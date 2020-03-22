@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -1935,6 +1935,9 @@
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
+        <LayoutBreak>
+          <subtype>section</subtype>
+          </LayoutBreak>
         <Chord>
           <durationType>quarter</durationType>
           <Note>
@@ -1974,7 +1977,7 @@
             </Articulation>
           </Rest>
         </Measure>
-      <Measure number="33" len="1/4">
+      <Measure number="1" len="1/4">
         <irregular/>
         <Clef>
           <concertClefType>G</concertClefType>
@@ -2040,7 +2043,6 @@
           </Chord>
         </Measure>
       <Measure number="1">
-        <noOffset>-32</noOffset>
         <Harmony>
           <name>IV.V[I</name>
           </Harmony>
@@ -6094,7 +6096,7 @@
             </Note>
           </Chord>
         </Measure>
-      <Measure number="33" len="1/4">
+      <Measure number="1" len="1/4">
         <Clef>
           <concertClefType>F</concertClefType>
           <transposingClefType>F</transposingClefType>

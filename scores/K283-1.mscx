@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -4933,7 +4933,7 @@
           <durationType>quarter</durationType>
           </Rest>
         <BarLine>
-          <subtype>normal</subtype>
+          <subtype>end-start-repeat</subtype>
           <span>2</span>
           <visible>0</visible>
           </BarLine>
@@ -10459,6 +10459,7 @@
           </Chord>
         </Measure>
       <Measure number="120">
+        <endRepeat>2</endRepeat>
         <Harmony>
           <name>I]</name>
           </Harmony>
@@ -10484,7 +10485,7 @@
           <durationType>quarter</durationType>
           </Rest>
         <BarLine>
-          <subtype>end</subtype>
+          <subtype>end-repeat</subtype>
           <span>2</span>
           <Articulation>
             <direction>down</direction>

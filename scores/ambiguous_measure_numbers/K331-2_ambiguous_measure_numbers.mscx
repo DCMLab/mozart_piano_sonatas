@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -98,6 +98,8 @@
           </System>
         </Page>
       <Page>
+        <System>
+          </System>
         <System>
           </System>
         <System>
@@ -513,10 +515,7 @@
           <name>V(64)</name>
           <pos x="0" y="-5.4"/>
           </Harmony>
-        <Slur id="9">
-          <track>0</track>
-          </Slur>
-        <HairPin id="10">
+        <HairPin id="9">
           <subtype>0</subtype>
           <useTextLine>1</useTextLine>
           <lineStyle>6</lineStyle>
@@ -531,9 +530,12 @@
             <text>(cresc.)</text>
             </continueText>
           </HairPin>
+        <Slur id="10">
+          <track>0</track>
+          </Slur>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="9"/>
+          <Slur type="start" id="10"/>
           <Note>
             <pitch>71</pitch>
             <tpc>19</tpc>
@@ -562,7 +564,7 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="stop" id="9"/>
+          <Slur type="stop" id="10"/>
           <Note>
             <pitch>76</pitch>
             <tpc>18</tpc>
@@ -579,7 +581,7 @@
           <name>ii6</name>
           <pos x="0" y="-5.4"/>
           </Harmony>
-        <endSpanner id="10"/>
+        <endSpanner id="9"/>
         <Slur id="11">
           <track>0</track>
           </Slur>
@@ -1635,10 +1637,7 @@
           <name>i64(9)</name>
           <pos x="0.34275" y="-4.9"/>
           </Harmony>
-        <Slur id="26">
-          <track>0</track>
-          </Slur>
-        <HairPin id="27">
+        <HairPin id="26">
           <subtype>0</subtype>
           <useTextLine>1</useTextLine>
           <lineStyle>6</lineStyle>
@@ -1653,9 +1652,12 @@
             <text>(cresc.)</text>
             </continueText>
           </HairPin>
+        <Slur id="27">
+          <track>0</track>
+          </Slur>
         <Chord>
           <durationType>quarter</durationType>
-          <Slur type="start" id="26"/>
+          <Slur type="start" id="27"/>
           <Note>
             <pitch>73</pitch>
             <tpc>21</tpc>
@@ -1669,7 +1671,7 @@
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
-          <Slur type="stop" id="26"/>
+          <Slur type="stop" id="27"/>
           <Note>
             <pitch>71</pitch>
             <tpc>19</tpc>
@@ -1696,7 +1698,7 @@
           <name>V7(6)</name>
           <pos x="0" y="-4.9"/>
           </Harmony>
-        <endSpanner id="27"/>
+        <endSpanner id="26"/>
         <Slur id="28">
           <track>0</track>
           </Slur>
@@ -2513,10 +2515,7 @@
           <name>V7</name>
           <pos x="0" y="-6.16"/>
           </Harmony>
-        <Slur id="45">
-          <track>0</track>
-          </Slur>
-        <HairPin id="46">
+        <HairPin id="45">
           <subtype>0</subtype>
           <useTextLine>1</useTextLine>
           <lineStyle>6</lineStyle>
@@ -2531,10 +2530,13 @@
             <text>(cresc.)</text>
             </continueText>
           </HairPin>
+        <Slur id="46">
+          <track>0</track>
+          </Slur>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
-          <Slur type="start" id="45"/>
+          <Slur type="start" id="46"/>
           <Note>
             <pitch>69</pitch>
             <tpc>17</tpc>
@@ -2565,7 +2567,7 @@
         <Chord>
           <BeamMode>mid</BeamMode>
           <durationType>eighth</durationType>
-          <Slur type="stop" id="45"/>
+          <Slur type="stop" id="46"/>
           <Note>
             <pitch>74</pitch>
             <tpc>16</tpc>
@@ -2583,7 +2585,7 @@
           <name>V(64)</name>
           <pos x="0" y="-6.16"/>
           </Harmony>
-        <endSpanner id="46"/>
+        <endSpanner id="45"/>
         <Slur id="47">
           <track>0</track>
           </Slur>
@@ -3617,6 +3619,9 @@
         </Measure>
       <Measure number="48">
         <endRepeat>2</endRepeat>
+        <LayoutBreak>
+          <subtype>section</subtype>
+          </LayoutBreak>
         <Harmony>
           <name>I\\</name>
           <pos x="0" y="-5.29"/>
@@ -3649,7 +3654,6 @@
           </BarLine>
         </Measure>
       <Measure number="1">
-        <noOffset>-48</noOffset>
         <KeySig>
           <accidental>2</accidental>
           </KeySig>
@@ -3661,6 +3665,11 @@
           <subtype>p</subtype>
           <velocity>49</velocity>
           </Dynamic>
+        <StaffText>
+          <pos x="-8.26988" y="-7.97792"/>
+          <style>System</style>
+          <text><b><font size="13"></font>TRIO</b></text>
+          </StaffText>
         <Slur id="63">
           <track>0</track>
           <SlurSegment no="0">
@@ -8090,7 +8099,7 @@
           </Chord>
         </Measure>
       <Measure number="53">
-        <endRepeat>2</endRepeat>
+        <irregular/>
         <Harmony>
           <name>I\\</name>
           <pos x="0" y="-3.61"/>
@@ -8119,7 +8128,7 @@
           <durationType>quarter</durationType>
           </Rest>
         <BarLine>
-          <subtype>end-repeat</subtype>
+          <subtype>end</subtype>
           <span>2</span>
           <Articulation>
             <direction>down</direction>

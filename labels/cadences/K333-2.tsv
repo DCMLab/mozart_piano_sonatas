@@ -1,20 +1,20 @@
-measure	beat	label
-4.0	2.0	HC
-6.0	3.0	DC
-8.0	1.0	PAC
-13.0	2.0	HC.CON
-21.0	1.0	PAC
-25.0	2.0	IAC
-29.0	1.0	PAC
-31.0	2.0	PAC
-35.0	2.0	PAC
-43.0	1.0	PAC
-48.0	2.0	HC.PH
-54.0	2.0	HC
-58.0	1.0	PAC
-63.0	2.0	HC.CON
-71.0	1.0	PAC
-75.0	2.0	IAC
-79.0	1.0	PAC
-81.0	2.0	PAC
-82.0	3.0	PAC
+mn	onset	cadence	cadence_subtype
+4	1/4	HC	
+6	1/2	DC	
+8	0	PAC	
+13	1/4	HC	CON
+21	0	PAC	
+25	1/4	IAC	
+29	0	PAC	
+31	1/4	PAC	
+35	1/4	PAC	
+43	0	PAC	
+48	1/4	HC	PH
+54	1/4	HC	
+58	0	PAC	
+63	1/4	HC	CON
+71	0	PAC	
+75	1/4	IAC	
+79	0	PAC	
+81	1/4	PAC	
+82	1/2	PAC	

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -517,10 +517,7 @@
           <name>V(64)</name>
           <pos x="0" y="-5.4"/>
           </Harmony>
-        <Slur id="9">
-          <track>0</track>
-          </Slur>
-        <HairPin id="10">
+        <HairPin id="9">
           <subtype>0</subtype>
           <useTextLine>1</useTextLine>
           <lineStyle>6</lineStyle>
@@ -535,9 +532,12 @@
             <text>(cresc.)</text>
             </continueText>
           </HairPin>
+        <Slur id="10">
+          <track>0</track>
+          </Slur>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="9"/>
+          <Slur type="start" id="10"/>
           <Note>
             <pitch>71</pitch>
             <tpc>19</tpc>
@@ -566,7 +566,7 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="stop" id="9"/>
+          <Slur type="stop" id="10"/>
           <Note>
             <pitch>76</pitch>
             <tpc>18</tpc>
@@ -583,7 +583,7 @@
           <name>ii6</name>
           <pos x="0" y="-5.4"/>
           </Harmony>
-        <endSpanner id="10"/>
+        <endSpanner id="9"/>
         <Slur id="11">
           <track>0</track>
           </Slur>
@@ -1639,10 +1639,7 @@
           <name>i64(9)</name>
           <pos x="0.34275" y="-4.9"/>
           </Harmony>
-        <Slur id="26">
-          <track>0</track>
-          </Slur>
-        <HairPin id="27">
+        <HairPin id="26">
           <subtype>0</subtype>
           <useTextLine>1</useTextLine>
           <lineStyle>6</lineStyle>
@@ -1657,9 +1654,12 @@
             <text>(cresc.)</text>
             </continueText>
           </HairPin>
+        <Slur id="27">
+          <track>0</track>
+          </Slur>
         <Chord>
           <durationType>quarter</durationType>
-          <Slur type="start" id="26"/>
+          <Slur type="start" id="27"/>
           <Note>
             <pitch>73</pitch>
             <tpc>21</tpc>
@@ -1673,7 +1673,7 @@
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
-          <Slur type="stop" id="26"/>
+          <Slur type="stop" id="27"/>
           <Note>
             <pitch>71</pitch>
             <tpc>19</tpc>
@@ -1700,7 +1700,7 @@
           <name>V7(6)</name>
           <pos x="0" y="-4.9"/>
           </Harmony>
-        <endSpanner id="27"/>
+        <endSpanner id="26"/>
         <Slur id="28">
           <track>0</track>
           </Slur>
@@ -2517,10 +2517,7 @@
           <name>V7</name>
           <pos x="0" y="-6.16"/>
           </Harmony>
-        <Slur id="45">
-          <track>0</track>
-          </Slur>
-        <HairPin id="46">
+        <HairPin id="45">
           <subtype>0</subtype>
           <useTextLine>1</useTextLine>
           <lineStyle>6</lineStyle>
@@ -2535,10 +2532,13 @@
             <text>(cresc.)</text>
             </continueText>
           </HairPin>
+        <Slur id="46">
+          <track>0</track>
+          </Slur>
         <Chord>
           <BeamMode>begin</BeamMode>
           <durationType>eighth</durationType>
-          <Slur type="start" id="45"/>
+          <Slur type="start" id="46"/>
           <Note>
             <pitch>69</pitch>
             <tpc>17</tpc>
@@ -2569,7 +2569,7 @@
         <Chord>
           <BeamMode>mid</BeamMode>
           <durationType>eighth</durationType>
-          <Slur type="stop" id="45"/>
+          <Slur type="stop" id="46"/>
           <Note>
             <pitch>74</pitch>
             <tpc>16</tpc>
@@ -2587,7 +2587,7 @@
           <name>V(64)</name>
           <pos x="0" y="-6.16"/>
           </Harmony>
-        <endSpanner id="46"/>
+        <endSpanner id="45"/>
         <Slur id="47">
           <track>0</track>
           </Slur>
@@ -8085,7 +8085,7 @@
           </Chord>
         </Measure>
       <Measure number="101">
-        <endRepeat>2</endRepeat>
+        <irregular/>
         <Harmony>
           <name>I\\</name>
           <pos x="0" y="-3.61"/>
@@ -8114,7 +8114,7 @@
           <durationType>quarter</durationType>
           </Rest>
         <BarLine>
-          <subtype>end-repeat</subtype>
+          <subtype>end</subtype>
           <span>2</span>
           <Articulation>
             <direction>down</direction>
