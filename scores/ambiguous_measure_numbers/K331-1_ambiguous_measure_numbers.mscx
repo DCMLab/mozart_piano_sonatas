@@ -1582,6 +1582,9 @@
         </Measure>
       <Measure>
         <endRepeat>2</endRepeat>
+        <LayoutBreak>
+          <subtype>section</subtype>
+          </LayoutBreak>
         <voice>
           <Harmony>
             <name>V(64)</name>
@@ -1669,7 +1672,6 @@
         </Measure>
       <Measure>
         <startRepeat/>
-        <noOffset>-18</noOffset>
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
@@ -1678,6 +1680,9 @@
             <sigN>6</sigN>
             <sigD>8</sigD>
             </TimeSig>
+          <BarLine>
+            <subtype>start-repeat</subtype>
+            </BarLine>
           <RehearsalMark>
             <offset x="-5.56172" y="-6.27181"/>
             <text>Var. I.</text>
@@ -4278,7 +4283,7 @@
       <Measure>
         <endRepeat>2</endRepeat>
         <LayoutBreak>
-          <subtype>line</subtype>
+          <subtype>section</subtype>
           </LayoutBreak>
         <voice>
           <Harmony>
@@ -4367,7 +4372,6 @@
         </Measure>
       <Measure>
         <startRepeat/>
-        <noOffset>-18</noOffset>
         <voice>
           <TimeSig>
             <sigN>6</sigN>
@@ -6989,7 +6993,7 @@
       <Measure>
         <endRepeat>2</endRepeat>
         <LayoutBreak>
-          <subtype>line</subtype>
+          <subtype>section</subtype>
           </LayoutBreak>
         <voice>
           <Harmony>
@@ -7137,7 +7141,6 @@
         </Measure>
       <Measure>
         <startRepeat/>
-        <noOffset>-18</noOffset>
         <voice>
           <KeySig>
             <accidental>0</accidental>
@@ -9547,7 +9550,7 @@
       <Measure>
         <endRepeat>2</endRepeat>
         <LayoutBreak>
-          <subtype>line</subtype>
+          <subtype>section</subtype>
           </LayoutBreak>
         <voice>
           <Harmony>
@@ -9702,7 +9705,6 @@
         </Measure>
       <Measure>
         <startRepeat/>
-        <noOffset>-18</noOffset>
         <voice>
           <KeySig>
             <accidental>3</accidental>
@@ -12856,7 +12858,7 @@
       <Measure>
         <endRepeat>2</endRepeat>
         <LayoutBreak>
-          <subtype>line</subtype>
+          <subtype>section</subtype>
           </LayoutBreak>
         <voice>
           <Harmony>
@@ -13026,7 +13028,6 @@
         </Measure>
       <Measure>
         <startRepeat/>
-        <noOffset>-18</noOffset>
         <voice>
           <TimeSig>
             <sigN>6</sigN>
@@ -15329,9 +15330,6 @@
               <tpc>16</tpc>
               </Note>
             </Chord>
-          <BarLine>
-            <subtype>end</subtype>
-            </BarLine>
           </voice>
         <voice>
           <location>
@@ -18495,6 +18493,13 @@
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
+              <prev>
+                <location>
+                  <grace>0</grace>
+                  </location>
+                </prev>
+              </Spanner>
+            <Spanner type="Slur">
               <Slur>
                 </Slur>
               <next>
@@ -18502,13 +18507,6 @@
                   <fractions>1/8</fractions>
                   </location>
                 </next>
-              </Spanner>
-            <Spanner type="Slur">
-              <prev>
-                <location>
-                  <grace>0</grace>
-                  </location>
-                </prev>
               </Spanner>
             <Note>
               <pitch>73</pitch>
@@ -18648,6 +18646,13 @@
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
+              <prev>
+                <location>
+                  <grace>0</grace>
+                  </location>
+                </prev>
+              </Spanner>
+            <Spanner type="Slur">
               <Slur>
                 </Slur>
               <next>
@@ -18655,13 +18660,6 @@
                   <fractions>1/8</fractions>
                   </location>
                 </next>
-              </Spanner>
-            <Spanner type="Slur">
-              <prev>
-                <location>
-                  <grace>0</grace>
-                  </location>
-                </prev>
               </Spanner>
             <Note>
               <pitch>71</pitch>
@@ -20065,6 +20063,13 @@
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
+              <prev>
+                <location>
+                  <grace>0</grace>
+                  </location>
+                </prev>
+              </Spanner>
+            <Spanner type="Slur">
               <Slur>
                 </Slur>
               <next>
@@ -20072,13 +20077,6 @@
                   <fractions>1/8</fractions>
                   </location>
                 </next>
-              </Spanner>
-            <Spanner type="Slur">
-              <prev>
-                <location>
-                  <grace>0</grace>
-                  </location>
-                </prev>
               </Spanner>
             <Note>
               <pitch>73</pitch>
@@ -20218,6 +20216,13 @@
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
+              <prev>
+                <location>
+                  <grace>0</grace>
+                  </location>
+                </prev>
+              </Spanner>
+            <Spanner type="Slur">
               <Slur>
                 </Slur>
               <next>
@@ -20225,13 +20230,6 @@
                   <fractions>1/8</fractions>
                   </location>
                 </next>
-              </Spanner>
-            <Spanner type="Slur">
-              <prev>
-                <location>
-                  <grace>0</grace>
-                  </location>
-                </prev>
               </Spanner>
             <Note>
               <pitch>71</pitch>
@@ -23040,6 +23038,9 @@
             <sigN>6</sigN>
             <sigD>8</sigD>
             </TimeSig>
+          <BarLine>
+            <subtype>start-repeat</subtype>
+            </BarLine>
           <Rest>
             <durationType>eighth</durationType>
             </Rest>
@@ -30785,9 +30786,6 @@
             <concertClefType>G</concertClefType>
             <transposingClefType>G</transposingClefType>
             </Clef>
-          <BarLine>
-            <subtype>end</subtype>
-            </BarLine>
           </voice>
         <voice>
           <Chord>

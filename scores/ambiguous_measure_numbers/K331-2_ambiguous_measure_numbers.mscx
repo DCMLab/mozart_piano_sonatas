@@ -4317,6 +4317,9 @@
         </Measure>
       <Measure>
         <endRepeat>2</endRepeat>
+        <LayoutBreak>
+          <subtype>section</subtype>
+          </LayoutBreak>
         <voice>
           <Harmony>
             <name>I\\</name>
@@ -4346,7 +4349,6 @@
           </voice>
         </Measure>
       <Measure>
-        <noOffset>-48</noOffset>
         <voice>
           <KeySig>
             <accidental>2</accidental>
@@ -4359,6 +4361,10 @@
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <SystemText>
+            <offset x="-8.26988" y="-7.97792"/>
+            <text><b><font size="13"></font>TRIO</b></text>
+            </SystemText>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -9536,7 +9542,7 @@
           </voice>
         </Measure>
       <Measure>
-        <endRepeat>2</endRepeat>
+        <irregular>1</irregular>
         <voice>
           <Harmony>
             <name>I\\</name>
@@ -9580,7 +9586,7 @@
             <subtype>fermataAbove</subtype>
             </Fermata>
           <BarLine>
-            <subtype>end-repeat</subtype>
+            <subtype>end</subtype>
             </BarLine>
           <Spanner type="Volta">
             <prev>
@@ -15323,7 +15329,7 @@
             <placement>below</placement>
             </Fermata>
           <BarLine>
-            <subtype>end-repeat</subtype>
+            <subtype>end</subtype>
             </BarLine>
           </voice>
         </Measure>

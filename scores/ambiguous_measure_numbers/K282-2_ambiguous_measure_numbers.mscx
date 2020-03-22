@@ -2282,7 +2282,7 @@
       <Measure len="1/2">
         <endRepeat>2</endRepeat>
         <LayoutBreak>
-          <subtype>line</subtype>
+          <subtype>section</subtype>
           </LayoutBreak>
         <voice>
           <Chord>
@@ -2395,7 +2395,6 @@
           </voice>
         </Measure>
       <Measure>
-        <noOffset>-32</noOffset>
         <voice>
           <Harmony>
             <name>IV.V[I</name>

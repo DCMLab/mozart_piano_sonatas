@@ -9531,7 +9531,7 @@
           </voice>
         </Measure>
       <Measure>
-        <endRepeat>2</endRepeat>
+        <irregular>1</irregular>
         <voice>
           <Harmony>
             <name>I\\</name>
@@ -9575,7 +9575,7 @@
             <subtype>fermataAbove</subtype>
             </Fermata>
           <BarLine>
-            <subtype>end-repeat</subtype>
+            <subtype>end</subtype>
             </BarLine>
           <Spanner type="Volta">
             <prev>
@@ -15318,7 +15318,7 @@
             <placement>below</placement>
             </Fermata>
           <BarLine>
-            <subtype>end-repeat</subtype>
+            <subtype>end</subtype>
             </BarLine>
           </voice>
         </Measure>

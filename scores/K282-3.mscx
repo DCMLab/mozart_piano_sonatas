@@ -7145,6 +7145,7 @@
           </voice>
         </Measure>
       <Measure len="3/8">
+        <endRepeat>2</endRepeat>
         <stretch>1.1</stretch>
         <voice>
           <Harmony>
@@ -7164,9 +7165,6 @@
           <Rest>
             <durationType>eighth</durationType>
             </Rest>
-          <BarLine>
-            <subtype>end</subtype>
-            </BarLine>
           </voice>
         </Measure>
       </Staff>
@@ -11551,9 +11549,6 @@
           <Rest>
             <durationType>eighth</durationType>
             </Rest>
-          <BarLine>
-            <subtype>end</subtype>
-            </BarLine>
           </voice>
         <voice>
           <Chord>
