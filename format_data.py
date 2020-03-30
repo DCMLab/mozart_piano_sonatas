@@ -173,7 +173,7 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
     else:
         script_path = os.path.abspath('')
         kinds = []
-        for kind in ['notes', 'harmonies', 'cadences', 'measures']:
+        for kind in ['notes', 'harmonies', 'cadences']:
             if locals()[kind]:
                 kinds.append(kind)
         if join:
