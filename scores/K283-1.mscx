@@ -10458,7 +10458,7 @@
             </Note>
           </Chord>
         </Measure>
-      <Measure number="120">
+      <Measure number="120" len="2/4">
         <endRepeat>2</endRepeat>
         <Harmony>
           <name>I]</name>
@@ -10478,9 +10478,6 @@
             <tpc>15</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>quarter</durationType>
-          </Rest>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
@@ -16942,7 +16939,7 @@
             </Note>
           </Chord>
         </Measure>
-      <Measure number="120">
+      <Measure number="120" len="2/4">
         <Chord>
           <durationType>quarter</durationType>
           <Note>
@@ -16950,9 +16947,6 @@
             <tpc>15</tpc>
             </Note>
           </Chord>
-        <Rest>
-          <durationType>quarter</durationType>
-          </Rest>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>
