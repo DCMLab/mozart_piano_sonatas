@@ -1,6 +1,7 @@
 """
 How to derive the relational data structure from the (MS3) MSCX files:
-python extract_annotations.py -cnmqos
+On the toplevel of the repo, run
+    python extract_annotations.py scores -cnmqos
 """
 
 import argparse, os, sys
