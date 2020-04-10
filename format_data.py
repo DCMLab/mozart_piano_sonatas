@@ -1,13 +1,10 @@
 """
-Internal note: How to derive this data structure from the (MS3) MSCX files:
-1. python extract_annotations.py -cnmqo
-2. rename folder chords -> harmonies
-3. Delete files with ambiguous_measure_numbers
+How to derive the relational data structure from the (MS3) MSCX files:
+python extract_annotations.py -cnmqos
 """
 
 import argparse, os, sys
 from fractions import Fraction as frac
-from functools import reduce
 try:
     import pandas as pd
 except ImportError:
