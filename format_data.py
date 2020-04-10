@@ -16,7 +16,7 @@ python -m pip install pandas""")
 os.environ['NUMEXPR_MAX_THREADS'] = '64' # to silence NumExpr prompt
 idx = pd.IndexSlice                      # for easy MultiIndex slicing
 
-LOSTR2INT = lambda l: '' if pd.isnull(l) else l.split(', ')
+LOSTR2INT = lambda l: [] if l == '' else [int(s) for s in l.split(', ')]
 
 CONVERTERS = {
     'act_dur': frac,
@@ -147,20 +147,45 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
         if (join or unfold) and not 'measures' in kinds:
             kinds.append('measures')
 
+        print(f"Reading {len(selection) * len(kinds)} TSV files...")
         joining = {kind: read_tsvs(os.path.join(script_path, kind), selection) for kind in kinds}
 
+        if unfold:
+            print("Calculating unfolding structures...")
+            mn_seq_needed = not join and 'cadences' in kinds
+            mc_sequences, mn_sequences = {}, {}
+            for file, measure_list in joining['measures'].groupby(level=0):
+                ml = measure_list.set_index('mc')
+                seq = next2sequence(ml.next)
+                mc_sequences[file] = seq
+                if mn_seq_needed:
+                    mn_seq = ml.mn.loc[seq]
+                    mn_sequences[file] = mn_seq[mn_seq != mn_seq.shift()].to_list()
 
         if join:
             joined = join_tsv(**joining)
+            print(joined.index.names)
             if unfold:
-                store_result(unfold_multiple(joined, joining['measures']), fname, 'joined')
+                print("Unfolding joined DataFrame...")
+                store_result(unfold_multiple(joined, mc_sequences=mc_sequences), fname, 'joined')
             else:
-                store_result(joined, fname, 'joined')
+                store_result(joined.drop(columns='volta'), fname, 'joined')
         else:
             for kind, tsv in joining.items():
-                if kind == 'measures':
-                    tsv.next = tsv.next.map(lambda l: ', '.join(str(s) for s in l))
-                store_result(tsv, fname, kind)
+                if kind != 'measures':
+                    if unfold:
+                        print(f"Unfolding {kind}...")
+                        store_result(unfold_multiple(tsv, mc_sequences=mc_sequences, mn_sequences=mn_sequences), fname, kind)
+                    elif 'volta' in tsv.columns:
+                        store_result(tsv.drop(index=tsv[tsv.volta.fillna(2) == 1].index, columns='volta'), fname, kind)
+                    else:
+                        store_result(tsv, fname, kind)
+
+        if measures:
+            tsv = joining['measures']
+            tsv.next = tsv.next.map(lambda l: ', '.join(str(s) for s in l))
+            store_result(tsv, fname, 'measures')
+
         # if propagate:
         #     if cadences:
         #         joined.cadence.fillna(method='bfill', inplace=True)
@@ -173,6 +198,7 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None):
     """"""
     if notes is not None:
         if harmonies is not None:
+            print("Joining notes with harmony labels...")
             left = pd.merge(notes.set_index(['mc', 'mn', 'onset'], append=True), harmonies.set_index(['mc', 'mn', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True, suffixes=('', '_y'))
             duplicates = [col for col in left.columns if col.endswith('_y')]
             left = left.reset_index(level='mc').drop(columns=duplicates)
@@ -182,12 +208,13 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None):
         left = harmonies.set_index(['mn', 'onset'], append=True)
 
     if cadences is not None:
+        print("Adjoining cadence labels...")
         res = pd.merge(left, cadences.set_index(['mn', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True)
     else:
         res = left
     if res.mc.isna().any():
         res.loc[res.mc.isna(), 'mc'] = pd.merge(res[res.mc.isna()].reset_index(level='onset')['onset'], measures[['mc', 'mn']], on=['filename', 'mn']).set_index(['mn', 'onset'], append=True)
-    return res
+    return res.reset_index(['mn', 'onset'])
 
 
 
@@ -253,17 +280,23 @@ def store_result(df, fname, what):
 
 
 
-def unfold_multiple(unfold_this, measure_list):
-    sequence_dict = {fname: next2sequence(ml.set_index('mc').next) for fname, ml in measure_list.groupby(level=0)}
+def unfold_multiple(unfold_this, mc_sequences, mn_sequences=None):
 
     def unfold(df):
         """
         """
-        nonlocal sequence_dict
-        fname = df.iloc[0].name[0]
-        return df.set_index('mc', drop=True).loc[sequence_dict[fname]].reset_index()
+        file = df.iloc[0].name
+        if 'mc' in df.columns:
+            seq = [mc for mc in mc_sequences[file]  if mc in df.mc.values]
+            return df.set_index('mc').loc[seq]
+        else:
+            seq = [mn for mn in mn_sequences[file]  if mn in df.mn.values]
+            return df.set_index('mn').loc[seq]
 
-    return unfold_this.groupby(level=0).apply(unfold)
+    res = unfold_this.groupby(level=0).apply(unfold)
+    if 'volta' in res.columns:
+        res.drop(columns='volta', inplace=True)
+    return res.reset_index(level=1)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
