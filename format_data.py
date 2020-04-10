@@ -1,6 +1,6 @@
 """
 Internal note: How to derive this data structure from the (MS3) MSCX files:
-1. python extract_annotations.py -cnmo
+1. python extract_annotations.py -cnmqo
 2. rename folder chords -> harmonies
 3. Delete files with ambiguous_measure_numbers
 """
@@ -111,12 +111,12 @@ def read_tsvs(dir, selection, unfold):
     files = (selection.filename + '.tsv').values
     df = pd.concat([pd.read_csv(os.path.join(dir, f), sep='\t', dtype=DTYPES, converters=CONVERTERS) for f in files],
                      keys=selection.filename)
-    if unfold:
-        return repeat(df) # groupby-apply
-    else:
-        if 'volta' in df.columns:
-            df = df[(df.volta != 1).fillna(True)].drop(columns='volta')
-        return df
+    # if unfold:
+    #     return repeat(df) # groupby-apply
+    # else:
+    #     if 'volta' in df.columns:
+    #         df = df[(df.volta != 1).fillna(True)].drop(columns='volta')
+    return df
 
 
 
@@ -166,7 +166,7 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
 
     if test:
         print(selection)
-    elif not harmonies and not cadences and not notes:
+    elif not harmonies and not cadences and not notes and not measures:
         print("Select the kind of data: -N for notes, -H for harmony labels, and -C for cadence labels. Pass -j to join several kinds into a single TSV.")
     elif len(selection) == 0:
         print("No data matching your selection.")
@@ -178,25 +178,25 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
                 kinds.append(kind)
         if join:
             assert len(kinds) > 1, "Select at least two kinds of data for joining."
+        if not 'measures' in kinds:
+            kinds.append('measures')
 
         joining = {kind: read_tsvs(os.path.join(script_path, kind), selection, unfold) for kind in kinds}
-        return joining
+        #return joining
 
         if join:
-            for df in joining:
-                df.index = df.index.droplevel(1)
-            joined = reduce(lambda left,right: pd.merge(left, right, left_index=True, right_index=True, how='outer', suffixes=('', '_y')), joining)
-            duplicates = [col for col in joined.columns if col.endswith('_y')]
-            joined.drop(columns=duplicates, inplace=True)
-            if propagate:
-                if cadences:
-                    joined.cadence.fillna(method='bfill', inplace=True)
-                if notes and harmonies:
-                    joined.chords.fillna(method='ffill', inplace=True)
+            joined = join_tsv(**joining)
             store_result(joined, fname, 'joined')
         else:
             for kind, tsv in joining.items():
+                if kind == 'measures':
+                    tsv.next = tsv.next.map(lambda l: ', '.join(str(s) for s in l))
                 store_result(tsv, fname, kind)
+        # if propagate:
+        #     if cadences:
+        #         joined.cadence.fillna(method='bfill', inplace=True)
+        #     if notes and harmonies:
+        #         joined.chords.fillna(method='ffill', inplace=True)
 
 
 # joining = format_data(notes=True, harmonies=True, cadences=True, measures=True)
@@ -207,18 +207,24 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None):
         if harmonies is not None:
             notes = notes.drop(columns='mn')
             left = pd.merge(notes, harmonies, on=['filename', 'mc', 'onset'], how='outer', suffixes=('', '_y'))\
-                          .sort_values(['mc', 'onset'])\
                           .drop(columns='mn')
+                          #.sort_values(['mc', 'onset'])\
             left = pd.merge(left, measures[['mc', 'mn']], on=['filename', 'mc'])
             return left
         else:
             left = notes
     else:
         left = harmonies
-    # if cadences is not None:
-    #     if
 
+    if cadences is not None:
+        res = pd.merge(left, cadences, on=['filename', 'mn', 'onset'], how='outer', suffixes=('', '_y'))
+        return res
+    else:
+        return left
+# duplicates = [col for col in joined.columns if col.endswith('_y')]
+# joined.drop(columns=duplicates, inplace=True)
 
+# joining['measures']
 # joining['measures'].offset.value_counts()
 # join_tsv(**joining)
 # test[(test.volta != 1).fillna(True)]
