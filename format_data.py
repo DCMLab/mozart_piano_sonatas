@@ -4,7 +4,7 @@ On the toplevel of the repo, run
     python extract_annotations.py scores -cnmqos
 """
 
-import argparse, os, sys
+import argparse, os, sys, logging
 from fractions import Fraction as frac
 try:
     import pandas as pd
@@ -122,7 +122,10 @@ def check_dir(d):
 
 
 
-def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None, test=False, notes=False, harmonies=False, cadences=False, measures=False, join=False, propagate=False):
+
+
+
+def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None, test=False, notes=False, harmonies=False, cadences=False, measures=False, join=False, expand=False, full_expand=False, propagate=False):
     fname = ' '.join(sys.argv[1:]) if name is None else name
 
     if dir is None:
@@ -132,10 +135,10 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
 
     if test:
         print(selection)
-    elif not harmonies and not cadences and not notes and not measures:
-        print("Select the kind of data: -N for notes, -H for harmony labels, -M for measures, and -C for cadence labels. Pass -j to join several kinds into a single TSV.")
+    elif not any([harmonies, cadences, notes, measures, expand, full_expand]):
+        logging.error("Select the kind of data: -N for notes, -H for harmony labels, -M for measures, and -C for cadence labels. Pass -j to join several kinds into a single TSV.")
     elif len(selection) == 0:
-        print("No data matching your selection.")
+        logging.error("No data matching your selection.")
     else:
         script_path = os.path.abspath('')
         kinds = []
@@ -146,12 +149,21 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
             assert len(kinds) > 1, "Select at least two kinds of data for joining."
         if (join or unfold) and not 'measures' in kinds:
             kinds.append('measures')
+        if full_expand:
+            expand=True
+        if expand and not harmonies:
+            kinds.append('harmonies')
 
-        print(f"Reading {len(selection) * len(kinds)} TSV files...")
+        logging.info(f"Reading {len(selection) * len(kinds)} TSV files...")
         joining = {kind: read_tsvs(os.path.join(script_path, kind), selection) for kind in kinds}
 
+
+        if expand:
+            logging.info("Expanding chord labels...")
+            joining['harmonies'] = expand_labels(joining['harmonies'], column='chords', steps=full_expand)
+
         if unfold:
-            print("Calculating unfolding structures...")
+            logging.info("Calculating unfolding structures...")
             mn_seq_needed = not join and 'cadences' in kinds
             mc_sequences, mn_sequences = {}, {}
             for file, measure_list in joining['measures'].groupby(level=0):
@@ -164,9 +176,8 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
 
         if join:
             joined = join_tsv(**joining)
-            print(joined.index.names)
             if unfold:
-                print("Unfolding joined DataFrame...")
+                logging.info("Unfolding joined DataFrame...")
                 store_result(unfold_multiple(joined, mc_sequences=mc_sequences), fname, 'joined')
             else:
                 store_result(joined.drop(columns='volta'), fname, 'joined')
@@ -174,7 +185,7 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
             for kind, tsv in joining.items():
                 if kind != 'measures':
                     if unfold:
-                        print(f"Unfolding {kind}...")
+                        logging.info(f"Unfolding {kind}...")
                         store_result(unfold_multiple(tsv, mc_sequences=mc_sequences, mn_sequences=mn_sequences), fname, kind)
                     elif 'volta' in tsv.columns:
                         store_result(tsv.drop(index=tsv[tsv.volta.fillna(2) == 1].index, columns='volta'), fname, kind)
@@ -198,7 +209,7 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None):
     """"""
     if notes is not None:
         if harmonies is not None:
-            print("Joining notes with harmony labels...")
+            logging.info("Joining notes with harmony labels...")
             left = pd.merge(notes.set_index(['mc', 'mn', 'onset'], append=True), harmonies.set_index(['mc', 'mn', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True, suffixes=('', '_y'))
             duplicates = [col for col in left.columns if col.endswith('_y')]
             left = left.reset_index(level='mc').drop(columns=duplicates)
@@ -208,7 +219,7 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None):
         left = harmonies.set_index(['mn', 'onset'], append=True)
 
     if cadences is not None:
-        print("Adjoining cadence labels...")
+        logging.info("Adjoining cadence labels...")
         res = pd.merge(left, cadences.set_index(['mn', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True)
     else:
         res = left
@@ -276,7 +287,7 @@ def store_result(df, fname, what):
     tsv_name = f"{fname}_{what}.tsv" if what != 'joined' else fname + '.tsv'
     tsv_path = os.path.join(args.dir, tsv_name)
     df.to_csv(tsv_path, sep='\t')
-    print(f"PREVIEW of {tsv_path}:", df.head(1), sep='\n', end='\n\n')
+    logging.info(f"PREVIEW of {tsv_path}:", df.head(1), sep='\n', end='\n\n')
 
 
 
@@ -320,8 +331,24 @@ Run with parameter -t to see all file names.
     parser.add_argument('-C','--cadences', action='store_true', help="Get cadence labels.")
     parser.add_argument('-M','--measures', action='store_true', help="Get measure properties.")
     parser.add_argument('-j','--join', action='store_true', help="Join the data into one single TSV.")
+    parser.add_argument('-e','--expand', action='store_true', help="Split the chord labels into their encoded features.")
+    parser.add_argument('-E','--full_expand', action='store_true', help="Compute additional chord features.")
     parser.add_argument('-p','--propagate', action='store_true', help="When joining, spread out chord and cadence labels.")
+    parser.add_argument('-l','--logging',default='INFO',help="Set logging to one of the levels {DEBUG, INFO, WARNING, ERROR, CRITICAL}. You may abbreviate by {D, I, W, E, C}.")
     args = parser.parse_args()
+    logging_levels = {
+        'DEBUG':    logging.DEBUG,
+        'INFO':     logging.INFO,
+        'WARNING':  logging.WARNING,
+        'ERROR':    logging.ERROR,
+        'CRITICAL':  logging.CRITICAL,
+        'D':    logging.DEBUG,
+        'I':     logging.INFO,
+        'W':  logging.WARNING,
+        'E':    logging.ERROR,
+        'C':  logging.CRITICAL,
+        }
+    logging.basicConfig(level=logging_levels[args.logging], format='%(levelname)-8s %(message)s')
 
     format_data(args.name,
                 args.dir,
@@ -334,4 +361,6 @@ Run with parameter -t to see all file names.
                 args.cadences,
                 args.measures,
                 args.join,
+                args.expand,
+                args.full_expand,
                 args.propagate)
