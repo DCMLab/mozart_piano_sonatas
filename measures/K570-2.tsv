@@ -2,7 +2,7 @@ mc	mn	keysig	timesig	act_dur	offset	voices	repeats	volta	barline	numbering_offse
 1	1	-3	4/4	1	0	3	firstMeasure					2
 2	2	-3	4/4	1	0	3						3
 3	3	-3	4/4	1	0	3						4
-4	4	-3	4/4	1	0	3	endRepeat					5, 1
+4	4	-3	4/4	1	0	3	endRepeat					1, 5
 5	5	-3	4/4	1	0	2	startRepeat					6
 6	6	-3	4/4	1	0	2						7
 7	7	-3	4/4	1	0	2						8
@@ -10,11 +10,11 @@ mc	mn	keysig	timesig	act_dur	offset	voices	repeats	volta	barline	numbering_offse
 9	9	-3	4/4	1	0	2						10
 10	10	-3	4/4	1	0	3						11
 11	11	-3	4/4	1	0	3						12
-12	12	-3	4/4	1	0	3	endRepeat					13, 5
+12	12	-3	4/4	1	0	3	endRepeat					5, 13
 13	13	-3	4/4	1	0	2	startRepeat					14
 14	14	-3	4/4	1	0	2						15
 15	15	-3	4/4	1	0	2						16
-16	16	-3	4/4	1	0	2	endRepeat					17, 13
+16	16	-3	4/4	1	0	2	endRepeat					13, 17
 17	17	-3	4/4	1	0	2	startRepeat					18
 18	18	-3	4/4	1	0	2						19
 19	19	-3	4/4	1	0	2						20
@@ -23,7 +23,7 @@ mc	mn	keysig	timesig	act_dur	offset	voices	repeats	volta	barline	numbering_offse
 22	22	-3	4/4	1	0	2						23
 23	23	-3	4/4	1	0	2						24, 25
 24	24	-3	4/4	1	0	2	endRepeat	1				17
-25	24	-3	4/4	1	0	2		2			1.0	26
+25	24	-3	4/4	1	0	2		2			1.0	17, 26
 26	25	-3	4/4	1	0	2						27
 27	26	-3	4/4	1	0	2						28
 28	27	-3	4/4	1	0	2						29
@@ -34,11 +34,11 @@ mc	mn	keysig	timesig	act_dur	offset	voices	repeats	volta	barline	numbering_offse
 33	32	-3	4/4	1	0	2	startRepeat		start-repeat			34
 34	33	-3	4/4	1	0	2						35
 35	34	-3	4/4	1	0	2						36
-36	35	-3	4/4	1	0	2	endRepeat					37, 33
+36	35	-3	4/4	1	0	2	endRepeat					33, 37
 37	36	-3	4/4	1	0	3	startRepeat		start-repeat			38
 38	37	-3	4/4	1	0	3						39
 39	38	-3	4/4	1	0	2						40
-40	39	-3	4/4	1	0	2	endRepeat					41, 37
+40	39	-3	4/4	1	0	2	endRepeat					37, 41
 41	40	-3	4/4	1	0	2						42
 42	41	-3	4/4	1	0	3						43
 43	42	-3	4/4	1	0	3						44
