@@ -105,16 +105,6 @@ FILE_LIST.index.names = ['sonata', 'movement']
 
 
 
-def read_tsvs(dir, selection, unfold):
-    files = (selection.filename + '.tsv').values
-    df = pd.concat([pd.read_csv(os.path.join(dir, f), sep='\t', dtype=DTYPES, converters=CONVERTERS) for f in files],
-                     keys=selection.filename)
-    # if unfold:
-    #     return repeat(df) # groupby-apply
-    # else:
-    #     if 'volta' in df.columns:
-    #         df = df[(df.volta != 1).fillna(True)].drop(columns='volta')
-    return df
 
 
 
@@ -129,6 +119,115 @@ def check_dir(d):
     if not os.path.isabs(d):
         d = os.path.abspath(d)
     return d
+
+
+
+def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None, test=False, notes=False, harmonies=False, cadences=False, measures=False, join=False, propagate=False):
+    fname = ' '.join(sys.argv[1:]) if name is None else name
+
+    if dir is None:
+        dir = os.path.join(os.getcwd(), 'formatted')
+
+    selection = select_files(sonatas=sonatas, movements=movements)
+
+    if test:
+        print(selection)
+    elif not harmonies and not cadences and not notes and not measures:
+        print("Select the kind of data: -N for notes, -H for harmony labels, -M for measures, and -C for cadence labels. Pass -j to join several kinds into a single TSV.")
+    elif len(selection) == 0:
+        print("No data matching your selection.")
+    else:
+        script_path = os.path.abspath('')
+        kinds = []
+        for kind in ['notes', 'harmonies', 'cadences']:
+            if locals()[kind]:
+                kinds.append(kind)
+        if join:
+            assert len(kinds) > 1, "Select at least two kinds of data for joining."
+        if (join or unfold) and not 'measures' in kinds:
+            kinds.append('measures')
+
+        joining = {kind: read_tsvs(os.path.join(script_path, kind), selection) for kind in kinds}
+
+
+        if join:
+            joined = join_tsv(**joining)
+            if unfold:
+                store_result(unfold_multiple(joined, joining['measures']), fname, 'joined')
+            else:
+                store_result(joined, fname, 'joined')
+        else:
+            for kind, tsv in joining.items():
+                if kind == 'measures':
+                    tsv.next = tsv.next.map(lambda l: ', '.join(str(s) for s in l))
+                store_result(tsv, fname, kind)
+        # if propagate:
+        #     if cadences:
+        #         joined.cadence.fillna(method='bfill', inplace=True)
+        #     if notes and harmonies:
+        #         joined.chords.fillna(method='ffill', inplace=True)
+
+
+
+def join_tsv(notes=None, harmonies=None, cadences=None, measures=None):
+    """"""
+    if notes is not None:
+        if harmonies is not None:
+            left = pd.merge(notes.set_index(['mc', 'mn', 'onset'], append=True), harmonies.set_index(['mc', 'mn', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True, suffixes=('', '_y'))
+            duplicates = [col for col in left.columns if col.endswith('_y')]
+            left = left.reset_index(level='mc').drop(columns=duplicates)
+        else:
+            left = notes.set_index(['mn', 'onset'], append=True)
+    else:
+        left = harmonies.set_index(['mn', 'onset'], append=True)
+
+    if cadences is not None:
+        res = pd.merge(left, cadences.set_index(['mn', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True)
+    else:
+        res = left
+    if res.mc.isna().any():
+        res.loc[res.mc.isna(), 'mc'] = pd.merge(res[res.mc.isna()].reset_index(level='onset')['onset'], measures[['mc', 'mn']], on=['filename', 'mn']).set_index(['mn', 'onset'], append=True)
+    return res
+
+
+
+def next2sequence(nxt):
+    """Turns a pd.Series of lists into a sequence of elements."""
+    i = nxt.index[0]
+    last_i = nxt.index[-1]
+    acc = [i]
+    nxt = nxt.to_dict()
+    flag = 0
+    nxt_list = nxt[i]
+    l = len(nxt_list)
+    while i <= last_i:
+        if i == last_i:
+            if flag or l == 0:
+                break
+            elif l == 1: # last mc has repeat sign
+                i = nxt_list[0]
+                flag = 1
+            else:
+                raise NotImplementedError
+        elif l == 1:
+            i = nxt_list[0]
+        elif l == 2:
+            i = nxt_list[flag]
+            flag = int(not flag)
+        else:
+            raise NotImplementedError("More than two voltas.")
+        acc.append(i)
+        nxt_list = nxt[i]
+        l = len(nxt_list)
+    return acc
+
+
+
+def read_tsvs(dir, selection):
+    files = (selection.filename + '.tsv').values
+    df = pd.concat([pd.read_csv(os.path.join(dir, f), sep='\t', dtype=DTYPES, converters=CONVERTERS) for f in files],
+                     keys=selection.filename,)
+    return df.droplevel(1)
 
 
 
@@ -154,79 +253,17 @@ def store_result(df, fname, what):
 
 
 
-def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None, test=False, notes=False, harmonies=False, cadences=False, measures=False, join=False, propagate=False):
-    fname = ' '.join(sys.argv[1:]) if name is None else name
+def unfold_multiple(unfold_this, measure_list):
+    sequence_dict = {fname: next2sequence(ml.set_index('mc').next) for fname, ml in measure_list.groupby(level=0)}
 
-    if dir is None:
-        dir = os.path.join(os.getcwd(), 'formatted')
+    def unfold(df):
+        """
+        """
+        nonlocal sequence_dict
+        fname = df.iloc[0].name[0]
+        return df.set_index('mc', drop=True).loc[sequence_dict[fname]].reset_index()
 
-    selection = select_files(sonatas=sonatas, movements=movements)
-
-    if test:
-        print(selection)
-    elif not harmonies and not cadences and not notes and not measures:
-        print("Select the kind of data: -N for notes, -H for harmony labels, and -C for cadence labels. Pass -j to join several kinds into a single TSV.")
-    elif len(selection) == 0:
-        print("No data matching your selection.")
-    else:
-        script_path = os.path.abspath('')
-        kinds = []
-        for kind in ['notes', 'harmonies', 'cadences']:
-            if locals()[kind]:
-                kinds.append(kind)
-        if join:
-            assert len(kinds) > 1, "Select at least two kinds of data for joining."
-        if not 'measures' in kinds:
-            kinds.append('measures')
-
-        joining = {kind: read_tsvs(os.path.join(script_path, kind), selection, unfold) for kind in kinds}
-        #return joining
-
-        if join:
-            joined = join_tsv(**joining)
-            store_result(joined, fname, 'joined')
-        else:
-            for kind, tsv in joining.items():
-                if kind == 'measures':
-                    tsv.next = tsv.next.map(lambda l: ', '.join(str(s) for s in l))
-                store_result(tsv, fname, kind)
-        # if propagate:
-        #     if cadences:
-        #         joined.cadence.fillna(method='bfill', inplace=True)
-        #     if notes and harmonies:
-        #         joined.chords.fillna(method='ffill', inplace=True)
-
-
-# joining = format_data(notes=True, harmonies=True, cadences=True, measures=True)
-
-def join_tsv(notes=None, harmonies=None, cadences=None, measures=None):
-    """"""
-    if notes is not None:
-        if harmonies is not None:
-            notes = notes.drop(columns='mn')
-            left = pd.merge(notes, harmonies, on=['filename', 'mc', 'onset'], how='outer', suffixes=('', '_y'))\
-                          .drop(columns='mn')
-                          #.sort_values(['mc', 'onset'])\
-            left = pd.merge(left, measures[['mc', 'mn']], on=['filename', 'mc'])
-            return left
-        else:
-            left = notes
-    else:
-        left = harmonies
-
-    if cadences is not None:
-        res = pd.merge(left, cadences, on=['filename', 'mn', 'onset'], how='outer', suffixes=('', '_y'))
-        return res
-    else:
-        return left
-# duplicates = [col for col in joined.columns if col.endswith('_y')]
-# joined.drop(columns=duplicates, inplace=True)
-
-# joining['measures']
-# joining['measures'].offset.value_counts()
-# join_tsv(**joining)
-# test[(test.volta != 1).fillna(True)]
-# test[test.mn.isna()]
+    return unfold_this.groupby(level=0).apply(unfold)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
@@ -237,6 +274,7 @@ if __name__ == '__main__':
 ------------------------------------
 
 This script needs to remain at the top level of (your local copy of) the repo  mozart_piano_sonatas.
+Run with parameter -t to see all file names.
 ''')
     parser.add_argument('name', metavar='NAME', nargs='?', type=check_dir, help='You may choose a name for the new TSV file(s). Existing files will be overwritten.')
     parser.add_argument('dir', metavar='DIR', nargs='?', type=check_dir, default=os.path.join(os.getcwd(), 'formatted'), help='Folder for storing the new TSV file(s). Can be relative, defaults to ./formatted')
