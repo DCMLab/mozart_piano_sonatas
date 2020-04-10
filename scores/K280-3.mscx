@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -40,19 +40,19 @@
     <showFrames>1</showFrames>
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
-    <metaTag name="composer"></metaTag>
+    <metaTag name="composer">Wolfgang Amadeus Mozart</metaTag>
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2017-12-04</metaTag>
     <metaTag name="lyricist"></metaTag>
-    <metaTag name="movementNumber"></metaTag>
-    <metaTag name="movementTitle"></metaTag>
+    <metaTag name="movementNumber">3</metaTag>
+    <metaTag name="movementTitle">Presto</metaTag>
     <metaTag name="originalFormat">cap</metaTag>
     <metaTag name="platform">Apple Macintosh</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source"></metaTag>
+    <metaTag name="source">nan</metaTag>
     <metaTag name="translator"></metaTag>
-    <metaTag name="workNumber"></metaTag>
-    <metaTag name="workTitle"></metaTag>
+    <metaTag name="workNumber">K280</metaTag>
+    <metaTag name="workTitle">Piano Sonata no. 2 in F major</metaTag>
     <PageList>
       <Page>
         <System>
@@ -247,7 +247,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="4"/>
+          <Slur type="start" id="3"/>
           <grace16/>
           <Note>
             <pitch>76</pitch>
@@ -256,8 +256,8 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="3"/>
-          <Slur type="stop" id="4"/>
+          <Slur type="stop" id="3"/>
+          <Slur type="start" id="4"/>
           <Note>
             <pitch>82</pitch>
             <tpc>12</tpc>
@@ -282,7 +282,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="6"/>
+          <Slur type="start" id="5"/>
           <grace16/>
           <Note>
             <pitch>77</pitch>
@@ -291,8 +291,8 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="5"/>
-          <Slur type="stop" id="6"/>
+          <Slur type="stop" id="5"/>
+          <Slur type="start" id="6"/>
           <Note>
             <pitch>81</pitch>
             <tpc>17</tpc>
@@ -317,7 +317,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="8"/>
+          <Slur type="start" id="7"/>
           <grace16/>
           <Note>
             <pitch>76</pitch>
@@ -326,8 +326,8 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="7"/>
-          <Slur type="stop" id="8"/>
+          <Slur type="stop" id="7"/>
+          <Slur type="start" id="8"/>
           <Note>
             <pitch>79</pitch>
             <tpc>15</tpc>
@@ -645,7 +645,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="16"/>
+          <Slur type="start" id="15"/>
           <grace16/>
           <Note>
             <pitch>65</pitch>
@@ -654,8 +654,8 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="15"/>
-          <Slur type="stop" id="16"/>
+          <Slur type="stop" id="15"/>
+          <Slur type="start" id="16"/>
           <Note>
             <pitch>69</pitch>
             <tpc>17</tpc>
@@ -3264,7 +3264,8 @@
             </Note>
           </Chord>
         </Measure>
-      <Measure number="77">
+      <Measure number="77" len="2/8">
+        <endRepeat>2</endRepeat>
         <Harmony>
           <name>I\\</name>
           </Harmony>
@@ -3282,11 +3283,10 @@
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
-        <BarLine>
-          <subtype>end-start-repeat</subtype>
-          <customSubtype>1</customSubtype>
-          <span>2</span>
-          </BarLine>
+        </Measure>
+      <Measure number="78" len="1/8">
+        <startRepeat/>
+        <irregular/>
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
@@ -4434,7 +4434,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="53"/>
+          <Slur type="start" id="52"/>
           <grace16/>
           <Note>
             <pitch>76</pitch>
@@ -4443,8 +4443,8 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="52"/>
-          <Slur type="stop" id="53"/>
+          <Slur type="stop" id="52"/>
+          <Slur type="start" id="53"/>
           <Note>
             <pitch>82</pitch>
             <tpc>12</tpc>
@@ -4466,7 +4466,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="55"/>
+          <Slur type="start" id="54"/>
           <grace16/>
           <Note>
             <pitch>77</pitch>
@@ -4475,8 +4475,8 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="54"/>
-          <Slur type="stop" id="55"/>
+          <Slur type="stop" id="54"/>
+          <Slur type="start" id="55"/>
           <Note>
             <pitch>81</pitch>
             <tpc>17</tpc>
@@ -4498,7 +4498,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="57"/>
+          <Slur type="start" id="56"/>
           <grace16/>
           <Note>
             <pitch>76</pitch>
@@ -4507,8 +4507,8 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="56"/>
-          <Slur type="stop" id="57"/>
+          <Slur type="stop" id="56"/>
+          <Slur type="start" id="57"/>
           <Note>
             <pitch>79</pitch>
             <tpc>15</tpc>
@@ -4792,7 +4792,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="64"/>
+          <Slur type="start" id="63"/>
           <grace16/>
           <Note>
             <pitch>64</pitch>
@@ -4801,8 +4801,8 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="63"/>
-          <Slur type="stop" id="64"/>
+          <Slur type="stop" id="63"/>
+          <Slur type="start" id="64"/>
           <Note>
             <pitch>70</pitch>
             <tpc>12</tpc>
@@ -4824,7 +4824,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="66"/>
+          <Slur type="start" id="65"/>
           <grace16/>
           <Note>
             <pitch>65</pitch>
@@ -4833,8 +4833,8 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="65"/>
-          <Slur type="stop" id="66"/>
+          <Slur type="stop" id="65"/>
+          <Slur type="start" id="66"/>
           <Note>
             <pitch>69</pitch>
             <tpc>17</tpc>
@@ -4856,7 +4856,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="68"/>
+          <Slur type="start" id="67"/>
           <grace16/>
           <Note>
             <pitch>64</pitch>
@@ -4865,8 +4865,8 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="67"/>
-          <Slur type="stop" id="68"/>
+          <Slur type="stop" id="67"/>
+          <Slur type="start" id="68"/>
           <Note>
             <pitch>67</pitch>
             <tpc>15</tpc>
@@ -9467,7 +9467,7 @@
             </Note>
           </Chord>
         </Measure>
-      <Measure number="77">
+      <Measure number="77" len="2/8">
         <Chord>
           <durationType>eighth</durationType>
           <Note>
@@ -9478,11 +9478,8 @@
         <Rest>
           <durationType>eighth</durationType>
           </Rest>
-        <BarLine>
-          <subtype>end-start-repeat</subtype>
-          <customSubtype>1</customSubtype>
-          <span from="0" to="8">1</span>
-          </BarLine>
+        </Measure>
+      <Measure number="78" len="1/8">
         <Rest>
           <durationType>eighth</durationType>
           </Rest>

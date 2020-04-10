@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -186,15 +186,15 @@
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2019-10-09</metaTag>
     <metaTag name="lyricist"></metaTag>
-    <metaTag name="movementNumber"></metaTag>
-    <metaTag name="movementTitle"></metaTag>
+    <metaTag name="movementNumber">3</metaTag>
+    <metaTag name="movementTitle">Allegro assai</metaTag>
     <metaTag name="originalFormat">musicxml</metaTag>
     <metaTag name="platform">Linux</metaTag>
     <metaTag name="poet"></metaTag>
     <metaTag name="source">http://musescore.com/user/3414606/scores/2200926</metaTag>
     <metaTag name="translator"></metaTag>
-    <metaTag name="workNumber"></metaTag>
-    <metaTag name="workTitle">Piano Sonata in C Minor</metaTag>
+    <metaTag name="workNumber">K457</metaTag>
+    <metaTag name="workTitle">Piano Sonata no. 14 in C minor</metaTag>
     <PageList>
       <Page>
         <System>
@@ -394,17 +394,11 @@
         <Tempo>
           <tempo>1.83333</tempo>
           <followText>1</followText>
-          <pos x="-5.47363" y="-2.56436"/>
+          <pos x="-9.87409" y="-8.25276"/>
           <xoffset>0</xoffset>
           <yoffset>-0.027</yoffset>
-          <text><font size="12"></font><b>Vivace</b></text>
-          </Tempo>
-        <Tempo>
-          <tempo>3</tempo>
-          <followText>1</followText>
-          <xoffset>0</xoffset>
-          <yoffset>-4.858</yoffset>
-          <text><sym>unicodeNoteQuarterUp</sym> = 180</text>
+          <text><font size="12"/>Allegro assai
+agitato</text>
           </Tempo>
         <Harmony>
           <name>.c.i</name>
@@ -456,7 +450,7 @@
         </Measure>
       <Measure number="2">
         <Harmony>
-          <name>#viio65</name>
+          <name>#viio6</name>
           </Harmony>
         <Slur id="5">
           <track>0</track>
@@ -757,7 +751,7 @@
         </Measure>
       <Measure number="10">
         <Harmony>
-          <name>#viio65</name>
+          <name>#viio6</name>
           </Harmony>
         <Slur id="22">
           <track>0</track>
@@ -1044,7 +1038,7 @@
         </Measure>
       <Measure number="17">
         <Harmony>
-          <name>V[V65</name>
+          <name>V[V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -1130,7 +1124,7 @@
         </Measure>
       <Measure number="19">
         <Harmony>
-          <name>V65</name>
+          <name>V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -1544,7 +1538,7 @@
         </Measure>
       <Measure number="31">
         <Harmony>
-          <name>V[V65</name>
+          <name>V[V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -1630,7 +1624,7 @@
         </Measure>
       <Measure number="33">
         <Harmony>
-          <name>V65</name>
+          <name>V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -5031,7 +5025,7 @@
         </Measure>
       <Measure number="105">
         <Harmony>
-          <name>#viio65</name>
+          <name>#viio6</name>
           </Harmony>
         <Slur id="91">
           <track>0</track>
@@ -5324,7 +5318,7 @@
         </Measure>
       <Measure number="113">
         <Harmony>
-          <name>#viio65</name>
+          <name>#viio6</name>
           </Harmony>
         <Slur id="107">
           <track>0</track>
@@ -5611,7 +5605,7 @@
         </Measure>
       <Measure number="120">
         <Harmony>
-          <name>V[V65</name>
+          <name>V[V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -5697,7 +5691,7 @@
         </Measure>
       <Measure number="122">
         <Harmony>
-          <name>V65</name>
+          <name>V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -6111,7 +6105,7 @@
         </Measure>
       <Measure number="134">
         <Harmony>
-          <name>V[V65</name>
+          <name>V[V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -6197,7 +6191,7 @@
         </Measure>
       <Measure number="136">
         <Harmony>
-          <name>V65</name>
+          <name>V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -9883,7 +9877,7 @@
         </Measure>
       <Measure number="222">
         <Harmony>
-          <name>#viio43</name>
+          <name>#viio6</name>
           </Harmony>
         <Slur id="189">
           <track>0</track>
@@ -10693,7 +10687,7 @@
         </Measure>
       <Measure number="249">
         <Harmony>
-          <name>V[V65</name>
+          <name>V[V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -10779,7 +10773,7 @@
         </Measure>
       <Measure number="251">
         <Harmony>
-          <name>V65</name>
+          <name>V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -11196,7 +11190,7 @@
         </Measure>
       <Measure number="263">
         <Harmony>
-          <name>V[V65</name>
+          <name>V[V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -11282,7 +11276,7 @@
         </Measure>
       <Measure number="265">
         <Harmony>
-          <name>V65</name>
+          <name>V7</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
