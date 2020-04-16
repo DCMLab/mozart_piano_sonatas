@@ -300,6 +300,15 @@ def expand_labels(df, column, regex, groupby={'level': 0, 'group_keys': False}, 
             cols[col] = col
     global_minor = f"{cols['globalkey']}_is_minor"
 
+    not_nan = df[column].dropna()
+    immediate_repetitions = not_nan == not_nan.shift()
+    k = immediate_repetitions.sum()
+    if k > 0:
+        if k / len(not_nan.index) > 0.1:
+            raise ValueError("DataFrame has many direct repetitions of labels. This function is written for lists of labels only which should have no immediate repetitions.")
+        else:
+            logging.debug(f"Immediate repetition of labels:\n{not_nan[immediate_repetitions]}")
+
     df = split_labels(df, column, regex, cols=cols, dropna=dropna)
     df['chord_type'] = transform(df, features2type, [cols[col] for col in ['numeral', 'form', 'figbass']])
     df = replace_special(df, regex=regex, merge=True, cols=cols)
@@ -672,7 +681,7 @@ def propagate_keys(df, globalkey='globalkey', localkey='localkey', add_bool=True
     """
     df = df.copy()
     nunique = df[globalkey].nunique()
-    assert nunique > 0, "No global key specified."
+    assert nunique > 0, "No global key specified. It might be that this function is being applied in a wrong groupby and gets rows instead of entire frames."
     if nunique > 1:
         raise NotImplementedError("Several global keys not accepted at the moment.")
 
@@ -1021,13 +1030,13 @@ def split_labels(df, column, regex, cols={}, dropna=False, **kwargs):
             logging.debug(f"Removing NaN values from label column {column}...")
             df = df[df[column].notna()]
         else:
-            logging.warning(f"{column} contains Nan values.")
+            logging.warning(f"{column} contains NaN values.")
     if df[column].str.contains('-').any():
         logging.debug(f"Splitting alternative annotations...")
         alternatives = df[column].str.rsplit('-', expand=True)
         alt_name = f"alt_{column}"
         df.loc[:, column] = alternatives[0]
-        df.insert(df.columns.get_loc(column)+1, alt_name, alternatives[1])
+        df.insert(df.columns.get_loc(column)+1, alt_name, alternatives[1].fillna(np.nan)) # replace None by NaN
         if len(alternatives.columns) > 2:
             logging.warning(f"More than two alternatives are not taken into account: {alternatives[alternatives[2].notna()]}")
     logging.debug("Applying RegEx to labels...")

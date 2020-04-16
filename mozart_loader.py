@@ -26,6 +26,7 @@ iterable2str = lambda iterable: ', '.join(str(s) for s in iterable)
 
 CONVERTERS = {
     'act_dur': frac,
+    'chord_tones': str2tuple,
     'next': str2tuple,
     'nominal_duration': frac,
     'offset': frac,
@@ -35,13 +36,20 @@ CONVERTERS = {
 
 DTYPES = {
     'barline': str,
+    'bass_note': 'Int64',
+    'cadences_id': 'Int64',
     'dont_count': 'Int64',
+    'globalkey_is_minor': 'Int64',
+    'harmonies_id': 'Int64',
     'keysig': int,
+    'localkey_is_minor': 'Int64',
     'mc': int,
     'midi': int,
     'mn': int,
+    'notes_id': 'Int64',
     'numbering_offset': 'Int64',
     'repeats': str,
+    'root': 'Int64',
     'staff': int,
     'tied': 'Int64',
     'timesig': str,
@@ -131,7 +139,7 @@ def check_dir(d):
 
 
 
-def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None, test=False, notes=False, harmonies=False, cadences=False, measures=False, join=False, expand=False, full_expand=False, propagate=False):
+def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None, test=False, notes=False, harmonies=False, cadences=False, measures=False, join=False, expand=False, full_expand=False, relative_to_global=False, absolute=False, propagate=False):
     """"""
     fname = ' '.join(sys.argv[1:]) if name is None else name
 
@@ -142,7 +150,7 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
 
     if test:
         print(selection)
-    elif not any([harmonies, cadences, notes, measures, expand, full_expand]):
+    elif not any([harmonies, cadences, notes, measures, expand, full_expand, relative_to_global, absolute]):
         logging.error("Select the kind of data: -N for notes, -H for harmony labels, -M for measures, and -C for cadence labels. Pass -j to join several kinds into a single TSV.")
     elif len(selection) == 0:
         logging.error("No data matching your selection.")
@@ -156,11 +164,13 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
             assert len(kinds) > 1, "Select at least two kinds of data for joining."
         if measures or join or unfold:
             kinds.append('measures')
-        if full_expand:
-            expand=True
+        if absolute:
+            full_expand = True
+        if full_expand or relative_to_global:
+            expand = True
         if expand and not harmonies:
+            logging.info("Parameters implie -H: Getting harmonies as well...")
             kinds.append('harmonies')
-
         logging.info(f"Reading {len(selection) * len(kinds)} TSV files...")
         joining = {kind: read_tsvs(os.path.join(script_path, kind), selection) for kind in kinds}
 
@@ -181,7 +191,9 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
         if expand:
             global REGEX
             logging.info("Expanding chord labels...")
-            expanded = expand_labels(joining['harmonies'], column='label', regex=REGEX, chord_tones=full_expand).astype({'globalkey_is_minor': int, 'localkey_is_minor': int})
+            expanded = expand_labels(joining['harmonies'], column='label', regex=REGEX, chord_tones=full_expand, relative_to_global=relative_to_global, absolute=absolute)
+            col2type = {'globalkey_is_minor': int, 'localkey_is_minor': int} if 'localkey_is_minor' in expanded.columns else {'globalkey_is_minor': int}
+            expanded = expanded.astype(col2type)
             if full_expand: # turn tuples into strings
                 tone_tuples = ['chord_tones', 'added_tones']
                 expanded.loc[:, tone_tuples] = expanded.loc[:, tone_tuples].applymap(iterable2str)
@@ -202,8 +214,9 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
                     df = df.drop(index=df[df.volta.fillna(0) == 1].index, columns='volta')
 
                 if what == 'joined' and propagate:
+
                     if 'label' in df.columns:
-                        logging.info("Propagating chord labels...")
+                        logging.info(f"Propagating {'expanded' if expand else ''} chord labels...")
                         df = df.reset_index(level='harmonies_id')
                         df.harmonies_id = df.groupby(level=0, group_keys=False).apply(lambda df: df.harmonies_id.fillna(method='ffill'))
                         df.drop(columns='label', inplace=True)
@@ -214,16 +227,32 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
                         df = pd.merge(df.set_index('harmonies_id', append=True), expanded, left_index=True, right_index=True, how='left', suffixes=('', '_y'))
                         duplicates = [col for col in df.columns if col.endswith('_y')]
                         df = df.drop(columns=duplicates)
+
                     if 'cadence' in df.columns:
                         logging.info("Propagating cadence labels...")
-                        df = df.reset_index(level='cadences_id')
-                        df.loc[:, ['cadences_id', 'cadence']] = df.groupby(level=0, group_keys=False).apply(lambda df: df[['cadences_id', 'cadence']].fillna(method='bfill'))
-                        df = df.set_index('cadences_id', append=True)
+                        df = df.reset_index(level='cadences_id').set_index(pd.Series(range(len(df)), name='tmp_index'), append=True)
+                        filled = df.groupby(level=0, group_keys=False).apply(lambda df: df[['cadences_id', 'cadence']].fillna(method='bfill'))
+                        df[['cadences_id', 'cadence']] = filled
+                        df = df.droplevel('tmp_index').set_index('cadences_id', append=True)
 
+                    dtypes =  {k: v for k, v in {'bass_note': 'Int64',
+                                                'cadences_id': 'Int64',
+                                                'globalkey_is_minor': 'Int64',
+                                                'harmonies_id': 'Int64',
+                                                'localkey_is_minor': 'Int64',
+                                                'notes_id': 'Int64',
+                                                'root': 'Int64',}.items() if k in df.columns or k in df.index.names}
+                    df = ensure_types(df, dtypes)
 
             df.to_csv(tsv_path, sep='\t')
             logging.info(f"PREVIEW of {tsv_path}:\n{df.head(5)}\n")
-
+            if full_expand:
+                if absolute:
+                    logging.info("The chord tones designate absolute pitches ordered on the line of fifth where -1 = F, 0 = C, 1 = G and so on.")
+                elif relative_to_global:
+                    logging.info("The chord tones designate scale degrees ordered on the line of fifth where 0 is the GLOBAL tonic, 1 the tone a perfect fifth above, and so on.")
+                else:
+                    logging.info("The chord tones designate scale degrees ordered on the line of fifth where 0 is the LOCAL tonic, 1 the tone a perfect fifth above, and so on.")
 
 
         if join:
@@ -266,6 +295,17 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None):
         res.loc[res.mc.isna(), 'mc'] = pd.merge(res[res.mc.isna()].reset_index(level='onset')['onset'], measures[['mc', 'mn']], on=['filename', 'mn']).set_index(['mn', 'onset'], append=True)
 
     return res.reset_index(['mn', 'onset'])
+
+
+
+def ensure_types(df, col2dtype_dict, index_levels=True):
+    names = None
+    if index_levels and any(n in col2dtype_dict for n in df.index.names):
+        names = [n for n in ['filename', 'notes_id', 'harmonies_id', 'cadences_id'] if n in df.index.names]
+        df = df.reset_index()
+    logging.debug(f"Changed the Dtypes as follows: {col2dtype_dict}")
+    df = df.astype(col2dtype_dict)
+    return df if names is None else df.set_index(names)
 
 
 
@@ -341,7 +381,10 @@ def unfold_multiple(unfold_this, mc_sequences, mn_sequences=None):
     names = unfold_this.index.names
     groupby = names[0] if names[0] is not None else 'level_0'
     res = unfold_this.reset_index().set_index(col)
-    res = res.groupby(groupby, group_keys=False).apply(lambda df: unfold(df, sequences[df[groupby].iloc[0]]))
+    try:
+        res = res.groupby(groupby, group_keys=False).apply(lambda df: unfold(df, sequences[df[groupby].iloc[0]]))
+    except:
+        print(res[groupby])
     res = res.reset_index().set_index(names)
     if 'volta' in res.columns:
         res.drop(columns='volta', inplace=True)
@@ -372,7 +415,10 @@ Run with parameter -t to see all file names.
     parser.add_argument('-M','--measures', action='store_true', help="Get measure properties.")
     parser.add_argument('-j','--join', action='store_true', help="Join the data into one single TSV.")
     parser.add_argument('-e','--expand', action='store_true', help="Split the chord labels into their encoded features.")
-    parser.add_argument('-E','--full_expand', action='store_true', help="Compute additional chord features.")
+    parser.add_argument('-E','--full_expand', action='store_true', help="Compute chord tones, added tones, bass note and root note for every chord, expressed as line-of-fifth scale degrees.")
+    parser.add_argument('-g','--globalkey', action='store_true', help="""Express all labels (and chord tones if -E is set) relative to the global tonic, not to the local key.
+This parameter gets rid of the columns 'localkey' and relativeroot.""")
+    parser.add_argument('-a','--absolute', action='store_true', help="Implies -E, but returns the chord tones as actual pitches rather than scale degrees.")
     parser.add_argument('-p','--propagate', action='store_true', help="When joining, spread out chord and cadence labels.")
     parser.add_argument('-l','--logging',default='INFO',help="Set logging to one of the levels {DEBUG, INFO, WARNING, ERROR, CRITICAL}. You may abbreviate by {D, I, W, E, C}.")
     args = parser.parse_args()
@@ -403,4 +449,6 @@ Run with parameter -t to see all file names.
                 args.join,
                 args.expand,
                 args.full_expand,
+                args.globalkey,
+                args.absolute,
                 args.propagate)
