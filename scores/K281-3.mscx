@@ -6422,9 +6422,6 @@
         <startRepeat/>
         <stretch>1.1</stretch>
         <voice>
-          <BarLine>
-            <subtype>start-repeat</subtype>
-            </BarLine>
           <Dynamic>
             <subtype>p</subtype>
             <velocity>49</velocity>
@@ -8240,7 +8237,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>#viio6</name>
+            <name>viio6</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -8874,7 +8871,7 @@
             </Chord>
           <endTuplet/>
           <Harmony>
-            <name>#viio</name>
+            <name>viio</name>
             <offset x="0" y="-5.5"/>
             </Harmony>
           <Tuplet>
@@ -9276,7 +9273,7 @@
             </Chord>
           <endTuplet/>
           <Harmony>
-            <name>#viio</name>
+            <name>viio</name>
             <offset x="0" y="-5.5"/>
             </Harmony>
           <Tuplet>
@@ -12714,7 +12711,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>#viio6</name>
+            <name>viio6</name>
             </Harmony>
           <Chord>
             <durationType>whole</durationType>
@@ -14602,7 +14599,7 @@
             <velocity>96</velocity>
             </Dynamic>
           <Harmony>
-            <name>#viio6</name>
+            <name>viio6</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -14671,7 +14668,7 @@
             <velocity>96</velocity>
             </Dynamic>
           <Harmony>
-            <name>#viio6</name>
+            <name>viio6</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -14854,7 +14851,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>#viio6</name>
+            <name>viio6</name>
             </Harmony>
           <Rest>
             <durationType>eighth</durationType>
@@ -15232,7 +15229,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>#viio6</name>
+            <name>viio6</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -15873,7 +15870,7 @@
             </Chord>
           <endTuplet/>
           <Harmony>
-            <name>#viio</name>
+            <name>viio</name>
             <offset x="0" y="-5.5"/>
             </Harmony>
           <Tuplet>
@@ -16270,7 +16267,7 @@
             </Chord>
           <endTuplet/>
           <Harmony>
-            <name>#viio</name>
+            <name>viio</name>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
@@ -20952,9 +20949,6 @@
         </Measure>
       <Measure>
         <voice>
-          <BarLine>
-            <subtype>start-repeat</subtype>
-            </BarLine>
           <Clef>
             <concertClefType>G</concertClefType>
             <transposingClefType>G</transposingClefType>

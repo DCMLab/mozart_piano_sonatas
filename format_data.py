@@ -1,26 +1,32 @@
 """
 How to derive the relational data structure from the (MS3) MSCX files:
 On the toplevel of the repo, run
-    python extract_annotations.py scores -cnmqos
+    python extract_annotations.py scores -NHMqos
 """
 
-import argparse, os, sys, logging
+import argparse, os, re, sys, logging
 from fractions import Fraction as frac
 try:
     import pandas as pd
 except ImportError:
     sys.exit("""This script requires the pandas package. You can install it using the command
 python -m pip install pandas""")
+#pd.options.display.max_columns = None
+
+from expand_labels import expand_labels
+from harmony import regex
+REGEX = re.compile(regex, re.VERBOSE)
 
 
 os.environ['NUMEXPR_MAX_THREADS'] = '64' # to silence NumExpr prompt
 idx = pd.IndexSlice                      # for easy MultiIndex slicing
 
-LOSTR2INT = lambda l: [] if l == '' else [int(s) for s in l.split(', ')]
+str2tuple = lambda l: tuple() if l == '' else tuple(int(s) for s in l.split(', '))
+iterable2str = lambda iterable: ', '.join(str(s) for s in iterable)
 
 CONVERTERS = {
     'act_dur': frac,
-    'next': LOSTR2INT,
+    'next': str2tuple,
     'nominal_duration': frac,
     'offset': frac,
     'onset': frac,
@@ -126,6 +132,7 @@ def check_dir(d):
 
 
 def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None, test=False, notes=False, harmonies=False, cadences=False, measures=False, join=False, expand=False, full_expand=False, propagate=False):
+    """"""
     fname = ' '.join(sys.argv[1:]) if name is None else name
 
     if dir is None:
@@ -147,7 +154,7 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
                 kinds.append(kind)
         if join:
             assert len(kinds) > 1, "Select at least two kinds of data for joining."
-        if (join or unfold) and not 'measures' in kinds:
+        if measures or join or unfold:
             kinds.append('measures')
         if full_expand:
             expand=True
@@ -157,10 +164,6 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
         logging.info(f"Reading {len(selection) * len(kinds)} TSV files...")
         joining = {kind: read_tsvs(os.path.join(script_path, kind), selection) for kind in kinds}
 
-
-        if expand:
-            logging.info("Expanding chord labels...")
-            joining['harmonies'] = expand_labels(joining['harmonies'], column='chords', steps=full_expand)
 
         if unfold:
             logging.info("Calculating unfolding structures...")
@@ -174,34 +177,69 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
                     mn_seq = ml.mn.loc[seq]
                     mn_sequences[file] = mn_seq[mn_seq != mn_seq.shift()].to_list()
 
+
+        if expand:
+            global REGEX
+            logging.info("Expanding chord labels...")
+            expanded = expand_labels(joining['harmonies'], column='label', regex=REGEX, chord_tones=full_expand).astype({'globalkey_is_minor': int, 'localkey_is_minor': int})
+            if full_expand: # turn tuples into strings
+                tone_tuples = ['chord_tones', 'added_tones']
+                expanded.loc[:, tone_tuples] = expanded.loc[:, tone_tuples].applymap(iterable2str)
+            if not propagate:
+                joining['harmonies'] = expanded
+
+
+        def store_result(df, fname, what):
+            tsv_name = f"{fname}_{what}.tsv"
+            tsv_path = os.path.join(dir, tsv_name)
+            if kind != 'measures':
+
+                if unfold:
+                    logging.info(f"Unfolding {what}...")
+                    df = unfold_multiple(df, mc_sequences=mc_sequences, mn_sequences=mn_sequences)
+                elif 'volta' in df.columns:
+                    logging.info(f"Removing first voltas from {what}...")
+                    df = df.drop(index=df[df.volta.fillna(0) == 1].index, columns='volta')
+
+                if what == 'joined' and propagate:
+                    if 'label' in df.columns:
+                        logging.info("Propagating chord labels...")
+                        df = df.reset_index(level='harmonies_id')
+                        df.harmonies_id = df.groupby(level=0, group_keys=False).apply(lambda df: df.harmonies_id.fillna(method='ffill'))
+                        df.drop(columns='label', inplace=True)
+                        if expand:
+                            nonlocal expanded
+                        else:
+                            expanded = joining['harmonies']
+                        df = pd.merge(df.set_index('harmonies_id', append=True), expanded, left_index=True, right_index=True, how='left', suffixes=('', '_y'))
+                        duplicates = [col for col in df.columns if col.endswith('_y')]
+                        df = df.drop(columns=duplicates)
+                    if 'cadence' in df.columns:
+                        logging.info("Propagating cadence labels...")
+                        df = df.reset_index(level='cadences_id')
+                        df.loc[:, ['cadences_id', 'cadence']] = df.groupby(level=0, group_keys=False).apply(lambda df: df[['cadences_id', 'cadence']].fillna(method='bfill'))
+                        df = df.set_index('cadences_id', append=True)
+
+
+            df.to_csv(tsv_path, sep='\t')
+            logging.info(f"PREVIEW of {tsv_path}:\n{df.head(5)}\n")
+
+
+
         if join:
             joined = join_tsv(**joining)
-            if unfold:
-                logging.info("Unfolding joined DataFrame...")
-                store_result(unfold_multiple(joined, mc_sequences=mc_sequences), fname, 'joined')
-            else:
-                store_result(joined.drop(columns='volta'), fname, 'joined')
+            store_result(joined, fname, 'joined')
         else:
+            if propagate:
+                logging.info("If DataFrames are not being joined, no data needs to be propagated.")
             for kind, tsv in joining.items():
                 if kind != 'measures':
-                    if unfold:
-                        logging.info(f"Unfolding {kind}...")
-                        store_result(unfold_multiple(tsv, mc_sequences=mc_sequences, mn_sequences=mn_sequences), fname, kind)
-                    elif 'volta' in tsv.columns:
-                        store_result(tsv.drop(index=tsv[tsv.volta.fillna(2) == 1].index, columns='volta'), fname, kind)
-                    else:
-                        store_result(tsv, fname, kind)
+                    store_result(tsv, fname, kind)
 
         if measures:
             tsv = joining['measures']
-            tsv.next = tsv.next.map(lambda l: ', '.join(str(s) for s in l))
+            tsv.next = tsv.next.map(iterable2str)
             store_result(tsv, fname, 'measures')
-
-        # if propagate:
-        #     if cadences:
-        #         joined.cadence.fillna(method='bfill', inplace=True)
-        #     if notes and harmonies:
-        #         joined.chords.fillna(method='ffill', inplace=True)
 
 
 
@@ -220,11 +258,13 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None):
 
     if cadences is not None:
         logging.info("Adjoining cadence labels...")
-        res = pd.merge(left, cadences.set_index(['mn', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True)
+        res = pd.merge(left, cadences.set_index(['mn', 'onset'], append=True), left_index=True, right_index=True, how='outer')
     else:
         res = left
+
     if res.mc.isna().any():
         res.loc[res.mc.isna(), 'mc'] = pd.merge(res[res.mc.isna()].reset_index(level='onset')['onset'], measures[['mc', 'mn']], on=['filename', 'mn']).set_index(['mn', 'onset'], append=True)
+
     return res.reset_index(['mn', 'onset'])
 
 
@@ -264,8 +304,8 @@ def next2sequence(nxt):
 def read_tsvs(dir, selection):
     files = (selection.filename + '.tsv').values
     df = pd.concat([pd.read_csv(os.path.join(dir, f), sep='\t', dtype=DTYPES, converters=CONVERTERS) for f in files],
-                     keys=selection.filename,)
-    return df.droplevel(1)
+                     keys=selection.filename, names=['filename', f"{os.path.basename(dir)}_id"])
+    return df
 
 
 
@@ -283,31 +323,31 @@ def select_files(sonatas=None, movements=None):
 
 
 
-def store_result(df, fname, what):
-    tsv_name = f"{fname}_{what}.tsv" if what != 'joined' else fname + '.tsv'
-    tsv_path = os.path.join(args.dir, tsv_name)
-    df.to_csv(tsv_path, sep='\t')
-    logging.info(f"PREVIEW of {tsv_path}:", df.head(1), sep='\n', end='\n\n')
-
-
-
 def unfold_multiple(unfold_this, mc_sequences, mn_sequences=None):
-
-    def unfold(df):
+    """ `unfold_this` is a DataFrame with a MultiIndex of which the first level
+        disambiguates thes pieces to be unfolded.
+    """
+    def unfold(df, sequence):
         """
         """
-        file = df.iloc[0].name
-        if 'mc' in df.columns:
-            seq = [mc for mc in mc_sequences[file]  if mc in df.mc.values]
-            return df.set_index('mc').loc[seq]
-        else:
-            seq = [mn for mn in mn_sequences[file]  if mn in df.mn.values]
-            return df.set_index('mn').loc[seq]
+        return df.loc[[mc for mc in sequence if mc in df.index]]
 
-    res = unfold_this.groupby(level=0).apply(unfold)
+    if 'mc' in unfold_this.columns:
+        col = 'mc'
+        sequences = mc_sequences
+    else:
+        col = 'mn'
+        sequences = mn_sequences
+    names = unfold_this.index.names
+    groupby = names[0] if names[0] is not None else 'level_0'
+    res = unfold_this.reset_index().set_index(col)
+    res = res.groupby(groupby, group_keys=False).apply(lambda df: unfold(df, sequences[df[groupby].iloc[0]]))
+    res = res.reset_index().set_index(names)
     if 'volta' in res.columns:
         res.drop(columns='volta', inplace=True)
-    return res.reset_index(level=1)
+    return res
+
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(

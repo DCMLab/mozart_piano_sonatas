@@ -1,4 +1,4 @@
-mc	mn	onset	chords	volta
+mc	mn	onset	label	volta
 1	1	0	.F.I6	
 1	1	1/2	I	
 2	2	0	V2	
@@ -61,7 +61,7 @@ mc	mn	onset	chords	volta
 26	26	1/2	I\\	
 27	27	0	V7/V	
 27	27	3/4	V	
-28	28	0	V9	
+28	28	0	V(+9)	
 28	28	3/4	I	
 29	29	0	ii6	
 29	29	1/2	V(64)	
@@ -424,6 +424,6 @@ mc	mn	onset	chords	volta
 186	185	0	I	
 186	185	1/2	V7	
 187	186	0	I	
-187	186	1/2	V9	
+187	186	1/2	V(+9)	
 188	187	0	I(74)	
 188	187	1/2	I\\	
