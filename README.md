@@ -15,7 +15,7 @@ The READMEs in the respective folders contain information about the features inc
 
 # Accessing the Data
 
-The included script `mozart_loader.py` lets you conveniently create an augmented representation of the data. First, create a local copy of this repository, either by using the command `git clone https://github.com/DCMLab/mozart_piano_sonatas.git` or by downloading it as a [ZIP file](https://github.com/DCMLab/mozart_piano_sonatas/archive/master.zip). After navigating to your local copy, you can simply run it by typing `python mozart_loader.py`. The script requires Python >= 3.6 with the `pandas` library installed.
+The included script `mozart_loader.py` lets you conveniently create an augmented representation of the data. First, create a local copy of this repository, either by using the command `git clone https://github.com/DCMLab/mozart_piano_sonatas.git` or by unpacking this [ZIP file](https://github.com/DCMLab/mozart_piano_sonatas/archive/master.zip). After navigating to your local copy, you can simply run the script by typing `python mozart_loader.py`. The script requires Python >= 3.6 with the `pandas` library installed.
 
 ## Raw Data
 
@@ -38,7 +38,7 @@ The harmony labels follow the [DCML standard for harmonic annotation](https://gi
 
 * Using the option `-e` on the script will perform this expansion for you and spread the encoded information over the DataFrame, e.g. information about global and local keys.
 * If you want to transpose all labels to the global tonic, thus eliminating the information about local keys, use `-g`.
-* The chord tones expressed by the labels can be additionally computed by using `-E` instead of `e`. They are expressed as integer intervals representing the count of perfect fifths you need to stack on the tonic, i.e., `0` is the tonic, `1` the dominant, `2` the supertonic, `-1` the subdominant, etc.
+* The chord tones expressed by the labels can be additionally computed by using `-E` instead of `-e`. They are expressed as integer intervals representing the count of perfect fifths you need to stack on the tonic, i.e., `0` is the tonic, `1` the dominant, `2` the supertonic, `-1` the subdominant, etc.
   * If the parameter `-g` is set, all chord tones are expressed as intervals (stacks of fifths) over the *global* tonic.
   * Otherwise, they represent intervals (stacks of fifths) over the chord's *local* tonic.
   * Or you can have all chord tones represent absolute pitches, based on the global key. In that case they display intervals (stacks of fifths) over the tone C = `0`, making G = `1`, F = `-1` etc.
@@ -47,4 +47,4 @@ All options can be combined with the above-mentioned functionality for data join
 
 ## Repetitions
 
-By default, all data is being returned as though playing every section only once, i.e. without first endings (without *prima volta*). Instead, you may choose the 'unfolded' version that duplicates notes and labels depending on the piece's repeat structure. Simply add `-u` to the parameters.
+By default, all data is being returned as though playing every section only once, i.e. without first endings (without *prima volta*). Instead, you may choose the 'unfolded' version that duplicates notes and labels depending on the piece's repeat structure. Simply add `-u` to the parameters. This puts first and second endings in their correct positions, thus creating correct transitions and event counts that are closer to what is actually being performed.
