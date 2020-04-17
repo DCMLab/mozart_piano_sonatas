@@ -1,0 +1,9 @@
+from mozart_loader import load_tsv
+
+# The file was created using
+# python mozart_loader.py -CHNjuE
+tsv = './formatted/-CHNMjpuE_measures.tsv'
+
+# If you have pandas >= 1.0.0 installed and want to use the new nullable string type,
+# set stringtype=True.
+df = load_tsv(tsv, stringtype=False)

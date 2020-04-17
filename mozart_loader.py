@@ -35,28 +35,44 @@ CONVERTERS = {
     'scalar': frac,}
 
 DTYPES = {
+    'alt_label': str,
     'barline': str,
     'bass_note': 'Int64',
+    'cadence': str,
     'cadences_id': 'Int64',
+    'changes': str,
+    'chord': str,
+    'chord_type': str,
     'dont_count': 'Int64',
+    'figbass': str,
+    'form': str,
+    'globalkey': str,
     'globalkey_is_minor': 'Int64',
+    'gracenote': str,
     'harmonies_id': 'Int64',
     'keysig': int,
+    'label': str,
+    'localkey': str,
     'localkey_is_minor': 'Int64',
     'mc': int,
     'midi': int,
     'mn': int,
     'notes_id': 'Int64',
     'numbering_offset': 'Int64',
+    'numeral': str,
+    'pedal': str,
+    'phraseend': str,
+    'relativeroot': str,
     'repeats': str,
     'root': 'Int64',
+    'special': str,
     'staff': int,
     'tied': 'Int64',
     'timesig': str,
     'tpc': int,
     'voice': int,
     'voices': int,
-    'volta': 'Int64',
+    'volta': 'Int64'
 }
 
 FILE_LIST = pd.DataFrame({'filename':
@@ -136,6 +152,14 @@ def check_dir(d):
 
 
 
+def ensure_types(df, col2dtype_dict, index_levels=True):
+    names = None
+    if index_levels and any(n in col2dtype_dict for n in df.index.names):
+        names = [n for n in ['filename', 'notes_id', 'harmonies_id', 'cadences_id'] if n in df.index.names]
+        df = df.reset_index()
+    logging.debug(f"Changed the Dtypes as follows: {col2dtype_dict}")
+    df = df.astype(col2dtype_dict)
+    return df if names is None else df.set_index(names)
 
 
 
@@ -204,7 +228,7 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
         def store_result(df, fname, what):
             tsv_name = f"{fname}_{what}.tsv"
             tsv_path = os.path.join(dir, tsv_name)
-            if kind != 'measures':
+            if what != 'measures':
 
                 if unfold:
                     logging.info(f"Unfolding {what}...")
@@ -246,7 +270,8 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
 
             df.to_csv(tsv_path, sep='\t')
             logging.info(f"PREVIEW of {tsv_path}:\n{df.head(5)}\n")
-            if full_expand:
+
+            if 'chord_tones' in df.columns:
                 if absolute:
                     logging.info("The chord tones designate absolute pitches ordered on the line of fifth where -1 = F, 0 = C, 1 = G and so on.")
                 elif relative_to_global:
@@ -298,14 +323,31 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None):
 
 
 
-def ensure_types(df, col2dtype_dict, index_levels=True):
-    names = None
-    if index_levels and any(n in col2dtype_dict for n in df.index.names):
-        names = [n for n in ['filename', 'notes_id', 'harmonies_id', 'cadences_id'] if n in df.index.names]
-        df = df.reset_index()
-    logging.debug(f"Changed the Dtypes as follows: {col2dtype_dict}")
-    df = df.astype(col2dtype_dict)
-    return df if names is None else df.set_index(names)
+def load_tsv(path, index_col=[0, 1], converters={}, dtypes={}, stringtype=False, **kwargs):
+    """ Loads the TSV file `path` while applying correct type conversion and parsing tuples.
+
+    Parameters
+    ----------
+    path : :obj:`str`
+        Path to a TSV file as output by format_data().
+    index_col : :obj:`list`, optional
+        By default, the first two columns are loaded as MultiIndex.
+        The first level distinguishes pieces and the second level the elements within.
+    converters, dtypes : :obj:`dict`, optional
+        Enhances or overwrites the mapping from column names to types included the constants.
+    stringtype : :obj:`bool`, optional
+        If you're using pandas >= 1.0.0 you might want to set this to True in order
+        to be using the new `string` datatype that includes the new null type `pd.NA`.
+    """
+    conv = dict(CONVERTERS)
+    types = dict(DTYPES)
+    types.update(dtypes)
+    conv.update(converters)
+    if stringtype:
+        types = {col: 'string' if typ == str else typ for col, typ in types.items()}
+    return pd.read_csv(path, sep='\t', index_col=index_col,
+                                dtype=types,
+                                converters=conv, **kwargs)
 
 
 
@@ -342,6 +384,15 @@ def next2sequence(nxt):
 
 
 def read_tsvs(dir, selection):
+    """ Concatenates the selected files in `dir`.
+
+    Parameters
+    ----------
+    dir : :obj:`str`
+        Folder with TSV files.
+    selection : :obj:`pandas.Series`
+        Filenames without file extension. Files are assumed to exist.
+    """
     files = (selection.filename + '.tsv').values
     df = pd.concat([pd.read_csv(os.path.join(dir, f), sep='\t', dtype=DTYPES, converters=CONVERTERS) for f in files],
                      keys=selection.filename, names=['filename', f"{os.path.basename(dir)}_id"])
