@@ -53,18 +53,20 @@ By default, all data is being returned as though playing every section only once
 
 Since the TSV files contain null values, lists, fractions, and numbers that are to be treated as strings, you may want to use this code to load any TSV files related to this repository, processed or not:
 
-    from mozart_loader import load_tsv
+```python
+from mozart_loader import load_tsv
 
-    ############################################################################
-    # For a file created using `python mozart_loader.py -CHNjuE`
-    ############################################################################
-    tsv = './formatted/-CHNMjpuE_joined.tsv'
+############################################################################
+# For a file created using `python mozart_loader.py -CHNjuE`
+############################################################################
+tsv = './formatted/-CHNMjpuE_joined.tsv'
 
-    ############################################################################
-    # If you have pandas >= 1.0.0 installed and want to use the new nullable
-    # string type, set stringtype=True.
-    ############################################################################
-    df = load_tsv(tsv, stringtype=False)
+############################################################################
+# If you have pandas >= 1.0.0 installed and want to use the new nullable
+# string type, set stringtype=True.
+############################################################################
+df = load_tsv(tsv, stringtype=False)
+```
 
 ## How to get to different representations of chord tones
 
@@ -84,11 +86,13 @@ converts them to scale degrees, `rn` to Roman numerals. In both cases, `transfor
 automatically uses the boolean column `localkey_is_minor` to compute mode-dependent
 scale degrees.
 
-    from mozart_loader import load_tsv
-    from expand_labels import transform_note_columns
+```python
+from mozart_loader import load_tsv
+from expand_labels import transform_note_columns
 
-    df = load_tsv('./formatted/-E_harmonies.tsv')
-    transform_note_columns(df, 'sd')
+df = load_tsv('./formatted/-E_harmonies.tsv')
+transform_note_columns(df, 'sd')
+```
 
 This example output shows only the most relevant columns:
 
@@ -106,8 +110,10 @@ When the same chords are expressed relative to the global tonic by using
 scale degrees or Roman numerals for the chord tones, the boolean column `globalkey_is_minor`
 needs to be used:
 
-    df = load_tsv('./formatted/-Eg_harmonies.tsv')
-    transform_note_columns(df, 'sd', minor_col='globalkey_is_minor')
+```python
+df = load_tsv('./formatted/-Eg_harmonies.tsv')
+transform_note_columns(df, 'sd', minor_col='globalkey_is_minor')
+```
 
 |globalkey| chord |     chord_tones     |root|bass_note|
 |---------|-------|---------------------|----|---------|
@@ -123,8 +129,10 @@ by using the keyword argument `minor=False`. Additionally, the next example uses
 the `note_cols` argument to transform only the `chord_tones` to Roman numerals,
 leaving the other columns untouched (as stacks of fifths over the global tonic).
 
-    df = load_tsv('./formatted/-Eg_harmonies.tsv')
-    res = transform_note_columns(df, 'rn', note_cols=['chord_tones'], minor=False)
+```python
+df = load_tsv('./formatted/-Eg_harmonies.tsv')
+res = transform_note_columns(df, 'rn', note_cols=['chord_tones'], minor=False)
+```
 
 |globalkey| chord |        chord_tones        |root|bass_note|
 |---------|-------|---------------------------|----|---------|
@@ -141,8 +149,10 @@ This representation simply converts the 'stacks of fifths' intervals to specific
 interval names or to relative chromatic pitch classes where 0 is the tonic. In the
 two example, the local keys have once again been preserved:
 
-    df = load_tsv('./formatted/-E_harmonies.tsv')
-    transform_note_columns(df, 'iv')
+```python
+df = load_tsv('./formatted/-E_harmonies.tsv')
+transform_note_columns(df, 'iv')
+```
 
 |globalkey|localkey|chord |      chord_tones       |root|bass_note|
 |---------|--------|------|------------------------|----|---------|
@@ -153,7 +163,9 @@ two example, the local keys have once again been preserved:
 |f        |III     |V(64) |(P5, P1, M3)      |P5  |P5       |
 |f        |III     |V7    |(P5, M7, M2, P4)|P5  |P5       |
 
-    transform_note_columns(df, 'pc')
+```python
+transform_note_columns(df, 'pc')
+```
 
 |globalkey|localkey|chord | chord_tones |root|bass_note|
 |---------|--------|------|-------------|---:|--------:|
@@ -169,8 +181,10 @@ two example, the local keys have once again been preserved:
 In order to express the chords as absolutepitches, the chord tones first need
 to be transposed to the absolute key which can be done using `mozart_loader.py -a`.
 
-    df = load_tsv('./formatted/-a_harmonies.tsv')
-    transform_note_columns(df, 'name')
+```python
+df = load_tsv('./formatted/-a_harmonies.tsv')
+transform_note_columns(df, 'name')
+```
 
 |globalkey|localkey|chord |      chord_tones      |root|bass_note|
 |---------|--------|------|-----------------------|----|---------|
@@ -184,8 +198,10 @@ to be transposed to the absolute key which can be done using `mozart_loader.py -
 If, instead, you use the globalkey chord labels for a note name representation,
 this would correspond to a transposition of the whole piece to the key of C (major or minor).
 
-    df = load_tsv('./formatted/-Eg_harmonies.tsv')
-    res = transform_note_columns(df, 'name')
+```python
+df = load_tsv('./formatted/-Eg_harmonies.tsv')
+res = transform_note_columns(df, 'name')
+```
 
 |globalkey| chord |     chord_tones      |root|bass_note|
 |---------|-------|----------------------|----|---------|
@@ -216,8 +232,10 @@ chords, for example, will appear as `(Eb, G, Bb)` for local minor keys and as
 Naturally, you can also represent the pitches of the note lists of the actual scores
 as note names, e.g. the simple note list of all sonatas created using `mozart_loader.py -N`:
 
-    df = load_tsv('./formatted/-N_notes.tsv')
-    res = transform_note_columns(df, 'name', note_cols=['tpc'])
+```python
+df = load_tsv('./formatted/-N_notes.tsv')
+res = transform_note_columns(df, 'name', note_cols=['tpc'])
+```
 
 The first five notes in the first sonata `K279-1` with their note names:
 
@@ -238,23 +256,24 @@ degrees, roman numerals, or interval names). This small example shows how the co
 and datatypes that the function uses can be updated. It uses a note list with joined
 harmonies and chord tones produced by `mozart_loader.py -Naj`.
 
-    from mozart_loader import load_tsv, str2strtuple, iterable2str
-    from expand_labels import transform_note_columns
+```python
+from mozart_loader import load_tsv, str2strtuple, iterable2str
+from expand_labels import transform_note_columns
 
-    df = load_tsv('./formatted/-Naj_joined.tsv')
+df = load_tsv('./formatted/-Naj_joined.tsv')
 
-    # Converting the (absolute) chord tones and the pitches of the notes to note names
-    absolute_chord_tones = transform_note_columns(df, 'name')
-    absolute_pitches = transform_note_columns(absolute_chord_tones, 'name', note_cols=['tpc'])
+# Converting the (absolute) chord tones and the pitches of the notes to note names
+absolute_chord_tones = transform_note_columns(df, 'name')
+absolute_pitches = transform_note_columns(absolute_chord_tones, 'name', note_cols=['tpc'])
 
-    # Converting the tone tuples to strings before saving the DataFrame to TSV
-    tone_tuples = ['chord_tones', 'added_tones']
-    absolute_pitches.loc[:, tone_tuples] = absolute_pitches.loc[:, tone_tuples].applymap(iterable2str)
-    absolute_pitches.to_csv('absolute_pitches.tsv', sep='\t')
+# Converting the tone tuples to strings before saving the DataFrame to TSV
+tone_tuples = ['chord_tones', 'added_tones']
+absolute_pitches.loc[:, tone_tuples] = absolute_pitches.loc[:, tone_tuples].applymap(iterable2str)
+absolute_pitches.to_csv('absolute_pitches.tsv', sep='\t')
 
-    # re-loading the stored TSV while updating the converters and data types for the altered columns
-    reloaded = load_tsv('absolute_pitches.tsv', converters={'chord_tones': str2strtuple, 'added_tones': str2strtuple}, dtypes={'root': str, 'bass_note': str, 'tpc': str}, )
-
+# re-loading the stored TSV while updating the converters and data types for the altered columns
+reloaded = load_tsv('absolute_pitches.tsv', converters={'chord_tones': str2strtuple, 'added_tones': str2strtuple}, dtypes={'root': str, 'bass_note': str, 'tpc': str}, )
+```
 
 
 ## Licenses
