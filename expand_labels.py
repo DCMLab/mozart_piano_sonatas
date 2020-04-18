@@ -3,6 +3,7 @@
 ################################################################################
 import argparse, os, re, sys, logging
 from collections.abc import Iterable
+from inspect import getfullargspec
 from fractions import Fraction as frac
 logging.getLogger().setLevel(logging.INFO)
 
@@ -567,6 +568,99 @@ def features2type(numeral, form=None, figbass=None):
 
 
 
+def fifths2iv(fifths):
+    """ Return interval name of a stack of fifths such that
+       0 = 'P1', -1 = 'P4', -2 = 'm7', 4 = 'M3' etc.
+    """
+    if pd.isnull(fifths):
+        return fifths
+    if isinstance(fifths, Iterable):
+        return map2elements(fifths, fifths2iv)
+    interval_qualities = {0: ['P', 'P', 'P', 'M', 'M', 'M', 'M'],
+                   -1:['D', 'D', 'D', 'm', 'm', 'm', 'm']}
+    fifths += 1       # making 0 = fourth, 1 = unison, 2 = fifth etc.
+    pos = fifths % 7
+    int_num = [4, 1, 5, 2, 6, 3, 7][pos]
+    qual_region = fifths // 7
+    if qual_region in interval_qualities:
+        int_qual = interval_qualities[qual_region][pos]
+    elif qual_region < 0:
+        int_qual = (abs(qual_region) - 1) * 'D'
+    else:
+        int_qual = qual_region * 'A'
+    return int_qual + str(int_num)
+
+
+
+def fifths2acc(fifths):
+    """ Returns accidentals for a stack of fifths that can be combined with a
+        basic representation of the seven steps."""
+    return abs(fifths // 7) * 'b' if fifths < 0 else fifths // 7 * '#'
+
+
+
+def fifths2name(fifths):
+    """ Return note name of a stack of fifths such that
+       0 = C, -1 = F, -2 = Bb, 1 = G etc.
+    """
+    if pd.isnull(fifths):
+        return fifths
+    if isinstance(fifths, Iterable):
+        return map2elements(fifths, fifths2name)
+    note_names = ['F', 'C', 'G', 'D', 'A', 'E', 'B']
+    return fifths2str(fifths, note_names)
+
+
+
+def fifths2pc(fifths):
+    """Turn a stack of fifths into a chromatic pitch class"""
+    if pd.isnull(fifths):
+        return fifths
+    if isinstance(fifths, Iterable):
+        return map2elements(fifths, fifths2pc)
+    return 7 * fifths % 12
+
+
+
+def fifths2rn(fifths, minor=False):
+    """Return Roman numeral of a stack of fifths such that
+       0 = I, -1 = IV, 1 = V, -2 = bVII in major, VII in minor, etc.
+    """
+    if pd.isnull(fifths):
+        return fifths
+    if isinstance(fifths, Iterable):
+        return map2elements(fifths, fifths2rn, minor=minor)
+    rn = ['VI', 'III', 'VII', 'IV', 'I', 'V', 'II'] if minor else ['IV', 'I', 'V', 'II', 'VI', 'III', 'VII']
+    if minor:
+        fifths += 3
+    return fifths2str(fifths, rn)
+
+
+
+def fifths2sd(fifths, minor=False):
+    """Return scale degree of a stack of fifths such that
+       0 = '1', -1 = '4', -2 = 'b7' in major, '7' in minor etc.
+    """
+    if pd.isnull(fifths):
+        return fifths
+    if isinstance(fifths, Iterable):
+        return map2elements(fifths, fifths2sd, minor=minor)
+    sd = ['6', '3', '7', '4', '1', '5', '2'] if minor else ['4', '1', '5', '2', '6', '3', '7']
+    if minor:
+        fifths += 3
+    return fifths2str(fifths, sd)
+
+
+
+def fifths2str(fifths, steps):
+    """ Boiler plate used by fifths2-functions.
+    """
+    fifths += 1
+    acc = fifths2acc(fifths)
+    return steps[fifths % 7] + acc
+
+
+
 def labels2global_tonic(df, cols={}, inplace=False):
     """ Transposes all numerals to their position in the global major or minor scale.
         This eliminates localkeys and relativeroots. The resulting chords are defined
@@ -580,7 +674,8 @@ def labels2global_tonic(df, cols={}, inplace=False):
         and where the keys have been propagated using propagate_keys(add_bool=True).
     cols : :obj:`dict`, optional
         In case the column names for ['numeral', 'form', 'figbass', 'changes', 'relativeroot', 'localkey', 'globalkey'] deviate, pass a dict, such as
-        {'numeral':         'numeral_col_name',
+        {'chord':           'chord_col_name'
+         'numeral':         'numeral_col_name',
          'form':            'form_col_name',
          'figbass':         'figbass_col_name',
          'changes':         'changes_col_name',
@@ -601,7 +696,7 @@ def labels2global_tonic(df, cols={}, inplace=False):
         logging.debug("Index is not unique. Temporarily added a unique index level.")
         df.set_index(pd.Series(range(len(df))), append=True, inplace=True)
 
-    features = ['numeral', 'form', 'figbass', 'changes', 'relativeroot', 'localkey', 'globalkey']
+    features = ['chord', 'numeral', 'form', 'figbass', 'changes', 'relativeroot', 'localkey', 'globalkey']
     for col in features:
         if col in df.columns and not col in cols:
             cols[col] = col
@@ -629,6 +724,9 @@ def labels2global_tonic(df, cols={}, inplace=False):
     gp_cols = [cols[col] for col in ['changes', 'numeral']] + ['abs_numeral', local_minor, global_minor]
     df[cols['changes']] = transform(df, transpose_changes, gp_cols)
 
+    # Combine the new chord features
+    df[cols['chord']] = df.abs_numeral + df.form.fillna('') + df.figbass.fillna('') + ('(' + df.changes + ')').fillna('') # + ('/' + df.relativeroot).fillna('')
+
     if inplace:
         df[cols['numeral']] = df.abs_numeral
         drop_cols = [cols[col] for col in ['localkey', 'relativeroot']] + ['abs_numeral', local_minor]
@@ -637,6 +735,15 @@ def labels2global_tonic(df, cols={}, inplace=False):
         res_cols = ['abs_numeral'] + [cols[col] for col in ['form', 'figbass', 'changes', 'globalkey']] + [global_minor]
         res = df[res_cols].rename(columns={'abs_numeral': cols['numeral']})
         return res.droplevel(-1) if tmp_index else res
+
+
+
+def map2elements(e, f, *args, **kwargs):
+    """ If `e` is an iterable, `f` is applied to all elements.
+    """
+    if isinstance(e, Iterable):
+        return e.__class__(map2elements(x, f, *args, **kwargs) for x in e)
+    return f(e, *args, **kwargs)
 
 
 
@@ -982,7 +1089,7 @@ def series_is_minor(S, is_name=True):
 
 def sort_tpcs(tpcs, ascending=True, start=None):
     """ Sort tonal pitch classes by order on the piano.
-        Uses: tpc2pc()
+        Uses: fifths2pc()
 
     Parameters
     ----------
@@ -993,10 +1100,10 @@ def sort_tpcs(tpcs, ascending=True, start=None):
     start : :obj:`int`, optional
         Start on or above this TPC.
     """
-    res = sorted(tpcs, key=lambda x: (tpc2pc(x),-x))
+    res = sorted(tpcs, key=lambda x: (fifths2pc(x),-x))
     if start is not None:
-        pcs = [tpc2pc(tpc) for tpc in res]
-        start = tpc2pc(start)
+        pcs = [fifths2pc(tpc) for tpc in res]
+        start = fifths2pc(start)
         i = 0
         while i < len(pcs) - 1 and pcs[i] < start:
             i += 1
@@ -1102,44 +1209,173 @@ def str_is_minor(tone, is_name=True):
 
 
 
-def tpc2pc(tpc):
-    """Turn a tonal pitch class into a MIDI pitch class"""
-    return 7 * tpc % 12
-
-
-
-def transform(df, func, param2col, **kwargs):
+def transform(df, func, param2col=None, column_wise=False, **kwargs):
     """ Compute a function for every row of a DataFrame, using several cols as arguments.
         The result is the same as using df.apply(lambda r: func(param1=r.col1, param2=r.col2...), axis=1)
         but it optimizes the procedure by precomputing `func` for all occurrent parameter combinations.
+        Uses: inspect.getfullargspec()
+
+    Parameters
+    ----------
+    df : :obj:`pandas.DataFrame` or :obj:`pandas.Series`
+        Dataframe containing function parameters.
+    func : :obj:`callable`
+        The result of this function for every row will be returned.
+    param2col : :obj:`dict` or :obj:`list`, optional
+        Mapping from parameter names of `func` to column names.
+        If you pass a list of column names, the columns' values are passed as positional arguments.
+        Pass None if you want to use all columns as positional arguments.
+    column_wise : :obj:`bool`, optional
+        Pass True if you want to map `func` to the elements of every column separately.
+        This is simply an optimized version of df.apply(func) but allows for naming
+        columns to use as function arguments. If param2col is None, `func` is mapped
+        to the elements of all columns, otherwise to all columns that are not named
+        as parameters in `param2col`.
+        In the case where `func` does not require a positional first element and
+        you want to pass the elements of the various columns as keyword argument,
+        give it as param2col={'function_argument': None}
+    inplace : :obj:`bool`, optional
+        Pass True if you want to mutate `df` rather than getting an altered copy.
+    **kwargs : Other parameters passed to `func`.
+    """
+    if column_wise:
+        if not df.__class__ == pd.core.series.Series:
+            if param2col is None:
+                return df.apply(transform, args=(func,), **kwargs)
+            if param2col.__class__ == dict:
+                var_arg = [k for k, v in param2col.items() if v is None]
+                apply_cols = [col for col in df.columns if not col in param2col.values()]
+                assert len(var_arg) < 2, f"Name only one variable keyword argument as which {apply_cols} are used {'argument': None}."
+                var_arg = var_arg[0] if len(var_arg) > 0 else getfullargspec(func).args[0]
+                param2col = {k: v for k, v in param2col.items() if v is not None}
+                result_cols = {col: transform(df, func, {**{var_arg: col}, **param2col}, **kwargs) for col in apply_cols}
+                param2col = param2col.values()
+            else:
+                apply_cols = [col for col in df.columns if not col in param2col]
+                result_cols = {col: transform(df, func, [col] + param2col, **kwargs) for col in apply_cols}
+            return pd.DataFrame(result_cols, index=df.index)
+
+    elif param2col.__class__ == dict:
+        param_tuples = list(df[param2col.values()].itertuples(index=False, name=None))
+        result_dict = {t: func(**{a:b for a, b in zip(param2col.keys(), t)}, **kwargs) for t in set(param_tuples)}
+    else:
+        if df.__class__ == pd.core.series.Series:
+            param_tuples = df.values
+            result_dict = {t: func(t, **kwargs) for t in set(param_tuples)}
+        else:
+            if param2col is None:
+                param_tuples = list(df.itertuples(index=False, name=None))
+            else:
+                param_tuples = list(df[list(param2col)].itertuples(index=False, name=None))
+            result_dict = {t: func(*t, **kwargs) for t in set(param_tuples)}
+    return pd.Series([result_dict[t] for t in param_tuples], index=df.index)
+
+
+
+def transform_columns(df, func, columns=None, param2col=None, inplace=False, **kwargs):
+    """ Wrapper function to use transform() on df[columns].
 
     Parameters
     ----------
     df : :obj:`pandas.DataFrame`
-        Dataframe containing function parameters.
-    func : function
-        The result of this function for every row will be returned.
-    param2col : :obj:`dict` or :obj:`list`
+        DataFrame where columns (or column combinations) work as function arguments.
+    func : :obj:`callable`
+        Function you want to apply to all elements in `columns`.
+    columns : :obj:`list`
+        Columns to which you want to apply `func`.
+    param2col : :obj:`dict` or :obj:`list`, optional
         Mapping from parameter names of `func` to column names.
         If you pass a list of column names, the columns' values are passed as positional arguments.
-    **kwargs : Other parameters passed to `func`.
+        Pass None if you want to use all columns as positional arguments.
+    inplace : :obj:`bool`, optional
+        Pass True if you want to mutate `df` rather than getting an altered copy.
+    **kwargs: keyword arguments for transform()
     """
-    if param2col.__class__ == dict:
-        param_tuples = list(df[param2col.values()].itertuples(index=False, name=None))
-        result_dict = {t: func(**{a:b for a, b in zip(param2col.keys(), t)}, **kwargs) for t in set(param_tuples)}
+    if not inplace:
+        df = df.copy()
+
+    param_cols = []
+    if columns is None:
+        columns = df.columns
+    elif param2col is None:
+        pass
+    elif param2col.__class__ == dict:
+        param_cols = list(param2col.values())
     else:
-        param_tuples = list(df[list(param2col)].itertuples(index=False, name=None))
-        result_dict = {t: func(*t, **kwargs) for t in set(param_tuples)}
-    return pd.Series([result_dict[t] for t in param_tuples], index=df.index)
+        param_cols = list(param2col)
+
+    df.loc[:, columns] = transform(df[columns+param_cols], func, param2col, **kwargs)
+    if not inplace:
+        return df
+
+
+
+def transform_note_columns(df, to, note_cols=['chord_tones', 'added_tones', 'bass_note', 'root'], minor_col='localkey_is_minor', inplace=False, **kwargs):
+    """ Efficiently maps `func` to all elements of `columns`. This is a versatile
+        and optimized alternative to df[columns].applymap(func). If `func` takes
+        additional parameters, you can either name `argument_cols` or **kwargs.
+        Uses: transform_columns()
+
+    Parameters
+    ----------
+    df : :obj:`pandas.DataFrame`
+        DataFrame where columns (or column combinations) work as function arguments.
+    to : {'name', 'iv', 'pc', 'sd', 'rn'}
+        The tone representation that you want to get from the `note_cols`.
+        'name': Note names. Should only be used if the stacked fifths actually represent
+                absolute tonal pitch classes rather than intervals over the local tonic.
+                In other words, make sure to use 'name' only if 0 means C rather than I.
+        'iv':   Intervals such that 0 = 'P1', 1 = 'P5', 4 = 'M3', -3 = 'm3', 6 = 'A4',
+                -6 = 'D5' etc.
+        'pc':   (Relative) chromatic pitch class, or distance from tonic in semitones.
+        'sd':   Scale degrees such that 0 = '1', -1 = '4', -2 = 'b7' in major, '7' in minor etc.
+                This representation requires a boolean column `minor_col` which is
+                True in those rows where the stacks of fifths occur in a local minor
+                context and False for the others. Alternatively, if all pitches are
+                in the same mode or you simply want to express them as degrees of
+                particular mode, you can pass the boolean keyword argument `minor`.
+        'rn':   Roman numerals such that 0 = 'I', -2 = 'bVII' in major, 'VII' in minor etc.
+                Requires boolean 'minor' values, see 'sd'.
+    note_cols : :obj:`list`, optional
+        List of columns that hold integers or collections of integers that represent
+        stacks of fifth (0 = tonal center, 1 = fifth above, -1 = fourth above, etc).
+    minor_col : :obj:`str`, optional
+        If `to` is 'sd' or 'rn', specify a boolean column where the value is
+        True in those rows where the stacks of fifths occur in a local minor
+        context and False for the others.
+    argument_cols : :obj:`dict` or :obj:`list`, optional
+        While the elements in `columns` are always used as first function argument,
+        unless
+
+    """
+    transformations = {
+        'name': fifths2name,
+        'names': fifths2name,
+        'iv': fifths2iv,
+        'pc': fifths2pc,
+        'sd': fifths2sd,
+        'rn': fifths2rn,
+    }
+    assert to in transformations, "Parameter to needs to be one of {'name', 'iv', 'pc', 'sd', 'rn'}"
+    cols = [col for col in note_cols if col in df.columns]
+    if len(cols) < len(note_cols):
+        logging.warning(f"Columns {[[col for col in note_cols if not col in df.columns]]}")
+    param2col = None
+    if to in ['sd', 'rn']:
+        assert minor_col in df.columns or 'minor' in kwargs, f"'{to} representation requires a boolean column for the 'minor' argument, e.g. 'globalkey_is_minor'."
+        if not 'minor' in kwargs:
+            param2col = {'minor': minor_col}
+    func = transformations[to]
+    res = transform_columns(df, func, columns=note_cols, inplace=inplace, param2col=param2col, column_wise=True, **kwargs)
+    if not inplace:
+        return res
 
 
 
 def transpose(e, n):
     """ Add `n` to all elements `e` recursively.
     """
-    if isinstance(e, Iterable):
-        return e.__class__(transpose(x, n) for x in e)
-    return e + n
+    return map2elements(e, lambda x: x+n)
 
 
 

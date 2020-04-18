@@ -1,33 +1,91 @@
-"""
-How to derive the relational data structure from the (MS3) MSCX files:
-On the toplevel of the repo, run
+#!/usr/bin/env python
+
+""" This script outputs data related to the scores of the 18 Piano Sonatas by W.A.
+Mozart as TSV files. It is hard-coded for being run at the top level of the repository
+https://github.com/DCMLab/mozart_piano_sonatas.
+
+In order to create the TSV files anew from the (MS3) MSCX files, use this
+script that will be available in the near future at https://github.com/DCMLab/parsers :
+
     python extract_annotations.py scores -NHMqos
 """
 
 import argparse, os, re, sys, logging
 from fractions import Fraction as frac
+
 try:
     import pandas as pd
 except ImportError:
     sys.exit("""This script requires the pandas package. You can install it using the command
 python -m pip install pandas""")
-#pd.options.display.max_columns = None
 
 from expand_labels import expand_labels
 from harmony import regex
-REGEX = re.compile(regex, re.VERBOSE)
+
+__author__ = "Johannes Hentschel"
+__copyright__ = """
+
+    Copyright 2020, École Polytechnique Fédéral de Lausanne, Digital and Cognitive Musicology Lab
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+"""
+__credits__ = ["Johanes Hentschel", "Andrew McLeod"]
+__license__ = "GPL-3.0-or-later"
+__version__ = "1.0.0"
+__maintainer__ = "Johannes Hentschel"
+__email__ = "johannes.hentschel@epfl.ch"
+__status__ = "Production"
 
 
+
+
+
+################################################################################
+# Configuration
+################################################################################
 os.environ['NUMEXPR_MAX_THREADS'] = '64' # to silence NumExpr prompt
-idx = pd.IndexSlice                      # for easy MultiIndex slicing
 
-str2tuple = lambda l: tuple() if l == '' else tuple(int(s) for s in l.split(', '))
+
+
+
+
+################################################################################
+# Converters
+################################################################################
+str2inttuple = lambda l: tuple() if l == '' else tuple(int(s) for s in l.split(', '))
+str2strtuple = lambda l: tuple() if l == '' else tuple(str(s) for s in l.split(', '))
 iterable2str = lambda iterable: ', '.join(str(s) for s in iterable)
 
+
+
+
+
+################################################################################
+# Constants
+################################################################################
+REGEX = re.compile(regex, re.VERBOSE)
+
+IDX = pd.IndexSlice                      # for easy MultiIndex slicing
+
 CONVERTERS = {
+    'added_tones': str2inttuple,
     'act_dur': frac,
-    'chord_tones': str2tuple,
-    'next': str2tuple,
+    'chord_tones': str2inttuple,
+    'globalkey_is_minor': bool,
+    'localkey_is_minor': bool,
+    'next': str2inttuple,
     'nominal_duration': frac,
     'offset': frac,
     'onset': frac,
@@ -47,13 +105,11 @@ DTYPES = {
     'figbass': str,
     'form': str,
     'globalkey': str,
-    'globalkey_is_minor': 'Int64',
     'gracenote': str,
     'harmonies_id': 'Int64',
     'keysig': int,
     'label': str,
     'localkey': str,
-    'localkey_is_minor': 'Int64',
     'mc': int,
     'midi': int,
     'mn': int,
@@ -137,7 +193,9 @@ FILE_LIST.index.names = ['sonata', 'movement']
 
 
 
-
+################################################################################
+# Functions
+################################################################################
 def check_dir(d):
     if not os.path.isdir(d):
         d = os.path.join(os.getcwd(),d)
@@ -184,10 +242,6 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
         for kind in ['notes', 'harmonies', 'cadences']:
             if locals()[kind]:
                 kinds.append(kind)
-        if join:
-            assert len(kinds) > 1, "Select at least two kinds of data for joining."
-        if measures or join or unfold:
-            kinds.append('measures')
         if absolute:
             full_expand = True
         if full_expand or relative_to_global:
@@ -195,6 +249,10 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
         if expand and not harmonies:
             logging.info("Parameters implie -H: Getting harmonies as well...")
             kinds.append('harmonies')
+        if join:
+            assert len(kinds) > 1, "Select at least two kinds of data for joining."
+        if measures or join or unfold:
+            kinds.append('measures')
         logging.info(f"Reading {len(selection) * len(kinds)} TSV files...")
         joining = {kind: read_tsvs(os.path.join(script_path, kind), selection) for kind in kinds}
 
@@ -409,7 +467,7 @@ def select_files(sonatas=None, movements=None):
     else:
         df = FILE_LIST.loc[sonatas]
     if movements is not None:
-        df = df.loc[idx[:, movements],]
+        df = df.loc[IDX[:, movements],]
     return df
 
 
@@ -443,6 +501,9 @@ def unfold_multiple(unfold_this, mc_sequences, mn_sequences=None):
 
 
 
+################################################################################
+# Command Line Interface
+################################################################################
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
