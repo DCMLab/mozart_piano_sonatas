@@ -43,11 +43,15 @@ The harmony labels follow the [DCML standard for harmonic annotation](https://gi
   * Otherwise, they represent intervals (stacks of fifths) over the chord's *local* tonic.
   * Or you can have all chord tones represent absolute pitches, based on the global key. In that case they display intervals (stacks of fifths) over the tone C = `0`, making G = `1`, F = `-1` etc.
 
-All options can be combined with the above-mentioned functionality for data joining. The thickest data representation would be yielded using `python mozart_loader.py NHCEjp`. Except if you add:
+All options can be combined with the above-mentioned functionality for data joining. The thickest data representation would be yielded using `python mozart_loader.py NHCEpj`. Except if you add:
 
 ### Repetitions
 
 By default, all data is being returned as though playing every section only once, i.e. without first endings (without *prima volta*). Instead, you may choose the 'unfolded' version that duplicates notes and labels depending on the piece's repeat structure. Simply add `-u` to the parameters. This puts first and second endings in their correct positions, thus creating correct transitions and event counts that are closer to what is actually being performed.
+
+### Transposing everything to C
+
+The option `-A` lets you rebase all pitches on C which corresponds to a transposition of every piece to C major or C minor. It is a special case of the (maximal) parameter combination `-CHNEpj`: The result is a DataFrame that represents the note list of all pieces merged with cadence labels and fully expanded chord labels which both have been propagated over the note lists. The difference is that all global keys are changed to `C` or `c` with the columns `tpc` (tonal pitch class) and `midi` transposed accordingly. The chord tones correspond to the representation of parameter `-g` but without transposing the chord labels (unless you add `-g`).
 
 ## How to correctly load the TSV files into pandas
 
@@ -131,7 +135,7 @@ leaving the other columns untouched (as stacks of fifths over the global tonic).
 
 ```python
 df = load_tsv('./formatted/-Eg_harmonies.tsv')
-res = transform_note_columns(df, 'rn', note_cols=['chord_tones'], minor=False)
+transform_note_columns(df, 'rn', note_cols=['chord_tones'], minor=False)
 ```
 
 |globalkey| chord |        chord_tones        |root|bass_note|
@@ -196,11 +200,12 @@ transform_note_columns(df, 'name')
 |f        |III     |V7    |(Eb, G, Bb, Db)|Eb  |Eb       |
 
 If, instead, you use the globalkey chord labels for a note name representation,
-this would correspond to a transposition of the whole piece to the key of C (major or minor).
+this would correspond to a transposition of the whole piece to the key of C (major
+or minor), as output as well using `mozart_loader.py -A`.
 
 ```python
 df = load_tsv('./formatted/-Eg_harmonies.tsv')
-res = transform_note_columns(df, 'name')
+transform_note_columns(df, 'name')
 ```
 
 |globalkey| chord |     chord_tones      |root|bass_note|
@@ -234,7 +239,7 @@ as note names, e.g. the simple note list of all sonatas created using `mozart_lo
 
 ```python
 df = load_tsv('./formatted/-N_notes.tsv')
-res = transform_note_columns(df, 'name', note_cols=['tpc'])
+transform_note_columns(df, 'name', note_cols=['tpc'])
 ```
 
 The first five notes in the first sonata `K279-1` with their note names:

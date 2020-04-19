@@ -246,7 +246,7 @@ def compute_chord_tones(df, bass_only=False, expand=False, cols={}):
 
 
 
-def expand_labels(df, column, regex, groupby={'level': 0, 'group_keys': False}, cols={}, dropna=False, relative_to_global=False, chord_tones=False, absolute=False):
+def expand_labels(df, column, regex, groupby={'level': 0, 'group_keys': False}, cols={}, dropna=False, relative_to_global=False, chord_tones=False, absolute=False, all_in_c=False):
     """ Split harmony labels complying with the DCML syntax into columns holding their various features
         and allows for additional computations and transformations.
         Uses: split_labels(), replace_special(), propagate_keys(), propagate_pedal(),
@@ -277,17 +277,22 @@ def expand_labels(df, column, regex, groupby={'level': 0, 'group_keys': False}, 
         This levels and eliminates the features `localkey` and `relativeroot`.
     chord_tones : :obj:`bool`, optional
         Pass True if you want to add four columns that contain information about each label's
-        pitch content. The pitches are expressed as relative intervals, concretely as
-        tonal pitch classes relative to the respective chord's local key or, if
-        `relative_to_global=True`, to the globalkey. These relative tonal pitch classes can be
-        converted to intervals or scale degrees, e.g. -3 can be expressed as 'm6' or
-        (in major) as 'b6' / 'bVI' / 'bvi' or (in minor) as '6' / 'VI' / 'vi'
+        chord, added, root, and bass tones. The pitches are expressed as intervals
+        relative to the respective chord's local key or, if `relative_to_global=True`,
+        to the globalkey. The intervals are represented as integers that represent
+        stacks of fifths over the tonic, such that 0 = tonic, 1 = dominant, -1 = subdominant,
+        2 = supertonic etc.
     absolute : :obj:`bool`, optional
         Pass True if you want to transpose the relative `chord_tones` to the global
         key, which makes them absolute so they can be expressed as actual note names.
         This implies prior conversion of the chord_tones (but not of the labels) to
         the global tonic.
+    all_in_c : :obj:`bool`, optional
+        Pass True to transpose `chord_tones` to C major/minor. This performs the same
+        transposition of chord tones as `relative_to_global` but without transposing
+        the labels, too. This option clashes with `absolute=True`.
     """
+    assert sum((absolute, all_in_c)) < 2, "Chord tones can be either 'absolute' or 'all_in_c', not both."
     df = df.copy()
     tmp_index = not df.index.is_unique
     if tmp_index:
@@ -332,7 +337,7 @@ def expand_labels(df, column, regex, groupby={'level': 0, 'group_keys': False}, 
 
     if chord_tones:
         ct = compute_chord_tones(df, expand=True, cols=cols)
-        if relative_to_global or absolute:
+        if relative_to_global or absolute or all_in_c:
             transpose_by = transform(df, rn2tpc, [cols['localkey'], global_minor])
             if absolute:
                 transpose_by += transform(df, name2tpc, [cols['globalkey']])
@@ -762,7 +767,7 @@ def name2tpc(nn):
     """ Turn a note name such as `Ab` into a tonal pitch class, such that -1=F, 0=C, 1=G etc.
         Uses: split_note_name()
     """
-    if nn.__class__ == int:
+    if nn.__class__ == int or pd.isnull(nn):
         return nn
     name_tpcs = {'C': 0, 'D': 2, 'E': 4, 'F': -1, 'G': 1, 'A': 3, 'B': 5}
     accidentals, note_name = split_note_name(nn, count=True)

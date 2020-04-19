@@ -19,7 +19,7 @@ except ImportError:
     sys.exit("""This script requires the pandas package. You can install it using the command
 python -m pip install pandas""")
 
-from expand_labels import expand_labels
+from expand_labels import expand_labels, name2tpc, transform
 from harmony import regex
 
 __author__ = "Johannes Hentschel"
@@ -221,8 +221,23 @@ def ensure_types(df, col2dtype_dict, index_levels=True):
 
 
 
-def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None, test=False, notes=False, harmonies=False, cadences=False, measures=False, join=False, expand=False, full_expand=False, relative_to_global=False, absolute=False, propagate=False):
-    """"""
+def format_data(name=None,
+                dir=None,
+                unfold=False,
+                sonatas=None,
+                movements=None,
+                test=False,
+                notes=False,
+                harmonies=False,
+                cadences=False,
+                measures=False,
+                join=False, expand=False,
+                full_expand=False,
+                relative_to_global=False,
+                absolute=False,
+                all_in_c=False,
+                propagate=False):
+    """ Documentation in the help of the command line interface."""
     fname = ' '.join(sys.argv[1:]) if name is None else name
 
     if dir is None:
@@ -232,17 +247,27 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
 
     if test:
         print(selection)
-    elif not any([harmonies, cadences, notes, measures, expand, full_expand, relative_to_global, absolute]):
+    elif not any([harmonies, cadences, notes, measures, expand, full_expand, relative_to_global, absolute, all_in_c]):
         logging.error("Select the kind of data: -N for notes, -H for harmony labels, -M for measures, and -C for cadence labels. Pass -j to join several kinds into a single TSV.")
     elif len(selection) == 0:
         logging.error("No data matching your selection.")
     else:
         script_path = os.path.abspath('')
+        if all_in_c: # -CHNEpj
+            notes = True
+            harmonies = True
+            cadences = True
+            full_expand = True
+            propagate = True
+            join = True
+
         kinds = []
         for kind in ['notes', 'harmonies', 'cadences']:
             if locals()[kind]:
                 kinds.append(kind)
         if absolute:
+            if all_in_c:
+                raise ValueError("Chord tones can be either --absolute or --all_in_c, but not both. Use either -A or -a, not both.")
             full_expand = True
         if full_expand or relative_to_global:
             expand = True
@@ -273,10 +298,11 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
         if expand:
             global REGEX
             logging.info("Expanding chord labels...")
-            expanded = expand_labels(joining['harmonies'], column='label', regex=REGEX, chord_tones=full_expand, relative_to_global=relative_to_global, absolute=absolute)
+            expanded = expand_labels(joining['harmonies'], column='label', regex=REGEX, chord_tones=full_expand, relative_to_global=relative_to_global, absolute=absolute, all_in_c=all_in_c)
             col2type = {'globalkey_is_minor': int, 'localkey_is_minor': int} if 'localkey_is_minor' in expanded.columns else {'globalkey_is_minor': int}
             expanded = expanded.astype(col2type)
             if full_expand: # turn tuples into strings
+                logging.info("Computing chord tones...")
                 tone_tuples = ['chord_tones', 'added_tones']
                 expanded.loc[:, tone_tuples] = expanded.loc[:, tone_tuples].applymap(iterable2str)
             if not propagate:
@@ -300,7 +326,7 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
                     if 'label' in df.columns:
                         logging.info(f"Propagating {'expanded' if expand else ''} chord labels...")
                         df = df.reset_index(level='harmonies_id')
-                        df.harmonies_id = df.groupby(level=0, group_keys=False).apply(lambda df: df.harmonies_id.fillna(method='ffill'))
+                        df.harmonies_id = df.groupby(level=0, group_keys=False).apply(lambda df: df.harmonies_id.fillna(method='ffill').fillna(method='bfill'))
                         df.drop(columns='label', inplace=True)
                         if expand:
                             nonlocal expanded
@@ -309,12 +335,15 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
                         df = pd.merge(df.set_index('harmonies_id', append=True), expanded, left_index=True, right_index=True, how='left', suffixes=('', '_y'))
                         duplicates = [col for col in df.columns if col.endswith('_y')]
                         df = df.drop(columns=duplicates)
+                        if all_in_c:
+                            logging.info('Transposing the note list to C...')
+                            transpose_to_C(df)
 
                     if 'cadence' in df.columns:
                         logging.info("Propagating cadence labels...")
                         df = df.reset_index(level='cadences_id').set_index(pd.Series(range(len(df)), name='tmp_index'), append=True)
                         filled = df.groupby(level=0, group_keys=False).apply(lambda df: df[['cadences_id', 'cadence']].fillna(method='bfill'))
-                        df[['cadences_id', 'cadence']] = filled
+                        df.loc[:, ['cadences_id', 'cadence']] = filled
                         df = df.droplevel('tmp_index').set_index('cadences_id', append=True)
 
                     dtypes =  {k: v for k, v in {'bass_note': 'Int64',
@@ -332,10 +361,12 @@ def format_data(name=None, dir=None, unfold=False, sonatas=None, movements=None,
             if 'chord_tones' in df.columns:
                 if absolute:
                     logging.info("The chord tones designate absolute pitches ordered on the line of fifth where -1 = F, 0 = C, 1 = G and so on.")
+                elif all_in_c:
+                    logging.info("The chord tones designate absolute pitches when interpreting labels within C major/minor, ordered on the line of fifth where -1 = F, 0 = C, 1 = G and so on.")
                 elif relative_to_global:
-                    logging.info("The chord tones designate scale degrees ordered on the line of fifth where 0 is the GLOBAL tonic, 1 the tone a perfect fifth above, and so on.")
+                    logging.info("The chord tones designate stack-of-fifths invervals where 0 is the GLOBAL tonic, 1 the tone a perfect fifth above, -1 a perfect fourth above,  and so on.")
                 else:
-                    logging.info("The chord tones designate scale degrees ordered on the line of fifth where 0 is the LOCAL tonic, 1 the tone a perfect fifth above, and so on.")
+                    logging.info("The chord tones designate stack-of-fifths invervals where 0 is the LOCAL tonic, 1 the tone a perfect fifth above, -1 a perfect fourth above, and so on.")
 
 
         if join:
@@ -472,6 +503,22 @@ def select_files(sonatas=None, movements=None):
 
 
 
+def transpose_to_C(note_list):
+    """ Transposes the columns ['tpc', 'midi'] of a note list to C/c depending on
+        the column 'globalkey'. Input is mutated."""
+    transpose_by = transform(note_list.globalkey, name2tpc)
+    note_list.tpc -= transpose_by
+
+    midi_transposition = transform(transpose_by, lambda x: 7 * x % 12)
+    # For transpositions up to a diminished fifth, move pitches up,
+    # for larger intervals, move pitches down.
+    midi_transposition.where(midi_transposition <= 6, midi_transposition % -12, inplace=True)
+    note_list.midi -= midi_transposition
+
+    note_list.globalkey = note_list.globalkey.str.islower().replace({True: 'c', False: 'C'})
+
+
+
 def unfold_multiple(unfold_this, mc_sequences, mn_sequences=None):
     """ `unfold_this` is a DataFrame with a MultiIndex of which the first level
         disambiguates thes pieces to be unfolded.
@@ -530,7 +577,9 @@ Run with parameter -t to see all file names.
     parser.add_argument('-E','--full_expand', action='store_true', help="Compute chord tones, added tones, bass note and root note for every chord, expressed as line-of-fifth scale degrees.")
     parser.add_argument('-g','--globalkey', action='store_true', help="""Express all labels (and chord tones if -E is set) relative to the global tonic, not to the local key.
 This parameter gets rid of the columns 'localkey' and relativeroot.""")
-    parser.add_argument('-a','--absolute', action='store_true', help="Implies -E, but returns the chord tones as actual pitches rather than scale degrees.")
+    parser.add_argument('-a','--absolute', action='store_true', help="Implies -E, but returns the chord tones as absolute pitches rather than scale degrees.")
+    parser.add_argument('-A','--all_in_c', action='store_true', help="""Implies -CHNEpj but with all pitches and chord tones corresponding to a transposition of every piece to C major or C minor.
+Specifically, this transposes the columns ['tpc', 'midi'] of the note list and performs the same transposition of chord tones as --globalkey but without transposing the labels.""")
     parser.add_argument('-p','--propagate', action='store_true', help="When joining, spread out chord and cadence labels.")
     parser.add_argument('-l','--logging',default='INFO',help="Set logging to one of the levels {DEBUG, INFO, WARNING, ERROR, CRITICAL}. You may abbreviate by {D, I, W, E, C}.")
     args = parser.parse_args()
@@ -563,4 +612,5 @@ This parameter gets rid of the columns 'localkey' and relativeroot.""")
                 args.full_expand,
                 args.globalkey,
                 args.absolute,
+                args.all_in_c,
                 args.propagate)
