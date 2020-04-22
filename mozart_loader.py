@@ -569,8 +569,8 @@ if __name__ == '__main__':
 This script needs to remain at the top level of (your local copy of) the repo  mozart_piano_sonatas.
 Run with parameter -t to see all file names.
 ''')
-    parser.add_argument('name', metavar='NAME', nargs='?', type=check_dir, help='You may choose a name for the new TSV file(s). Existing files will be overwritten.')
     parser.add_argument('dir', metavar='DIR', nargs='?', type=check_dir, default=os.path.join(os.getcwd(), 'formatted'), help='Folder for storing the new TSV file(s). Can be relative, defaults to ./formatted')
+    parser.add_argument('--prefix', metavar='NAME', help='You may choose a name for the new TSV file(s). Existing files will be overwritten.')
     parser.add_argument('-u','--unfold', action='store_true', help="Unfold: Repeat everything that is repeated in the score, taking into account first and second endings ('voltas'). Otherwise, only second endings are returned.")
     parser.add_argument('-s','--sonatas', nargs='+', type=int, help="Select sonatas out of 1-18, e.g. -s 2 5 12")
     parser.add_argument('-m','--movements', nargs='+', type=int, help="Select only movements 1, 2 or 3, e.g. -m 1 3")
@@ -604,7 +604,7 @@ Specifically, this transposes the columns ['tpc', 'midi'] of the note list and p
         }
     logging.basicConfig(level=logging_levels[args.logging], format='%(levelname)-8s %(message)s')
 
-    format_data(args.name,
+    format_data(args.prefix,
                 args.dir,
                 args.unfold,
                 args.sonatas,
