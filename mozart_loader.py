@@ -552,6 +552,13 @@ def unfold_multiple(unfold_this, mc_sequences, mn_sequences=None):
 # Command Line Interface
 ################################################################################
 if __name__ == '__main__':
+    # Check versions
+    py_ver = sys.version_info
+    if py_ver[0] < 3 or py_ver[1] < 6:
+        raise Exception("This script requires at least Python 3.6, yours is " + sys.version)
+    pd_ver = [int(x) for x in pd.__version__.split('.')]
+    assert pd_ver[0] > 0 or pd_ver[1] >= 24, "This script requires at least pandas 0.24.0, not " + pd.__version__
+
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
         description = '''\

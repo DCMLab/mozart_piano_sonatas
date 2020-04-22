@@ -1134,7 +1134,8 @@ def split_labels(df, column, regex, cols={}, dropna=False, **kwargs):
     dropna : :obj:`bool`, optional
         Pass True if you want to drop rows where `column` is NaN/<NA>
     """
-    assert regex.__class__ == re.Pattern, "Compile regular expression using re.compile()"
+
+    assert regex.__class__ == re.compile('').__class__, "Compile regular expression using re.compile()"
     features = regex.groupindex.keys()
     df = df.copy()
     if df[column].isna().any():

@@ -90,7 +90,7 @@
     <metaTag name="originalFormat">cap</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">http://www.tobis-notenarchiv.de/mozart/KV_309_3.cap</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K309</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 7 in C major</metaTag>
@@ -8428,6 +8428,13 @@
           <Chord>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
+              <prev>
+                <location>
+                  <grace>0</grace>
+                  </location>
+                </prev>
+              </Spanner>
+            <Spanner type="Slur">
               <Slur>
                 </Slur>
               <next>
@@ -8435,13 +8442,6 @@
                   <fractions>3/16</fractions>
                   </location>
                 </next>
-              </Spanner>
-            <Spanner type="Slur">
-              <prev>
-                <location>
-                  <grace>0</grace>
-                  </location>
-                </prev>
               </Spanner>
             <Note>
               <pitch>76</pitch>
@@ -23624,7 +23624,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I[I6</name>
+            <name>I[</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -23947,7 +23947,7 @@
             <transposingClefType>F</transposingClefType>
             </Clef>
           <Harmony>
-            <name>I64]\\</name>
+            <name>I]\\</name>
             <offset x="0" y="-5.54272"/>
             </Harmony>
           <Chord>
