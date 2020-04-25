@@ -117,6 +117,7 @@ DTYPES = {
     'numbering_offset': 'Int64',
     'numeral': str,
     'pedal': str,
+    'playthrough': int,
     'phraseend': str,
     'relativeroot': str,
     'repeats': str,
@@ -320,7 +321,6 @@ def format_data(name=None,
         if all_in_c: # -CHNEpj
             notes = True
             harmonies = True
-            cadences = True
             full_expand = True
             propagate = True
             join = True
@@ -335,9 +335,9 @@ def format_data(name=None,
             full_expand = True
         if full_expand or relative_to_global:
             expand = True
-        if expand and not harmonies:
-            logging.info("Parameters implie -H: Getting harmonies as well...")
-            kinds.append('harmonies')
+            if not harmonies:
+                logging.info("Parameters implie -H: Getting harmonies as well...")
+                kinds.append('harmonies')
         if measures or join or unfold or expand:
             kinds.append('measures')
         if join:
@@ -368,19 +368,20 @@ def format_data(name=None,
 
 
         if expand:
-            global REGEX
-            logging.info("Expanding chord labels...")
-            expanded = expand_labels(joining['harmonies'], column='label', regex=REGEX, chord_tones=full_expand, relative_to_global=relative_to_global, absolute=absolute, all_in_c=all_in_c)
-            col2type = {'globalkey_is_minor': int, 'localkey_is_minor': int} if 'localkey_is_minor' in expanded.columns else {'globalkey_is_minor': int}
-            expanded = expanded.astype(col2type)
-            if full_expand: # turn tuples into strings
-                logging.info("Computing chord tones...")
-                tone_tuples = ['chord_tones', 'added_tones']
-                expanded.loc[:, tone_tuples] = expanded.loc[:, tone_tuples].applymap(iterable2str)
-            if not propagate:
-                joining['harmonies'] = expanded
             # for joining time signatures
             mn2timesig = joining['measures'][['mn', 'timesig']].groupby('filename', group_keys=False).apply(lambda df: df.drop_duplicates()).droplevel(-1).set_index('mn', append=True)
+            if harmonies:
+                global REGEX
+                logging.info("Expanding chord labels...")
+                expanded = expand_labels(joining['harmonies'], column='label', regex=REGEX, chord_tones=full_expand, relative_to_global=relative_to_global, absolute=absolute, all_in_c=all_in_c)
+                col2type = {'globalkey_is_minor': int, 'localkey_is_minor': int} if 'localkey_is_minor' in expanded.columns else {'globalkey_is_minor': int}
+                expanded = expanded.astype(col2type)
+                if full_expand: # turn tuples into strings
+                    logging.info("Computing chord tones...")
+                    tone_tuples = ['chord_tones', 'added_tones']
+                    expanded.loc[:, tone_tuples] = expanded.loc[:, tone_tuples].applymap(iterable2str)
+                if not propagate:
+                    joining['harmonies'] = expanded
 
 
         def store_result(df, fname, what):
@@ -754,12 +755,12 @@ Run with parameter -t to see all file names.
     parser.add_argument('-C','--cadences', action='store_true', help="Get cadence labels.")
     parser.add_argument('-M','--measures', action='store_true', help="Get measure properties.")
     parser.add_argument('-j','--join', action='store_true', help="Join the data into one single TSV.")
-    parser.add_argument('-e','--expand', action='store_true', help="Split the chord labels into their encoded features and add a beat representation (also to note lists). Implies -H.")
+    parser.add_argument('-e','--expand', action='store_true', help="Split the chord labels into their encoded features (if -H) and adds 'beat' and 'timesig' columns (for -NHC).")
     parser.add_argument('-E','--full_expand', action='store_true', help="Compute chord tones, added tones, bass note and root note for every chord, expressed as line-of-fifth scale degrees.")
     parser.add_argument('-g','--globalkey', action='store_true', help="""Express all labels (and chord tones if -E is set) relative to the global tonic, not to the local key.
 This parameter gets rid of the columns 'localkey' and relativeroot.""")
     parser.add_argument('-a','--absolute', action='store_true', help="Implies -E, but returns the chord tones as absolute pitches rather than scale degrees.")
-    parser.add_argument('-A','--all_in_c', action='store_true', help="""Implies -CHNEpj but with all pitches and chord tones corresponding to a transposition of every piece to C major or C minor.
+    parser.add_argument('-A','--all_in_c', action='store_true', help="""Implies -NHEpj but with all pitches and chord tones corresponding to a transposition of every piece to C major or C minor.
 Specifically, this transposes the columns ['tpc', 'midi'] of the note list and performs the same transposition of chord tones as --globalkey but without transposing the labels.""")
     parser.add_argument('-p','--propagate', action='store_true', help="When joining, spread out chord and cadence labels.")
     parser.add_argument('-T','--no_ties', action='store_true', help="Merge notes that are tied together, leaving only the first one (the only one constituting an onset) that has the summed duration of the merged notes.")

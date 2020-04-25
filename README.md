@@ -317,6 +317,7 @@ find information about the column (**N**otes, **H**armonies, **C**adences, **M**
 | numeral          | string  | H          |
 | pedal            | string  | H          |
 | phraseend        | string  | H          |
+| playthrough      | integer | NHCM       |
 | relativeroot     | string  | H          |
 | repeats          | string  | M          |
 | root             | Int64   | H          |
