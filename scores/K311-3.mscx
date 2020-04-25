@@ -17021,13 +17021,8 @@
             </Chord>
           </voice>
         </Measure>
-      <Measure>
+      <Measure len="10/4">
         <voice>
-          <TimeSig>
-            <visible>0</visible>
-            <sigN>10</sigN>
-            <sigD>4</sigD>
-            </TimeSig>
           <Harmony>
             <name>V7</name>
             <offset x="0" y="-4.86"/>
@@ -17433,21 +17428,12 @@
           <BarLine>
             <visible>0</visible>
             </BarLine>
-          <TimeSig>
-            <visible>0</visible>
-            <sigN>11</sigN>
-            <sigD>16</sigD>
-            </TimeSig>
           </voice>
         </Measure>
       <Measure len="43/16">
         <irregular>1</irregular>
         <stretch>0</stretch>
         <voice>
-          <TimeSig>
-            <sigN>11</sigN>
-            <sigD>16</sigD>
-            </TimeSig>
           <Fermata>
             <subtype>fermataAbove</subtype>
             <offset x="0.658281" y="-4.51375"/>
@@ -38361,13 +38347,8 @@
             </Chord>
           </voice>
         </Measure>
-      <Measure>
+      <Measure len="10/4">
         <voice>
-          <TimeSig>
-            <visible>0</visible>
-            <sigN>10</sigN>
-            <sigD>4</sigD>
-            </TimeSig>
           <Rest>
             <offset x="5" y="0.829454"/>
             <visible>0</visible>
@@ -38387,19 +38368,10 @@
           <BarLine>
             <visible>0</visible>
             </BarLine>
-          <TimeSig>
-            <visible>0</visible>
-            <sigN>11</sigN>
-            <sigD>16</sigD>
-            </TimeSig>
           </voice>
         </Measure>
       <Measure len="43/16">
         <voice>
-          <TimeSig>
-            <sigN>11</sigN>
-            <sigD>16</sigD>
-            </TimeSig>
           <Rest>
             <offset x="5" y="0.128756"/>
             <visible>0</visible>

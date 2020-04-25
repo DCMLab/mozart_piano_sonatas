@@ -151,7 +151,7 @@ transform_note_columns(df, 'rn', note_cols=['chord_tones'], minor=False)
 
 This representation simply converts the 'stacks of fifths' intervals to specific
 interval names or to relative chromatic pitch classes where 0 is the tonic. In the
-two example, the local keys have once again been preserved:
+two examples, the local keys have once again been preserved:
 
 ```python
 df = load_tsv('./formatted/-E_harmonies.tsv')
@@ -182,7 +182,7 @@ transform_note_columns(df, 'pc')
 
 ### Note Names
 
-In order to express the chords as absolutepitches, the chord tones first need
+In order to express the chords as absolute pitches, the chord tones first need
 to be transposed to the absolute key which can be done using `mozart_loader.py -a`.
 
 ```python
@@ -217,7 +217,7 @@ transform_note_columns(df, 'name')
 |f        |VII(64)|(Bb, Eb, G)     |Bb  |Bb       |
 |f        |VII7   |(Bb, D, F, Ab)|Bb  |Bb       |
 
-Using the original labels and chord tones would correspond to a transposition to
+Using the original labels and chord tones (`mozart_loader.py -E`) would correspond to a transposition to
 C (major or minor) of each segment in a particular local key. In other words,
 all `I` chords will appear as `(C, E, G)` (in major and minor keys) but all `III`
 chords, for example, will appear as `(Eb, G, Bb)` for local minor keys and as
@@ -280,8 +280,75 @@ absolute_pitches.to_csv('absolute_pitches.tsv', sep='\t')
 reloaded = load_tsv('absolute_pitches.tsv', converters={'chord_tones': str2strtuple, 'added_tones': str2strtuple}, dtypes={'root': str, 'bass_note': str, 'tpc': str}, )
 ```
 
+### Data types for parsing the data
 
-## Licenses
+The function `load_tsv` uses the following data types and converters to load the individual columns.
 
-* Scores and annotations: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-* Software: [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)
+#### Data types
+
+The data type `Int64` designates columns that contain integers *and* NULL values. The column `occurrence`
+shows which of the individual TSV files the columns can occur and, consequently, in which README you
+find information about the column (**N**otes, **H**armonies, **C**adences, **M**easures)
+
+| column           | type    | occurrence |
+|------------------|---------|------------|
+| alt_label        | string  | H          |
+| barline          | string  | M          |
+| bass_note        | Int64   | H          |
+| cadence          | string  | C          |
+| cadences_id      | Int64   | C          |
+| changes          | string  | H          |
+| chord            | string  | H          |
+| chord_type       | string  | H          |
+| dont_count       | Int64   | M          |
+| figbass          | string  | H          |
+| form             | string  | H          |
+| globalkey        | string  | H          |
+| gracenote        | string  | N          |
+| harmonies_id     | Int64   | H          |
+| keysig           | integer | M          |
+| label            | string  | H          |
+| localkey         | string  | H          |
+| mc               | integer | NHM        |
+| midi             | integer | H          |
+| mn               | integer | NHCM       |
+| notes_id         | Int64   | N          |
+| numbering_offset | Int64   | M          |
+| numeral          | string  | H          |
+| pedal            | string  | H          |
+| phraseend        | string  | H          |
+| relativeroot     | string  | H          |
+| repeats          | string  | M          |
+| root             | Int64   | H          |
+| special          | string  | H          |
+| staff            | integer | N          |
+| tied             | Int64   | N          |
+| timesig          | string  | NHCM       |
+| tpc              | integer | N          |
+| voice            | integer | N          |
+| voices           | integer | M          |
+| volta            | Int64   | M          |
+
+#### Converters/Parsers
+
+The collections are stored in the TSV files as strings in which the different elements
+are separated by the string `, ` (comma and space). The boolean values are stored as
+0 or 1. The fractions are stored either as integers or in the format `3/4`.
+
+| column             | converter  | occurrence |
+|--------------------|------------|------------|
+| added_tones        | collection | H          |
+| act_dur            | fraction   | M          |
+| chord_tones        | collection | H          |
+| globalkey_is_minor | boolean    | H          |
+| localkey_is_minor  | boolean    | H          |
+| next               | collection | M          |
+| nominal_duration   | fraction   | N          |
+| offset             | fraction   | M          |
+| onset              | fraction   | NHC        |
+| duration           | fraction   | N          |
+| scalar             | fraction   | N          |
+
+## License
+
+[GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)

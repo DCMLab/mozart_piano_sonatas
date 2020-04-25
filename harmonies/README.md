@@ -1,21 +1,32 @@
-The labels will be split into the columns
+## Columns
 
-- globalkey 
-- localkey 
-- pedal 
-- chord 
-- numeral 
-- special 
-- form 
-- figbass 
-- changes 
-- relativeroot 
-- phraseend.
+The raw data contain only the columns `mc, mn, onset, label`. The derived feature columns are available via `mozart_loader.py [-e]` or, with chord tones added for each label, via one of the parameters `mozart_loader.py [-e][-E][-g][-a][-A]`.
 
-Additionally, the columns
+For all features given as Roman numerals (`localkey, pedal, numeral, relativeroot`), the scale degrees `III, VI, VII` depend on the local mode: In a local minor key (`localkey_is_minor == 1`), they are a minor 3rd/6th/7th above the local tonic, in major, a major 3rd/6th/7th.
 
-- chord_type
-- globalkey_is_minor
-- localkey_is_minor
-
-are computed.
+| column | type | description |
+|---------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **mc** | integer | Measure count, identifier for the measure units in the XML encoding. |
+| **mn** | integer | Measure number, continuous count of complete measures as used in printed editions. |
+| **timesig** | string | Time signature of the measure in which the note occurs. |
+| **beat** | fraction | On which beat the note occurs, expressed as string. Downbeat positions are just integers (e.g. `'1'`) and upbeat positions have a fraction of the respective beat size attached, for instance, in `2/2` meter, beat `'1.1/2'` is on the second quarter note and beat `'1.1/3'` is on the second quarter triplet note.<br> The mapping timesig => beat size is `'2/2' => 1/2, '4/4' => 1/4, '2/4' => 1/4, '3/8' => 1/8, '6/8' => 3/8`} |
+| **onset** | fraction | Note's temporal position from beat 1 of the measure, expressed in fractions of a whole note (1/4 = quarter note, 1/12 = triplet eigth, etc.) |
+| **label** | string | Original chord label as entered by the annotator. |
+| **alt_label** | string | Alternative annotation as added by the annotator. |
+| **globalkey** | string | Tonality of the piece, expressed as absolute note name, e.g. 'Ab' for A flat major, or `g#` for G sharp minor. |
+| **localkey** | string | Local key expressed as Roman numeral relative to the `globalkey`, e.g. `IV` for the major key on the 4th scale degree or `#iv` for the minor scale on the raised 4th scale degree. |
+| **pedal** | string | If the chord occurs over a pedal note, this pedal note is expressed as a Roman numeral. If the chord tones are being computed (see below), this additional note is not taken into account and would need to be added as bass note. |
+| **chord** | string | This is simply a compact view of the features that define the chord tones, namely `numeral, form, figbass, changes, relativeroot`. |
+| **numeral** | string | Roman numeral defining the chordal root relative to the local key. An uppercase numeral stands for a major chordal third, lowercase for a minor third. If chord tones are being computed, the column `root` expresses the same information as an absolute interval. |
+| **special** | string | Labels containing special chord names are being replaced and the special names go in this column. Special names can be `Ger, Fr, It` for the three 'geographical chords', i.e. for the augmented sixth chords. |
+| **form** | string | `<NA>`: The chord is either a major or minor triad if `figbass` is one of `<NA>, '6', '64'`. Otherwise, it is either a major or a minor chord with a minor seventh.<br>`o, +`: Diminished or augmented chord. Again, it depend on `figbass` whether it is a triad or a seventh chord.<br>`%, M`: Half diminished or major seventh chord. For the latter, the chord form depends on the Roman numeral. |
+| **figbass** | string | Figured bass notation of the chord inversion. For triads, this feature can be `<NA>, '6', '64'`, for seventh chords `'7', '65', '43', '2'`. This features is decisive for which chord tone is in the bass. |
+| **changes** | string | A string containing all **added** intervals, all **replacing** intervals, and all chord tone **alterations**. All intervals are given as arabic numbers standing for the scale degree found above the `numeral` in the current local scale. E.g., `+6`, over the numeral `V`, would add a major sixth in a local major key, and a minor sixth in a local minor key. A minor sixth added to the dominant in a major key would be `+b6`. **Replacing** intervals and **alterations** are not preceded by `+`. Alterations are changes to the chord tones `3, 5, 8, 10, 12`. All other intervals replace a chord tone. If preceded by `#`, they replace the upper neighbor (e.g. `#2` replace the chordal third. Otherwise, they replace the lower neighbour (e.g. `2` replaces the root, `9` replaces the octave). |
+| **relativeroot** | string | This feature designates a lower-level key to which the current chord relates. It is expressed relative to the local key. For example, if the current numeral is a `V` and it is a secondary dominant, `relativeroot` is the scale degree that is being tonicized. |
+| **phraseend** | string | If the chord ends a phrase, this feature is `\\`. |
+| **chord_type** | string | A summary of information that otherwise depends on the three columns `numeral, form, figbass`. It can be one of the wide-spread abbreviations for triads: `M, m, o, +` or for seventh chords: `o7, %7, +7` (for diminished, half-diminished and augmented seventh chords), or `Mm7, mm7, MM7, mM7`for all combinations of a major/minor triad with a minor/major seventh. |
+| globalkey_is_minor, localkey_is_minor | boolean | For convenience. `1`: global/local key is a minor key, `0`: global/local key is a major key. |
+| chord_tones | collection | Exactly three tones for triads and four tones for seventh chords. They appear in ascending order, starting from the bass note ('closed form'). Replaced or altered chord tones are taken into account. Tones are expressed as stack-of-fifths intervals where 0 is the local tonic. With parameters `-g` or `-A`, however, 0 is the global tonic. With parameter `-a`, 0 is equal to the absolute pitch of the global key. |
+| added_tones | collection | Contains any number of added chord tones. |
+| root | integer | Chordal root expressed as stack-of-fifths interval. |
+| bass_note | integer | Always the first integer in `chord_tones`. |

@@ -233,10 +233,10 @@ def compute_chord_tones(df, bass_only=False, expand=False, cols={}):
         df[global_minor] = series_is_minor(df[cols['globalkey']], is_name=True)
         logging.debug(f"Boolean column '{global_minor} created.'")
 
-    gp_cols = {col: cols[col] for col in ['numeral', 'form', 'figbass', 'changes', 'relativeroot'] if cols[col] is not None}
-    gp_cols['minor'] = local_minor
-    param_tuples = list(df[gp_cols.values()].itertuples(index=False, name=None))
-    result_dict = {t: features2tpcs(**{a:b for a, b in zip(gp_cols.keys(), t)}, bass_only=bass_only, merge_tones=not expand) for t in set(param_tuples)}
+    param_cols = {col: cols[col] for col in ['numeral', 'form', 'figbass', 'changes', 'relativeroot'] if cols[col] is not None}
+    param_cols['minor'] = local_minor
+    param_tuples = list(df[param_cols.values()].itertuples(index=False, name=None))
+    result_dict = {t: features2tpcs(**{a:b for a, b in zip(param_cols.keys(), t)}, bass_only=bass_only, merge_tones=not expand) for t in set(param_tuples)}
     if expand:
         res = pd.DataFrame([result_dict[t] for t in param_tuples], index=df.index)
         res['bass_note'] = res.chord_tones.apply(lambda l: l if pd.isnull(l) else l[0])
@@ -246,7 +246,7 @@ def compute_chord_tones(df, bass_only=False, expand=False, cols={}):
 
 
 
-def expand_labels(df, column, regex, groupby={'level': 0, 'group_keys': False}, cols={}, dropna=False, relative_to_global=False, chord_tones=False, absolute=False, all_in_c=False):
+def expand_labels(df, column, regex, groupby={'level': 0, 'group_keys': False}, cols={}, dropna=False, propagate=True, relative_to_global=False, chord_tones=False, absolute=False, all_in_c=False):
     """ Split harmony labels complying with the DCML syntax into columns holding their various features
         and allows for additional computations and transformations.
         Uses: split_labels(), replace_special(), propagate_keys(), propagate_pedal(),
@@ -272,6 +272,10 @@ def expand_labels(df, column, regex, groupby={'level': 0, 'group_keys': False}, 
         Dictionary to map the regex's group names to deviating column names of your choice.
     dropna : :obj:`bool`, optional
         Pass True if you want to drop rows where `column` is NaN/<NA>
+    propagate: :obj:`bool`, optional
+        By default, information about global and local keys and about pedal points is spread throughout
+        the DataFrame. Pass False if you only want to split the labels into their features. This ignores
+        all following parameters because their expansions depend on information about keys.
     relative_to_global : :obj:`bool`, optional
         Pass True if you want all labels expressed with respect to the global key.
         This levels and eliminates the features `localkey` and `relativeroot`.
@@ -319,30 +323,31 @@ def expand_labels(df, column, regex, groupby={'level': 0, 'group_keys': False}, 
     df['chord_type'] = transform(df, features2type, [cols[col] for col in ['numeral', 'form', 'figbass']])
     df = replace_special(df, regex=regex, merge=True, cols=cols)
 
-    key_cols = {col: cols[col] for col in ['localkey', 'globalkey']}
-    if groupby is not None:
-        try:
-            df = df.groupby(**groupby).apply(propagate_keys, add_bool=True, **key_cols)
-        except:
-            logging.error("Are you expanding labels of a single piece? In that case, call expand_labels() with 'groupby=None'")
-            raise
-    else:
-        try:
-            df = propagate_keys(df, add_bool=True, **key_cols)
-        except:
-            logging.error("Are you expanding labels of several pieces in the same DataFrame? In that case, define 'groupby()' parameters.")
-            raise
+    if propagate:
+        key_cols = {col: cols[col] for col in ['localkey', 'globalkey']}
+        if groupby is not None:
+            try:
+                df = df.groupby(**groupby).apply(propagate_keys, add_bool=True, **key_cols)
+            except:
+                logging.error("Are you expanding labels of a single piece? In that case, call expand_labels() with 'groupby=None'")
+                raise
+        else:
+            try:
+                df = propagate_keys(df, add_bool=True, **key_cols)
+            except:
+                logging.error("Are you expanding labels of several pieces in the same DataFrame? In that case, define 'groupby()' parameters.")
+                raise
 
-    df = propagate_pedal(df, cols=cols)
+        df = propagate_pedal(df, cols=cols)
 
-    if chord_tones:
-        ct = compute_chord_tones(df, expand=True, cols=cols)
-        if relative_to_global or absolute or all_in_c:
-            transpose_by = transform(df, rn2tpc, [cols['localkey'], global_minor])
-            if absolute:
-                transpose_by += transform(df, name2tpc, [cols['globalkey']])
-            ct = pd.DataFrame([transpose(tpcs, fifths) for tpcs, fifths in zip(ct.itertuples(index=False, name=None), transpose_by.values)], index=ct.index, columns=ct.columns)
-        df = pd.concat([df, ct], axis=1)
+        if chord_tones:
+            ct = compute_chord_tones(df, expand=True, cols=cols)
+            if relative_to_global or absolute or all_in_c:
+                transpose_by = transform(df, rn2tpc, [cols['localkey'], global_minor])
+                if absolute:
+                    transpose_by += transform(df, name2tpc, [cols['globalkey']])
+                ct = pd.DataFrame([transpose(tpcs, fifths) for tpcs, fifths in zip(ct.itertuples(index=False, name=None), transpose_by.values)], index=ct.index, columns=ct.columns)
+            df = pd.concat([df, ct], axis=1)
 
     if relative_to_global:
         labels2global_tonic(df, inplace=True, cols=cols)
@@ -669,7 +674,7 @@ def fifths2str(fifths, steps):
 def labels2global_tonic(df, cols={}, inplace=False):
     """ Transposes all numerals to their position in the global major or minor scale.
         This eliminates localkeys and relativeroots. The resulting chords are defined
-        by [`numeral`, `figbass`, `changes`, `globalkey_is_minor`].
+        by [`numeral`, `figbass`, `changes`, `globalkey_is_minor`] (and `pedal`).
         Uses: transform(), resolve_relative_keys(), rel2abs_key(), transpose_changes()
 
     Parameters
@@ -680,6 +685,7 @@ def labels2global_tonic(df, cols={}, inplace=False):
     cols : :obj:`dict`, optional
         In case the column names for ['numeral', 'form', 'figbass', 'changes', 'relativeroot', 'localkey', 'globalkey'] deviate, pass a dict, such as
         {'chord':           'chord_col_name'
+         'pedal':           'pedal_col_name',
          'numeral':         'numeral_col_name',
          'form':            'form_col_name',
          'figbass':         'figbass_col_name',
@@ -687,6 +693,8 @@ def labels2global_tonic(df, cols={}, inplace=False):
          'relativeroot':    'relativeroot_col_name',
          'localkey':        'localkey_col_name',
          'globalkey':       'globalkey_col_name'}}
+    inplace : :obj:`bool`, optional
+        Pass True if you want to mutate the input.
 
     Returns
     -------
@@ -701,7 +709,7 @@ def labels2global_tonic(df, cols={}, inplace=False):
         logging.debug("Index is not unique. Temporarily added a unique index level.")
         df.set_index(pd.Series(range(len(df))), append=True, inplace=True)
 
-    features = ['chord', 'numeral', 'form', 'figbass', 'changes', 'relativeroot', 'localkey', 'globalkey']
+    features = ['chord', 'pedal', 'numeral', 'form', 'figbass', 'changes', 'relativeroot', 'localkey', 'globalkey']
     for col in features:
         if col in df.columns and not col in cols:
             cols[col] = col
@@ -713,21 +721,25 @@ def labels2global_tonic(df, cols={}, inplace=False):
         df[global_minor] = series_is_minor(df[cols['globalkey']], is_name=True)
         logging.debug(f"Boolean column '{global_minor} created.'")
 
+    # Express pedals in relation to the global tonic
+    param_cols = [cols[col] for col in ['pedal', 'localkey']] + [global_minor]
+    df['pedal'] = transform(df, rel2abs_key, param_cols)
+
     # Make relativeroots to local keys
-    gp_cols = [cols[col] for col in ['relativeroot', 'localkey']] + [local_minor, global_minor]
-    relativeroots = df.loc[df[cols['relativeroot']].notna(), gp_cols]
+    param_cols = [cols[col] for col in ['relativeroot', 'localkey']] + [local_minor, global_minor]
+    relativeroots = df.loc[df[cols['relativeroot']].notna(), param_cols]
     rr_tuples = list(relativeroots.itertuples(index=False, name=None))
     transposed_rr = {(rr, localkey, local_minor, global_minor): rel2abs_key(resolve_relative_keys(rr), localkey, global_minor) for (rr, localkey, local_minor, global_minor) in set(rr_tuples)}
     df.loc[relativeroots.index, cols['localkey']] = pd.Series((transposed_rr[t] for t in rr_tuples), index=relativeroots.index)
     df.loc[relativeroots.index, local_minor] = series_is_minor(df.loc[relativeroots.index, cols['localkey']])
 
     # Express numerals in relation to the global tonic
-    gp_cols = [cols[col] for col in ['numeral', 'localkey']] + [global_minor]
-    df['abs_numeral'] = transform(df, rel2abs_key, gp_cols)
+    param_cols = [cols[col] for col in ['numeral', 'localkey']] + [global_minor]
+    df['abs_numeral'] = transform(df, rel2abs_key, param_cols)
 
     # Transpose changes to be valid with the new numeral
-    gp_cols = [cols[col] for col in ['changes', 'numeral']] + ['abs_numeral', local_minor, global_minor]
-    df[cols['changes']] = transform(df, transpose_changes, gp_cols)
+    param_cols = [cols[col] for col in ['changes', 'numeral']] + ['abs_numeral', local_minor, global_minor]
+    df[cols['changes']] = transform(df, transpose_changes, param_cols)
 
     # Combine the new chord features
     df[cols['chord']] = df.abs_numeral + df.form.fillna('') + df.figbass.fillna('') + ('(' + df.changes + ')').fillna('') # + ('/' + df.relativeroot).fillna('')
@@ -874,7 +886,7 @@ def propagate_pedal(df, relative=True, drop_pedalend=True, cols={}):
             first_localkey = localkeys.iloc[0]
             globalkeys = df.loc[section, cols['globalkey']].unique()
             assert len(globalkeys) == 1, "Several globalkeys appearing within the same organ point."
-            global_minor = globalkeys[0]
+            global_minor = globalkeys[0].islower()
             key2pedal = {key: ped if key == first_localkey else abs2rel_key(rel2abs_key(ped, first_localkey, global_minor), key, global_minor) for key in localkeys.unique()}
             logging.debug(f"Pedal note {ped} has been transposed relative to other local keys within a global {'minor' if global_minor else 'major'} context: {key2pedal}")
             pedals = pd.Series([key2pedal[key] for key in localkeys], index=section)
@@ -1261,11 +1273,13 @@ def transform(df, func, param2col=None, column_wise=False, **kwargs):
                 result_cols = {col: transform(df, func, [col] + param2col, **kwargs) for col in apply_cols}
             return pd.DataFrame(result_cols, index=df.index)
 
-    elif param2col.__class__ == dict:
+    if param2col.__class__ == dict:
         param_tuples = list(df[param2col.values()].itertuples(index=False, name=None))
         result_dict = {t: func(**{a:b for a, b in zip(param2col.keys(), t)}, **kwargs) for t in set(param_tuples)}
     else:
         if df.__class__ == pd.core.series.Series:
+            if param2col is not None:
+                logging.warning("When 'df' is a Series, the parameter 'param2col' has no use.")
             param_tuples = df.values
             result_dict = {t: func(t, **kwargs) for t in set(param_tuples)}
         else:
