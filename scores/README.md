@@ -60,7 +60,7 @@ These columns provide a mapping between multiple identifiers for the sonatas (no
 
 | column          | content                                                                                                 |
 |-----------------|---------------------------------------------------------------------------------------------------------|
-| **wikidata**    | URL of the [WikiData](https://www.wikidata.org/) item                                                                                |
+| **wikidata**    | URL of the [WikiData](https://www.wikidata.org/) item                                                   |
 | **viaf**        | URL of the Virtual International Authority File ([VIAF](http://viaf.org/)) entry                        |
 | **musicbrainz** | [MusicBrainz](https://musicbrainz.org/) identifier                                                      |
 | **imslp**       | URL to the wiki page within the International Music Score Library Project ([IMSLP](https://imslp.org/)) |
