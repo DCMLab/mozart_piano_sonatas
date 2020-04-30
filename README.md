@@ -1,5 +1,27 @@
 # mozart_piano_sonatas
-Chord and cadence labels for Mozart's 18 piano sonatas
+Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following the [Neue Mozart Ausgabe](https://dme.mozarteum.at/DME/nma).
+
+## TOC
+
+- [Data Formats](#data-formats)
+- [Accessing the Data](#accessing-the-data)
+  - [Raw Data](#raw-data)
+  - [Accessing Harmony Features](#accessing-harmony-features)
+  - [Repetitions](#repetitions)
+  - [Transposing everything to C](#transposing-everything-to-c)
+- [How to correctly load the TSV files into pandas](#how-to-correctly-load-the-tsv-files-into-pandas)
+- [How to get to different representations of chord tones](#how-to-get-to-different-representations-of-chord-tones)
+  - [Scale Degrees & Roman Numerals](#scale-degrees--roman-numerals)
+  - [Intervals & Relative Chromatic Pitch Classes](#intervals--relative-chromatic-pitch-classes)
+  - [Note Names](#note-names)
+    - [Tonal Pitch Classes in the note lists](#tonal-pitch-classes-in-the-note-lists)
+  - [Storing and Retrieving Pitch-Based String Representations](#storing-and-retrieving-pitch-based-string-representations)
+  - [Data types for parsing the data](#data-types-for-parsing-the-data)
+    - [Data types](#data-types)
+    - [Converters/Parsers](#convertersparsers)
+- [Questions, Suggestions, Corrections, Bug Reports](#questions--suggestions--corrections--bug-reports)
+- [Licenses](#licenses)
+
 
 ## Data Formats
 
@@ -11,7 +33,7 @@ Every sonata movement is represented by five files with identical filenames in f
 * `harmonies/K279-1.tsv`: A list of the included harmony labels with their positions in the score.
 * `cadences/K279-1.tsv`: A list of cadence labels and their positions.
 
-The READMEs in the respective folders contain information about the features included in the TSV files.
+The README in each folder contains information about the respective files.
 
 ## Accessing the Data
 
@@ -24,13 +46,14 @@ The included script `mozart_loader.py` lets you conveniently create an augmented
 The script's most simple functionality concatenates all TSV files from the folders and stores them as single files:
 
 * `-N` concatenates the note matrices
+    * `-NT` merges notes that are being tied together, leaving only those representing an onset, with merged durations aggregated
 * `-M` concatenates the measure matrices
 * `-H` concatenates the harmony labels
 * `-C` concatenates the cadence labels
 
-In case you want to join harmony labels with notes and/or cadence labels in a single file, add `-j` for joining. The basic representation of all data in a single file is yielded by `python mozart_loader.py -NHCj` (Measure lists are not joined, they are more of an auxiliary character and would still be output as a separate file.)
+In case you want to join harmony labels with notes and/or cadence labels in a single file, add `-j` for joining. The basic representation of all data in a single file is yielded by `python mozart_loader.py -NHCMj`.
 
-When joining the notes with labels, the latter often appear duplicated, namely once for every note with the identical onset. All notes that do not coincide with a label have `NaN` values in the concerning columns. This can be circumvented using the parameter `-p` which propagates the labels (and their features), thus identifying all notes that fall in their range.
+When joining the notes with labels, the latter often appear duplicated, namely once for every note with the identical onset. All notes that do not coincide with a label have NULL values in the concerning columns. This can be circumvented using the parameter `-p` which propagates the labels (and their features), thus identifying all notes that fall in their range.
 
 ### Accessing Harmony Features
 
@@ -38,7 +61,7 @@ The harmony labels follow the [DCML standard for harmonic annotation](https://gi
 
 * Using the option `-e` on the script will perform this expansion for you and spread the encoded information over the DataFrame, e.g. information about global and local keys.
 * If you want to transpose all labels to the global tonic, thus eliminating the information about local keys, use `-g`.
-* The chord tones expressed by the labels can be additionally computed by using `-E` instead of `-e`. They are expressed as integer intervals representing the count of perfect fifths you need to stack on the tonic, i.e., `0` is the tonic, `1` the dominant, `2` the supertonic, `-1` the subdominant, etc.
+* The chord tones expressed by the labels can be additionally computed by using `-E` instead of `-e`. They are expressed as integer intervals representing the number of stacked perfect fifths over the tonic, i.e., `0` is the tonic, `1` the dominant, `2` the supertonic, `-1` the subdominant, etc.
   * If the parameter `-g` is set, all chord tones are expressed as intervals (stacks of fifths) over the *global* tonic.
   * Otherwise, they represent intervals (stacks of fifths) over the chord's *local* tonic.
   * Or you can have all chord tones represent absolute pitches, based on the global key. In that case they display intervals (stacks of fifths) over the tone C = `0`, making G = `1`, F = `-1` etc.
@@ -47,7 +70,7 @@ All options can be combined with the above-mentioned functionality for data join
 
 ### Repetitions
 
-By default, all data is being returned as though playing every section only once, i.e. without first endings (without *prima volta*). Instead, you may choose the 'unfolded' version that duplicates notes and labels depending on the piece's repeat structure. Simply add `-u` to the parameters. This puts first and second endings in their correct positions, thus creating correct transitions and event counts that are closer to what is actually being performed.
+By default, all data is being returned as though playing every section only once, i.e. without first endings (without *prima volta*). Instead, you may choose the 'unfolded' version that duplicates notes and labels depending on the piece's repeat structure. Simply add `-u` to the parameters. This puts first and second endings in their correct positions, thus creating correct transitions and event counts that are closer to what is actually being performed. This option adds the column `playthrough` which counts complete measures in `mn` style but counting "through" instead of repeating measure numbers.
 
 ### Transposing everything to C
 
@@ -147,7 +170,7 @@ transform_note_columns(df, 'rn', note_cols=['chord_tones'], minor=False)
 |f        |VII(64)|(VIIb, IIIb, V)      |  -2|       -2|
 |f        |VII7   |(VIIb, II, IV, VIb)|  -2|       -2|
 
-### Intervals & Relative Chromatic Citch Classes
+### Intervals & Relative Chromatic Pitch Classes
 
 This representation simply converts the 'stacks of fifths' intervals to specific
 interval names or to relative chromatic pitch classes where 0 is the tonic. In the
@@ -350,6 +373,11 @@ are separated by the string `, ` (comma and space). The boolean values are store
 | duration           | fraction   | N          |
 | scalar             | fraction   | N          |
 
-## License
+## Questions, Suggestions, Corrections, Bug Reports
 
-[GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)
+Please create an issue and feel free to fork and submit pull requests.
+
+## Licenses
+
+* **Data**: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/))
+* **Software**: [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)
