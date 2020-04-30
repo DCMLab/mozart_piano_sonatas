@@ -1,5 +1,27 @@
 # mozart_piano_sonatas
-Chord and cadence labels for Mozart's 18 piano sonatas
+Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following the [Neue Mozart Ausgabe](https://dme.mozarteum.at/DME/nma).
+
+## TOC
+
+- [Data Formats](#data-formats)
+- [Accessing the Data](#accessing-the-data)
+  - [Raw Data](#raw-data)
+  - [Accessing Harmony Features](#accessing-harmony-features)
+  - [Repetitions](#repetitions)
+  - [Transposing everything to C](#transposing-everything-to-c)
+- [How to correctly load the TSV files into pandas](#how-to-correctly-load-the-tsv-files-into-pandas)
+- [How to get to different representations of chord tones](#how-to-get-to-different-representations-of-chord-tones)
+  - [Scale Degrees & Roman Numerals](#scale-degrees--roman-numerals)
+  - [Intervals & Relative Chromatic Pitch Classes](#intervals--relative-chromatic-pitch-classes)
+  - [Note Names](#note-names)
+    - [Tonal Pitch Classes in the note lists](#tonal-pitch-classes-in-the-note-lists)
+  - [Storing and Retrieving Pitch-Based String Representations](#storing-and-retrieving-pitch-based-string-representations)
+  - [Data types for parsing the data](#data-types-for-parsing-the-data)
+    - [Data types](#data-types)
+    - [Converters/Parsers](#convertersparsers)
+- [Questions, Suggestions, Corrections, Bug Reports](#questions--suggestions--corrections--bug-reports)
+- [Licenses](#licenses)
+
 
 ## Data Formats
 
@@ -148,7 +170,7 @@ transform_note_columns(df, 'rn', note_cols=['chord_tones'], minor=False)
 |f        |VII(64)|(VIIb, IIIb, V)      |  -2|       -2|
 |f        |VII7   |(VIIb, II, IV, VIb)|  -2|       -2|
 
-### Intervals & Relative Chromatic Citch Classes
+### Intervals & Relative Chromatic Pitch Classes
 
 This representation simply converts the 'stacks of fifths' intervals to specific
 interval names or to relative chromatic pitch classes where 0 is the tonic. In the
@@ -350,6 +372,10 @@ are separated by the string `, ` (comma and space). The boolean values are store
 | onset              | fraction   | NHC        |
 | duration           | fraction   | N          |
 | scalar             | fraction   | N          |
+
+## Questions, Suggestions, Corrections, Bug Reports
+
+Please create an issue and feel free to fork and submit pull requests.
 
 ## Licenses
 
