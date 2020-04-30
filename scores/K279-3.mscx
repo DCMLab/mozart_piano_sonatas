@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -47,7 +47,7 @@
     <metaTag name="originalFormat">cap</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">http://www.tobis-notenarchiv.de/mozart/KV_279_3.cap</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K279</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 1 in C major</metaTag>
@@ -5179,7 +5179,7 @@
         </Measure>
       <Measure number="97">
         <Harmony>
-          <name>I[V43/IV</name>
+          <name>I[V7/IV</name>
           </Harmony>
         <Chord>
           <durationType>16th</durationType>
@@ -5395,7 +5395,7 @@
           <subtype>page</subtype>
           </LayoutBreak>
         <Harmony>
-          <name>I6]</name>
+          <name>I]</name>
           <pos x="-1.2042" y="-5.30105"/>
           </Harmony>
         <Slur id="63">
@@ -6640,7 +6640,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="80"/>
+          <Slur type="start" id="79"/>
           <grace16/>
           <Note>
             <pitch>65</pitch>
@@ -6653,8 +6653,8 @@
             <subtype>staccatissimo</subtype>
             <pos x="0.658281" y="-0.5"/>
             </Articulation>
-          <Slur type="start" id="79"/>
-          <Slur type="stop" id="80"/>
+          <Slur type="stop" id="79"/>
+          <Slur type="start" id="80"/>
           <Note>
             <pitch>77</pitch>
             <tpc>13</tpc>
@@ -6676,7 +6676,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="82"/>
+          <Slur type="start" id="81"/>
           <grace16/>
           <Note>
             <pitch>64</pitch>
@@ -6688,8 +6688,8 @@
           <Articulation>
             <subtype>staccatissimo</subtype>
             </Articulation>
-          <Slur type="start" id="81"/>
-          <Slur type="stop" id="82"/>
+          <Slur type="stop" id="81"/>
+          <Slur type="start" id="82"/>
           <Note>
             <pitch>76</pitch>
             <tpc>18</tpc>
@@ -6709,7 +6709,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="84"/>
+          <Slur type="start" id="83"/>
           <grace16/>
           <Note>
             <pitch>62</pitch>
@@ -6721,8 +6721,8 @@
           <Articulation>
             <subtype>staccatissimo</subtype>
             </Articulation>
-          <Slur type="start" id="83"/>
-          <Slur type="stop" id="84"/>
+          <Slur type="stop" id="83"/>
+          <Slur type="start" id="84"/>
           <Note>
             <pitch>74</pitch>
             <tpc>16</tpc>
@@ -6744,7 +6744,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="86"/>
+          <Slur type="start" id="85"/>
           <grace16/>
           <Note>
             <pitch>60</pitch>
@@ -6756,8 +6756,8 @@
           <Articulation>
             <subtype>staccatissimo</subtype>
             </Articulation>
-          <Slur type="start" id="85"/>
-          <Slur type="stop" id="86"/>
+          <Slur type="stop" id="85"/>
+          <Slur type="start" id="86"/>
           <Note>
             <pitch>72</pitch>
             <tpc>14</tpc>
@@ -6781,7 +6781,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="88"/>
+          <Slur type="start" id="87"/>
           <grace16/>
           <Note>
             <pitch>65</pitch>
@@ -6793,8 +6793,8 @@
           <Articulation>
             <subtype>staccato</subtype>
             </Articulation>
-          <Slur type="start" id="87"/>
-          <Slur type="stop" id="88"/>
+          <Slur type="stop" id="87"/>
+          <Slur type="start" id="88"/>
           <Note>
             <pitch>77</pitch>
             <tpc>13</tpc>
@@ -6823,7 +6823,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="90"/>
+          <Slur type="start" id="89"/>
           <grace16/>
           <Note>
             <pitch>64</pitch>
@@ -6835,8 +6835,8 @@
           <Articulation>
             <subtype>staccato</subtype>
             </Articulation>
-          <Slur type="start" id="89"/>
-          <Slur type="stop" id="90"/>
+          <Slur type="stop" id="89"/>
+          <Slur type="start" id="90"/>
           <Note>
             <pitch>76</pitch>
             <tpc>18</tpc>
@@ -6863,7 +6863,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="92"/>
+          <Slur type="start" id="91"/>
           <grace16/>
           <Note>
             <pitch>62</pitch>
@@ -6875,8 +6875,8 @@
           <Articulation>
             <subtype>staccato</subtype>
             </Articulation>
-          <Slur type="start" id="91"/>
-          <Slur type="stop" id="92"/>
+          <Slur type="stop" id="91"/>
+          <Slur type="start" id="92"/>
           <Note>
             <pitch>74</pitch>
             <tpc>16</tpc>
@@ -6905,7 +6905,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="94"/>
+          <Slur type="start" id="93"/>
           <grace16/>
           <Note>
             <pitch>67</pitch>
@@ -6917,8 +6917,8 @@
           <Articulation>
             <subtype>staccatissimo</subtype>
             </Articulation>
-          <Slur type="start" id="93"/>
-          <Slur type="stop" id="94"/>
+          <Slur type="stop" id="93"/>
+          <Slur type="start" id="94"/>
           <Note>
             <pitch>79</pitch>
             <tpc>15</tpc>
@@ -6942,7 +6942,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="96"/>
+          <Slur type="start" id="95"/>
           <grace16/>
           <Note>
             <pitch>76</pitch>
@@ -6954,8 +6954,8 @@
           <Articulation>
             <subtype>staccato</subtype>
             </Articulation>
-          <Slur type="start" id="95"/>
-          <Slur type="stop" id="96"/>
+          <Slur type="stop" id="95"/>
+          <Slur type="start" id="96"/>
           <Note>
             <pitch>77</pitch>
             <tpc>13</tpc>
@@ -6984,7 +6984,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="98"/>
+          <Slur type="start" id="97"/>
           <grace16/>
           <Note>
             <Accidental>
@@ -6999,8 +6999,8 @@
           <Articulation>
             <subtype>staccato</subtype>
             </Articulation>
-          <Slur type="start" id="97"/>
-          <Slur type="stop" id="98"/>
+          <Slur type="stop" id="97"/>
+          <Slur type="start" id="98"/>
           <Note>
             <pitch>76</pitch>
             <tpc>18</tpc>
@@ -7027,7 +7027,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="100"/>
+          <Slur type="start" id="99"/>
           <grace16/>
           <Note>
             <Accidental>
@@ -7042,8 +7042,8 @@
           <Articulation>
             <subtype>staccato</subtype>
             </Articulation>
-          <Slur type="start" id="99"/>
-          <Slur type="stop" id="100"/>
+          <Slur type="stop" id="99"/>
+          <Slur type="start" id="100"/>
           <Note>
             <Accidental>
               <subtype>natural</subtype>
@@ -7076,7 +7076,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="102"/>
+          <Slur type="start" id="101"/>
           <grace16/>
           <Note>
             <Accidental>
@@ -7091,8 +7091,8 @@
           <Articulation>
             <subtype>staccatissimo</subtype>
             </Articulation>
-          <Slur type="start" id="101"/>
-          <Slur type="stop" id="102"/>
+          <Slur type="stop" id="101"/>
+          <Slur type="start" id="102"/>
           <Note>
             <pitch>79</pitch>
             <tpc>15</tpc>

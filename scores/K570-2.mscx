@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -45,7 +45,7 @@
     <metaTag name="originalFormat">mid</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">https://kern.humdrum.org/cgi-bin/ksdata?location=users/craig/classical/mozart/piano/sonata&amp;file=sonata16-2.krn&amp;format=xml</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K570</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 17 in B flat major</metaTag>
@@ -839,7 +839,7 @@
       <Measure number="5">
         <startRepeat/>
         <Harmony>
-          <name>V[viio</name>
+          <name>V[V</name>
           </Harmony>
         <Slur id="12">
           <track>0</track>
@@ -880,7 +880,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>viio6]</name>
+          <name>V7]</name>
           </Harmony>
         <Slur id="13">
           <track>0</track>
@@ -2565,7 +2565,7 @@
       <Measure number="17">
         <startRepeat/>
         <Harmony>
-          <name>ii.V[#viio6</name>
+          <name>ii.V[V7</name>
           </Harmony>
         <Slur id="39">
           <track>0</track>
@@ -2613,7 +2613,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio</name>
+          <name>V7</name>
           </Harmony>
         <Slur id="40">
           <track>0</track>
@@ -2659,7 +2659,7 @@
         </Measure>
       <Measure number="18">
         <Harmony>
-          <name>I.V[viio6</name>
+          <name>I.V[V7</name>
           </Harmony>
         <Slur id="41">
           <track>0</track>
@@ -2704,7 +2704,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>viio</name>
+          <name>V7</name>
           </Harmony>
         <Slur id="42">
           <track>0</track>
@@ -7362,7 +7362,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>I6</name>
+          <name>I</name>
           </Harmony>
         <Slur id="124">
           <track>0</track>
@@ -7476,7 +7476,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>I6]</name>
+          <name>I]</name>
           </Harmony>
         <Slur id="126">
           <track>0</track>

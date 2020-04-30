@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -44,7 +44,7 @@
     <metaTag name="originalFormat">mid</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">http://www.tobis-notenarchiv.de/mozart/KV_311.cap</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K311</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 9 in D major</metaTag>
@@ -218,6 +218,8 @@
           </System>
         </Page>
       <Page>
+        <System>
+          </System>
         <System>
           </System>
         <System>
@@ -14810,13 +14812,7 @@
             </Note>
           </Chord>
         </Measure>
-      <Measure number="173">
-        <TimeSig>
-          <visible>0</visible>
-          <sigN>10</sigN>
-          <sigD>4</sigD>
-          <showCourtesySig>1</showCourtesySig>
-          </TimeSig>
+      <Measure number="173" len="10/4">
         <Harmony>
           <name>V7</name>
           <pos x="0" y="-4.86"/>
@@ -15197,21 +15193,10 @@
           <span>2</span>
           <visible>0</visible>
           </BarLine>
-        <TimeSig>
-          <visible>0</visible>
-          <sigN>11</sigN>
-          <sigD>16</sigD>
-          <showCourtesySig>1</showCourtesySig>
-          </TimeSig>
         </Measure>
       <Measure number="174" len="43/16">
         <irregular/>
         <stretch>0</stretch>
-        <TimeSig>
-          <sigN>11</sigN>
-          <sigD>16</sigD>
-          <showCourtesySig>1</showCourtesySig>
-          </TimeSig>
         <Chord>
           <durationType>quarter</durationType>
           <Articulation>
@@ -33909,13 +33894,7 @@
             </Note>
           </Chord>
         </Measure>
-      <Measure number="173">
-        <TimeSig>
-          <visible>0</visible>
-          <sigN>10</sigN>
-          <sigD>4</sigD>
-          <showCourtesySig>1</showCourtesySig>
-          </TimeSig>
+      <Measure number="173" len="10/4">
         <Rest>
           <offset x="5" y="0.829454"/>
           <visible>0</visible>
@@ -33932,19 +33911,8 @@
             <subtype>fermata</subtype>
             </Articulation>
           </Rest>
-        <TimeSig>
-          <visible>0</visible>
-          <sigN>11</sigN>
-          <sigD>16</sigD>
-          <showCourtesySig>1</showCourtesySig>
-          </TimeSig>
         </Measure>
       <Measure number="174" len="43/16">
-        <TimeSig>
-          <sigN>11</sigN>
-          <sigD>16</sigD>
-          <showCourtesySig>1</showCourtesySig>
-          </TimeSig>
         <Rest>
           <offset x="5" y="0.128756"/>
           <visible>0</visible>

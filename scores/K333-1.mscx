@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -44,7 +44,7 @@
     <metaTag name="originalFormat">mid</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">https://kern.humdrum.org/cgi-bin/ksdata?location=users/craig/classical/mozart/piano/sonata&amp;file=sonata13-1.krn&amp;format=xml</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K333</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 13 in B flat major</metaTag>
@@ -7091,10 +7091,6 @@
             <veloType>user</veloType>
             </Note>
           </Chord>
-        <Harmony>
-          <name>I</name>
-          <pos x="0" y="-4.37"/>
-          </Harmony>
         <Chord>
           <durationType>eighth</durationType>
           <Articulation>
@@ -16338,10 +16334,7 @@
           <name>IV6</name>
           <pos x="0" y="-6.14395"/>
           </Harmony>
-        <Slur id="241">
-          <track>0</track>
-          </Slur>
-        <HairPin id="242">
+        <HairPin id="241">
           <subtype>0</subtype>
           <useTextLine>1</useTextLine>
           <lineStyle>6</lineStyle>
@@ -16352,9 +16345,12 @@
             <text>(cresc.)</text>
             </continueText>
           </HairPin>
+        <Slur id="242">
+          <track>0</track>
+          </Slur>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="241"/>
+          <Slur type="start" id="242"/>
           <Note>
             <pitch>82</pitch>
             <tpc>12</tpc>
@@ -16364,7 +16360,7 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="stop" id="241"/>
+          <Slur type="stop" id="242"/>
           <Note>
             <pitch>75</pitch>
             <tpc>11</tpc>
@@ -16372,7 +16368,7 @@
             <veloType>user</veloType>
             </Note>
           </Chord>
-        <endSpanner id="242"/>
+        <endSpanner id="241"/>
         <Rest>
           <durationType>quarter</durationType>
           </Rest>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -45,7 +45,7 @@
     <metaTag name="originalFormat">mid</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">https://kern.humdrum.org/cgi-bin/ksdata?location=users/craig/classical/mozart/piano/sonata&amp;file=sonata13-2.krn&amp;format=xml</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K333</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 13 in B flat major</metaTag>
@@ -6301,7 +6301,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio6</name>
+          <name>viio6</name>
           <pos x="0" y="-5.93201"/>
           </Harmony>
         <Slur id="117">
@@ -7472,7 +7472,7 @@
           </Chord>
         <tick>83520</tick>
         <Harmony>
-          <name>#viio6</name>
+          <name>viio6</name>
           <track>1</track>
           </Harmony>
         <Dynamic>
@@ -8220,7 +8220,7 @@
         </Measure>
       <Measure number="65">
         <Harmony>
-          <name>#viio6</name>
+          <name>viio6</name>
           <pos x="0" y="-7.64"/>
           </Harmony>
         <Slur id="151">
@@ -9399,7 +9399,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio6</name>
+          <name>viio6</name>
           <pos x="0" y="-5.89"/>
           </Harmony>
         <Chord>
@@ -10000,7 +10000,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio6</name>
+          <name>viio6</name>
           <pos x="0" y="-6.48388"/>
           </Harmony>
         <Chord>
@@ -10464,7 +10464,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio6</name>
+          <name>viio6</name>
           <pos x="0" y="-5.74"/>
           </Harmony>
         <Chord>
@@ -13225,14 +13225,7 @@
           <concertClefType>F</concertClefType>
           <transposingClefType>F</transposingClefType>
           </Clef>
-        <Slur id="234">
-          <track>4</track>
-          <lineType>2</lineType>
-          </Slur>
-        <Slur id="235">
-          <track>4</track>
-          </Slur>
-        <HairPin id="236">
+        <HairPin id="234">
           <subtype>0</subtype>
           <useTextLine>1</useTextLine>
           <lineStyle>6</lineStyle>
@@ -13243,10 +13236,17 @@
             <text>(cresc.)</text>
             </continueText>
           </HairPin>
+        <Slur id="235">
+          <track>4</track>
+          <lineType>2</lineType>
+          </Slur>
+        <Slur id="236">
+          <track>4</track>
+          </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="234"/>
           <Slur type="start" id="235"/>
+          <Slur type="start" id="236"/>
           <Note>
             <pitch>58</pitch>
             <tpc>12</tpc>
@@ -13267,7 +13267,7 @@
             <veloType>user</veloType>
             </Note>
           </Chord>
-        <endSpanner id="236"/>
+        <endSpanner id="234"/>
         <Chord>
           <durationType>16th</durationType>
           <Note>
@@ -13279,7 +13279,7 @@
           </Chord>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="stop" id="234"/>
+          <Slur type="stop" id="235"/>
           <Note>
             <pitch>50</pitch>
             <tpc>16</tpc>
@@ -13307,7 +13307,7 @@
           </Chord>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="stop" id="235"/>
+          <Slur type="stop" id="236"/>
           <Note>
             <pitch>48</pitch>
             <tpc>14</tpc>
@@ -17223,10 +17223,7 @@
           <concertClefType>F</concertClefType>
           <transposingClefType>F</transposingClefType>
           </Clef>
-        <Slur id="285">
-          <track>4</track>
-          </Slur>
-        <HairPin id="286">
+        <HairPin id="285">
           <subtype>0</subtype>
           <useTextLine>1</useTextLine>
           <lineStyle>6</lineStyle>
@@ -17237,9 +17234,12 @@
             <text>(cresc.)</text>
             </continueText>
           </HairPin>
+        <Slur id="286">
+          <track>4</track>
+          </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="285"/>
+          <Slur type="start" id="286"/>
           <Note>
             <pitch>63</pitch>
             <tpc>11</tpc>
@@ -17259,7 +17259,7 @@
             <veloType>user</veloType>
             </Note>
           </Chord>
-        <endSpanner id="286"/>
+        <endSpanner id="285"/>
         <Chord>
           <durationType>16th</durationType>
           <Note>
@@ -17271,7 +17271,7 @@
           </Chord>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="stop" id="285"/>
+          <Slur type="stop" id="286"/>
           <Note>
             <pitch>55</pitch>
             <tpc>15</tpc>

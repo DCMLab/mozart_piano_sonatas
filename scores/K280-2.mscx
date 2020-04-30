@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -48,7 +48,7 @@
     <metaTag name="originalFormat">cap</metaTag>
     <metaTag name="platform">Apple Macintosh</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">http://www.tobis-notenarchiv.de/mozart/KV_280_2.cap</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K280</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 2 in F major</metaTag>
@@ -1987,7 +1987,7 @@
           </Rest>
         <tick>36000</tick>
         <Harmony>
-          <name>ii.#viio2</name>
+          <name>iv.#viio2</name>
           <track>1</track>
           </Harmony>
         <Chord>
@@ -3774,7 +3774,7 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="stop" id="52"/>
+          <Slur type="start" id="52"/>
           <Note>
             <pitch>66</pitch>
             <tpc>8</tpc>
@@ -4241,7 +4241,7 @@
         <Chord>
           <dots>1</dots>
           <durationType>quarter</durationType>
-          <Slur type="stop" id="63"/>
+          <Slur type="start" id="63"/>
           <Note>
             <pitch>77</pitch>
             <tpc>13</tpc>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -49,7 +49,7 @@
     <metaTag name="originalFormat">cap</metaTag>
     <metaTag name="platform">Apple Macintosh</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">http://www.tobis-notenarchiv.de/mozart/KV_282_1.cap</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K282</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 4 in E flat major</metaTag>
@@ -3518,7 +3518,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>V(65)/IV</name>
+          <name>V65/IV</name>
           </Harmony>
         <Chord>
           <durationType>eighth</durationType>
@@ -5105,7 +5105,7 @@
           <durationType>eighth</durationType>
           <Articulation>
             <subtype>staccatissimo</subtype>
-            <pos x="0.658281" y="-1.5"/>
+            <pos x="0.658281" y="-1"/>
             </Articulation>
           <Slur type="stop" id="121"/>
           <Note>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -48,7 +48,7 @@
     <metaTag name="originalFormat">cap</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">http://www.tobis-notenarchiv.de/mozart/KV_309_3.cap</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K309</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 7 in C major</metaTag>
@@ -5547,16 +5547,16 @@
           </Harmony>
         <Slur id="52">
           <track>0</track>
+          </Slur>
+        <Slur id="53">
+          <track>0</track>
           <SlurSegment no="0">
             <pos x="0" y="-0.28389"/>
             </SlurSegment>
           </Slur>
-        <Slur id="53">
-          <track>0</track>
-          </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="53"/>
+          <Slur type="start" id="52"/>
           <grace16/>
           <Note>
             <pitch>81</pitch>
@@ -5565,8 +5565,8 @@
           </Chord>
         <Chord>
           <durationType>quarter</durationType>
-          <Slur type="start" id="52"/>
-          <Slur type="stop" id="53"/>
+          <Slur type="stop" id="52"/>
+          <Slur type="start" id="53"/>
           <Note>
             <Tie id="54">
               </Tie>
@@ -5670,16 +5670,16 @@
           </Harmony>
         <Slur id="58">
           <track>0</track>
+          </Slur>
+        <Slur id="59">
+          <track>0</track>
           <SlurSegment no="0">
             <pos x="0" y="-0.213291"/>
             </SlurSegment>
           </Slur>
-        <Slur id="59">
-          <track>0</track>
-          </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="59"/>
+          <Slur type="start" id="58"/>
           <grace16/>
           <Note>
             <pitch>74</pitch>
@@ -5688,8 +5688,8 @@
           </Chord>
         <Chord>
           <durationType>quarter</durationType>
-          <Slur type="start" id="58"/>
-          <Slur type="stop" id="59"/>
+          <Slur type="stop" id="58"/>
+          <Slur type="start" id="59"/>
           <Note>
             <Tie id="60">
               </Tie>
@@ -7705,7 +7705,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="75"/>
+          <Slur type="start" id="74"/>
           <grace16/>
           <Note>
             <pitch>77</pitch>
@@ -7714,8 +7714,8 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="74"/>
-          <Slur type="stop" id="75"/>
+          <Slur type="stop" id="74"/>
+          <Slur type="start" id="75"/>
           <Note>
             <pitch>76</pitch>
             <tpc>18</tpc>
@@ -7733,7 +7733,7 @@
           </Chord>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="stop" id="74"/>
+          <Slur type="stop" id="75"/>
           <Note>
             <pitch>72</pitch>
             <tpc>14</tpc>
@@ -9912,7 +9912,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="117"/>
+          <Slur type="start" id="116"/>
           <grace16/>
           <Note>
             <pitch>67</pitch>
@@ -9921,8 +9921,8 @@
           </Chord>
         <Chord>
           <durationType>32nd</durationType>
-          <Slur type="start" id="116"/>
-          <Slur type="stop" id="117"/>
+          <Slur type="stop" id="116"/>
+          <Slur type="start" id="117"/>
           <Note>
             <pitch>65</pitch>
             <tpc>13</tpc>
@@ -9958,16 +9958,16 @@
           </Chord>
         <Slur id="118">
           <track>0</track>
+          </Slur>
+        <Slur id="119">
+          <track>0</track>
           <SlurSegment no="0">
             <pos x="0" y="-0.141945"/>
             </SlurSegment>
           </Slur>
-        <Slur id="119">
-          <track>0</track>
-          </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="119"/>
+          <Slur type="start" id="118"/>
           <grace16/>
           <Note>
             <Accidental>
@@ -9979,8 +9979,8 @@
           </Chord>
         <Chord>
           <durationType>32nd</durationType>
-          <Slur type="start" id="118"/>
-          <Slur type="stop" id="119"/>
+          <Slur type="stop" id="118"/>
+          <Slur type="start" id="119"/>
           <Note>
             <pitch>69</pitch>
             <tpc>17</tpc>
@@ -22038,7 +22038,7 @@
         </Measure>
       <Measure number="245">
         <Harmony>
-          <name>I[I6</name>
+          <name>I[I</name>
           </Harmony>
         <Slur id="200">
           <track>0</track>
@@ -22304,7 +22304,7 @@
           <transposingClefType>F</transposingClefType>
           </Clef>
         <Harmony>
-          <name>I64]\\</name>
+          <name>I]\\</name>
           <pos x="0" y="-5.54272"/>
           </Harmony>
         <Slur id="204">

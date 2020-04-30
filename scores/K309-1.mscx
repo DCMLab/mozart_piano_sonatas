@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -47,7 +47,7 @@
     <metaTag name="originalFormat">cap</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">http://www.tobis-notenarchiv.de/mozart/KV_309_1.cap</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K309</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 7 in C major</metaTag>
@@ -425,7 +425,7 @@
           <transposingClefType>G</transposingClefType>
           </Clef>
         <Harmony>
-          <name>I(4)</name>
+          <name>I</name>
           <pos x="0" y="-3.55579"/>
           </Harmony>
         <Slur id="4">
@@ -451,12 +451,6 @@
             <tpc>18</tpc>
             </Note>
           </Chord>
-        <tick>7920</tick>
-        <Harmony>
-          <name>I</name>
-          <pos x="0" y="-3.55579"/>
-          </Harmony>
-        <tick>8160</tick>
         <Chord>
           <durationType>quarter</durationType>
           <Articulation>
@@ -870,7 +864,7 @@
           <subtype>line</subtype>
           </LayoutBreak>
         <Harmony>
-          <name>I(+4)</name>
+          <name>I</name>
           <pos x="0" y="-3.90526"/>
           </Harmony>
         <Slur id="13">
@@ -896,12 +890,6 @@
             <tpc>18</tpc>
             </Note>
           </Chord>
-        <tick>21360</tick>
-        <Harmony>
-          <name>I</name>
-          <pos x="0" y="-3.86602"/>
-          </Harmony>
-        <tick>21600</tick>
         <Chord>
           <durationType>quarter</durationType>
           <Articulation>
@@ -1741,16 +1729,16 @@
           </Rest>
         <Slur id="24">
           <track>0</track>
+          </Slur>
+        <Slur id="25">
+          <track>0</track>
           <SlurSegment no="0">
             <pos x="-0.213291" y="-0.159968"/>
             </SlurSegment>
           </Slur>
-        <Slur id="25">
-          <track>0</track>
-          </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="25"/>
+          <Slur type="start" id="24"/>
           <grace16/>
           <Note>
             <pitch>72</pitch>
@@ -1759,8 +1747,8 @@
           </Chord>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="24"/>
-          <Slur type="stop" id="25"/>
+          <Slur type="stop" id="24"/>
+          <Slur type="start" id="25"/>
           <Note>
             <pitch>71</pitch>
             <tpc>19</tpc>
@@ -1927,16 +1915,16 @@
           </Rest>
         <Slur id="26">
           <track>0</track>
+          </Slur>
+        <Slur id="27">
+          <track>0</track>
           <SlurSegment no="0">
             <pos x="-0.322603" y="-0.129041"/>
             </SlurSegment>
           </Slur>
-        <Slur id="27">
-          <track>0</track>
-          </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="27"/>
+          <Slur type="start" id="26"/>
           <grace16/>
           <Note>
             <pitch>71</pitch>
@@ -1945,8 +1933,8 @@
           </Chord>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="26"/>
-          <Slur type="stop" id="27"/>
+          <Slur type="stop" id="26"/>
+          <Slur type="start" id="27"/>
           <Note>
             <pitch>69</pitch>
             <tpc>17</tpc>
@@ -2070,7 +2058,7 @@
         </Measure>
       <Measure number="27">
         <Harmony>
-          <name>I(4)</name>
+          <name>I</name>
           <pos x="0" y="-4.88726"/>
           </Harmony>
         <Slur id="28">
@@ -2093,12 +2081,6 @@
             <tpc>19</tpc>
             </Note>
           </Chord>
-        <tick>50040</tick>
-        <Harmony>
-          <name>I</name>
-          <pos x="0" y="-4.95178"/>
-          </Harmony>
-        <tick>50160</tick>
         <Chord>
           <durationType>16th</durationType>
           <Note>
@@ -2114,7 +2096,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>V64(4)</name>
+          <name>V64</name>
           <pos x="0" y="-4.82274"/>
           </Harmony>
         <Slur id="29">
@@ -2137,12 +2119,6 @@
             <tpc>13</tpc>
             </Note>
           </Chord>
-        <tick>50520</tick>
-        <Harmony>
-          <name>V64</name>
-          <pos x="0" y="-4.82274"/>
-          </Harmony>
-        <tick>50640</tick>
         <Chord>
           <durationType>16th</durationType>
           <Note>
@@ -2218,8 +2194,8 @@
           <subtype>line</subtype>
           </LayoutBreak>
         <Harmony>
-          <name>I(4)</name>
-          <pos x="0" y="-4.81768"/>
+          <name>I</name>
+          <pos x="0" y="-4.88726"/>
           </Harmony>
         <Slur id="31">
           <track>0</track>
@@ -2229,7 +2205,7 @@
           </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="32"/>
+          <Slur type="start" id="31"/>
           <grace16/>
           <Note>
             <pitch>84</pitch>
@@ -2238,19 +2214,13 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="31"/>
-          <Slur type="stop" id="32"/>
+          <Slur type="stop" id="31"/>
+          <Slur type="start" id="32"/>
           <Note>
             <pitch>83</pitch>
             <tpc>19</tpc>
             </Note>
           </Chord>
-        <tick>51960</tick>
-        <Harmony>
-          <name>I</name>
-          <pos x="0" y="-4.81733"/>
-          </Harmony>
-        <tick>52080</tick>
         <Chord>
           <durationType>16th</durationType>
           <Note>
@@ -2266,8 +2236,8 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>V64(4)</name>
-          <pos x="0" y="-4.8462"/>
+          <name>V64</name>
+          <pos x="0" y="-4.82274"/>
           </Harmony>
         <Slur id="33">
           <track>0</track>
@@ -2289,12 +2259,6 @@
             <tpc>13</tpc>
             </Note>
           </Chord>
-        <tick>52440</tick>
-        <Harmony>
-          <name>V64</name>
-          <pos x="0" y="-4.8462"/>
-          </Harmony>
-        <tick>52560</tick>
         <Chord>
           <durationType>16th</durationType>
           <Note>
@@ -7059,7 +7023,7 @@
           <transposingClefType>G</transposingClefType>
           </Clef>
         <Harmony>
-          <name>I(+4)</name>
+          <name>I</name>
           <pos x="0" y="-3.14521"/>
           </Harmony>
         <Slur id="82">
@@ -7085,12 +7049,6 @@
             <tpc>18</tpc>
             </Note>
           </Chord>
-        <tick>186480</tick>
-        <Harmony>
-          <name>I</name>
-          <pos x="0" y="-3.14099"/>
-          </Harmony>
-        <tick>186720</tick>
         <Chord>
           <durationType>quarter</durationType>
           <Articulation>
@@ -7405,16 +7363,16 @@
           </Harmony>
         <Slur id="89">
           <track>0</track>
+          </Slur>
+        <Slur id="90">
+          <track>0</track>
           <SlurSegment no="0">
             <pos x="0" y="-0.242961"/>
             </SlurSegment>
           </Slur>
-        <Slur id="90">
-          <track>0</track>
-          </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="90"/>
+          <Slur type="start" id="89"/>
           <grace16/>
           <Note>
             <Accidental>
@@ -7430,8 +7388,8 @@
             <subtype>staccatissimo</subtype>
             <pos x="0.658281" y="-1.5"/>
             </Articulation>
-          <Slur type="start" id="89"/>
-          <Slur type="stop" id="90"/>
+          <Slur type="stop" id="89"/>
+          <Slur type="start" id="90"/>
           <Note>
             <pitch>79</pitch>
             <tpc>15</tpc>
@@ -7569,14 +7527,14 @@
         <LayoutBreak>
           <subtype>line</subtype>
           </LayoutBreak>
-        <Harmony>
-          <name>#viio2(+4)/ii</name>
-          <pos x="-10.7375" y="-3.90276"/>
-          </Harmony>
         <Dynamic>
           <subtype>f</subtype>
           <velocity>96</velocity>
           </Dynamic>
+        <Harmony>
+          <name>#viio2/ii</name>
+          <pos x="-1.40168" y="-3.96961"/>
+          </Harmony>
         <Slur id="94">
           <track>0</track>
           </Slur>
@@ -7588,10 +7546,6 @@
             <tpc>13</tpc>
             </Note>
           </Chord>
-        <Harmony>
-          <name>#viio2/ii</name>
-          <pos x="-1.40168" y="-3.96961"/>
-          </Harmony>
         <Chord>
           <durationType>eighth</durationType>
           <Slur type="stop" id="94"/>
@@ -7636,7 +7590,7 @@
           <transposingClefType>G</transposingClefType>
           </Clef>
         <Harmony>
-          <name>iv6(+2)</name>
+          <name>iv6(72)</name>
           <pos x="0" y="-4.17891"/>
           </Harmony>
         <Slur id="96">
@@ -7701,7 +7655,7 @@
       <Measure number="107">
         <Harmony>
           <name>viio43(2)/V</name>
-          <pos x="-6.22172" y="-5.4038"/>
+          <pos x="0.177999" y="-6.34802"/>
           </Harmony>
         <Dynamic>
           <subtype>f</subtype>
@@ -7720,7 +7674,7 @@
           </Chord>
         <Harmony>
           <name>viio43/V</name>
-          <pos x="1.4049" y="-5.28866"/>
+          <pos x="0.0410256" y="-4.44935"/>
           </Harmony>
         <Chord>
           <durationType>eighth</durationType>
@@ -8452,16 +8406,16 @@
           </Rest>
         <Slur id="108">
           <track>0</track>
+          </Slur>
+        <Slur id="109">
+          <track>0</track>
           <SlurSegment no="0">
             <pos x="0" y="-0.339326"/>
             </SlurSegment>
           </Slur>
-        <Slur id="109">
-          <track>0</track>
-          </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="109"/>
+          <Slur type="start" id="108"/>
           <grace16/>
           <Note>
             <pitch>74</pitch>
@@ -8470,8 +8424,8 @@
           </Chord>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="108"/>
-          <Slur type="stop" id="109"/>
+          <Slur type="stop" id="108"/>
+          <Slur type="start" id="109"/>
           <Note>
             <pitch>72</pitch>
             <tpc>14</tpc>
@@ -8617,16 +8571,16 @@
           </Rest>
         <Slur id="110">
           <track>0</track>
+          </Slur>
+        <Slur id="111">
+          <track>0</track>
           <SlurSegment no="0">
             <pos x="-0.387802" y="-0.193901"/>
             </SlurSegment>
           </Slur>
-        <Slur id="111">
-          <track>0</track>
-          </Slur>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="111"/>
+          <Slur type="start" id="110"/>
           <grace16/>
           <Note>
             <pitch>72</pitch>
@@ -8635,8 +8589,8 @@
           </Chord>
         <Chord>
           <durationType>16th</durationType>
-          <Slur type="start" id="110"/>
-          <Slur type="stop" id="111"/>
+          <Slur type="stop" id="110"/>
+          <Slur type="start" id="111"/>
           <Note>
             <pitch>71</pitch>
             <tpc>19</tpc>
@@ -8943,7 +8897,7 @@
           <transposingClefType>G</transposingClefType>
           </Clef>
         <Harmony>
-          <name>V[V64</name>
+          <name>V[V</name>
           <pos x="-0.501751" y="-4.27099"/>
           </Harmony>
         <Chord>

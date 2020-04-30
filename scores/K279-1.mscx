@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -45,7 +45,7 @@
     <metaTag name="originalFormat">cap</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">http://www.tobis-notenarchiv.de/mozart/KV_279_1.cap</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K279</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 1 in C major</metaTag>
@@ -866,7 +866,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>I[I6(#2)</name>
+          <name>I[I(#2)</name>
           </Harmony>
         <Slur id="8">
           <track>0</track>
@@ -883,7 +883,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>I6</name>
+          <name>I</name>
           </Harmony>
         <Chord>
           <durationType>eighth</durationType>
@@ -1046,7 +1046,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>I6(#4)</name>
+          <name>I(#4)</name>
           <pos x="-2.30806" y="-3.1021"/>
           </Harmony>
         <Slur id="13">
@@ -1064,7 +1064,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>I6]</name>
+          <name>I]</name>
           <pos x="-0.4" y="-3.20245"/>
           </Harmony>
         <Chord>
@@ -4493,9 +4493,6 @@
             <tpc>15</tpc>
             </Note>
           </Chord>
-        <Harmony>
-          <name>@none</name>
-          </Harmony>
         <Chord>
           <durationType>16th</durationType>
           <Articulation>
@@ -6703,7 +6700,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>V9</name>
+          <name>V(+9)</name>
           </Harmony>
         <Chord>
           <durationType>16th</durationType>
@@ -8491,7 +8488,7 @@
           <velocity>49</velocity>
           </Dynamic>
         <Harmony>
-          <name>I[I6</name>
+          <name>I[I</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -8585,7 +8582,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>I6</name>
+          <name>I</name>
           </Harmony>
         <Chord>
           <durationType>eighth</durationType>
@@ -8686,7 +8683,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>I6]</name>
+          <name>I]</name>
           <pos x="0" y="-3.20245"/>
           </Harmony>
         <Chord>

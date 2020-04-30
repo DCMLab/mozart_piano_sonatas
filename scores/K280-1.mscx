@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -48,7 +48,7 @@
     <metaTag name="originalFormat">cap</metaTag>
     <metaTag name="platform">Apple Macintosh</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">http://www.tobis-notenarchiv.de/mozart/KV_280_1.cap</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K280</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 2 in F major</metaTag>
@@ -110,6 +110,8 @@
           </System>
         </Page>
       <Page>
+        <System>
+          </System>
         <System>
           </System>
         <System>
@@ -310,7 +312,7 @@
         </Measure>
       <Measure number="3">
         <Harmony>
-          <name>I[I6</name>
+          <name>I[I</name>
           </Harmony>
         <Slur id="2">
           <track>0</track>
@@ -334,7 +336,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>viio/IV</name>
+          <name>V7/IV</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -410,7 +412,7 @@
         </Measure>
       <Measure number="6">
         <Harmony>
-          <name>I6]</name>
+          <name>I]</name>
           </Harmony>
         <Slur id="4">
           <track>0</track>
@@ -963,7 +965,7 @@
         </Measure>
       <Measure number="14">
         <Harmony>
-          <name>I[I6</name>
+          <name>I[I</name>
           </Harmony>
         <StaffText>
           <pos x="0" y="-2.5"/>
@@ -6098,7 +6100,7 @@
           <velocity>96</velocity>
           </Dynamic>
         <Harmony>
-          <name>V[V6\\</name>
+          <name>V[V\\</name>
           </Harmony>
         <Tuplet id="57">
           <normalNotes>2</normalNotes>
@@ -6330,7 +6332,7 @@
         </Measure>
       <Measure number="80">
         <Harmony>
-          <name>V6]</name>
+          <name>V]</name>
           </Harmony>
         <Rest>
           <durationType>quarter</durationType>
@@ -6581,7 +6583,7 @@
         </Measure>
       <Measure number="85">
         <Harmony>
-          <name>I[I6</name>
+          <name>I[I</name>
           </Harmony>
         <Slur id="76">
           <track>0</track>
@@ -6605,7 +6607,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>viio/IV</name>
+          <name>V7/IV</name>
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
@@ -6681,7 +6683,7 @@
         </Measure>
       <Measure number="88">
         <Harmony>
-          <name>I6]</name>
+          <name>I]</name>
           </Harmony>
         <Slur id="78">
           <track>0</track>
@@ -7243,7 +7245,7 @@
           <text>(simile)</text>
           </StaffText>
         <Harmony>
-          <name>I[I6</name>
+          <name>I[I</name>
           </Harmony>
         <Tuplet id="66">
           <normalNotes>2</normalNotes>

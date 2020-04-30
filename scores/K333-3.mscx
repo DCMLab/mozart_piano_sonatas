@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -44,7 +44,7 @@
     <metaTag name="originalFormat">mid</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">https://kern.humdrum.org/cgi-bin/ksdata?location=users/craig/classical/mozart/piano/sonata&amp;file=sonata13-3.krn&amp;format=xml</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K333</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 13 in B flat major</metaTag>
@@ -194,6 +194,8 @@
           </System>
         </Page>
       <Page>
+        <System>
+          </System>
         <System>
           </System>
         <System>
@@ -1883,7 +1885,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio</name>
+          <name>viio</name>
           <pos x="0" y="-3.87"/>
           </Harmony>
         <Slur id="28">
@@ -2152,7 +2154,7 @@
         </Measure>
       <Measure number="22">
         <Harmony>
-          <name>#viio6</name>
+          <name>viio6</name>
           <pos x="0" y="-3.87"/>
           </Harmony>
         <Chord>
@@ -2202,7 +2204,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio</name>
+          <name>viio</name>
           <pos x="0" y="-3.87"/>
           </Harmony>
         <Tuplet id="11">
@@ -3295,7 +3297,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio6</name>
+          <name>viio6</name>
           <pos x="0" y="-5.12"/>
           </Harmony>
         <Chord>
@@ -5795,7 +5797,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio</name>
+          <name>viio</name>
           <pos x="0" y="-3.44"/>
           </Harmony>
         <Slur id="73">
@@ -7810,7 +7812,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio6/V</name>
+          <name>viio6/V</name>
           <pos x="0" y="-4.47"/>
           </Harmony>
         <Chord>
@@ -7911,13 +7913,10 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio6</name>
+          <name>viio6</name>
           <pos x="0" y="-4.47"/>
           </Harmony>
-        <Slur id="118">
-          <track>0</track>
-          </Slur>
-        <HairPin id="119">
+        <HairPin id="118">
           <subtype>0</subtype>
           <useTextLine>1</useTextLine>
           <lineStyle>6</lineStyle>
@@ -7928,9 +7927,12 @@
             <text>(cresc.)</text>
             </continueText>
           </HairPin>
+        <Slur id="119">
+          <track>0</track>
+          </Slur>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="start" id="118"/>
+          <Slur type="start" id="119"/>
           <Note>
             <pitch>75</pitch>
             <tpc>11</tpc>
@@ -7940,7 +7942,7 @@
           </Chord>
         <Chord>
           <durationType>eighth</durationType>
-          <Slur type="stop" id="118"/>
+          <Slur type="stop" id="119"/>
           <Note>
             <pitch>74</pitch>
             <tpc>16</tpc>
@@ -7954,7 +7956,7 @@
           <name>I6</name>
           <pos x="0" y="-3.88"/>
           </Harmony>
-        <endSpanner id="119"/>
+        <endSpanner id="118"/>
         <Slur id="120">
           <track>0</track>
           </Slur>
@@ -14821,7 +14823,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio6</name>
+          <name>viio6</name>
           <pos x="0" y="-4.68"/>
           </Harmony>
         <Chord>
@@ -18377,7 +18379,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio</name>
+          <name>viio</name>
           <pos x="0" y="-4.64"/>
           </Harmony>
         <Chord>
@@ -18909,7 +18911,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio6</name>
+          <name>viio6</name>
           <pos x="0" y="-4.14"/>
           </Harmony>
         <Chord>
@@ -18969,7 +18971,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio</name>
+          <name>viio</name>
           <pos x="0" y="-4.14"/>
           </Harmony>
         <Chord>
@@ -20923,7 +20925,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio64</name>
+          <name>viio64</name>
           <pos x="0" y="-3.98"/>
           </Harmony>
         <Tuplet id="62">

@@ -11,8 +11,7 @@
     <Style>
       <staffDistance>10</staffDistance>
       <akkoladeDistance>9</akkoladeDistance>
-      <minSystemDistance>8</minSystemDistance>
-      <maxSystemDistance>12</maxSystemDistance>
+      <minSystemDistance>12</minSystemDistance>
       <measureSpacing>1</measureSpacing>
       <smallStaffMag>0.662</smallStaffMag>
       <TextStyle>
@@ -60,7 +59,7 @@
     <metaTag name="originalFormat">cap</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">http://www.tobis-notenarchiv.de/mozart/KV_283_1.cap</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K283</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 5 in G major</metaTag>
@@ -78,26 +77,8 @@
           </System>
         <System>
           </System>
-        <System>
-          </System>
         </Page>
       <Page>
-        <System>
-          </System>
-        <System>
-          </System>
-        <System>
-          </System>
-        <System>
-          </System>
-        <System>
-          </System>
-        <System>
-          </System>
-        </Page>
-      <Page>
-        <System>
-          </System>
         <System>
           </System>
         <System>
@@ -120,12 +101,32 @@
           </System>
         <System>
           </System>
+        </Page>
+      <Page>
+        <System>
+          </System>
+        <System>
+          </System>
+        <System>
+          </System>
+        <System>
+          </System>
         <System>
           </System>
         </Page>
       <Page>
         <System>
           </System>
+        <System>
+          </System>
+        <System>
+          </System>
+        <System>
+          </System>
+        <System>
+          </System>
+        </Page>
+      <Page>
         <System>
           </System>
         <System>
@@ -2620,7 +2621,7 @@
             </Note>
           </Chord>
         <Harmony>
-          <name>#viio43/V</name>
+          <name>viio43/V</name>
           <pos x="0" y="-7.5"/>
           </Harmony>
         <Slur id="40">

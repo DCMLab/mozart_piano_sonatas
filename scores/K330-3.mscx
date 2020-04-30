@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="2.06">
   <programVersion>2.3.2</programVersion>
-  <programRevision>4592407</programRevision>
+  <programRevision>3543170</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -42,7 +42,7 @@
     <metaTag name="originalFormat">mid</metaTag>
     <metaTag name="platform">Microsoft Windows</metaTag>
     <metaTag name="poet"></metaTag>
-    <metaTag name="source">nan</metaTag>
+    <metaTag name="source">https://kern.humdrum.org/cgi-bin/ksdata?location=users/craig/classical/mozart/piano/sonata&amp;file=sonata10-3.krn&amp;format=xml</metaTag>
     <metaTag name="translator"></metaTag>
     <metaTag name="workNumber">K330</metaTag>
     <metaTag name="workTitle">Piano Sonata no. 10 in C major</metaTag>
@@ -5923,7 +5923,7 @@
           <durationType>eighth</durationType>
           </Rest>
         <Harmony>
-          <name>I[I6</name>
+          <name>I[I</name>
           </Harmony>
         <Dynamic>
           <subtype>p</subtype>
@@ -5981,7 +5981,7 @@
         </Measure>
       <Measure number="62">
         <Harmony>
-          <name>V43</name>
+          <name>V7</name>
           <pos x="0" y="-4.18205"/>
           </Harmony>
         <Chord>
@@ -6008,9 +6008,6 @@
             <veloType>user</veloType>
             </Note>
           </Chord>
-        <Harmony>
-          <name>V2</name>
-          </Harmony>
         <Chord>
           <BeamMode>mid</BeamMode>
           <durationType>eighth</durationType>
@@ -6039,7 +6036,7 @@
         </Measure>
       <Measure number="63">
         <Harmony>
-          <name>I6</name>
+          <name>I</name>
           </Harmony>
         <Slur id="73">
           <track>0</track>
@@ -6112,7 +6109,7 @@
         </Measure>
       <Measure number="64">
         <Harmony>
-          <name>V43</name>
+          <name>V7</name>
           </Harmony>
         <Chord>
           <durationType>eighth</durationType>
@@ -6138,9 +6135,6 @@
             <veloType>user</veloType>
             </Note>
           </Chord>
-        <Harmony>
-          <name>V2</name>
-          </Harmony>
         <Chord>
           <BeamMode>mid</BeamMode>
           <durationType>eighth</durationType>
@@ -6169,7 +6163,7 @@
         </Measure>
       <Measure number="65">
         <Harmony>
-          <name>I6</name>
+          <name>I</name>
           </Harmony>
         <Chord>
           <durationType>eighth</durationType>
@@ -6184,7 +6178,7 @@
           <durationType>eighth</durationType>
           </Rest>
         <Harmony>
-          <name>V2</name>
+          <name>V7</name>
           </Harmony>
         <Dynamic>
           <subtype>m</subtype>
@@ -6270,7 +6264,7 @@
         </Measure>
       <Measure number="66">
         <Harmony>
-          <name>I6</name>
+          <name>I</name>
           </Harmony>
         <Chord>
           <durationType>eighth</durationType>
@@ -6286,7 +6280,7 @@
           <durationType>eighth</durationType>
           </Rest>
         <Harmony>
-          <name>V2</name>
+          <name>V7</name>
           </Harmony>
         <Dynamic>
           <subtype>m</subtype>
@@ -6368,7 +6362,7 @@
         </Measure>
       <Measure number="67">
         <Harmony>
-          <name>I6]</name>
+          <name>I]</name>
           </Harmony>
         <Chord>
           <durationType>eighth</durationType>
@@ -7684,7 +7678,7 @@
         </Measure>
       <Measure number="91">
         <Harmony>
-          <name>.It6(7)</name>
+          <name>.It6(2)</name>
           <pos x="-0.819237" y="-2.90768"/>
           </Harmony>
         <Rest>
@@ -14410,14 +14404,14 @@
           </Dynamic>
         <Slur id="196">
           <track>0</track>
+          <up>1</up>
           </Slur>
         <Slur id="197">
           <track>0</track>
-          <up>1</up>
           </Slur>
         <Chord>
           <durationType>32nd</durationType>
-          <Slur type="start" id="197"/>
+          <Slur type="start" id="196"/>
           <grace32/>
           <Note>
             <pitch>67</pitch>
@@ -14427,8 +14421,8 @@
         <Chord>
           <dots>1</dots>
           <durationType>eighth</durationType>
-          <Slur type="start" id="196"/>
-          <Slur type="stop" id="197"/>
+          <Slur type="stop" id="196"/>
+          <Slur type="start" id="197"/>
           <Note>
             <pitch>79</pitch>
             <tpc>15</tpc>
@@ -14461,7 +14455,7 @@
           </Harmony>
         <Chord>
           <durationType>quarter</durationType>
-          <Slur type="stop" id="196"/>
+          <Slur type="stop" id="197"/>
           <Note>
             <pitch>84</pitch>
             <tpc>14</tpc>
