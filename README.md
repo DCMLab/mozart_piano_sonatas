@@ -48,7 +48,7 @@ All options can be combined with the above-mentioned functionality for data join
 
 ### Repetitions
 
-By default, all data is being returned as though playing every section only once, i.e. without first endings (without *prima volta*). Instead, you may choose the 'unfolded' version that duplicates notes and labels depending on the piece's repeat structure. Simply add `-u` to the parameters. This puts first and second endings in their correct positions, thus creating correct transitions and event counts that are closer to what is actually being performed.
+By default, all data is being returned as though playing every section only once, i.e. without first endings (without *prima volta*). Instead, you may choose the 'unfolded' version that duplicates notes and labels depending on the piece's repeat structure. Simply add `-u` to the parameters. This puts first and second endings in their correct positions, thus creating correct transitions and event counts that are closer to what is actually being performed. This option adds the column `playthrough` which counts complete measures in `mn` style but counting "through" instead of repeating measure numbers.
 
 ### Transposing everything to C
 
