@@ -19,7 +19,7 @@ Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following
   - [Data types for parsing the data](#data-types-for-parsing-the-data)
     - [Data types](#data-types)
     - [Converters/Parsers](#convertersparsers)
-- [Questions, Suggestions, Corrections, Bug Reports](#questions--suggestions--corrections--bug-reports)
+- [Questions, Suggestions, Corrections, Bug Reports](#questions-suggestions-corrections-bug-reports)
 - [Licenses](#licenses)
 
 
