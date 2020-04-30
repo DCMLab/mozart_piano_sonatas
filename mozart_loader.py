@@ -10,8 +10,7 @@ script that will be available in the near future at https://github.com/DCMLab/pa
     python extract_annotations.py scores -NHMqos
 """
 
-import argparse, os, re, sys, logging
-from fractions import Fraction as frac
+import argparse, os, sys, logging, re
 
 try:
     import pandas as pd
@@ -19,8 +18,9 @@ except ImportError:
     sys.exit("""This script requires the pandas package. You can install it using the command
 python -m pip install pandas""")
 
-from expand_labels import expand_labels, name2tpc, transform
-from harmony import regex
+from utils.feature_matrices import compute_beat, compute_mn, ensure_types, iterable2str, join_tsv, merge_ties, next2sequence, read_tsvs, transform, transpose_to_C, unfold_multiple
+from utils.expand_labels import expand_labels
+from utils.harmony import regex
 
 __author__ = "Johannes Hentschel"
 __copyright__ = """
@@ -62,75 +62,11 @@ os.environ['NUMEXPR_MAX_THREADS'] = '64' # to silence NumExpr prompt
 
 
 ################################################################################
-# Converters
-################################################################################
-str2inttuple = lambda l: tuple() if l == '' else tuple(int(s) for s in l.split(', '))
-str2strtuple = lambda l: tuple() if l == '' else tuple(str(s) for s in l.split(', '))
-iterable2str = lambda iterable: ', '.join(str(s) for s in iterable)
-
-
-
-
-
-################################################################################
 # Constants
 ################################################################################
 REGEX = re.compile(regex, re.VERBOSE)
 
-IDX = pd.IndexSlice                      # for easy MultiIndex slicing
-
-CONVERTERS = {
-    'added_tones': str2inttuple,
-    'act_dur': frac,
-    'chord_tones': str2inttuple,
-    'globalkey_is_minor': bool,
-    'localkey_is_minor': bool,
-    'next': str2inttuple,
-    'nominal_duration': frac,
-    'offset': frac,
-    'onset': frac,
-    'duration': frac,
-    'scalar': frac,}
-
-DTYPES = {
-    'alt_label': str,
-    'barline': str,
-    'bass_note': 'Int64',
-    'cadence': str,
-    'cadences_id': 'Int64',
-    'changes': str,
-    'chord': str,
-    'chord_type': str,
-    'dont_count': 'Int64',
-    'figbass': str,
-    'form': str,
-    'globalkey': str,
-    'gracenote': str,
-    'harmonies_id': 'Int64',
-    'keysig': int,
-    'label': str,
-    'localkey': str,
-    'mc': int,
-    'midi': int,
-    'mn': int,
-    'notes_id': 'Int64',
-    'numbering_offset': 'Int64',
-    'numeral': str,
-    'pedal': str,
-    'playthrough': int,
-    'phraseend': str,
-    'relativeroot': str,
-    'repeats': str,
-    'root': 'Int64',
-    'special': str,
-    'staff': int,
-    'tied': 'Int64',
-    'timesig': str,
-    'tpc': int,
-    'voice': int,
-    'voices': int,
-    'volta': 'Int64'
-}
+IDX = pd.IndexSlice    # for easy MultiIndex slicing
 
 FILE_LIST = pd.DataFrame({'filename':
   {(1, 1): 'K279-1',
@@ -193,40 +129,13 @@ FILE_LIST.index.names = ['sonata', 'movement']
 
 
 
-BEATSIZE_MEMO = {}
+
 ################################################################################
 # Functions
 ################################################################################
-def beat_size(x):
-    """ Pass a time signature and you get the beat size which is based on the fraction's
-        denominator ('2/2' => 1/2, '4/4' => 1/4, '4/8' => 1/8). If the nominator is
-        a higher multiple of 3, the threefold beat size is returned
-        ('12/8' => 3/8, '6/4' => 3/4).
-
-    Returns
-    -------
-    :obj:`Fraction`
-    """
-    d, n = str(x).split('/')
-    d = int(d)
-    return frac(f"{3 if d % 3 == 0 and d > 3 else 1}/{n}")
-
-
-
-def beat_size_memo(x):
-    """ Memoized version of beat_size() using the global dict BEATSIZE_MEMO.
-    """
-    global BEATSIZE_MEMO
-    if x in BEATSIZE_MEMO:
-        return BEATSIZE_MEMO[x]
-    bs = beat_size(x)
-    logging.debug(f"Using beat size {bs} for {x} time signatures.")
-    BEATSIZE_MEMO[x] = bs
-    return bs
-
-
-
 def check_dir(d):
+    """ Turn input into an existing, absolute directory path.
+    """
     if not os.path.isdir(d):
         d = os.path.join(os.getcwd(),d)
         if not os.path.isdir(d):
@@ -237,51 +146,6 @@ def check_dir(d):
     if not os.path.isabs(d):
         d = os.path.abspath(d)
     return d
-
-
-
-def compute_beat(onset, timesig):
-    """ Turn a offset in whole notes into a beat based on the time signature.
-        Uses: beat_size_memo()
-
-    Parameters
-    ----------
-    onset : :obj:`Fraction`
-        Offset from the measure's beginning as fraction of a whole note.
-    timesig : :obj:`str`
-        Time signature, i.e., a string representing a fraction.
-    """
-    size = beat_size_memo(timesig)
-    beat = onset // size + 1
-    subbeat = frac((onset % size) / size)
-    if subbeat > 0:
-        return f"{beat}.{subbeat}"
-    else:
-        return str(beat)
-
-
-
-def compute_mn(df):
-    """ Compute measure numbers from a measure list with columns ['dont_count', 'numbering_offset']
-    """
-    excluded = df['dont_count'].fillna(0).astype(bool)
-    offset   = df['numbering_offset']
-    mn = (~excluded).cumsum()
-    if offset.notna().any():
-        offset = offset.fillna(0).astype(int).cumsum()
-        mn += offset
-    return mn.rename('mn')
-
-
-
-def ensure_types(df, col2dtype_dict, index_levels=True):
-    names = None
-    if index_levels and any(n in col2dtype_dict for n in df.index.names):
-        names = [n for n in ['filename', 'notes_id', 'harmonies_id', 'cadences_id'] if n in df.index.names]
-        df = df.reset_index()
-    logging.debug(f"Changed the Dtypes as follows: {col2dtype_dict}")
-    df = df.astype(col2dtype_dict)
-    return df if names is None else df.set_index(names)
 
 
 
@@ -303,6 +167,7 @@ def format_data(name=None,
                 propagate=False,
                 no_ties=False):
     """ Documentation in the help of the command line interface."""
+    global REGEX
     fname = ' '.join(sys.argv[1:]) if name is None else name
 
     if dir is None:
@@ -318,17 +183,17 @@ def format_data(name=None,
         logging.error("No data matching your selection.")
     else:
         script_path = os.path.abspath('')
+
+        #################### Checking the parameters ##########################
         if all_in_c: # -CHNEpj
             notes = True
             harmonies = True
             full_expand = True
             propagate = True
             join = True
-
-        kinds = []
-        for kind in ['notes', 'harmonies', 'cadences']:
-            if locals()[kind]:
-                kinds.append(kind)
+        if no_ties and not notes:
+            logging.info("Parameter -T implies -N: Getting notes as well...")
+            notes = True
         if absolute:
             if all_in_c:
                 raise ValueError("Chord tones can be either --absolute or --all_in_c, but not both. Use either -A or -a, not both.")
@@ -337,7 +202,12 @@ def format_data(name=None,
             expand = True
             if not harmonies:
                 logging.info("Parameters implie -H: Getting harmonies as well...")
-                kinds.append('harmonies')
+                harmonies = True
+
+        kinds = []
+        for kind in ['notes', 'harmonies', 'cadences']:
+            if locals()[kind]:
+                kinds.append(kind)
         if measures or join or unfold or expand:
             kinds.append('measures')
         if join:
@@ -345,9 +215,12 @@ def format_data(name=None,
             assert l > 1, "Select at least two kinds of data for joining."
             if l == 2:
                 assert set(kinds) != {'cadences', 'measures'}, "Cannot correctly join cadences with measures because cadences don't have MC for measure disambiguation. Add harmonies and/or notes."
+
+        #################### Reading TSVs #####################################
         logging.info(f"Reading {len(selection) * len(kinds)} TSV files...")
         joining = {kind: read_tsvs(os.path.join(script_path, kind), selection) for kind in kinds}
 
+        #################### Preliminary transformations ######################
         if 'notes' in kinds and no_ties:
             logging.info("Merging ties in note list...")
             joining['notes'] = merge_ties(joining['notes'])
@@ -374,6 +247,8 @@ def format_data(name=None,
                 global REGEX
                 logging.info("Expanding chord labels...")
                 expanded = expand_labels(joining['harmonies'], column='label', regex=REGEX, chord_tones=full_expand, relative_to_global=relative_to_global, absolute=absolute, all_in_c=all_in_c)
+                if 'volta' in expanded.columns:
+                    expanded = expanded.drop(columns='volta')
                 col2type = {'globalkey_is_minor': int, 'localkey_is_minor': int} if 'localkey_is_minor' in expanded.columns else {'globalkey_is_minor': int}
                 expanded = expanded.astype(col2type)
                 if full_expand: # turn tuples into strings
@@ -384,6 +259,7 @@ def format_data(name=None,
                     joining['harmonies'] = expanded
 
 
+        #################### join, unfold, propagate, store ###################
         def store_result(df, fname, what):
             tsv_name = f"{fname}_{what}.tsv"
             tsv_path = os.path.join(dir, tsv_name)
@@ -418,12 +294,15 @@ def format_data(name=None,
                                    .mc\
                                    .rename('next')
                     df = df.drop(columns='next').join(nxt, on='uniq').drop(columns='uniq')
-            else:
-                if 'volta' in df.columns and what != 'measures':
+            elif 'next' in df.columns:
+                df.next = transform(df.next, iterable2str)
+
+            if 'volta' in df.columns and what != 'measures':
+                if unfold:
+                    df = df.drop(columns='volta')
+                else:
                     logging.info(f"Removing first voltas from {what}...")
                     df = df.drop(index=df[df.volta.fillna(0) == 1].index, columns='volta')
-                if 'next' in df.columns:
-                    df.next = transform(df.next, iterable2str)
 
 
             if what == 'joined':
@@ -442,7 +321,7 @@ def format_data(name=None,
                                 expanded = joining['harmonies']
                             df = df.merge(expanded, left_on=['filename', 'harmonies_id'], how='left', right_index=True, suffixes=('', '_y'))
                             duplicates = [col for col in df.columns if col.endswith('_y')]
-                            df = df.drop(columns=duplicates + ['volta'])
+                            df = df.drop(columns=duplicates)
                             if all_in_c:
                                 logging.info('Transposing the note list to C...')
                                 transpose_to_C(df)
@@ -477,7 +356,7 @@ The pitch-related columns `tpc` and `midi` hold the scores' pitches, transposed 
                     logging.info("The chord tones designate stack-of-fifths invervals where 0 is the GLOBAL tonic, 1 the tone a perfect fifth above, -1 a perfect fourth above,  and so on.\n")
                 else:
                     logging.info("The chord tones designate stack-of-fifths invervals where 0 is the LOCAL tonic, 1 the tone a perfect fifth above, -1 a perfect fourth above, and so on.\n")
-
+            #################### end of store_result() #########################
 
         if join:
             joined = join_tsv(**joining, join_measures=measures)
@@ -488,177 +367,15 @@ The pitch-related columns `tpc` and `midi` hold the scores' pitches, transposed 
             for kind, tsv in joining.items():
                 if kind != 'measures' or measures:
                     store_result(tsv, fname, kind)
+        #################### end of format_data() #############################
 
-
-
-def join_tsv(notes=None, harmonies=None, cadences=None, measures=None, join_measures=False):
-    """"""
-    first = True
-    if notes is not None:
-        if harmonies is not None:
-            logging.info("Joining notes with harmony labels...")
-            first = False
-            left = pd.merge(notes.set_index(['mc', 'mn', 'onset'], append=True), harmonies.set_index(['mc', 'mn', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True, suffixes=('', '_y'))
-            duplicates = [col for col in left.columns if col.endswith('_y')]
-            left = left.reset_index(level='mc').drop(columns=duplicates)
-        else:
-            left = notes.set_index(['mn', 'onset'], append=True)
-    else:
-        left = harmonies.set_index(['mn', 'onset'], append=True)
-
-    if cadences is not None:
-        if first:
-            logging.info("Joining notes with cadence labels...")
-            first = False
-        else:
-            logging.info("Adjoining cadence labels...")
-        res = pd.merge(left, cadences.set_index(['mn', 'onset'], append=True), left_index=True, right_index=True, how='outer')
-    else:
-        res = left
-
-    if res.mc.isna().any():
-        res.loc[res.mc.isna(), 'mc'] = pd.merge(res[res.mc.isna()].reset_index(level='onset')['onset'], measures[['mc', 'mn']], on=['filename', 'mn']).set_index(['mn', 'onset'], append=True)
-
-    res = res.reset_index(['mn', 'onset'])
-
-    if join_measures:
-        logging.info(f"{'J' if first else 'Adj'}oining measure info...")
-        res = res.merge(measures.set_index('mc', append=True).droplevel('measures_id'), how='left', left_on=['filename', 'mc'], right_index=True, suffixes=('', '_y'))
-        duplicates = [col for col in res.columns if col.endswith('_y')]
-        res = res.drop(columns=duplicates)
-    names = list(res.index.names)
-    names_order = [n for n in ['filename', 'notes_id', 'harmonies_id', 'cadences_id'] if n in names]
-    if names != names_order:
-        logging.debug("Reordering index levels...")
-        res = res.reorder_levels(names_order)
-    return res
-
-
-
-def load_tsv(path, index_col=[0, 1], converters={}, dtypes={}, stringtype=False, **kwargs):
-    """ Loads the TSV file `path` while applying correct type conversion and parsing tuples.
-
-    Parameters
-    ----------
-    path : :obj:`str`
-        Path to a TSV file as output by format_data().
-    index_col : :obj:`list`, optional
-        By default, the first two columns are loaded as MultiIndex.
-        The first level distinguishes pieces and the second level the elements within.
-    converters, dtypes : :obj:`dict`, optional
-        Enhances or overwrites the mapping from column names to types included the constants.
-    stringtype : :obj:`bool`, optional
-        If you're using pandas >= 1.0.0 you might want to set this to True in order
-        to be using the new `string` datatype that includes the new null type `pd.NA`.
-    """
-    conv = dict(CONVERTERS)
-    types = dict(DTYPES)
-    types.update(dtypes)
-    conv.update(converters)
-    if stringtype:
-        types = {col: 'string' if typ == str else typ for col, typ in types.items()}
-    return pd.read_csv(path, sep='\t', index_col=index_col,
-                                dtype=types,
-                                converters=conv, **kwargs)
-
-
-
-def next2sequence(nxt):
-    """Turns a pd.Series of lists into a sequence of elements."""
-    i = nxt.index[0]
-    last_i = nxt.index[-1]
-    acc = [i]
-    nxt = nxt.to_dict()
-    flag = 0
-    nxt_list = nxt[i]
-    l = len(nxt_list)
-    while i <= last_i:
-        if i == last_i:
-            if flag or l == 0:
-                break
-            elif l == 1: # last mc has repeat sign
-                i = nxt_list[0]
-                flag = 1
-            else:
-                raise NotImplementedError
-        elif l == 1:
-            i = nxt_list[0]
-        elif l == 2:
-            i = nxt_list[flag]
-            flag = int(not flag)
-        else:
-            raise NotImplementedError("More than two voltas.")
-        acc.append(i)
-        nxt_list = nxt[i]
-        l = len(nxt_list)
-    return acc
-
-
-
-def merge_ties(df, return_dropped=False, reset_index=True):
-    """ In a note list, merge tied notes to single events with accumulated durations.
-        Input dataframe needs columns ['duration', 'tied', 'midi', 'staff']. This
-        function does not handle correctly overlapping ties on the same pitch since
-        it doesn't take into account the notational layers ('voice').
-    """
-    def merge(df):
-        vc = df.tied.value_counts()
-        if vc[1] != 1 or vc[-1] != 1:
-            logging.warning(f"")
-        ix=df.iloc[0].name
-        dur = df.duration.sum()
-        drop = df.iloc[1:].index.to_list()
-        return pd.Series({'ix':ix, 'duration': dur, 'dropped': drop})
-
-    def merge_ties(staff_midi):
-
-        staff_midi['chunks'] = (staff_midi.tied  == 1).astype(int).cumsum()
-        t = staff_midi.groupby('chunks', group_keys=False).apply(merge)
-        return t.set_index('ix')
-
-    if reset_index:
-        try:
-            names = df.index.names
-            df = df.reset_index()
-        except:
-            logging.warning("Error while resetting index. Trying as is...")
-            names = None
-            df = df.copy()
-    else:
-        df = df.copy()
-    notna = df.loc[df.tied.notna(), ['duration', 'tied', 'midi', 'staff']]
-    new_dur = notna.groupby(['staff', 'midi'], group_keys=False).apply(merge_ties).sort_index()
-    df.loc[new_dur.index, 'duration'] = new_dur.duration
-    if return_dropped:
-        df.loc[new_dur.index, 'dropped'] = new_dur.dropped
-    df = df.drop(new_dur.dropped.sum())
-    if reset_index and names != None:
-        return df.set_index(names)
-    return df
-
-
-
-def read_tsvs(dir, selection):
-    """ Concatenates the selected files in `dir`.
-
-    Parameters
-    ----------
-    dir : :obj:`str`
-        Folder with TSV files.
-    selection : :obj:`pandas.Series`
-        Filenames without file extension. Files are assumed to exist.
-    """
-    files = (selection.filename + '.tsv').values
-    df = pd.concat([pd.read_csv(os.path.join(dir, f), sep='\t', dtype=DTYPES, converters=CONVERTERS) for f in files],
-                     keys=selection.filename, names=['filename', f"{os.path.basename(dir)}_id"])
-    return df
 
 
 
 def select_files(sonatas=None, movements=None):
+    """ Select files pased on the parameters.
     """
-
-    """
+    global FILE_LIST
     if sonatas is None:
         df = FILE_LIST
     else:
@@ -666,60 +383,6 @@ def select_files(sonatas=None, movements=None):
     if movements is not None:
         df = df.loc[IDX[:, movements],]
     return df
-
-
-
-def transpose_to_C(note_list):
-    """ Transposes the columns ['tpc', 'midi'] of a note list to C/c depending on
-        the column 'globalkey'. Input is mutated."""
-    transpose_by = transform(note_list.globalkey, name2tpc)
-    note_list.tpc -= transpose_by
-
-    midi_transposition = transform(transpose_by, lambda x: 7 * x % 12)
-    # For transpositions up to a diminished fifth, move pitches up,
-    # for larger intervals, move pitches down.
-    midi_transposition.where(midi_transposition <= 6, midi_transposition % -12, inplace=True)
-    note_list.midi -= midi_transposition
-
-    note_list.globalkey = note_list.globalkey.str.islower().replace({True: 'c', False: 'C'})
-
-
-
-def unfold_multiple(unfold_this, mc_sequences, mn_sequences=None):
-    """ `unfold_this` is a DataFrame with a MultiIndex of which the first level
-        disambiguates thes pieces to be unfolded.
-    """
-
-    def unfold(df, sequence):
-        """
-        """
-        nonlocal unfolded
-        vc = df.index.value_counts()
-        seq = sequence[sequence.isin(df.index)]
-        playthrough_vals = sum([[playthrough]*vc[mc] for playthrough, mc in seq.items()], [])
-        playthrough_col.extend(playthrough_vals)
-        return df.loc[seq.values]
-
-    if 'mc' in unfold_this.columns:
-        col = 'mc'
-        sequences = mc_sequences
-    else:
-        col = 'mn'
-        sequences = mn_sequences
-
-    names = unfold_this.index.names
-    groupby = names[0] if names[0] is not None else 'level_0'
-    res = unfold_this.reset_index().set_index(col)
-    playthrough_col = []
-    unfolded = []
-    for group, df in res.groupby(groupby, group_keys=False):
-        unfolded.append(unfold(df, sequences[group]))
-    res = pd.concat(unfolded)
-    res = res.reset_index().set_index(names)
-    res.insert(res.columns.get_loc('mn')+1, 'playthrough', playthrough_col)
-    if 'volta' in res.columns:
-        res.drop(columns='volta', inplace=True)
-    return res
 
 
 

@@ -58,7 +58,7 @@ The option `-A` lets you rebase all pitches on C which corresponds to a transpos
 Since the TSV files contain null values, lists, fractions, and numbers that are to be treated as strings, you may want to use this code to load any TSV files related to this repository, processed or not:
 
 ```python
-from mozart_loader import load_tsv
+from utils.feature_matrices import load_tsv
 
 ############################################################################
 # For a file created using `python mozart_loader.py -CHNjuE`
@@ -91,8 +91,8 @@ automatically uses the boolean column `localkey_is_minor` to compute mode-depend
 scale degrees.
 
 ```python
-from mozart_loader import load_tsv
-from expand_labels import transform_note_columns
+from utils.feature_matrices import load_tsv
+from utils.expand_labels import transform_note_columns
 
 df = load_tsv('./formatted/-E_harmonies.tsv')
 transform_note_columns(df, 'sd')
@@ -262,8 +262,8 @@ and datatypes that the function uses can be updated. It uses a note list with jo
 harmonies and chord tones produced by `mozart_loader.py -Naj`.
 
 ```python
-from mozart_loader import load_tsv, str2strtuple, iterable2str
-from expand_labels import transform_note_columns
+from utils.feature_matrices import load_tsv, str2strtuple, iterable2str
+from utils.expand_labels import transform_note_columns
 
 df = load_tsv('./formatted/-Naj_joined.tsv')
 
@@ -286,49 +286,49 @@ The function `load_tsv` uses the following data types and converters to load the
 
 #### Data types
 
-The data type `Int64` designates columns that contain integers *and* NULL values. The column `occurrence`
+The data type `Int64` designates columns that contain integers *and* NULL values. The column `function` serves as a quick reminder for the meaning of column names which are not self-evident. The column `occurrence`
 shows which of the individual TSV files the columns can occur and, consequently, in which README you
 find information about the column (**N**otes, **H**armonies, **C**adences, **M**easures)
 
-| column           | type    | occurrence |
-|------------------|---------|------------|
-| alt_label        | string  | H          |
-| barline          | string  | M          |
-| bass_note        | Int64   | H          |
-| cadence          | string  | C          |
-| cadences_id      | Int64   | C          |
-| changes          | string  | H          |
-| chord            | string  | H          |
-| chord_type       | string  | H          |
-| dont_count       | Int64   | M          |
-| figbass          | string  | H          |
-| form             | string  | H          |
-| globalkey        | string  | H          |
-| gracenote        | string  | N          |
-| harmonies_id     | Int64   | H          |
-| keysig           | integer | M          |
-| label            | string  | H          |
-| localkey         | string  | H          |
-| mc               | integer | NHM        |
-| midi             | integer | H          |
-| mn               | integer | NHCM       |
-| notes_id         | Int64   | N          |
-| numbering_offset | Int64   | M          |
-| numeral          | string  | H          |
-| pedal            | string  | H          |
-| phraseend        | string  | H          |
-| playthrough      | integer | NHCM       |
-| relativeroot     | string  | H          |
-| repeats          | string  | M          |
-| root             | Int64   | H          |
-| special          | string  | H          |
-| staff            | integer | N          |
-| tied             | Int64   | N          |
-| timesig          | string  | NHCM       |
-| tpc              | integer | N          |
-| voice            | integer | N          |
-| voices           | integer | M          |
-| volta            | Int64   | M          |
+| column           | function                                             | type    | occurrence |
+|------------------|------------------------------------------------------|---------|------------|
+| alt_label        | alternative chord label                              | string  | H          |
+| barline          |                                                      | string  | M          |
+| bass_note        |                                                      | Int64   | H          |
+| cadence          |                                                      | string  | C          |
+| cadences_id      |                                                      | Int64   | C          |
+| changes          | chord alterations, suspensions, additions etc.       | string  | H          |
+| chord            | part of the chord label that defines the chord tones | string  | H          |
+| chord_type       |                                                      | string  | H          |
+| dont_count       | concerns measure numbering                           | Int64   | M          |
+| figbass          | chord inversion                                      | string  | H          |
+| form             | chord form                                           | string  | H          |
+| globalkey        | global reference key of a piece                      | string  | H          |
+| gracenote        |                                                      | string  | N          |
+| harmonies_id     |                                                      | Int64   | H          |
+| keysig           | key signature of a measure                           | integer | M          |
+| label            | complete chord label                                 | string  | H          |
+| localkey         | local reference key                                  | string  | H          |
+| mc               | measure count                                        | integer | NHM        |
+| midi             |                                                      | integer | H          |
+| mn               | measure number                                       | integer | NHCM       |
+| notes_id         |                                                      | Int64   | N          |
+| numbering_offset | concerns measure numbering                           | Int64   | M          |
+| numeral          | Roman numeral (chord root)                           | string  | H          |
+| pedal            |                                                      | string  | H          |
+| phraseend        |                                                      | string  | H          |
+| playthrough      | unique measure numbers for unfolded scores           | integer | NHCM       |
+| relativeroot     | lower-reference key from which a chord is borrowed   | string  | H          |
+| repeats          |                                                      | string  | M          |
+| root             | root expressed as interval                           | Int64   | H          |
+| special          | shorthand chord symbols                              | string  | H          |
+| staff            |                                                      | integer | N          |
+| tied             |                                                      | Int64   | N          |
+| timesig          | time signature                                       | string  | NHCM       |
+| tpc              | tonal pitch class                                    | integer | N          |
+| voice            | in which notational layer a note occurs              | integer | N          |
+| voices           | number of notational layers in a measure             | integer | M          |
+| volta            | for identifying first and second endings             | Int64   | M          |
 
 #### Converters/Parsers
 

@@ -14,6 +14,12 @@ logging.getLogger().setLevel(logging.INFO)
 import pandas as pd
 import numpy as np
 
+
+################################################################################
+# Helpers
+################################################################################
+from .feature_matrices import name2tpc, transform
+
 ################################################################################
 # Constants
 ################################################################################
@@ -775,19 +781,6 @@ def merge_changes(left, right, *args):
 
 
 
-def name2tpc(nn):
-    """ Turn a note name such as `Ab` into a tonal pitch class, such that -1=F, 0=C, 1=G etc.
-        Uses: split_note_name()
-    """
-    if nn.__class__ == int or pd.isnull(nn):
-        return nn
-    name_tpcs = {'C': 0, 'D': 2, 'E': 4, 'F': -1, 'G': 1, 'A': 3, 'B': 5}
-    accidentals, note_name = split_note_name(nn, count=True)
-    step_tpc = name_tpcs[note_name.upper()]
-    return step_tpc + 7 * accidentals
-
-
-
 def propagate_keys(df, globalkey='globalkey', localkey='localkey', add_bool=True):
     """ Propagate information about global keys and local keys throughout the dataframe.
         Pass split harmonies for one piece at a time. For concatenated pieces, use apply_to_pieces().
@@ -1178,25 +1171,6 @@ def split_labels(df, column, regex, cols={}, dropna=False, **kwargs):
 
 
 
-def split_note_name(nn, count=False):
-    """ Splits a note name such as 'Ab' into accidentals and name.
-
-    nn : :obj:`str`
-        Note name.
-    count : :obj:`bool`, optional
-        Pass True to get the accidentals as integer rather than as string.
-    """
-    m = re.match("^([A-G]|[a-g])(#*|b*)$", str(nn))
-    if m is None:
-        logging.error(nn + " is not a valid scale degree.")
-        return None, None
-    note_name, accidentals = m.group(1), m.group(2)
-    if count:
-        accidentals = accidentals.count('#') - accidentals.count('b')
-    return accidentals, note_name
-
-
-
 def split_sd(sd, count=False):
     """ Splits a scale degree such as 'bbVI' or 'b6' into accidentals and numeral.
 
@@ -1224,71 +1198,6 @@ def str_is_minor(tone, is_name=True):
     #     return m
     # return m.group(1).islower()
     return tone.islower()
-
-
-
-def transform(df, func, param2col=None, column_wise=False, **kwargs):
-    """ Compute a function for every row of a DataFrame, using several cols as arguments.
-        The result is the same as using df.apply(lambda r: func(param1=r.col1, param2=r.col2...), axis=1)
-        but it optimizes the procedure by precomputing `func` for all occurrent parameter combinations.
-        Uses: inspect.getfullargspec()
-
-    Parameters
-    ----------
-    df : :obj:`pandas.DataFrame` or :obj:`pandas.Series`
-        Dataframe containing function parameters.
-    func : :obj:`callable`
-        The result of this function for every row will be returned.
-    param2col : :obj:`dict` or :obj:`list`, optional
-        Mapping from parameter names of `func` to column names.
-        If you pass a list of column names, the columns' values are passed as positional arguments.
-        Pass None if you want to use all columns as positional arguments.
-    column_wise : :obj:`bool`, optional
-        Pass True if you want to map `func` to the elements of every column separately.
-        This is simply an optimized version of df.apply(func) but allows for naming
-        columns to use as function arguments. If param2col is None, `func` is mapped
-        to the elements of all columns, otherwise to all columns that are not named
-        as parameters in `param2col`.
-        In the case where `func` does not require a positional first element and
-        you want to pass the elements of the various columns as keyword argument,
-        give it as param2col={'function_argument': None}
-    inplace : :obj:`bool`, optional
-        Pass True if you want to mutate `df` rather than getting an altered copy.
-    **kwargs : Other parameters passed to `func`.
-    """
-    if column_wise:
-        if not df.__class__ == pd.core.series.Series:
-            if param2col is None:
-                return df.apply(transform, args=(func,), **kwargs)
-            if param2col.__class__ == dict:
-                var_arg = [k for k, v in param2col.items() if v is None]
-                apply_cols = [col for col in df.columns if not col in param2col.values()]
-                assert len(var_arg) < 2, f"Name only one variable keyword argument as which {apply_cols} are used {'argument': None}."
-                var_arg = var_arg[0] if len(var_arg) > 0 else getfullargspec(func).args[0]
-                param2col = {k: v for k, v in param2col.items() if v is not None}
-                result_cols = {col: transform(df, func, {**{var_arg: col}, **param2col}, **kwargs) for col in apply_cols}
-                param2col = param2col.values()
-            else:
-                apply_cols = [col for col in df.columns if not col in param2col]
-                result_cols = {col: transform(df, func, [col] + param2col, **kwargs) for col in apply_cols}
-            return pd.DataFrame(result_cols, index=df.index)
-
-    if param2col.__class__ == dict:
-        param_tuples = list(df[param2col.values()].itertuples(index=False, name=None))
-        result_dict = {t: func(**{a:b for a, b in zip(param2col.keys(), t)}, **kwargs) for t in set(param_tuples)}
-    else:
-        if df.__class__ == pd.core.series.Series:
-            if param2col is not None:
-                logging.warning("When 'df' is a Series, the parameter 'param2col' has no use.")
-            param_tuples = df.values
-            result_dict = {t: func(t, **kwargs) for t in set(param_tuples)}
-        else:
-            if param2col is None:
-                param_tuples = list(df.itertuples(index=False, name=None))
-            else:
-                param_tuples = list(df[list(param2col)].itertuples(index=False, name=None))
-            result_dict = {t: func(*t, **kwargs) for t in set(param_tuples)}
-    return pd.Series([result_dict[t] for t in param_tuples], index=df.index)
 
 
 
