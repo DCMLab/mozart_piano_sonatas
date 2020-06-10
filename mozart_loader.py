@@ -5,7 +5,7 @@ Mozart as TSV files. It is hard-coded for being run at the top level of the repo
 https://github.com/DCMLab/mozart_piano_sonatas.
 
 In order to create the TSV files anew from the (MS3) MSCX files, use this
-script that will be available in the near future at https://github.com/DCMLab/parsers :
+script that will be available in the near future at https://github.com/DCMLab :
 
     python extract_annotations.py scores -NHMqos
 """
@@ -185,7 +185,7 @@ def format_data(name=None,
         script_path = os.path.abspath('')
 
         #################### Checking the parameters ##########################
-        if all_in_c: # -CHNEpj
+        if all_in_c: # -NHEpj
             notes = True
             harmonies = True
             full_expand = True
@@ -242,13 +242,15 @@ def format_data(name=None,
 
         if expand:
             # for joining time signatures
-            mn2timesig = joining['measures'][['mn', 'timesig']].groupby('filename', group_keys=False).apply(lambda df: df.drop_duplicates()).droplevel(-1).set_index('mn', append=True)
+            mc2timesig = joining['measures'][['mc', 'timesig']].groupby('filename', group_keys=False).apply(lambda df: df.drop_duplicates()).droplevel(-1).set_index('mc', append=True)
+            if not join and cadences:
+                mn2timesig = joining['measures'][['mn', 'timesig']].groupby('filename', group_keys=False).apply(lambda df: df.drop_duplicates()).droplevel(-1).set_index('mn', append=True)
             if harmonies:
                 global REGEX
                 logging.info("Expanding chord labels...")
                 expanded = expand_labels(joining['harmonies'], column='label', regex=REGEX, chord_tones=full_expand, relative_to_global=relative_to_global, absolute=absolute, all_in_c=all_in_c)
-                if 'volta' in expanded.columns:
-                    expanded = expanded.drop(columns='volta')
+                # if 'volta' in expanded.columns:
+                #     expanded = expanded.drop(columns='volta')
                 col2type = {'globalkey_is_minor': int, 'localkey_is_minor': int} if 'localkey_is_minor' in expanded.columns else {'globalkey_is_minor': int}
                 expanded = expanded.astype(col2type)
                 if full_expand: # turn tuples into strings
@@ -266,9 +268,13 @@ def format_data(name=None,
 
             if 'onset' in df.columns and expand:
                 if not 'timesig' in df.columns:
-                    nonlocal mn2timesig
                     logging.info(f"Adding time signatures to {what}...")
-                    df = df.merge(mn2timesig, left_on=['filename', 'mn'], right_index=True,)
+                    if 'mc' in df.columns:
+                        nonlocal mc2timesig
+                        df = df.merge(mc2timesig, left_on=['filename', 'mc'], right_index=True,)
+                    else:
+                        nonlocal mn2timesig
+                        df = df.merge(mn2timesig, left_on=['filename', 'mn'], right_index=True,)
                 logging.info(f"Computing beats for {what}...")
                 onset_col = df.columns.get_loc('onset')
                 df.insert(onset_col, 'beat', transform(df, compute_beat, ['onset', 'timesig']))

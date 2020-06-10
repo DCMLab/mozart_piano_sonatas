@@ -200,7 +200,7 @@ def compute_chord_tones(df, bass_only=False, expand=False, cols={}):
     bass_only : :obj:`bool`, optional
         Pass True if you need only the bass note.
     expand : :obj:`bool`, optional
-        Pass True if
+        Pass True if you need chord tones and added tones in separate columns.
     cols : :obj:`dict`, optional
         In case the column names for ['numeral', 'form', 'figbass', 'changes', 'relativeroot', 'localkey', 'globalkey'] deviate, pass a dict, such as
         {'numeral':         'numeral_col_name',
@@ -681,7 +681,7 @@ def labels2global_tonic(df, cols={}, inplace=False):
     """ Transposes all numerals to their position in the global major or minor scale.
         This eliminates localkeys and relativeroots. The resulting chords are defined
         by [`numeral`, `figbass`, `changes`, `globalkey_is_minor`] (and `pedal`).
-        Uses: transform(), resolve_relative_keys(), rel2abs_key(), transpose_changes()
+        Uses: transform(), rel2abs_key(), transpose_changes(), series_is_minor(), resolve_relative_keys() -> str_is_minor()
 
     Parameters
     ----------
@@ -735,7 +735,7 @@ def labels2global_tonic(df, cols={}, inplace=False):
     param_cols = [cols[col] for col in ['relativeroot', 'localkey']] + [local_minor, global_minor]
     relativeroots = df.loc[df[cols['relativeroot']].notna(), param_cols]
     rr_tuples = list(relativeroots.itertuples(index=False, name=None))
-    transposed_rr = {(rr, localkey, local_minor, global_minor): rel2abs_key(resolve_relative_keys(rr), localkey, global_minor) for (rr, localkey, local_minor, global_minor) in set(rr_tuples)}
+    transposed_rr = {(rr, localkey, local_minor, global_minor): rel2abs_key(resolve_relative_keys(rr, local_minor), localkey, global_minor) for (rr, localkey, local_minor, global_minor) in set(rr_tuples)}
     df.loc[relativeroots.index, cols['localkey']] = pd.Series((transposed_rr[t] for t in rr_tuples), index=relativeroots.index)
     df.loc[relativeroots.index, local_minor] = series_is_minor(df.loc[relativeroots.index, cols['localkey']])
 
@@ -1233,7 +1233,16 @@ def transform_columns(df, func, columns=None, param2col=None, inplace=False, **k
     else:
         param_cols = list(param2col)
 
+    tmp_index = not df.index.is_unique
+    if tmp_index:
+        ix = df.index
+        df.reset_index(drop=True, inplace=True)
+
     df.loc[:, columns] = transform(df[columns+param_cols], func, param2col, **kwargs)
+
+    if tmp_index:
+        df.index = ix
+
     if not inplace:
         return df
 

@@ -10,6 +10,12 @@ import pandas as pd
 str2inttuple = lambda l: tuple() if l == '' else tuple(int(s) for s in l.split(', '))
 str2strtuple = lambda l: tuple() if l == '' else tuple(str(s) for s in l.split(', '))
 iterable2str = lambda iterable: ', '.join(str(s) for s in iterable)
+def int2bool(s):
+    try:
+        return bool(int(s))
+    except:
+        return s
+
 
 
 
@@ -22,8 +28,8 @@ CONVERTERS = {
     'added_tones': str2inttuple,
     'act_dur': frac,
     'chord_tones': str2inttuple,
-    'globalkey_is_minor': bool,
-    'localkey_is_minor': bool,
+    'globalkey_is_minor': int2bool,
+    'localkey_is_minor': int2bool,
     'next': str2inttuple,
     'nominal_duration': frac,
     'offset': frac,
