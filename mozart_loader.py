@@ -41,7 +41,7 @@ __copyright__ = """
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """
-__credits__ = ["Johanes Hentschel", "Andrew McLeod"]
+__credits__ = ["Johannes Hentschel", "Andrew McLeod"]
 __license__ = "GPL-3.0-or-later"
 __version__ = "1.0.0"
 __maintainer__ = "Johannes Hentschel"
