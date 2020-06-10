@@ -25,7 +25,7 @@ from utils.harmony import regex
 __author__ = "Johannes Hentschel"
 __copyright__ = """
 
-    Copyright 2020, École Polytechnique Fédéral de Lausanne, Digital and Cognitive Musicology Lab
+    Copyright 2020, Ecole Polytechnique Fédéral de Lausanne, Digital and Cognitive Musicology Lab
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
