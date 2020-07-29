@@ -46,7 +46,7 @@ SM = SliceMaker()
 # Functions for treating DCML harmony labels
 ################################################################################
 
-def abs2rel_key(abs, localkey, global_minor=False):
+def abs2rel_key(absolute, localkey, global_minor=False):
     """ Expresses a Roman numeral as scale degree relative to a given localkey.
     The result changes depending on whether Roman numeral and localkey are
     interpreted within a global major or minor key.
@@ -55,12 +55,12 @@ def abs2rel_key(abs, localkey, global_minor=False):
 
     Parameters
     ----------
-    abs : :obj:`str`
+    absolute : :obj:`str`
         Relative key expressed as Roman scale degree of the local key.
     localkey : :obj:`str`
-        The local key in terms of which `abs` will be expressed.
+        The local key in terms of which `absolute` will be expressed.
     global_minor : bool, optional
-        Has to be set to True if `abs` and `localkey` are scale degrees of a global minor key.
+        Has to be set to True if `absolute` and `localkey` are scale degrees of a global minor key.
 
     Examples
     --------
@@ -84,7 +84,7 @@ def abs2rel_key(abs, localkey, global_minor=False):
         >>> abs2rel_key('VI', 'iv', global_minor=False)
         'III'       # Ab major expressed with respect to F minor
     """
-    if pd.isnull(abs):
+    if pd.isnull(absolute):
         return np.nan
     maj_rn = ['I','II','III','IV','V','VI','VII']
     min_rn = ['i','ii','iii','iv','v','vi','vii']
@@ -95,12 +95,12 @@ def abs2rel_key(abs, localkey, global_minor=False):
                         [0,0,0,0,0,0,1],
                         [0,0,1,0,0,1,1],
                         [0,1,1,0,1,1,1]])
-    abs_acc, abs = split_sd(abs, count=True)
+    abs_acc, absolute = split_sd(absolute, count=True)
     localkey_acc, localkey = split_sd(localkey, count=True)
-    shift = abs_acc + localkey_acc
-    steps = maj_rn if abs.isupper() else min_rn
+    shift = abs_acc - localkey_acc
+    steps = maj_rn if absolute.isupper() else min_rn
     key_num = maj_rn.index(localkey.upper())
-    abs_num = (steps.index(abs) - key_num) % 7
+    abs_num = (steps.index(absolute) - key_num) % 7
     step = steps[abs_num]
     if localkey.islower() and abs_num in [2,5,6]:
         shift += 1
@@ -326,8 +326,8 @@ def expand_labels(df, column, regex, groupby={'level': 0, 'group_keys': False}, 
             logging.debug(f"Immediate repetition of labels:\n{not_nan[immediate_repetitions]}")
 
     df = split_labels(df, column, regex, cols=cols, dropna=dropna)
-    df['chord_type'] = transform(df, features2type, [cols[col] for col in ['numeral', 'form', 'figbass']])
     df = replace_special(df, regex=regex, merge=True, cols=cols)
+    df['chord_type'] = transform(df, features2type, [cols[col] for col in ['numeral', 'form', 'figbass']])
 
     if propagate:
         key_cols = {col: cols[col] for col in ['localkey', 'globalkey']}
@@ -562,7 +562,8 @@ def features2type(numeral, form=None, figbass=None):
     'mM7':  Minor major seventh chord
     'o7':   Diminished seventh chord
     '%7':   Half-diminished seventh chord
-    '+7':   Augmented seventh chord
+    '+7':   Augmented (minor) seventh chord
+    '+M7':  Augmented major seventh chord
     """
     if pd.isnull(numeral):
         return numeral
@@ -571,12 +572,15 @@ def features2type(numeral, form=None, figbass=None):
     if figbass in ['', '6', '64']:
         if form in ['o', '+']:
             return form
-        if form in ['%', 'M']:
-            logging.error(f"{form} is a seventh chord and cannot have figbass '{figbass}'")
-            return None
-        return 'm' if numeral.islower() else 'M'
+        if form in ['%', 'M', '+M']:
+            if figbass != '':
+                logging.error(f"{form} is a seventh chord and cannot have figbass '{figbass}'")
+                return None
+            # else: go down, interpret as seventh chord
+        else:
+            return 'm' if numeral.islower() else 'M'
     # seventh chords
-    if form in ['o', '%', '+']:
+    if form in ['o', '%', '+', '+M']:
         return f"{form}7"
     triad = 'm' if numeral.islower() else 'M'
     seventh = 'M' if form == 'M' else 'm'
@@ -637,19 +641,34 @@ def fifths2pc(fifths):
     return 7 * fifths % 12
 
 
+def is_minor_mode(fifths, minor=False):
+    """ Returns True if the TPC `fifths` naturally has a minor third in the scale.
+    """
+    thirds = [-4, -3, -2, -1, 0, 1, 2] if minor else [3, 4, 5, -1, 0, 1, 2]
+    third = thirds[(fifths + 1) % 7] - fifths
+    return third == -3
 
-def fifths2rn(fifths, minor=False):
+
+def fifths2rn(fifths, minor=False, auto_key=False):
     """Return Roman numeral of a stack of fifths such that
        0 = I, -1 = IV, 1 = V, -2 = bVII in major, VII in minor, etc.
+
+    Parameters
+    ----------
+    auto_key : :obj:`bool`, optional
+        By default, the returned Roman numerals are uppercase. Pass True to pass upper-
+        or lowercase according to the position in the scale.
     """
     if pd.isnull(fifths):
         return fifths
     if isinstance(fifths, Iterable):
         return map2elements(fifths, fifths2rn, minor=minor)
     rn = ['VI', 'III', 'VII', 'IV', 'I', 'V', 'II'] if minor else ['IV', 'I', 'V', 'II', 'VI', 'III', 'VII']
-    if minor:
-        fifths += 3
-    return fifths2str(fifths, rn)
+    sel = fifths + 3 if minor else fifths
+    res = fifths2str(sel, rn)
+    if auto_key and is_minor_mode(fifths, minor):
+        return res.lower()
+    return res
 
 
 
@@ -673,7 +692,7 @@ def fifths2str(fifths, steps):
     """
     fifths += 1
     acc = fifths2acc(fifths)
-    return steps[fifths % 7] + acc
+    return acc + steps[fifths % 7]
 
 
 
@@ -1249,9 +1268,7 @@ def transform_columns(df, func, columns=None, param2col=None, inplace=False, **k
 
 
 def transform_note_columns(df, to, note_cols=['chord_tones', 'added_tones', 'bass_note', 'root'], minor_col='localkey_is_minor', inplace=False, **kwargs):
-    """ Efficiently maps `func` to all elements of `columns`. This is a versatile
-        and optimized alternative to df[columns].applymap(func). If `func` takes
-        additional parameters, you can either name `argument_cols` or **kwargs.
+    """ Turns columns with line-of-fifth tonal pitch classes into another representation.
         Uses: transform_columns()
 
     Parameters
@@ -1281,9 +1298,6 @@ def transform_note_columns(df, to, note_cols=['chord_tones', 'added_tones', 'bas
         If `to` is 'sd' or 'rn', specify a boolean column where the value is
         True in those rows where the stacks of fifths occur in a local minor
         context and False for the others.
-    argument_cols : :obj:`dict` or :obj:`list`, optional
-        While the elements in `columns` are always used as first function argument,
-        unless
 
     """
     transformations = {
