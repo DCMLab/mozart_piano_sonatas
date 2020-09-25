@@ -164,7 +164,7 @@
             <velocity>64</velocity>
             </Dynamic>
           <Harmony>
-            <name>.Eb.I</name>
+            <name>.Eb.I{</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -542,7 +542,7 @@
             <velocity>49</velocity>
             </Dynamic>
           <Harmony>
-            <name>I\\</name>
+            <name>I}{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -888,9 +888,6 @@
               <tpc>11</tpc>
               </Note>
             </Chord>
-          <Harmony>
-            <name>v.VI</name>
-            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Note>
@@ -921,7 +918,7 @@
         <stretch>0.9</stretch>
         <voice>
           <Harmony>
-            <name>V7</name>
+            <name>V.V7</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -1028,7 +1025,7 @@
         <stretch>0.6</stretch>
         <voice>
           <Harmony>
-            <name>V</name>
+            <name>V}</name>
             </Harmony>
           <Rest>
             <visible>0</visible>
@@ -1079,7 +1076,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V(#764)</name>
+            <name>V(#7b64)</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -1098,7 +1095,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -1263,7 +1260,7 @@
           </LayoutBreak>
         <voice>
           <Harmony>
-            <name>V.I</name>
+            <name>I{</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -2876,7 +2873,7 @@
           </LayoutBreak>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -2944,7 +2941,7 @@
             <durationType>eighth</durationType>
             </Rest>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Chord>
             <BeamMode>no</BeamMode>
@@ -3084,7 +3081,7 @@
             <subtype>start-repeat</subtype>
             </BarLine>
           <Harmony>
-            <name>#viio2/ii</name>
+            <name>#viio2/ii{</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -3630,7 +3627,7 @@
           </LayoutBreak>
         <voice>
           <Harmony>
-            <name>V[V</name>
+            <name>V[V}</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -4022,7 +4019,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V]\\</name>
+            <name>V]</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -4125,7 +4122,7 @@
           </LayoutBreak>
         <voice>
           <Harmony>
-            <name>I</name>
+            <name>I{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -4593,7 +4590,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>i.viio7/V</name>
+            <name>viio7/V</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -4654,7 +4651,7 @@
           </LayoutBreak>
         <voice>
           <Harmony>
-            <name>V</name>
+            <name>V}</name>
             </Harmony>
           <Rest>
             <visible>0</visible>
@@ -4710,7 +4707,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V(#764)</name>
+            <name>V(#7b64)</name>
             <offset x="0" y="-5"/>
             </Harmony>
           <Chord>
@@ -4730,7 +4727,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             <offset x="0" y="-5"/>
             </Harmony>
           <Chord>
@@ -4872,7 +4869,7 @@
         <stretch>0.7</stretch>
         <voice>
           <Harmony>
-            <name>I.I</name>
+            <name>I{</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -6390,7 +6387,7 @@
           </LayoutBreak>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -6456,7 +6453,7 @@
             <durationType>eighth</durationType>
             </Rest>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Rest>
             <durationType>16th</durationType>
@@ -6584,11 +6581,11 @@
             <family>Times New Roman</family>
             <size>13</size>
             <bold>1</bold>
-            <offset x="-6" y="-6"/>
+            <offset x="-8.13514" y="-6.94895"/>
             <text>Coda</text>
             </StaffText>
           <Harmony>
-            <name>I</name>
+            <name>{</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -6858,13 +6855,14 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I(6)</name>
+            <name>I</name>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -6883,9 +6881,6 @@
               <tpc>14</tpc>
               </Note>
             </Chord>
-          <Harmony>
-            <name>I</name>
-            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <StemDirection>down</StemDirection>
@@ -6908,6 +6903,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -6940,13 +6936,14 @@
             </Chord>
           <endTuplet/>
           <Harmony>
-            <name>vi</name>
+            <name>ii6</name>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -6975,14 +6972,12 @@
               </Note>
             </Chord>
           <endTuplet/>
-          <Harmony>
-            <name>ii64</name>
-            </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -7074,7 +7069,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I(974)</name>
+            <name>I(974)}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -7098,7 +7093,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -9378,13 +9373,13 @@
         </Measure>
       <Measure>
         <voice>
-          <BarLine>
-            <subtype>start-repeat</subtype>
-            </BarLine>
           <Clef>
             <concertClefType>G</concertClefType>
             <transposingClefType>G</transposingClefType>
             </Clef>
+          <BarLine>
+            <subtype>start-repeat</subtype>
+            </BarLine>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
