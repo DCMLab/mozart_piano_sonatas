@@ -151,7 +151,8 @@
             <sigD>4</sigD>
             </TimeSig>
           <Harmony>
-            <name>.C.I[I</name>
+            <name>.C.I[I{</name>
+            <offset x="0" y="-4.5"/>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -281,7 +282,7 @@
             <durationType>eighth</durationType>
             <Articulation>
               <subtype>ornamentTrill</subtype>
-              <offset x="0.658281" y="-0.453842"/>
+              <offset x="0.150792" y="0.0536467"/>
               </Articulation>
             <Note>
               <pitch>72</pitch>
@@ -392,7 +393,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>IV</name>
+            <name>viio64</name>
             <offset x="0.0910263" y="-2.68205"/>
             </Harmony>
           <Chord>
@@ -459,7 +460,7 @@
             <durationType>eighth</durationType>
             <Articulation>
               <subtype>ornamentTrill</subtype>
-              <offset x="0.749308" y="-0.0897365"/>
+              <offset x="0.241819" y="0.164008"/>
               </Articulation>
             <Note>
               <pitch>72</pitch>
@@ -762,7 +763,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -788,7 +789,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I(64)</name>
+            <name>IV64</name>
             </Harmony>
           <Dynamic>
             <subtype>p</subtype>
@@ -1126,7 +1127,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}{</name>
             <offset x="0" y="-2.86411"/>
             </Harmony>
           <Beam>
@@ -1903,7 +1904,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V2/IV</name>
+            <name>viio64/IV</name>
             </Harmony>
           <Chord>
             <durationType>32nd</durationType>
@@ -1964,10 +1965,16 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/16</fractions>
+            </location>
           <Harmony>
             <name>IV</name>
             <offset x="0.191026" y="-2.94487"/>
             </Harmony>
+          <location>
+            <fractions>1/16</fractions>
+            </location>
           <Chord>
             <durationType>32nd</durationType>
             <Note>
@@ -2177,7 +2184,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V(64)</name>
+            <name>V(64)}</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -2215,7 +2222,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -2234,7 +2241,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V.I</name>
+            <name>V.I{</name>
             </Harmony>
           <Dynamic>
             <subtype>p</subtype>
@@ -2569,6 +2576,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>32nd</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -3219,7 +3227,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I</name>
+            <name>I}{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -4128,7 +4136,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -4146,6 +4154,9 @@
             <subtype>sf</subtype>
             <velocity>112</velocity>
             </Dynamic>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -4533,7 +4544,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V(64)</name>
+            <name>V(64)}</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -4571,7 +4582,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             <offset x="0.1" y="-2.5"/>
             </Harmony>
           <Chord>
@@ -4590,6 +4601,9 @@
             <subtype>sf</subtype>
             <velocity>112</velocity>
             </Dynamic>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>16th</durationType>
@@ -4667,9 +4681,6 @@
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>ii</name>
-            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Articulation>
@@ -4746,9 +4757,6 @@
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>IV</name>
-            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Articulation>
@@ -4787,9 +4795,6 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Harmony>
-            <name>V</name>
-            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Articulation>
@@ -4985,7 +4990,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -5924,7 +5929,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}{</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -6890,7 +6895,7 @@
             <velocity>96</velocity>
             </Dynamic>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -7222,7 +7227,7 @@
             <velocity>96</velocity>
             </Dynamic>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Chord>
             <durationType>32nd</durationType>
@@ -7594,7 +7599,7 @@
         <endRepeat>2</endRepeat>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -7645,13 +7650,13 @@
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>I</name>
-            </Harmony>
           <Dynamic>
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>eighth</durationType>
@@ -8518,7 +8523,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -8536,6 +8541,9 @@
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <durationType>32nd</durationType>
             <Spanner type="Slur">
@@ -8746,6 +8754,10 @@
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <name>V7/IV</name>
+            <offset x="0" y="-3.7"/>
+            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
@@ -8764,9 +8776,6 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Harmony>
-            <name>V7/IV</name>
-            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
@@ -9193,7 +9202,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V7(4)</name>
+            <name>ii7(4)/IV</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -9519,6 +9528,9 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
+          <Harmony>
+            <name>I</name>
+            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -9766,7 +9778,8 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V[V\\</name>
+            <name>V[V}{</name>
+            <offset x="0" y="-2.78954"/>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -9824,6 +9837,7 @@
             </Chord>
           <Harmony>
             <name>viio6/V</name>
+            <offset x="0" y="-3.07907"/>
             </Harmony>
           <Rest>
             <durationType>16th</durationType>
@@ -9840,12 +9854,13 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
+          <Harmony>
+            <name>V7</name>
+            <offset x="-0.144768" y="-2.78954"/>
+            </Harmony>
           <Rest>
             <durationType>16th</durationType>
             </Rest>
-          <Harmony>
-            <name>viio</name>
-            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Note>
@@ -9863,8 +9878,8 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I(4)</name>
-            <offset x="0.455132" y="-2.59103"/>
+            <name>V(64)</name>
+            <offset x="0.546158" y="-2.68205"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -9884,10 +9899,6 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Harmony>
-            <name>I</name>
-            <offset x="0.546158" y="-2.68205"/>
-            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -9904,12 +9915,12 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
+          <Harmony>
+            <name>V(b64)</name>
+            </Harmony>
           <Rest>
             <durationType>16th</durationType>
             </Rest>
-          <Harmony>
-            <name>i</name>
-            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Note>
@@ -9923,7 +9934,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V2</name>
+            <name>V7</name>
             </Harmony>
           <Rest>
             <durationType>16th</durationType>
@@ -9937,12 +9948,12 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
+          <Harmony>
+            <name>V(b64)</name>
+            </Harmony>
           <Rest>
             <durationType>16th</durationType>
             </Rest>
-          <Harmony>
-            <name>i6</name>
-            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Note>
@@ -9957,7 +9968,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V64</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -9993,9 +10004,6 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Harmony>
-            <name>V6</name>
-            </Harmony>
           <Spanner type="HairPin">
             <HairPin>
               <subtype>2</subtype>
@@ -10107,7 +10115,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>viio</name>
+            <name>V7</name>
             </Harmony>
           <Rest>
             <durationType>32nd</durationType>
@@ -10163,7 +10171,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I</name>
+            <name>V(64)</name>
             </Harmony>
           <Spanner type="HairPin">
             <prev>
@@ -10224,7 +10232,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>i64</name>
+            <name>V(b64)</name>
             </Harmony>
           <Rest>
             <durationType>32nd</durationType>
@@ -10276,7 +10284,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V2]</name>
+            <name>V7]</name>
             </Harmony>
           <Rest>
             <durationType>32nd</durationType>
@@ -10378,7 +10386,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V\\</name>
+            <name>V}</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -11038,7 +11046,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I[I</name>
+            <name>I[I{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -11280,7 +11288,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>IV</name>
+            <name>viio64</name>
             </Harmony>
           <Chord>
             <BeamMode>begin</BeamMode>
@@ -11666,7 +11674,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -11692,7 +11700,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I(64)</name>
+            <name>IV64</name>
             </Harmony>
           <Dynamic>
             <subtype>p</subtype>
@@ -12011,7 +12019,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}{</name>
             <offset x="0" y="-2.86411"/>
             </Harmony>
           <Chord>
@@ -12371,7 +12379,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -12738,7 +12746,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -12775,7 +12783,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V2/IV</name>
+            <name>viio64/IV</name>
             </Harmony>
           <Chord>
             <durationType>32nd</durationType>
@@ -12836,9 +12844,15 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
+          <location>
+            <fractions>-1/16</fractions>
+            </location>
           <Harmony>
             <name>IV</name>
             </Harmony>
+          <location>
+            <fractions>1/16</fractions>
+            </location>
           <Chord>
             <durationType>32nd</durationType>
             <Note>
@@ -13043,7 +13057,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V(64)</name>
+            <name>V(64)}</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -13081,7 +13095,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -13100,7 +13114,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V</name>
+            <name>{</name>
             </Harmony>
           <Chord>
             <durationType>32nd</durationType>
@@ -13291,7 +13305,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V(64)</name>
+            <name>IV64/V</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -13428,6 +13442,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>32nd</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -13977,9 +13992,6 @@
             <durationType>32nd</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <o4 x="-0.45" y="-5.46167e-18"/>
-                  </SlurSegment>
                 </Slur>
               <next>
                 <location>
@@ -14141,7 +14153,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I</name>
+            <name>I}{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -14388,9 +14400,6 @@
             <durationType>16th</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <o1 x="1" y="0.4"/>
-                  </SlurSegment>
                 </Slur>
               <next>
                 <location>
@@ -15023,7 +15032,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -15044,6 +15053,9 @@
             <subtype>sf</subtype>
             <velocity>112</velocity>
             </Dynamic>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -15179,6 +15191,9 @@
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <name>V65</name>
+            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -15209,9 +15224,6 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Harmony>
-            <name>V65</name>
-            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -15308,7 +15320,7 @@
             <durationType>16th</durationType>
             <Articulation>
               <subtype>ornamentTrill</subtype>
-              <offset x="0.508294" y="-3.09995"/>
+              <offset x="-0.184323" y="0.0860894"/>
               </Articulation>
             <Note>
               <pitch>81</pitch>
@@ -15405,7 +15417,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V(64)</name>
+            <name>V(64)}</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -15443,7 +15455,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -15458,7 +15470,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I</name>
+            <name>{</name>
             </Harmony>
           <Dynamic>
             <subtype>sf</subtype>
@@ -15615,9 +15627,6 @@
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>IV</name>
-            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Articulation>
@@ -15657,9 +15666,6 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Harmony>
-            <name>V</name>
-            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Articulation>
@@ -15851,13 +15857,13 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I[I</name>
+            <name>I}{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Note>
-              <pitch>74</pitch>
-              <tpc>16</tpc>
+              <pitch>72</pitch>
+              <tpc>14</tpc>
               </Note>
             </Chord>
           <Rest>
@@ -15894,8 +15900,8 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>IV</name>
-            <offset x="-1" y="-2.8"/>
+            <name>I(64)</name>
+            <offset x="0.0401725" y="-6.09125"/>
             </Harmony>
           <Chord>
             <durationType>32nd</durationType>
@@ -15933,7 +15939,7 @@
             <durationType>32nd</durationType>
             <Articulation>
               <subtype>ornamentTrill</subtype>
-              <offset x="0.658281" y="-1.6"/>
+              <offset x="0.658281" y="-0.559828"/>
               </Articulation>
             <Note>
               <pitch>81</pitch>
@@ -15974,6 +15980,7 @@
         <voice>
           <Harmony>
             <name>I</name>
+            <offset x="0" y="-5.18518"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -16059,8 +16066,8 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>IV</name>
-            <offset x="0" y="-3.5"/>
+            <name>I(64)</name>
+            <offset x="0.148596" y="-7.78002"/>
             </Harmony>
           <Chord>
             <durationType>32nd</durationType>
@@ -16188,8 +16195,8 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I6]</name>
-            <offset x="0.0910263" y="-3.8654"/>
+            <name>I</name>
+            <offset x="0.0910263" y="-5.49996"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -16817,7 +16824,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I[I\\</name>
+            <name>I}{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -16828,15 +16835,6 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <location>
-            <fractions>-1/16</fractions>
-            </location>
-          <Harmony>
-            <name>I6</name>
-            </Harmony>
-          <location>
-            <fractions>1/16</fractions>
-            </location>
           <Rest>
             <durationType>32nd</durationType>
             </Rest>
@@ -16881,7 +16879,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>IV</name>
+            <name>I(64)</name>
             <offset x="0" y="-3.5"/>
             </Harmony>
           <Chord>
@@ -16978,7 +16976,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I6</name>
+            <name>I</name>
             <offset x="0" y="-3.77437"/>
             </Harmony>
           <Chord>
@@ -17054,7 +17052,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>IV</name>
+            <name>I(64)</name>
             <offset x="-0.0910263" y="-4.13847"/>
             </Harmony>
           <Chord>
@@ -17152,7 +17150,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I6]</name>
+            <name>I</name>
             <offset x="0.273079" y="-4.59361"/>
             </Harmony>
           <Chord>
@@ -17848,7 +17846,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -18168,7 +18166,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             <offset x="0" y="-2.77308"/>
             </Harmony>
           <Dynamic>
@@ -18543,7 +18541,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I[I\\</name>
+            <name>I[I{</name>
             <offset x="0" y="-3.5"/>
             </Harmony>
           <Chord>
@@ -18555,10 +18553,6 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Harmony>
-            <name>I6</name>
-            <offset x="0" y="-3.5"/>
-            </Harmony>
           <Rest>
             <durationType>16th</durationType>
             </Rest>
@@ -18606,7 +18600,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I64</name>
+            <name>I</name>
             <offset x="0" y="-3.5"/>
             </Harmony>
           <Chord>
@@ -18684,7 +18678,7 @@
             <durationType>16th</durationType>
             </Rest>
           <Harmony>
-            <name>V2/IV</name>
+            <name>V7/IV</name>
             <offset x="0" y="-3.5"/>
             </Harmony>
           <Chord>
@@ -18728,7 +18722,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>#viio2/ii</name>
+            <name>V2/ii</name>
             <offset x="-0.182053" y="-3.5"/>
             </Harmony>
           <Chord>
@@ -18889,7 +18883,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I6</name>
+            <name>I</name>
             <offset x="0" y="-4"/>
             </Harmony>
           <Chord>
@@ -18924,7 +18918,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V2(9)</name>
+            <name>vii%43</name>
             <offset x="0" y="-4"/>
             </Harmony>
           <Dynamic>
@@ -18950,7 +18944,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I6</name>
+            <name>I</name>
             <offset x="0" y="-4"/>
             </Harmony>
           <Chord>
@@ -18971,14 +18965,14 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Harmony>
-            <name>V2(9)</name>
-            <offset x="0" y="-4"/>
-            </Harmony>
           <Dynamic>
             <subtype>sf</subtype>
             <velocity>112</velocity>
             </Dynamic>
+          <Harmony>
+            <name>vii%43</name>
+            <offset x="0" y="-4"/>
+            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Note>
@@ -19009,7 +19003,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I6</name>
+            <name>I</name>
             <offset x="0" y="-4"/>
             </Harmony>
           <Dynamic>
@@ -19098,7 +19092,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I6</name>
+            <name>I</name>
             <offset x="0" y="-4"/>
             </Harmony>
           <Rest>
@@ -19138,13 +19132,13 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Rest>
-            <durationType>16th</durationType>
-            </Rest>
           <Harmony>
             <name>viio43</name>
             <offset x="0" y="-4"/>
             </Harmony>
+          <Rest>
+            <durationType>16th</durationType>
+            </Rest>
           <Chord>
             <durationType>32nd</durationType>
             <Spanner type="Slur">
@@ -19185,7 +19179,7 @@
         <endRepeat>2</endRepeat>
         <voice>
           <Harmony>
-            <name>I(974)</name>
+            <name>I(974)}</name>
             <offset x="0" y="-4"/>
             </Harmony>
           <Dynamic>
@@ -21373,6 +21367,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -21409,6 +21404,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -28015,8 +28011,8 @@
           <Chord>
             <durationType>16th</durationType>
             <Note>
-              <pitch>57</pitch>
-              <tpc>17</tpc>
+              <pitch>55</pitch>
+              <tpc>15</tpc>
               <velocity>52</velocity>
               <veloType>user</veloType>
               </Note>
@@ -28309,6 +28305,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -28345,6 +28342,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -29151,10 +29149,6 @@
             <durationType>eighth</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <o2 x="-1.11022e-17" y="-0.5"/>
-                  <o3 x="-1.11022e-17" y="-0.5"/>
-                  </SlurSegment>
                 </Slur>
               <next>
                 <location>
@@ -29532,10 +29526,6 @@
             <durationType>eighth</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <o2 x="2.08167e-18" y="0.3"/>
-                  <o3 x="2.08167e-18" y="0.3"/>
-                  </SlurSegment>
                 </Slur>
               <next>
                 <location>
