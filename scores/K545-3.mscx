@@ -155,7 +155,7 @@
             <sigD>4</sigD>
             </TimeSig>
           <Harmony>
-            <name>.C.I</name>
+            <name>.C.I6{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -432,7 +432,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V\\</name>
+            <name>V}</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -487,7 +487,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I</name>
+            <name>I6{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -797,7 +797,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -812,7 +812,7 @@
             <subtype>end-repeat</subtype>
             </BarLine>
           <Harmony>
-            <name>V.IV</name>
+            <name>V.IV{</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -1227,7 +1227,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V\\</name>
+            <name>V}</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -1285,13 +1285,13 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I</name>
+            <name>I6{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Articulation>
               <subtype>articStaccatissimoAbove</subtype>
-              <offset x="0.658281" y="-3.25"/>
+              <offset x="-0.356696" y="-0.205068"/>
               </Articulation>
             <Note>
               <pitch>83</pitch>
@@ -1310,7 +1310,7 @@
             <durationType>eighth</durationType>
             <Articulation>
               <subtype>articStaccatissimoAbove</subtype>
-              <offset x="0.658281" y="-3.25"/>
+              <offset x="0.0239202" y="-0.205068"/>
               </Articulation>
             <Note>
               <pitch>83</pitch>
@@ -1357,7 +1357,7 @@
             <durationType>eighth</durationType>
             <Articulation>
               <subtype>articStaccatissimoAbove</subtype>
-              <offset x="0.658281" y="-3"/>
+              <offset x="0.0239202" y="-0.843173"/>
               </Articulation>
             <Note>
               <pitch>81</pitch>
@@ -1376,7 +1376,7 @@
             <durationType>eighth</durationType>
             <Articulation>
               <subtype>articStaccatissimoAbove</subtype>
-              <offset x="0.658281" y="-3"/>
+              <offset x="0.277665" y="-0.462557"/>
               </Articulation>
             <Note>
               <pitch>81</pitch>
@@ -1589,7 +1589,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -1804,9 +1804,6 @@
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>V7(9)</name>
-            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
@@ -1870,9 +1867,6 @@
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>V7\\</name>
-            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Note>
@@ -1890,7 +1884,7 @@
             <durationType>eighth</durationType>
             </Rest>
           <Harmony>
-            <name>I</name>
+            <name>I6{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -2167,7 +2161,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V\\</name>
+            <name>V}</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -2222,7 +2216,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I</name>
+            <name>I6{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -2532,7 +2526,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -2547,7 +2541,7 @@
             <durationType>eighth</durationType>
             </Rest>
           <Harmony>
-            <name>I</name>
+            <name>vi.i6{</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -2557,7 +2551,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>vi</name>
+            <name>i</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -2615,7 +2609,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>viio</name>
+            <name>iio</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -2625,7 +2619,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V6/vi</name>
+            <name>V6</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -2683,13 +2677,13 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>vi.i</name>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Articulation>
               <subtype>articStaccatissimoAbove</subtype>
-              <offset x="0.658281" y="-3"/>
+              <offset x="0.150792" y="-0.589429"/>
               </Articulation>
             <Note>
               <pitch>76</pitch>
@@ -2708,7 +2702,8 @@
             <durationType>eighth</durationType>
             <Articulation>
               <subtype>articStaccatissimoAbove</subtype>
-              <offset x="0.658281" y="-3"/>
+              <minDistance>-999</minDistance>
+              <offset x="0.150792" y="0.044932"/>
               </Articulation>
             <Note>
               <pitch>76</pitch>
@@ -2727,9 +2722,6 @@
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>i64</name>
-            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Note>
@@ -3229,7 +3221,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V[V\\</name>
+            <name>V}</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -3303,7 +3295,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>i</name>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -3406,7 +3398,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V6</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -3523,7 +3515,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>i</name>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -3626,7 +3618,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V]</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -3641,7 +3633,7 @@
             <durationType>eighth</durationType>
             </Rest>
           <Harmony>
-            <name>i</name>
+            <name>i6{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -3684,7 +3676,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>i64</name>
+            <name>V(64)</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -4359,7 +4351,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i}</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -4725,7 +4717,7 @@
             <durationType>quarter</durationType>
             </Rest>
           <Harmony>
-            <name>I</name>
+            <name>I6{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -5002,7 +4994,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V\\</name>
+            <name>V}</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -5057,7 +5049,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I</name>
+            <name>I6{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -5367,7 +5359,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -5379,7 +5371,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V2</name>
+            <name>V2{</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -5795,7 +5787,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I(9)</name>
+            <name>I(9)}</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -5816,7 +5808,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -5835,7 +5827,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V2</name>
+            <name>V2{</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -6254,7 +6246,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -6693,7 +6685,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -6776,7 +6768,7 @@
             </Chord>
           <Fermata>
             <subtype>fermataAbove</subtype>
-            <offset x="9.53328" y="-3.08594"/>
+            <offset x="-0.109005" y="-2.19783"/>
             </Fermata>
           <Rest>
             <durationType>quarter</durationType>
@@ -10851,7 +10843,7 @@
             </Chord>
           <Fermata>
             <subtype>fermataBelow</subtype>
-            <offset x="9.53328" y="3.3"/>
+            <offset x="-0.109005" y="1.65066"/>
             <placement>below</placement>
             </Fermata>
           <Rest>

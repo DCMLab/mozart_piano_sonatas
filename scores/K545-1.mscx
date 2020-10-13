@@ -154,7 +154,7 @@
             <sigD>4</sigD>
             </TimeSig>
           <Harmony>
-            <name>.C.I</name>
+            <name>.C.I{</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -318,7 +318,7 @@
               </Spanner>
             <Articulation>
               <subtype>ornamentTrill</subtype>
-              <offset x="0.658281" y="-1.5"/>
+              <offset x="-0.522452" y="0.861466"/>
               </Articulation>
             <Note>
               <pitch>77</pitch>
@@ -351,7 +351,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -370,7 +370,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>IV</name>
+            <name>IV{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -1331,7 +1331,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V\\</name>
+            <name>V}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -1379,6 +1379,9 @@
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <name>V.V{</name>
+            </Harmony>
           <Rest>
             <durationType>measure</durationType>
             <duration>4/4</duration>
@@ -1387,7 +1390,7 @@
             <fractions>-1/2</fractions>
             </location>
           <Harmony>
-            <name>V.V2</name>
+            <name>V2</name>
             </Harmony>
           </voice>
         </Measure>
@@ -1524,7 +1527,7 @@
               </Spanner>
             <Articulation>
               <subtype>ornamentTrill</subtype>
-              <offset x="0.658281" y="-2"/>
+              <offset x="-0.37486" y="1.09942"/>
               </Articulation>
             <Note>
               <pitch>79</pitch>
@@ -2044,14 +2047,11 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Harmony>
-            <name>V65</name>
-            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Note>
-              <pitch>72</pitch>
-              <tpc>14</tpc>
+              <pitch>74</pitch>
+              <tpc>16</tpc>
               <velocity>61</velocity>
               <veloType>user</veloType>
               </Note>
@@ -2464,7 +2464,7 @@
             <durationType>whole</durationType>
             <Articulation>
               <subtype>ornamentTrill</subtype>
-              <offset x="0.990312" y="-1.5"/>
+              <offset x="-0.190421" y="0.713875"/>
               </Articulation>
             <Note>
               <pitch>81</pitch>
@@ -2478,7 +2478,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -2789,7 +2789,7 @@
         <startRepeat/>
         <voice>
           <Harmony>
-            <name>v.i</name>
+            <name>v.i{</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -4182,7 +4182,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}{</name>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -4333,7 +4333,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V43</name>
+            <name>V65</name>
             <offset x="0" y="-5.5"/>
             </Harmony>
           <Chord>
@@ -4349,7 +4349,8 @@
               </Spanner>
             <Articulation>
               <subtype>ornamentTrill</subtype>
-              <offset x="0.658281" y="-3"/>
+              <minDistance>-999</minDistance>
+              <offset x="-0.227269" y="1.42775"/>
               </Articulation>
             <Note>
               <Accidental>
@@ -4385,7 +4386,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I</name>
+            <name>I}</name>
             <offset x="0" y="-5.5"/>
             </Harmony>
           <Chord>
@@ -4405,7 +4406,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>IV</name>
+            <name>IV{</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -5556,7 +5557,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V\\</name>
+            <name>V}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -5604,6 +5605,9 @@
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Rest>
             <durationType>measure</durationType>
             <duration>4/4</duration>
@@ -6229,9 +6233,6 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Harmony>
-            <name>V65</name>
-            </Harmony>
           <Rest>
             <durationType>16th</durationType>
             </Rest>
@@ -6659,7 +6660,7 @@
         <stretch>0.9</stretch>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -6916,7 +6917,7 @@
         <stretch>0.9</stretch>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>

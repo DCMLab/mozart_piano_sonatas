@@ -133,7 +133,7 @@
             <sigD>4</sigD>
             </TimeSig>
           <Harmony>
-            <name>.Bb.I</name>
+            <name>.Bb.I{</name>
             <offset x="0" y="-4.9843"/>
             </Harmony>
           <Chord>
@@ -213,7 +213,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V6(#7)</name>
+            <name>V6(#14)</name>
             <offset x="0" y="-4.98"/>
             </Harmony>
           <StaffText>
@@ -421,7 +421,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I6(7)</name>
+            <name>I6(14)</name>
             <offset x="0" y="-4.98"/>
             </Harmony>
           <Beam>
@@ -491,7 +491,7 @@
             <fractions>-1/16</fractions>
             </location>
           <Harmony>
-            <name>IV+</name>
+            <name>ii6(#7)</name>
             <offset x="0" y="-5.02"/>
             </Harmony>
           <location>
@@ -710,7 +710,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I(4)</name>
+            <name>I</name>
             <offset x="0" y="-5.02"/>
             </Harmony>
           <Dynamic>
@@ -737,10 +737,6 @@
               <tpc>11</tpc>
               </Note>
             </Chord>
-          <Harmony>
-            <name>I</name>
-            <offset x="0" y="-5.02"/>
-            </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -764,7 +760,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V(64)</name>
+            <name>V(64)}</name>
             <offset x="0" y="-5.02"/>
             </Harmony>
           <Beam>
@@ -803,7 +799,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             <offset x="0" y="-5.02"/>
             </Harmony>
           <Beam>
@@ -867,7 +863,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>i.i</name>
+            <name>i{</name>
             <offset x="0" y="-5.38546"/>
             </Harmony>
           <Beam>
@@ -1007,7 +1003,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>v6(#7)</name>
+            <name>v6(#14)</name>
             <offset x="0" y="-5.39"/>
             </Harmony>
           <Beam>
@@ -1217,7 +1213,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I6(#7)</name>
+            <name>I6(7)</name>
             <offset x="0" y="-5.39"/>
             </Harmony>
           <Beam>
@@ -1244,7 +1240,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>i6</name>
+            <name>I6</name>
             <offset x="0" y="-5.39"/>
             </Harmony>
           <Chord>
@@ -1261,6 +1257,10 @@
               <tpc>12</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <name>i6</name>
+            <offset x="0" y="-5.3"/>
+            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Articulation>
@@ -1279,7 +1279,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V7(b9)/V</name>
+            <name>V.V7(b9)</name>
             <offset x="0.364105" y="-5.66839"/>
             </Harmony>
           <Dynamic>
@@ -1453,7 +1453,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>v.VI(4)</name>
+            <name>.bVI(4)</name>
             <offset x="0" y="-5.67"/>
             </Harmony>
           <Beam>
@@ -1476,7 +1476,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>VI</name>
+            <name>.bVI</name>
             <offset x="0" y="-5.67"/>
             </Harmony>
           <Chord>
@@ -1641,9 +1641,6 @@
             <durationType>eighth</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="0.234103"/>
-                  </SlurSegment>
                 </Slur>
               <next>
                 <location>
@@ -1697,7 +1694,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             <offset x="0" y="-3.74"/>
             </Harmony>
           <Dynamic>
@@ -1713,8 +1710,8 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V.I</name>
-            <offset x="0" y="-3.74"/>
+            <name>{</name>
+            <offset x="0" y="-3.8"/>
             </Harmony>
           <Rest>
             <offset x="0" y="2"/>
@@ -1723,7 +1720,7 @@
           </voice>
         <voice>
           <Harmony>
-            <name>V(64)</name>
+            <name>V(b64)</name>
             <offset x="0" y="-3.74418"/>
             </Harmony>
           <location>
@@ -2280,7 +2277,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V43</name>
+            <name>V64</name>
             <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
@@ -2318,6 +2315,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -2367,6 +2365,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -2443,7 +2442,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I(79)</name>
+            <name>I(974)}</name>
             <offset x="0" y="-5.52"/>
             </Harmony>
           <Chord>
@@ -2476,7 +2475,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I\\</name>
+            <name>I</name>
             <offset x="0" y="-5.52"/>
             </Harmony>
           <Chord>
@@ -2493,6 +2492,10 @@
               <tpc>17</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <name>{</name>
+            <offset x="0" y="-5.5"/>
+            </Harmony>
           <Rest>
             <offset x="0" y="2"/>
             <durationType>quarter</durationType>
@@ -2519,9 +2522,6 @@
             <durationType>eighth</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="-0.377025"/>
-                  </SlurSegment>
                 </Slur>
               <next>
                 <location>
@@ -3072,7 +3072,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V43</name>
+            <name>V64</name>
             <offset x="0" y="-6.23364"/>
             </Harmony>
           <Chord>
@@ -3110,6 +3110,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -3185,6 +3186,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -3285,7 +3287,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I</name>
+            <name>I}{</name>
             <offset x="0" y="-5.46"/>
             </Harmony>
           <Dynamic>
@@ -3931,6 +3933,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -4081,7 +4084,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I[I</name>
+            <name>I[I}{</name>
             <offset x="0" y="-5.30432"/>
             </Harmony>
           <Spanner type="Trill">
@@ -4116,7 +4119,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V2/IV</name>
+            <name>V7/IV</name>
             <offset x="0.0910263" y="-5.3"/>
             </Harmony>
           <Chord>
@@ -4240,7 +4243,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V2/IV</name>
+            <name>V7/IV</name>
             <offset x="-0.637184" y="-5.3"/>
             </Harmony>
           <Chord>
@@ -4373,7 +4376,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I.V7</name>
+            <name>I.V7}</name>
             <offset x="0" y="-3.84786"/>
             </Harmony>
           <Chord>
@@ -4404,10 +4407,6 @@
               <tpc>13</tpc>
               </Note>
             </Chord>
-          <Harmony>
-            <name>V7\\</name>
-            <offset x="0" y="-3.85"/>
-            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -4529,7 +4528,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I</name>
+            <name>I{</name>
             <offset x="0" y="-3.85"/>
             </Harmony>
           <Chord>
@@ -4606,7 +4605,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V6(#7)</name>
+            <name>V6(#14)</name>
             <offset x="0" y="-3.85"/>
             </Harmony>
           <StaffText>
@@ -4814,7 +4813,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I6(7)</name>
+            <name>I6(14)</name>
             <offset x="0" y="-5.53405"/>
             </Harmony>
           <Beam>
@@ -4900,7 +4899,7 @@
             <fractions>-1/16</fractions>
             </location>
           <Harmony>
-            <name>IV+</name>
+            <name>ii6(#7)</name>
             <offset x="0" y="-5.53"/>
             </Harmony>
           <location>
@@ -4969,7 +4968,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I6</name>
+            <name>iii</name>
             <offset x="0" y="-5.53"/>
             </Harmony>
           <Beam>
@@ -5017,6 +5016,10 @@
               <tpc>13</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <name>I6</name>
+            <offset x="0" y="-5.5"/>
+            </Harmony>
           <Beam>
             </Beam>
           <Chord>
@@ -5220,7 +5223,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V(64)</name>
+            <name>V(64)}</name>
             <offset x="0" y="-4.44"/>
             </Harmony>
           <Beam>
@@ -5266,7 +5269,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             <offset x="0" y="-4.44"/>
             </Harmony>
           <Chord>
@@ -5318,7 +5321,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>i.i</name>
+            <name>i{</name>
             <offset x="0" y="-3.64"/>
             </Harmony>
           <Beam>
@@ -5458,7 +5461,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>v6(#7)</name>
+            <name>v6(#14)</name>
             <offset x="0" y="-3.6405"/>
             </Harmony>
           <Beam>
@@ -5661,7 +5664,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I6(7)</name>
+            <name>I6(14)</name>
             <offset x="0" y="-5.92"/>
             </Harmony>
           <Beam>
@@ -5727,7 +5730,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>V7(b9)/V</name>
+            <name>V.V7(b9)</name>
             <offset x="-0.182053" y="-6.21333"/>
             </Harmony>
           <Dynamic>
@@ -5781,7 +5784,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V7/V</name>
+            <name>V7</name>
             <offset x="-0.0910263" y="-6.21"/>
             </Harmony>
           <Beam>
@@ -5903,7 +5906,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>v.VI(4)</name>
+            <name>.bVI(4)</name>
             <offset x="0" y="-6.21"/>
             </Harmony>
           <Beam>
@@ -5926,7 +5929,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>VI</name>
+            <name>.bVI</name>
             <offset x="0" y="-6.21"/>
             </Harmony>
           <Chord>
@@ -6169,7 +6172,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I\\</name>
+            <name>I}</name>
             <offset x="0" y="-5.16"/>
             </Harmony>
           <Dynamic>
@@ -6186,7 +6189,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I.I</name>
+            <name>I.I{</name>
             <offset x="0" y="-5.16"/>
             </Harmony>
           <Rest>
@@ -6196,7 +6199,7 @@
           </voice>
         <voice>
           <Harmony>
-            <name>V(64)</name>
+            <name>V(b64)</name>
             <offset x="0" y="-5.15631"/>
             </Harmony>
           <location>
@@ -6754,7 +6757,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V43</name>
+            <name>V64</name>
             <offset x="0" y="-5.58"/>
             </Harmony>
           <Chord>
@@ -6788,6 +6791,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -6832,6 +6836,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -6907,7 +6912,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I(97)</name>
+            <name>I(974)}</name>
             <offset x="0" y="-4.76"/>
             </Harmony>
           <Chord>
@@ -6943,8 +6948,8 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I\\</name>
-            <offset x="-0.273079" y="-4.76"/>
+            <name>I</name>
+            <offset x="0.415211" y="-5.36"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -6960,6 +6965,10 @@
               <tpc>16</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <name>{</name>
+            <offset x="0" y="-5.3"/>
+            </Harmony>
           <Rest>
             <offset x="0" y="2"/>
             <durationType>quarter</durationType>
@@ -7552,7 +7561,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V43</name>
+            <name>V64</name>
             <offset x="0" y="-5.33"/>
             </Harmony>
           <Chord>
@@ -7590,6 +7599,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -7644,6 +7654,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>
@@ -7722,7 +7733,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I</name>
+            <name>I}{</name>
             <offset x="0" y="-5.12"/>
             </Harmony>
           <Chord>
@@ -8490,7 +8501,7 @@
       <Measure>
         <voice>
           <Harmony>
-            <name>I[I\\</name>
+            <name>I[I}{</name>
             <offset x="0" y="-4.9"/>
             </Harmony>
           <Spanner type="Trill">
@@ -8525,7 +8536,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V2/IV</name>
+            <name>V7/IV</name>
             <offset x="-1.45642" y="-4.9"/>
             </Harmony>
           <Chord>
@@ -8633,7 +8644,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>V2/IV</name>
+            <name>V+7/IV</name>
             <offset x="0" y="-4.9"/>
             </Harmony>
           <Rest>
@@ -8740,7 +8751,7 @@
             <durationType>16th</durationType>
             </Rest>
           <Harmony>
-            <name>viio6</name>
+            <name>vii%65</name>
             </Harmony>
           <Beam>
             </Beam>
@@ -8797,7 +8808,7 @@
             <durationType>16th</durationType>
             </Rest>
           <Harmony>
-            <name>viio6</name>
+            <name>vii%65</name>
             </Harmony>
           <Beam>
             </Beam>
@@ -8834,7 +8845,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I(974)</name>
+            <name>I(974)}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -8889,7 +8900,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <name>I]\\</name>
+            <name>I]</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -10082,9 +10093,6 @@
             <durationType>16th</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="0.283264"/>
-                  </SlurSegment>
                 </Slur>
               <next>
                 <location>
@@ -10497,9 +10505,6 @@
             <durationType>16th</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="0.321891"/>
-                  </SlurSegment>
                 </Slur>
               <next>
                 <location>
@@ -10715,9 +10720,6 @@
             <durationType>eighth</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="0.282768"/>
-                  </SlurSegment>
                 <lineType>2</lineType>
                 </Slur>
               <next>
