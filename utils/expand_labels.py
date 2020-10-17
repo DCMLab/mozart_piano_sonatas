@@ -1183,7 +1183,8 @@ def split_labels(df, column, regex, cols={}, dropna=False, **kwargs):
         df[name] = spl[feature]
         logging.debug(f"Stored feature {feature} as column {name}.")
     numeral = cols['numeral'] if 'numeral' in cols else 'numeral'
-    mistakes = df[numeral].isna() & df[column].notna()
+    phrases = cols['phraseend'] if 'phraseend' in cols else 'phraseend'
+    mistakes = df[column].notna() & df[numeral].isna() & df[phrases].isna() 
     if mistakes.any():
         logging.warning(f"The following chords could not be parsed:\n{df.loc[mistakes, :column]}")
     return df

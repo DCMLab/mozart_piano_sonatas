@@ -9,7 +9,12 @@ import pandas as pd
 ################################################################################
 str2inttuple = lambda l: tuple() if l == '' else tuple(int(s) for s in l.split(', '))
 str2strtuple = lambda l: tuple() if l == '' else tuple(str(s) for s in l.split(', '))
-iterable2str = lambda iterable: ', '.join(str(s) for s in iterable)
+def iterable2str(iterable):
+    try:
+        return ', '.join(str(s) for s in iterable)
+    except:
+        return iterable
+
 def int2bool(s):
     try:
         return bool(int(s))

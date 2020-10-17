@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.01">
-  <programVersion>3.4.2</programVersion>
-  <programRevision>148e43f</programRevision>
+  <programVersion>3.5.0</programVersion>
+  <programRevision>43c5553</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -111,6 +111,10 @@
       <Instrument>
         <trackName></trackName>
         <Channel>
+          <program value="0"/>
+          <synti>Fluid</synti>
+          </Channel>
+        <Channel name="harmony">
           <program value="0"/>
           <synti>Fluid</synti>
           </Channel>
@@ -591,13 +595,6 @@
           <Chord>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
-              <prev>
-                <location>
-                  <grace>0</grace>
-                  </location>
-                </prev>
-              </Spanner>
-            <Spanner type="Slur">
               <Slur>
                 <up>down</up>
                 <lineType>2</lineType>
@@ -607,6 +604,13 @@
                   <fractions>1/8</fractions>
                   </location>
                 </next>
+              </Spanner>
+            <Spanner type="Slur">
+              <prev>
+                <location>
+                  <grace>0</grace>
+                  </location>
+                </prev>
               </Spanner>
             <Note>
               <pitch>67</pitch>
@@ -10416,7 +10420,7 @@
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
-              <subtype>articStaccatoBelow</subtype>
+              <subtype>articStaccatoAbove</subtype>
               </Articulation>
             <StemDirection>down</StemDirection>
             <Note>
@@ -15003,9 +15007,7 @@
               </Note>
             </Chord>
           <Harmony>
-            <root>19</root>
-            <rootCase>1</rootCase>
-            <name>VI6(9)</name>
+            <name>.bVI6(9)</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -26881,7 +26883,7 @@
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
-              <subtype>articStaccatissimoAbove</subtype>
+              <subtype>articStaccatissimoBelow</subtype>
               </Articulation>
             <Note>
               <pitch>43</pitch>
@@ -26891,7 +26893,7 @@
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
-              <subtype>articStaccatissimoAbove</subtype>
+              <subtype>articStaccatissimoBelow</subtype>
               </Articulation>
             <Note>
               <pitch>45</pitch>
@@ -26901,7 +26903,7 @@
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
-              <subtype>articStaccatissimoAbove</subtype>
+              <subtype>articStaccatissimoBelow</subtype>
               </Articulation>
             <Note>
               <Accidental>
@@ -34964,7 +34966,7 @@
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
-              <subtype>articStaccatissimoAbove</subtype>
+              <subtype>articStaccatissimoBelow</subtype>
               </Articulation>
             <Note>
               <pitch>36</pitch>
@@ -34974,7 +34976,7 @@
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
-              <subtype>articStaccatissimoAbove</subtype>
+              <subtype>articStaccatissimoBelow</subtype>
               </Articulation>
             <Note>
               <pitch>38</pitch>
@@ -34984,7 +34986,7 @@
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
-              <subtype>articStaccatissimoAbove</subtype>
+              <subtype>articStaccatissimoBelow</subtype>
               </Articulation>
             <Note>
               <pitch>40</pitch>
@@ -35472,7 +35474,7 @@
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
-              <subtype>articStaccatissimoAbove</subtype>
+              <subtype>articStaccatissimoBelow</subtype>
               </Articulation>
             <Note>
               <pitch>36</pitch>
@@ -35482,7 +35484,7 @@
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
-              <subtype>articStaccatissimoAbove</subtype>
+              <subtype>articStaccatissimoBelow</subtype>
               </Articulation>
             <Note>
               <pitch>38</pitch>
@@ -35492,7 +35494,7 @@
           <Chord>
             <durationType>quarter</durationType>
             <Articulation>
-              <subtype>articStaccatissimoAbove</subtype>
+              <subtype>articStaccatissimoBelow</subtype>
               </Articulation>
             <Note>
               <pitch>40</pitch>
