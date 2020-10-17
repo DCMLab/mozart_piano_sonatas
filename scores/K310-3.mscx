@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.01">
-  <programVersion>3.4.2</programVersion>
-  <programRevision>148e43f</programRevision>
+  <programVersion>3.5.0</programVersion>
+  <programRevision>43c5553</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -143,6 +143,10 @@
           <gateTime>100</gateTime>
           </Articulation>
         <Channel>
+          <program value="0"/>
+          <synti>Fluid</synti>
+          </Channel>
+        <Channel name="harmony">
           <program value="0"/>
           <synti>Fluid</synti>
           </Channel>
@@ -9550,7 +9554,7 @@
         <stretch>0.5</stretch>
         <voice>
           <Harmony>
-            <name>V2</name>
+            <name>V2]</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -9583,7 +9587,7 @@
         <stretch>0.5</stretch>
         <voice>
           <Harmony>
-            <name>I]}</name>
+            <name>I}</name>
             <offset x="0" y="-4.01813"/>
             </Harmony>
           <Spanner type="Volta">
@@ -9676,7 +9680,7 @@
             <accidental>0</accidental>
             </KeySig>
           <Harmony>
-            <name>i.i{</name>
+            <name>i.i[i{</name>
             </Harmony>
           <Dynamic>
             <subtype>p</subtype>
