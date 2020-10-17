@@ -210,7 +210,7 @@
 agitato</text>
             </Tempo>
           <Harmony>
-            <name>.c.i</name>
+            <name>.c.i{</name>
             </Harmony>
           <Dynamic>
             <subtype>p</subtype>
@@ -420,9 +420,6 @@ agitato</text>
           </voice>
         </Measure>
       <Measure>
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <voice>
           <Harmony>
             <name>i</name>
@@ -704,7 +701,7 @@ agitato</text>
           </LayoutBreak>
         <voice>
           <Harmony>
-            <name>V(#74)</name>
+            <name>V(#74)}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -731,7 +728,7 @@ agitato</text>
               </Note>
             </Chord>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -747,6 +744,9 @@ agitato</text>
               <tpc>15</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <name>i{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -768,9 +768,6 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>i</name>
-            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -1193,7 +1190,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -1209,6 +1206,9 @@ agitato</text>
             <subtype>f</subtype>
             <velocity>96</velocity>
             </Dynamic>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -1568,7 +1568,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V65\\</name>
+            <name>V65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -1610,7 +1610,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i</name>
+            <name>i6</name>
             </Harmony>
           <Dynamic>
             <subtype>p</subtype>
@@ -1772,7 +1772,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -1788,6 +1788,9 @@ agitato</text>
             <subtype>f</subtype>
             <velocity>96</velocity>
             </Dynamic>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -2153,7 +2156,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V65\\</name>
+            <name>V65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -2182,9 +2185,6 @@ agitato</text>
           </voice>
         </Measure>
       <Measure>
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <voice>
           <Fermata>
             <subtype>fermataAbove</subtype>
@@ -2198,7 +2198,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i</name>
+            <name>i6</name>
             </Harmony>
           <Dynamic>
             <subtype>p</subtype>
@@ -2360,7 +2360,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -2375,12 +2375,9 @@ agitato</text>
           </voice>
         </Measure>
       <Measure>
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <voice>
           <Harmony>
-            <name>V7/III</name>
+            <name>III.V7</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -2415,7 +2412,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>III.I[I</name>
+            <name>I[I{</name>
             </Harmony>
           <Rest>
             <durationType>measure</durationType>
@@ -2487,7 +2484,7 @@ agitato</text>
             <durationType>quarter</durationType>
             <Articulation>
               <subtype>ornamentTurn</subtype>
-              <offset x="3.38825" y="-1.94137"/>
+              <offset x="3.38825" y="-0.206918"/>
               </Articulation>
             <Note>
               <pitch>70</pitch>
@@ -2512,6 +2509,9 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <name>viio6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
@@ -2714,6 +2714,9 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <name>viio6</name>
+            </Harmony>
           <Spanner type="HairPin">
             <prev>
               <location>
@@ -2875,7 +2878,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>viio6/V</name>
+            <name>.It6</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -2903,6 +2906,7 @@ agitato</text>
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             <bracketType>2</bracketType>
@@ -2961,7 +2965,8 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>.bVI</name>
+            <name>.Ger6</name>
+            <offset x="-1.2" y="-2.5"/>
             </Harmony>
           <Chord>
             <durationType>half</durationType>
@@ -2982,9 +2987,6 @@ agitato</text>
               <tpc>8</tpc>
               </Note>
             </Chord>
-          <Harmony>
-            <name>.Ger6</name>
-            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -3007,7 +3009,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V\\</name>
+            <name>V}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -3265,7 +3267,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -3582,7 +3584,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>I6</name>
+            <name>I6{</name>
             </Harmony>
           <Rest>
             <durationType>measure</durationType>
@@ -3910,7 +3912,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}{</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -4517,7 +4519,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}{</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -5136,7 +5138,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>I\\</name>
+            <name>I}{</name>
             </Harmony>
           <Chord>
             <BeamMode>begin</BeamMode>
@@ -5966,7 +5968,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V65\\</name>
+            <name>V65}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -5995,6 +5997,9 @@ agitato</text>
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <Harmony>
+            <name>i{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -6016,9 +6021,6 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>i</name>
-            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -6466,7 +6468,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V(#74)</name>
+            <name>V(#74)}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -6493,7 +6495,7 @@ agitato</text>
               </Note>
             </Chord>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -6509,6 +6511,9 @@ agitato</text>
               <tpc>15</tpc>
               </Note>
             </Chord>
+          <Harmony>
+            <name>i{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -6529,13 +6534,7 @@ agitato</text>
           </voice>
         </Measure>
       <Measure>
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <voice>
-          <Harmony>
-            <name>i</name>
-            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -6930,7 +6929,7 @@ agitato</text>
               </Note>
             </Chord>
           <Harmony>
-            <name>V</name>
+            <name>V7</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -6958,7 +6957,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -6974,6 +6973,9 @@ agitato</text>
             <subtype>f</subtype>
             <velocity>96</velocity>
             </Dynamic>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -7333,7 +7335,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V65\\</name>
+            <name>V65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -7375,7 +7377,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i</name>
+            <name>i6</name>
             </Harmony>
           <Dynamic>
             <subtype>p</subtype>
@@ -7537,7 +7539,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -7553,6 +7555,9 @@ agitato</text>
             <subtype>f</subtype>
             <velocity>96</velocity>
             </Dynamic>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -7918,7 +7923,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V65\\</name>
+            <name>V65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -7960,7 +7965,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>#viio7/iv</name>
+            <name>iv.#viio7}</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -8042,7 +8047,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>iv.i</name>
+            <name>i{</name>
             </Harmony>
           <Rest>
             <durationType>measure</durationType>
@@ -8251,7 +8256,9 @@ agitato</text>
               </Note>
             </Chord>
           <Harmony>
-            <name>#viio7\\</name>
+            <name>#viio7}</name>
+            <minDistance>0.527396</minDistance>
+            <offset x="0.157535" y="-3.09341"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -8336,7 +8343,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i</name>
+            <name>i{</name>
             </Harmony>
           <Rest>
             <durationType>measure</durationType>
@@ -8541,7 +8548,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V65(9)</name>
+            <name>#viio7</name>
             </Harmony>
           <Dynamic>
             <subtype>fp</subtype>
@@ -8577,7 +8584,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V65\\</name>
+            <name>V65}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -8608,7 +8615,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i[i</name>
+            <name>i[i{</name>
             </Harmony>
           <Rest>
             <durationType>measure</durationType>
@@ -8721,6 +8728,9 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <name>#viio6</name>
+            </Harmony>
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
@@ -8923,6 +8933,9 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <name>#viio6</name>
+            </Harmony>
           <Spanner type="HairPin">
             <prev>
               <location>
@@ -9132,6 +9145,7 @@ agitato</text>
             <actualNotes>3</actualNotes>
             <baseNote>16th</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             <bracketType>2</bracketType>
@@ -9236,7 +9250,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V\\</name>
+            <name>V}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -9257,20 +9271,20 @@ agitato</text>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
               <Slur>
-                <up>down</up>
                 </Slur>
               <next>
                 <location>
-                  <measures>1</measures>
                   <fractions>1/4</fractions>
                   </location>
                 </next>
               </Spanner>
             <Spanner type="Slur">
               <Slur>
+                <up>down</up>
                 </Slur>
               <next>
                 <location>
+                  <measures>1</measures>
                   <fractions>1/4</fractions>
                   </location>
                 </next>
@@ -9418,21 +9432,21 @@ agitato</text>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
               <Slur>
-                </Slur>
-              <next>
-                <location>
-                  <measures>2</measures>
-                  <fractions>-3/8</fractions>
-                  </location>
-                </next>
-              </Spanner>
-            <Spanner type="Slur">
-              <Slur>
                 <up>up</up>
                 </Slur>
               <next>
                 <location>
                   <fractions>1/4</fractions>
+                  </location>
+                </next>
+              </Spanner>
+            <Spanner type="Slur">
+              <Slur>
+                </Slur>
+              <next>
+                <location>
+                  <measures>2</measures>
+                  <fractions>-3/8</fractions>
                   </location>
                 </next>
               </Spanner>
@@ -9562,7 +9576,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <staffMove>1</staffMove>
@@ -10094,7 +10108,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>iv6</name>
+            <name>iv6{</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -10121,7 +10135,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>#viio2</name>
+            <name>#viio43</name>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -10219,7 +10233,7 @@ agitato</text>
               </Note>
             </Chord>
           <Harmony>
-            <name>V2/iv</name>
+            <name>#viio64/iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -10379,9 +10393,6 @@ agitato</text>
           </voice>
         </Measure>
       <Measure>
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <voice>
           <Harmony>
             <name>V(64)</name>
@@ -10451,7 +10462,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i}{</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -11074,7 +11085,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i}{</name>
             </Harmony>
           <Dynamic>
             <subtype>f</subtype>
@@ -11825,11 +11836,6 @@ agitato</text>
             <HairPin>
               <subtype>2</subtype>
               <endText></endText>
-              <Segment>
-                <subtype>0</subtype>
-                <offset x="0" y="2.13905"/>
-                <off2 x="-5.37607" y="0"/>
-                </Segment>
               </HairPin>
             <next>
               <location>
@@ -11969,7 +11975,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V7\\</name>
+            <name>V7}</name>
             </Harmony>
           <Chord>
             <BeamMode>begin</BeamMode>
@@ -12254,7 +12260,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i</name>
+            <name>i{</name>
             </Harmony>
           <Dynamic>
             <subtype>p</subtype>
@@ -12499,9 +12505,6 @@ agitato</text>
           </voice>
         </Measure>
       <Measure>
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <voice>
           <Harmony>
             <name>i6</name>
@@ -12702,7 +12705,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V(#74)</name>
+            <name>V(#74)}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -12729,7 +12732,7 @@ agitato</text>
               </Note>
             </Chord>
           <Harmony>
-            <name>V\\</name>
+            <name>V</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -12748,6 +12751,9 @@ agitato</text>
           <StaffText>
             <text>a piacere</text>
             </StaffText>
+          <Harmony>
+            <name>i6{</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -12769,9 +12775,6 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>i6</name>
-            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -12851,12 +12854,9 @@ agitato</text>
           </voice>
         </Measure>
       <Measure>
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <voice>
           <Harmony>
-            <name>#viio65\\</name>
+            <name>#viio65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -12891,6 +12891,9 @@ agitato</text>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
+          <Harmony>
+            <name>#viio7</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -12912,9 +12915,6 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>#viio7</name>
-            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -13009,9 +13009,6 @@ agitato</text>
           </voice>
         </Measure>
       <Measure>
-        <LayoutBreak>
-          <subtype>line</subtype>
-          </LayoutBreak>
         <voice>
           <Rest>
             <durationType>quarter</durationType>
@@ -13019,6 +13016,9 @@ agitato</text>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
+          <Harmony>
+            <name>V65/iv</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -13040,9 +13040,6 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>V65/iv</name>
-            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -13124,7 +13121,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>iv\\</name>
+            <name>iv</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -13156,6 +13153,9 @@ agitato</text>
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
+          <Harmony>
+            <name>#viio43</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -13180,9 +13180,6 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>#viio43</name>
-            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -13264,6 +13261,9 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
+          <Harmony>
+            <name>viio7/V</name>
+            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
@@ -13321,6 +13321,9 @@ agitato</text>
           <StaffText>
             <text>in tempo</text>
             </StaffText>
+          <Harmony>
+            <name>viio65/V</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -13332,9 +13335,6 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <name>viio65/V</name>
-            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -13446,7 +13446,7 @@ agitato</text>
             <transposingClefType>G</transposingClefType>
             </Clef>
           <Harmony>
-            <name>i\\</name>
+            <name>i}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -13466,6 +13466,9 @@ agitato</text>
             <subtype>f</subtype>
             <velocity>96</velocity>
             </Dynamic>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -13828,7 +13831,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V65\\</name>
+            <name>V65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -13870,7 +13873,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i</name>
+            <name>i6</name>
             </Harmony>
           <Dynamic>
             <subtype>p</subtype>
@@ -14032,7 +14035,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -14048,6 +14051,9 @@ agitato</text>
             <subtype>f</subtype>
             <velocity>96</velocity>
             </Dynamic>
+          <Harmony>
+            <name>{</name>
+            </Harmony>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">
@@ -14413,7 +14419,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>V65\\</name>
+            <name>V65</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -14455,7 +14461,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>iv.#viio7\\</name>
+            <name>iv.#viio7}</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -14537,7 +14543,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i</name>
+            <name>i{</name>
             </Harmony>
           <Rest>
             <durationType>measure</durationType>
@@ -14712,7 +14718,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>#viio</name>
+            <name>V65</name>
             </Harmony>
           <Rest>
             <durationType>half</durationType>
@@ -14874,7 +14880,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i}{</name>
             </Harmony>
           <Spanner type="Trill">
             <prev>
@@ -15613,7 +15619,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>iio6</name>
+            <name>.bII6</name>
             </Harmony>
           <Chord>
             <BeamMode>begin</BeamMode>
@@ -15855,10 +15861,6 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
-          <Clef>
-            <concertClefType>F</concertClefType>
-            <transposingClefType>F</transposingClefType>
-            </Clef>
           <Harmony>
             <name>viio7/V</name>
             </Harmony>
@@ -15938,7 +15940,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -15961,10 +15963,6 @@ agitato</text>
         </Measure>
       <Measure>
         <voice>
-          <Clef>
-            <concertClefType>G</concertClefType>
-            <transposingClefType>G</transposingClefType>
-            </Clef>
           <Harmony>
             <name>V43</name>
             </Harmony>
@@ -16273,7 +16271,7 @@ agitato</text>
       <Measure>
         <voice>
           <Harmony>
-            <name>i\\</name>
+            <name>i</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
