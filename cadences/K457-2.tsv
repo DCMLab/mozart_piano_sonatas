@@ -1,12 +1,12 @@
-mn	onset	cadence
-3	3/4	HC
-7	1/2	PAC
-13	1/2	PAC
-19	3/4	HC
-23	1/2	PAC
-38	0	HC
-43	3/4	HC
-45	0	PAC
-47	1/2	PAC
-49	1/2	PAC
-54	0	PAC
+mc	mn	timesig	onset	staff	voice	cadence
+3	3	4/4	3/4	1	1	HC
+7	7	4/4	1/2	1	1	PAC
+13	13	4/4	1/2	1	1	PAC
+19	19	4/4	3/4	1	1	HC
+23	23	4/4	1/2	1	1	PAC
+38	38	4/4	0	1	1	HC
+43	43	4/4	3/4	1	1	HC
+45	45	4/4	0	1	1	PAC
+47	47	4/4	1/2	1	1	PAC
+49	49	4/4	1/2	1	1	PAC
+54	54	4/4	0	1	1	PAC
