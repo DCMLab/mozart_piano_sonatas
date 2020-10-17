@@ -57,28 +57,28 @@ DTYPES = {
     'globalkey': str,
     'gracenote': str,
     'harmonies_id': 'Int64',
-    'keysig': int,
+    'keysig': 'Int64',
     'label': str,
     'localkey': str,
-    'mc': int,
-    'midi': int,
-    'mn': int,
+    'mc': 'Int64',
+    'midi': 'Int64',
+    'mn': 'Int64',
     'notes_id': 'Int64',
     'numbering_offset': 'Int64',
     'numeral': str,
     'pedal': str,
-    'playthrough': int,
+    'playthrough': 'Int64',
     'phraseend': str,
     'relativeroot': str,
     'repeats': str,
     'root': 'Int64',
     'special': str,
-    'staff': int,
+    'staff': 'Int64',
     'tied': 'Int64',
     'timesig': str,
-    'tpc': int,
-    'voice': int,
-    'voices': int,
+    'tpc': 'Int64',
+    'voice': 'Int64',
+    'voices': 'Int64',
     'volta': 'Int64'
 }
 
@@ -101,7 +101,10 @@ def beat_size(x):
     -------
     :obj:`Fraction`
     """
-    d, n = str(x).split('/')
+    try:
+        d, n = str(x).split('/')
+    except:
+        return x
     d = int(d)
     return frac(f"{3 if d % 3 == 0 and d > 3 else 1}/{n}")
 
@@ -110,6 +113,8 @@ def beat_size(x):
 def beat_size_memo(x):
     """ Memoized version of beat_size() using the global dict BEATSIZE_MEMO.
     """
+    if pd.isnull(x):
+        return x
     global BEATSIZE_MEMO
     if x in BEATSIZE_MEMO:
         return BEATSIZE_MEMO[x]
@@ -131,6 +136,10 @@ def compute_beat(onset, timesig):
     timesig : :obj:`str`
         Time signature, i.e., a string representing a fraction.
     """
+    if pd.isnull(onset):
+        return onset
+    if pd.isnull(timesig):
+        return timesig
     size = beat_size_memo(timesig)
     beat = onset // size + 1
     subbeat = frac((onset % size) / size)
