@@ -189,31 +189,41 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None, join_meas
     """"""
     first = True
     if notes is not None:
+        notes = notes.set_index(['mc', 'onset'], append=True)
         if harmonies is not None:
             logging.info("Joining notes with harmony labels...")
             first = False
-            left = pd.merge(notes.set_index(['mc', 'mn', 'onset'], append=True), harmonies.set_index(['mc', 'mn', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True, suffixes=('', '_y'))
+            left = pd.merge(notes, harmonies.set_index(['mc', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True, suffixes=('', '_y'))
             duplicates = [col for col in left.columns if col.endswith('_y')]
-            left = left.reset_index(level='mc').drop(columns=duplicates)
+            left = left.drop(columns=duplicates)
         else:
-            left = notes.set_index(['mn', 'onset'], append=True)
+            left = notes
+    elif harmonies is not None:
+        left = harmonies.set_index(['mc', 'onset'], append=True)
     else:
-        left = harmonies.set_index(['mn', 'onset'], append=True)
+        left = None
 
-    if cadences is not None:
-        if first:
-            logging.info("Joining notes with cadence labels...")
-            first = False
+    if left is not None:
+        if cadences is not None:
+            if first:
+                logging.info("Joining notes with cadence labels...")
+                first = False
+            else:
+                logging.info("Adjoining cadence labels...")
+            res = pd.merge(left, cadences.set_index(['mc', 'onset'], append=True), left_index=True, right_index=True, how='outer')
         else:
-            logging.info("Adjoining cadence labels...")
-        res = pd.merge(left, cadences.set_index(['mn', 'onset'], append=True), left_index=True, right_index=True, how='outer')
+            res = left
     else:
-        res = left
+        res = cadences
 
-    if res.mc.isna().any():
-        res.loc[res.mc.isna(), 'mc'] = pd.merge(res[res.mc.isna()].reset_index(level='onset')['onset'], measures[['mc', 'mn']], on=['filename', 'mn']).set_index(['mn', 'onset'], append=True)
-
-    res = res.reset_index(['mn', 'onset'])
+    # try:
+    #     if res.mc.isna().any():
+    #         res.loc[res.mc.isna(), 'mc'] = pd.merge(res[res.mc.isna()].reset_index(level='onset')['onset'],
+    #                                                 measures[['mc', 'mn']], on=['filename', 'mn'])\
+    #                                          .set_index(['mn', 'onset'], append=True)
+    # except:
+    #     print(res)
+    #     raise
 
     if join_measures:
         logging.info(f"{'J' if first else 'Adj'}oining measure info...")

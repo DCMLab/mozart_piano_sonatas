@@ -213,8 +213,6 @@ def format_data(name=None,
         if join:
             l = len(kinds)
             assert l > 1, "Select at least two kinds of data for joining."
-            if l == 2:
-                assert set(kinds) != {'cadences', 'measures'}, "Cannot correctly join cadences with measures because cadences don't have MC for measure disambiguation. Add harmonies and/or notes."
 
         #################### Reading TSVs #####################################
         logging.info(f"Reading {len(selection) * len(kinds)} TSV files...")
@@ -308,6 +306,11 @@ def format_data(name=None,
                     df = df.drop(columns='volta')
                 else:
                     logging.info(f"Removing first voltas from {what}...")
+                    if 'cadence' in df.columns:
+                        sel = df.cadence.notna() & df.volta.notna()
+                        locs = [df.index.get_loc(i) for i in df[sel].index]
+                        print(df.iloc[locs])
+
                     df = df.drop(index=df[df.volta.fillna(0) == 1].index, columns='volta')
 
 
@@ -366,6 +369,8 @@ The pitch-related columns `tpc` and `midi` hold the scores' pitches, transposed 
 
         if join:
             joined = join_tsv(**joining, join_measures=measures)
+            if 'cadence' in joined:
+                print(joined.cadence.notna().sum())
             store_result(joined, fname, 'joined')
         else:
             if propagate:
