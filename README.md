@@ -4,6 +4,7 @@ Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following
 ## TOC
 
 - [Data Formats](#data-formats)
+  - [Opening TSV files](#opening-tsv-files)
 - [Accessing the Data](#accessing-the-data)
   - [Raw Data](#raw-data)
   - [Accessing Harmony Features](#accessing-harmony-features)
@@ -34,6 +35,10 @@ Every sonata movement is represented by five files with identical filenames in f
 * `cadences/K279-1.tsv`: A list of cadence labels and their positions.
 
 The README in each folder contains information about the respective files.
+
+### Opening TSV files
+
+Tab-separated value (TSV) files are like Comma-separated value (CSV) files and can be opened with most modern text editors. However, for correctly displaying the columns, you might want to use a spreadsheet or an addon for your favourite text editor. When you use an spreadsheet such as Excel, it might annoy you by interpreting fractions as dates. This can be circumvented by using `Data --> From Text/CSV` or the free alternative [LibreOffice Calc](https://www.libreoffice.org/download/download/). Other than that, TSV data can be loaded with every modern programming language.
 
 ## Accessing the Data
 

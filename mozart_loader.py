@@ -303,8 +303,6 @@ def format_data(name=None,
             if what != 'measures':
                 measures = joining['measures']
                 if not unfold and 'volta' not in df.columns and 'volta' in measures:
-                    if 'cadence' in df.columns:
-                        print(df.cadence.notna().sum())
                     ix = df.index
                     df = pd.merge(df, measures[['mc', 'volta']], on=['filename', 'mc'], how='left')
                     df.index = ix
