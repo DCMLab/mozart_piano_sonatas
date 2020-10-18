@@ -306,13 +306,9 @@ def format_data(name=None,
                     df = df.drop(columns='volta')
                 else:
                     logging.info(f"Removing first voltas from {what}...")
-                    if 'cadence' in df.columns:
-                        sel = df.cadence.notna() & df.volta.notna()
-                        locs = [df.index.get_loc(i) for i in df[sel].index]
-                        print(df.iloc[locs])
-
                     df = df.drop(index=df[df.volta.fillna(0) == 1].index, columns='volta')
-
+                    if 'cadence' in df.columns:
+                        print(df.cadence.notna().sum())
 
             if what == 'joined':
 
