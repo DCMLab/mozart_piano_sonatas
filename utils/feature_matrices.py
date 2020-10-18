@@ -210,7 +210,7 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None, join_meas
                 first = False
             else:
                 logging.info("Adjoining cadence labels...")
-            res = pd.merge(left, cadences.set_index(['mc', 'onset'], append=True), left_index=True, right_index=True, how='outer')
+            res = pd.merge(left, cadences.set_index(['mc', 'onset'], append=True), left_index=True, right_index=True, how='outer', suffixes=('', '_y'))
         else:
             res = left
     else:
@@ -228,10 +228,12 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None, join_meas
     if join_measures:
         logging.info(f"{'J' if first else 'Adj'}oining measure info...")
         res = res.merge(measures.set_index('mc', append=True).droplevel('measures_id'), how='left', left_on=['filename', 'mc'], right_index=True, suffixes=('', '_y'))
-        duplicates = [col for col in res.columns if col.endswith('_y')]
-        res = res.drop(columns=duplicates)
+    duplicates = [col for col in res.columns if col.endswith('_y')]
+    res = res.drop(columns=duplicates)
     names = list(res.index.names)
-    names_order = [n for n in ['filename', 'notes_id', 'harmonies_id', 'cadences_id'] if n in names]
+    fixed_order = ['filename', 'notes_id', 'harmonies_id', 'cadences_id']
+    names_order = [n for n in fixed_order if n in names]
+    names_order.extend([n for n in names if n not in fixed_order])
     if names != names_order:
         logging.debug("Reordering index levels...")
         res = res.reorder_levels(names_order)

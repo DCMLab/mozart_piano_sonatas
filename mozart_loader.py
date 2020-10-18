@@ -208,8 +208,7 @@ def format_data(name=None,
         for kind in ['notes', 'harmonies', 'cadences']:
             if locals()[kind]:
                 kinds.append(kind)
-        if measures or join or unfold or expand:
-            kinds.append('measures')
+        kinds.append('measures')
         if join:
             l = len(kinds)
             assert l > 1, "Select at least two kinds of data for joining."
@@ -301,14 +300,21 @@ def format_data(name=None,
             elif 'next' in df.columns:
                 df.next = transform(df.next, iterable2str)
 
-            if 'volta' in df.columns and what != 'measures':
-                if unfold:
-                    df = df.drop(columns='volta')
-                else:
-                    logging.info(f"Removing first voltas from {what}...")
-                    df = df.drop(index=df[df.volta.fillna(0) == 1].index, columns='volta')
+            if what != 'measures':
+                measures = joining['measures']
+                if not unfold and 'volta' not in df.columns and 'volta' in measures:
                     if 'cadence' in df.columns:
                         print(df.cadence.notna().sum())
+                    ix = df.index
+                    df = pd.merge(df, measures[['mc', 'volta']], on=['filename', 'mc'], how='left')
+                    df.index = ix
+
+                if 'volta' in df.columns:
+                    if unfold:
+                        df = df.drop(columns='volta')
+                    else:
+                        logging.info(f"Removing first voltas from {what}...")
+                        df = df.drop(index=df[df.volta.fillna(0) == 1].index, columns='volta')
 
             if what == 'joined':
 
@@ -362,6 +368,7 @@ The pitch-related columns `tpc` and `midi` hold the scores' pitches, transposed 
                 else:
                     logging.info("The chord tones designate stack-of-fifths invervals where 0 is the LOCAL tonic, 1 the tone a perfect fifth above, -1 a perfect fourth above, and so on.\n")
             #################### end of store_result() #########################
+
 
         if join:
             joined = join_tsv(**joining, join_measures=measures)
