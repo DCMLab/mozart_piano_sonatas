@@ -482,7 +482,7 @@ def features2tpcs(numeral, form=None, figbass=None, changes=None, relativeroot=N
     for full, added, acc, chord_interval in alts:
         added = added == '+'
         chord_interval = int(chord_interval) - 1
-        if chord_interval == 0 or chord_interval > 13:
+        if chord_interval == 0 or chord_interval > 14:
             logging.warning(f"Alteration of scale degree {chord_interval+1} is meaningless and ignored.")
             continue
         next_octave = chord_interval > 7
@@ -508,7 +508,7 @@ def features2tpcs(numeral, form=None, figbass=None, changes=None, relativeroot=N
                     added_notes.append(new_val)
                 else:                                   # otherwise they are unclear
                     logging.warning(f"In seventh chords, such as {label}, it is not clear whether the {full} alters the 7 or replaces the 8 and should not be used.")
-            elif tpcs[chord_interval] == new_val:
+            elif tpcs[chord_interval] == new_val and not next_octave:
                 logging.warning(f"The change {full} has no effect in {numeral}{form}{figbass}")
             else:
                 tpcs[chord_interval] = new_val
@@ -1184,7 +1184,7 @@ def split_labels(df, column, regex, cols={}, dropna=False, **kwargs):
         logging.debug(f"Stored feature {feature} as column {name}.")
     numeral = cols['numeral'] if 'numeral' in cols else 'numeral'
     phrases = cols['phraseend'] if 'phraseend' in cols else 'phraseend'
-    mistakes = df[column].notna() & df[numeral].isna() & df[phrases].isna() 
+    mistakes = df[column].notna() & df[numeral].isna() & df[phrases].isna()
     if mistakes.any():
         logging.warning(f"The following chords could not be parsed:\n{df.loc[mistakes, :column]}")
     return df
