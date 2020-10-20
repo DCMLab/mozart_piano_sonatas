@@ -20,6 +20,7 @@ Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following
   - [Data types for parsing the data](#data-types-for-parsing-the-data)
     - [Data types](#data-types)
     - [Converters/Parsers](#convertersparsers)
+- [Parsing](#parsing)
 - [Questions, Suggestions, Corrections, Bug Reports](#questions-suggestions-corrections-bug-reports)
 - [Licenses](#licenses)
 
@@ -377,6 +378,10 @@ are separated by the string `, ` (comma and space). The boolean values are store
 | onset              | fraction   | NHC        |
 | duration           | fraction   | N          |
 | scalar             | fraction   | N          |
+
+## Parsing
+
+	ms3 extract -N ../notes -M ../measures -L ../harmonies -e ambig
 
 ## Questions, Suggestions, Corrections, Bug Reports
 
