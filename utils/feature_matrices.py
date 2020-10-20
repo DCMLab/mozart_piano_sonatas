@@ -21,7 +21,11 @@ def int2bool(s):
     except:
         return s
 
-
+def safe_frac(s):
+    try:
+        return frac(s)
+    except:
+        return s
 
 
 
@@ -31,16 +35,16 @@ def int2bool(s):
 ################################################################################
 CONVERTERS = {
     'added_tones': str2inttuple,
-    'act_dur': frac,
+    'act_dur': safe_frac,
     'chord_tones': str2inttuple,
     'globalkey_is_minor': int2bool,
     'localkey_is_minor': int2bool,
     'next': str2inttuple,
-    'nominal_duration': frac,
-    'offset': frac,
-    'onset': frac,
-    'duration': frac,
-    'scalar': frac,}
+    'nominal_duration': safe_frac,
+    'offset': safe_frac,
+    'onset': safe_frac,
+    'duration': safe_frac,
+    'scalar': safe_frac,}
 
 DTYPES = {
     'alt_label': str,
@@ -189,17 +193,17 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None, join_meas
     """"""
     first = True
     if notes is not None:
-        notes = notes.set_index(['mc', 'onset'], append=True)
+        notes = notes.set_index(['mc', 'mn', 'onset'], append=True)
         if harmonies is not None:
             logging.info("Joining notes with harmony labels...")
             first = False
-            left = pd.merge(notes, harmonies.set_index(['mc', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True, suffixes=('', '_y'))
+            left = pd.merge(notes, harmonies.set_index(['mc', 'mn', 'onset'], append=True), left_index=True, right_index=True, how='outer', sort=True, suffixes=('', '_y'))
             duplicates = [col for col in left.columns if col.endswith('_y')]
             left = left.drop(columns=duplicates)
         else:
             left = notes
     elif harmonies is not None:
-        left = harmonies.set_index(['mc', 'onset'], append=True)
+        left = harmonies.set_index(['mc', 'mn', 'onset'], append=True)
     else:
         left = None
 
@@ -210,12 +214,16 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None, join_meas
                 first = False
             else:
                 logging.info("Adjoining cadence labels...")
-            res = pd.merge(left, cadences.set_index(['mc', 'onset'], append=True), left_index=True, right_index=True, how='outer', suffixes=('', '_y'))
+            left.set_index(['voice', 'staff'], append=True, inplace=True)
+            res = pd.merge(left, cadences.set_index(['mc', 'mn', 'onset', 'voice', 'staff'], append=True), left_index=True, right_index=True, how='outer', suffixes=('', '_y'))
         else:
             res = left
     else:
         res = cadences
 
+    go_back = [n for n in ['mc', 'mn', 'onset', 'voice', 'staff'] if n in res.index.names]
+    if len(go_back) > 0:
+        res.reset_index(go_back, inplace=True)
     # try:
     #     if res.mc.isna().any():
     #         res.loc[res.mc.isna(), 'mc'] = pd.merge(res[res.mc.isna()].reset_index(level='onset')['onset'],
@@ -227,7 +235,9 @@ def join_tsv(notes=None, harmonies=None, cadences=None, measures=None, join_meas
 
     if join_measures:
         logging.info(f"{'J' if first else 'Adj'}oining measure info...")
-        res = res.merge(measures.set_index('mc', append=True).droplevel('measures_id'), how='left', left_on=['filename', 'mc'], right_index=True, suffixes=('', '_y'))
+        if 'timesig' in res.columns:
+            res.drop(columns='timesig', inplace=True)
+        res = res.merge(measures.set_index(['mc', 'mn'], append=True).droplevel('measures_id'), how='outer', left_on=['filename', 'mc', 'mn'], right_index=True, suffixes=('', '_y'))
     duplicates = [col for col in res.columns if col.endswith('_y')]
     res = res.drop(columns=duplicates)
     names = list(res.index.names)
@@ -283,34 +293,16 @@ def name2tpc(nn):
 
 
 def next2sequence(nxt):
-    """Turns a pd.Series of lists into a sequence of elements."""
-    i = nxt.index[0]
-    last_i = nxt.index[-1]
-    acc = [i]
+    mc = nxt.index[0]
+    result = []
     nxt = nxt.to_dict()
-    flag = 0
-    nxt_list = nxt[i]
-    l = len(nxt_list)
-    while i <= last_i:
-        if i == last_i:
-            if flag or l == 0:
-                break
-            elif l == 1: # last mc has repeat sign
-                i = nxt_list[0]
-                flag = 1
-            else:
-                raise NotImplementedError
-        elif l == 1:
-            i = nxt_list[0]
-        elif l == 2:
-            i = nxt_list[flag]
-            flag = int(not flag)
-        else:
-            raise NotImplementedError("More than two voltas.")
-        acc.append(i)
-        nxt_list = nxt[i]
-        l = len(nxt_list)
-    return acc
+    while mc != -1:
+        result.append(mc)
+        new_mc, *rest = nxt[mc]
+        if len(rest) > 0:
+            nxt[mc] = rest
+        mc = new_mc
+    return result
 
 
 

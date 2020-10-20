@@ -345,7 +345,9 @@ def format_data(name=None,
                             df = df.set_index('cadences_id', append=True)
                     df = df.droplevel('tmp_index')
 
-                dtypes =  {k: v for k, v in {'bass_note': 'Int64',
+                dtypes =  {k: v for k, v in {'mc': 'Int64',
+                                             'mn': 'Int64',
+                                            'bass_note': 'Int64',
                                             'cadences_id': 'Int64',
                                             'globalkey_is_minor': 'Int64',
                                             'harmonies_id': 'Int64',

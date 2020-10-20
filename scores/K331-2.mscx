@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.01">
-  <programVersion>3.4.2</programVersion>
-  <programRevision>148e43f</programRevision>
+  <programVersion>3.5.0</programVersion>
+  <programRevision>43c5553</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -142,6 +142,10 @@
           <gateTime>100</gateTime>
           </Articulation>
         <Channel>
+          <program value="0"/>
+          <synti>Fluid</synti>
+          </Channel>
+        <Channel name="harmony">
           <program value="0"/>
           <synti>Fluid</synti>
           </Channel>
@@ -2651,13 +2655,6 @@
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
-              <prev>
-                <location>
-                  <grace>0</grace>
-                  </location>
-                </prev>
-              </Spanner>
-            <Spanner type="Slur">
               <Slur>
                 </Slur>
               <next>
@@ -2665,6 +2662,13 @@
                   <fractions>1/2</fractions>
                   </location>
                 </next>
+              </Spanner>
+            <Spanner type="Slur">
+              <prev>
+                <location>
+                  <grace>0</grace>
+                  </location>
+                </prev>
               </Spanner>
             <Note>
               <pitch>69</pitch>
@@ -4237,6 +4241,12 @@
         </Measure>
       <Measure>
         <endRepeat>2</endRepeat>
+        <Marker>
+          <visible>0</visible>
+          <style>Repeat Text Right</style>
+          <text>Fine</text>
+          <label>fine</label>
+          </Marker>
         <voice>
           <Harmony>
             <name>I}</name>
@@ -4278,6 +4288,10 @@
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <SystemText>
+            <offset x="-11.5105" y="-5.75148"/>
+            <text><font size="16"/>TRIO</text>
+            </SystemText>
           <Chord>
             <BeamMode>mid</BeamMode>
             <durationType>eighth</durationType>
@@ -9460,6 +9474,17 @@
         </Measure>
       <Measure>
         <irregular>1</irregular>
+        <Jump>
+          <autoplace>0</autoplace>
+          <offset x="0.839307" y="18.5797"/>
+          <style>Repeat Text Right</style>
+          <placement>below</placement>
+          <offset x="0.839307" y="18.5797"/>
+          <text><i>Menuetto da capo</i></text>
+          <jumpTo>start</jumpTo>
+          <playUntil>48</playUntil>
+          <continueAt></continueAt>
+          </Jump>
         <voice>
           <Harmony>
             <name>I</name>
@@ -9969,11 +9994,6 @@
             <durationType>quarter</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="-2.38468"/>
-                  </SlurSegment>
-                <up>down</up>
-                <lineType>2</lineType>
                 </Slur>
               <next>
                 <location>
@@ -9983,6 +10003,11 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
+                <SlurSegment no="0">
+                  <offset x="0" y="-2.38468"/>
+                  </SlurSegment>
+                <up>down</up>
+                <lineType>2</lineType>
                 </Slur>
               <next>
                 <location>
