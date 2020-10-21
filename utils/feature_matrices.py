@@ -361,7 +361,9 @@ def read_tsvs(dir, selection):
     """
     files = (selection.filename + '.tsv').values
     df = pd.concat([pd.read_csv(os.path.join(dir, f), sep='\t', dtype=DTYPES, converters=CONVERTERS) for f in files],
-                     keys=selection.filename, names=['filename', f"{os.path.basename(dir)}_id"])
+                     keys=selection.filename,
+                     names=['filename', f"{os.path.basename(dir)}_id"],
+                     sort=False)
     return df
 
 
