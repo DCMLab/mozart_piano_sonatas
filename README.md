@@ -20,7 +20,8 @@ Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following
   - [Data types for parsing the data](#data-types-for-parsing-the-data)
     - [Data types](#data-types)
     - [Converters/Parsers](#convertersparsers)
-- [Parsing](#parsing)
+- [Creating master table](#creating-master-table)
+- [Creating all TSV files](#creating-all-tsv-files)
 - [Questions, Suggestions, Corrections, Bug Reports](#questions-suggestions-corrections-bug-reports)
 - [Licenses](#licenses)
 
@@ -379,9 +380,14 @@ are separated by the string `, ` (comma and space). The boolean values are store
 | duration           | fraction   | N          |
 | scalar             | fraction   | N          |
 
-## Parsing
+## Creating master table
 
-	ms3 extract -N ../notes -M ../measures -L ../harmonies -e ambig
+    python mozart_loader.py -NECMjp
+
+
+## Creating all TSV files
+
+    ms3 extract -N ../notes -M ../measures -L ../harmonies -e ambig
 
 ## Questions, Suggestions, Corrections, Bug Reports
 

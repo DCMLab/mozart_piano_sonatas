@@ -372,8 +372,6 @@ The pitch-related columns `tpc` and `midi` hold the scores' pitches, transposed 
 
         if join:
             joined = join_tsv(**joining, join_measures=measures)
-            if 'cadence' in joined:
-                print(joined.cadence.notna().sum())
             store_result(joined, fname, 'joined')
         else:
             if propagate:
