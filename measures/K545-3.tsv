@@ -1,5 +1,5 @@
-mc	mn	keysig	timesig	act_dur	mc_offset	breaks	repeats	volta	barline	numbering_offset	dont_count	next
-1	0	0	2/4	1/4	1/4		firstMeasure				1	2
+mc	mn	keysig	timesig	act_dur	mc_offset	volta	numbering_offset	dont_count	barline	breaks	repeats	next
+1	0	0	2/4	1/4	1/4			1			firstMeasure	2
 2	1	0	2/4	1/2	0							3
 3	2	0	2/4	1/2	0							4
 4	3	0	2/4	1/2	0							5
@@ -72,4 +72,4 @@ mc	mn	keysig	timesig	act_dur	mc_offset	breaks	repeats	volta	barline	numbering_of
 71	70	0	2/4	1/2	0							72
 72	71	0	2/4	1/2	0							73
 73	72	0	2/4	1/2	0							74
-74	73	0	2/4	1/2	0		lastMeasure		end			-1
+74	73	0	2/4	1/2	0				end		lastMeasure	-1
