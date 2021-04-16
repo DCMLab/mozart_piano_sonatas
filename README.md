@@ -406,3 +406,120 @@ Please create an issue and feel free to fork and submit pull requests.
 
 * **Data**: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/))
 * **Software**: [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)
+
+
+# Overview
+|file_name|measures|labels|standard|annotators|             reviewers             |
+|---------|-------:|-----:|--------|----------|-----------------------------------|
+|         |        |   246|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   160|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   320|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   237|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   122|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   199|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   202|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   153|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   375|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   106|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   122|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   164|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   324|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   171|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   326|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   319|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   229|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   748|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   323|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   241|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   391|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   296|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   219|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   426|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   295|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   221|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   472|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   297|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   174|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   324|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   401|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   177|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   125|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   323|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   166|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   426|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   425|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   220|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   435|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   296|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   214|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   318|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   595|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   262|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   428|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   119|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   147|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   146|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   252|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   248|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   274|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   299|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   155|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |        |   362|        |          |Johannes Hentschel, Markus Neuwirth|
+|         |     100|   251|        |          |                                   |
+|         |      74|   154|        |          |                                   |
+|         |     158|   321|        |          |                                   |
+|         |     144|   225|        |          |                                   |
+|         |      60|   124|        |          |                                   |
+|         |     190|   199|        |          |                                   |
+|         |     109|   208|        |          |                                   |
+|         |     106|   152|        |          |                                   |
+|         |     162|   384|        |          |                                   |
+|         |      36|   103|        |          |                                   |
+|         |      72|   129|        |          |                                   |
+|         |     102|   175|        |          |                                   |
+|         |     120|   326|        |          |                                   |
+|         |      39|   169|        |          |                                   |
+|         |     277|   337|        |          |                                   |
+|         |     127|   330|        |          |                                   |
+|         |      92|   228|        |          |                                   |
+|         |     260|   755|        |          |                                   |
+|         |     155|   306|        |          |                                   |
+|         |      79|   259|        |          |                                   |
+|         |     252|   406|        |          |                                   |
+|         |     133|   292|        |          |                                   |
+|         |      86|   250|        |          |                                   |
+|         |     252|   427|        |          |                                   |
+|         |     112|   319|        |          |                                   |
+|         |      93|   236|        |          |                                   |
+|         |     269|   491|        |          |                                   |
+|         |     150|   293|        |          |                                   |
+|         |      64|   187|        |          |                                   |
+|         |     171|   365|        |          |                                   |
+|         |     134|   398|        |          |                                   |
+|         |     100|   160|        |          |                                   |
+|         |     127|   128|        |          |                                   |
+|         |     229|   316|        |          |                                   |
+|         |      40|   168|        |          |                                   |
+|         |     245|   449|        |          |                                   |
+|         |     165|   431|        |          |                                   |
+|         |      82|   217|        |          |                                   |
+|         |     224|   460|        |          |                                   |
+|         |     185|   307|        |          |                                   |
+|         |      57|   214|        |          |                                   |
+|         |     319|   328|        |          |                                   |
+|         |     239|   583|        |          |                                   |
+|         |     122|   261|        |          |                                   |
+|         |     187|   419|        |          |                                   |
+|         |      73|   119|        |          |                                   |
+|         |      74|   146|        |          |                                   |
+|         |      73|   143|        |          |                                   |
+|         |     209|   245|        |          |                                   |
+|         |      55|   250|        |          |                                   |
+|         |      89|   280|        |          |                                   |
+|         |     160|   295|        |          |                                   |
+|         |      67|   151|        |          |                                   |
+|         |     189|   381|        |          |                                   |
+|         |      72|   123|        |          |                                   |
+|         |     226|   748|        |          |                                   |
+|         |     116|   406|        |          |                                   |
+|         |     100|   178|        |          |                                   |
