@@ -1,3 +1,8 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/DCMLab/mozart_piano_sonatas)
+![GitHub all releases](https://img.shields.io/github/downloads/DCMLab/mozart_piano_sonatas/total?color=%252300&label=Downloaded%20ZIPs)
+![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-9cf)
+
+
 # The Annotated Mozart Sonatas: Score, Harmony, and Cadence
 Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following the [Neue Mozart Ausgabe](https://dme.mozarteum.at/DME/nma).
 
