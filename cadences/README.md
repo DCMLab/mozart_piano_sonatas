@@ -10,5 +10,5 @@ Cadence labels mark the end of the cadence. In most cases this is the final chor
 | **playthrough** | integer | u | For the unfolded representations, a running count of complete measures disambiguating repeated MNs. |
 | **timesig** | string | e/E/g/a/A | Time signature of the measure in which the cadence ends. |
 | **beat** | fraction | e/E/g/a/A | On which beat the cadence ends, expressed as string. Downbeat positions are just integers (e.g. `'1'`) and upbeat positions have a fraction of the respective beat size attached, for instance, in `2/2` meter, beat `'1.1/2'` is on the second quarter note and beat `'1.1/3'` is on the second quarter triplet note.<br> The mapping timesig => beat size is `'2/2' => 1/2, '4/4' => 1/4, '2/4' => 1/4, '3/8' => 1/8, '6/8' => 3/8`} |
-| **onset** | fraction | raw | Label's temporal position from beat 1 of the measure, expressed in fractions of a whole note (1/4 = quarter note, 1/12 = triplet eigth, etc.) |
+| **mc_onset** | fraction | raw | Label's temporal position from beat 1 of the measure, expressed in fractions of a whole note (1/4 = quarter note, 1/12 = triplet eigth, etc.) |
 | **cadence** | string | raw | Cadence label. Can be  `PAC` (Perfect Authentic Cadence), `IAC` (Imperfect Authentic Cadence), `HC` (Half Cadence), `DC` (Deceptive Cadence), or `EC` (Evaded Cadence). |
