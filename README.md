@@ -26,6 +26,28 @@ This dataset is accompanied by the data report `Hentschel, J., Neuwirth, M. and 
 * Unfolding with correct repeat structure in _da capo_ movements K282-2 and K331-2
 * updated labels of K283-3
 
+#### Changes in the outputs of `mozart_loader.py`
+
+* Joins are performed on positions only, i.e. identical combinations of `mc` and `mc_onset`,
+  independent of the staff. For example, look at this join of notes and cadences:
+
+  | mc | mc_onset | staff | duration | tpc | midi | cadence |
+  |----|----------|-------|----------|-----|------|---------|
+  | 3  | 0        | 1     | 1/4      | 4   | 64   | PAC     |
+  | 3  | 0        | 1     | 1/4      | 1   | 67   | PAC     |
+  | 3  | 0        | 1     | 1/4      | 0   | 72   | PAC     |
+  | 3  | 0        | 2     | 1/16     | 0   | 48   |         |
+
+  This corresponds to the old output; in the new output, the last cell, corresponding
+  to a note in the left hand (staff 2) also has the value `PAC`.
+* Changes to expanded annotation tables:
+  * less errors in the ordering of rows (and therefore less inherited errors in the propagation
+    of `localkey`)
+  * `chord_tones` had often been incorrect for `%` (half-diminished) chords
+  * augmented 6th chords keep their 'national' names in the `chord_type` column,
+    (for example, old value: `o7`, new value: `Ger`)
+
+
 ## TOC
 
 - [Data Formats](#data-formats)
@@ -55,7 +77,7 @@ This dataset is accompanied by the data report `Hentschel, J., Neuwirth, M. and 
 
 Every sonata movement is represented by five files with identical filenames in five different folders. For example, the first movement of the first sonata K. 279 has the following files:
 
-* `scores/K279-1.mscx`: Uncompressed MuseScore file including the music and harmony labels.
+* `MS3/K279-1.mscx`: Uncompressed MuseScore file including the music and harmony labels.
 * `notes/K279-1.tsv`: A table of all notes contained in the score and their relevant features.
 * `measures/K279-1.tsv`: A table with relevant information about the measures in the score.
 * `harmonies/K279-1.tsv`: A list of the included harmony labels with their positions in the score.
