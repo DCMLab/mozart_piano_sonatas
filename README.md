@@ -8,7 +8,23 @@ Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following
 
 This dataset is accompanied by the data report `Hentschel, J., Neuwirth, M. and Rohrmeier, M., 2021. The Annotated Mozart Sonatas: Score, Harmony, and Cadence. Transactions of the International Society for Music Information Retrieval, 4(1), pp.67–80. DOI:` [http://doi.org/10.5334/tismir.63](http://doi.org/10.5334/tismir.63)
 
-_An updated version of the dataset and the Python script are in preparation and will be released a couple of days from here (May 19th). The folder `scores` will be renamed to `MS3`. The column `onset` will be renamed to `mc_onset`. The annotation labels will appear under the left hand and in MuseScore's Roman Numeral Layer. The `mozart_loader.py` will be using the Python library [ms3](https://pypi.org/project/ms3) and appear with a couple of bugs corrected._
+## Changelog
+
+### Version 2.0
+
+#### Changes to harmonize with other DCML corpora
+
+* Renamed folder `scores` to `MS3`.
+* TSV files in folder `harmonies` are expanded into feature columns by default
+* Files updated to MuseScore 3.6.2
+* All labels moved from the chord layer of staff 1 to the Roman Numeral Analysis layer of staff 2.
+  This changes how they are displayed and eliminates the requirement to prepend
+  a full stop to labels starting with a note name.
+
+#### Changes to the content
+
+* Unfolding with correct repeat structure in _da capo_ movements K282-2 and K331-2
+* updated labels of K283-3
 
 ## TOC
 
