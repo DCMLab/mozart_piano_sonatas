@@ -474,7 +474,7 @@ Please create an issue and feel free to fork and submit pull requests.
 |K310-2   |      86|   250|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
 |K310-3   |     252|   427|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
 |K311-1   |     112|   319|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
-|K311-2   |      93|   236|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K311-2   |      93|   241|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
 |K311-3   |     269|   491|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
 |K330-1   |     150|   293|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
 |K330-2   |      64|   187|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
