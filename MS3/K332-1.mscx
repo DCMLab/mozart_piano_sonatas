@@ -17661,7 +17661,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>F.I[I{</name>
-            <offset x="0" y="-3.52645"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -17739,7 +17738,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7/IV</name>
-            <offset x="0" y="-3.53"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -17815,7 +17813,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV</name>
-            <offset x="0" y="-3.53"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -17869,7 +17866,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-3.5"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -17904,7 +17900,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio6</name>
-            <offset x="0" y="-3.53"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -17985,7 +17980,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I]</name>
-            <offset x="0" y="-3.53"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18008,7 +18002,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi6</name>
-            <offset x="0" y="-3.53"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -18020,7 +18013,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii</name>
-            <offset x="0" y="-3.53"/>
             </Harmony>
           <Rest>
             <durationType>measure</durationType>
@@ -18032,7 +18024,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-3.53"/>
             </Harmony>
           </voice>
         </Measure>
@@ -18041,7 +18032,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-3.53"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18067,7 +18057,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0" y="-3.53"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18088,7 +18077,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-3.53"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18106,7 +18094,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii7</name>
-            <offset x="0" y="-5.9245"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18132,7 +18119,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-5.92"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -18167,7 +18153,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-5.92"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18195,7 +18180,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV6</name>
-            <offset x="0" y="-5.92"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18216,7 +18200,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV</name>
-            <offset x="0" y="-5.92"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18234,7 +18217,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0" y="-5.92"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18251,7 +18233,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-5.92"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18269,7 +18250,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-5.92"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18286,7 +18266,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-5.92"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18303,8 +18282,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}</name>
-            <offset x="0" y="-5.92"/>
+            <name>I|PAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18318,15 +18296,14 @@
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
-          <Harmony>
-            <harmonyType>1</harmonyType>
-            <name>I6{</name>
-            <offset x="0" y="-5.92"/>
-            </Harmony>
           <Clef>
             <concertClefType>G</concertClefType>
             <transposingClefType>G</transposingClefType>
             </Clef>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I6{</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>eighth</durationType>
@@ -18365,7 +18342,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-5.92"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18416,7 +18392,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-5.92"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -18440,7 +18415,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0.0910263" y="-5.92"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18509,7 +18483,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-6.2948"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18585,8 +18558,7 @@
             </Chord>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I</name>
-            <offset x="0" y="-6.29"/>
+            <name>I|IAC</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18606,7 +18578,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0.0910263" y="-6.29"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -18646,7 +18617,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0.0910263" y="-6.29"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18697,7 +18667,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0.0910263" y="-6.29"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -18721,7 +18690,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0" y="-6.29"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18775,7 +18743,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="-0.0910263" y="-6.29"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18841,8 +18808,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}</name>
-            <offset x="0" y="-6.29"/>
+            <name>I|PAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18875,7 +18841,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-6.29"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18929,7 +18894,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-6.29"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -18965,15 +18929,14 @@
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
-          <Harmony>
-            <harmonyType>1</harmonyType>
-            <name>V7</name>
-            <offset x="0" y="-6.29"/>
-            </Harmony>
           <Clef>
             <concertClefType>F</concertClefType>
             <transposingClefType>F</transposingClefType>
             </Clef>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -19026,7 +18989,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-6.18807"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -19065,7 +19027,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V6/vi{</name>
-            <offset x="-2.36104" y="-5.81"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -19105,7 +19066,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-5.81"/>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -19253,7 +19213,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>#viio65/vi</name>
-            <offset x="0" y="-5.81"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -19362,7 +19321,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi6</name>
-            <offset x="0" y="-4.95066"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -19487,7 +19445,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V.viio65</name>
-            <offset x="0" y="-4.95"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -19602,7 +19559,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>i6</name>
-            <offset x="0" y="-4.75903"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -19733,7 +19689,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>bVI6</name>
-            <offset x="0" y="-4.76"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -19870,7 +19825,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>Ger6</name>
-            <offset x="0" y="-4.29165"/>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -20015,8 +19969,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>V}</name>
-            <offset x="0" y="-4.29"/>
+            <name>V|HC}</name>
             </Harmony>
           <Beam>
             <StemDirection>up</StemDirection>
@@ -20064,7 +20017,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>i</name>
-            <offset x="0" y="-4.29"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -20095,7 +20047,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-4.29"/>
             </Harmony>
           <Beam>
             <StemDirection>down</StemDirection>
@@ -20143,7 +20094,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>i</name>
-            <offset x="0" y="-4.29"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -20174,7 +20124,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-4.88364"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -20306,7 +20255,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I{</name>
-            <offset x="0" y="-4.88"/>
             </Harmony>
           <Chord>
             <durationType>32nd</durationType>
@@ -20366,7 +20314,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-4.88"/>
             </Harmony>
           <Chord>
             <durationType>32nd</durationType>
@@ -20426,7 +20373,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-4.88"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20440,7 +20386,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0" y="-4.88"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20454,7 +20399,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0.0910263" y="-4.88"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20472,7 +20416,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I(97)</name>
-            <offset x="0" y="-4.88"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20494,8 +20437,7 @@
             </Chord>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I</name>
-            <offset x="0" y="-4.88"/>
+            <name>I|IAC</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -20511,7 +20453,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV6</name>
-            <offset x="0" y="-5.04"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20565,7 +20506,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V6</name>
-            <offset x="0" y="-5.04492"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20615,7 +20555,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V65</name>
-            <offset x="0" y="-5.04"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -20631,7 +20570,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-5.04"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20645,7 +20583,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV6</name>
-            <offset x="0" y="-5.04"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20688,7 +20625,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-5.04"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20725,8 +20661,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>V}</name>
-            <offset x="0" y="-5.04"/>
+            <name>V|HC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20763,7 +20698,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I{</name>
-            <offset x="0" y="-5.04"/>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
@@ -20865,7 +20799,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V6</name>
-            <offset x="0" y="-5.42194"/>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
@@ -20929,7 +20862,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V65</name>
-            <offset x="0" y="-5.42"/>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
@@ -20966,7 +20898,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-5.42"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -20983,15 +20914,14 @@
               <veloType>user</veloType>
               </Note>
             </Chord>
-          <Harmony>
-            <harmonyType>1</harmonyType>
-            <name>I6</name>
-            <offset x="0" y="-5.42"/>
-            </Harmony>
           <Clef>
             <concertClefType>F</concertClefType>
             <transposingClefType>F</transposingClefType>
             </Clef>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I6</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -21004,7 +20934,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-5.42"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21022,7 +20951,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I(97)</name>
-            <offset x="0" y="-5.42"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21044,8 +20972,7 @@
             </Chord>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I</name>
-            <offset x="0" y="-5.42"/>
+            <name>I|IAC</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21067,7 +20994,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV6</name>
-            <offset x="0" y="-5.42"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -21151,7 +21077,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V6</name>
-            <offset x="-1.00129" y="-5.42"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -21208,7 +21133,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V65</name>
-            <offset x="0" y="-5.42"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -21247,7 +21171,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-3.63"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21261,7 +21184,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-3.63107"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21281,7 +21203,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-3.63"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21304,8 +21225,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}{</name>
-            <offset x="0" y="-3.63"/>
+            <name>I|PAC}{</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21352,7 +21272,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-3.63"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21391,7 +21310,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>i</name>
-            <offset x="0" y="-3.63"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21430,7 +21348,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-3.63"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21474,7 +21391,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>i</name>
-            <offset x="0" y="-3.85"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21528,7 +21444,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>iv7</name>
-            <offset x="0" y="-3.85194"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21583,7 +21498,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7/bIII</name>
-            <offset x="0" y="-3.85"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21634,7 +21548,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>bIIIM7</name>
-            <offset x="0" y="-3.85"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21692,7 +21605,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>bVIM7</name>
-            <offset x="0" y="-3.85"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21739,7 +21651,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii%7</name>
-            <offset x="0" y="-3.85"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21782,7 +21693,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-4.21"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21820,7 +21730,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>bVI</name>
-            <offset x="0" y="-4.21"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21846,7 +21755,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>i64</name>
-            <offset x="0" y="-4.21"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21860,7 +21768,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio7/V</name>
-            <offset x="-1.3654" y="-4.21375"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21887,8 +21794,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>V}</name>
-            <offset x="-0.2" y="-4.21"/>
+            <name>V|HC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21908,7 +21814,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio7/V</name>
-            <offset x="-3.49949" y="-4.21"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -21939,7 +21844,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="-0.364105" y="-4.21"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -21967,7 +21871,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio7/V</name>
-            <offset x="-3.36797" y="-4.21"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -21998,7 +21901,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-4.21"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -22093,7 +21995,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV{</name>
-            <offset x="0" y="-3.50364"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22147,7 +22048,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-3.5"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22172,7 +22072,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="-0.1" y="-3.5"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22226,7 +22125,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-3.5"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22251,7 +22149,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-3.5"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22265,7 +22162,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-3.5"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22279,7 +22175,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-3.5"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22296,8 +22191,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}</name>
-            <offset x="0" y="-3.5"/>
+            <name>I|IAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22325,7 +22219,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV64{</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22400,7 +22293,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0.2" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22437,7 +22329,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0.0910263" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22529,7 +22420,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22571,7 +22461,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22595,7 +22484,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22609,7 +22497,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio64</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22637,8 +22524,7 @@
             </Dynamic>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I6</name>
-            <offset x="0" y="-4.78"/>
+            <name>I6|EC</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -22666,7 +22552,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>#viio7/vi</name>
-            <offset x="-0.910263" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -22686,7 +22571,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -22707,7 +22591,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -22724,7 +22607,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-4.781"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -22741,7 +22623,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio64</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -22765,8 +22646,7 @@
             </Dynamic>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I6</name>
-            <offset x="0" y="-4.78"/>
+            <name>I6|EC</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22786,7 +22666,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>#viio7/vi</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22812,7 +22691,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22836,7 +22714,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22856,7 +22733,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22876,7 +22752,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-4.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -22899,8 +22774,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I[I}{</name>
-            <offset x="0" y="-5.06"/>
+            <name>I[I|PAC}{</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -23089,7 +22963,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V2(+4)</name>
-            <offset x="0" y="-5.05837"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -23134,7 +23007,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0.108974" y="-5.06"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -23323,7 +23195,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V2(+4)</name>
-            <offset x="-0.0910263" y="-5.46308"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -23368,7 +23239,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I]</name>
-            <offset x="0.0910263" y="-5.46"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23405,7 +23275,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V6/vi</name>
-            <offset x="0.0910263" y="-5.46"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -23451,7 +23320,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23476,7 +23344,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -23510,7 +23377,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -23547,7 +23413,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23579,8 +23444,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}</name>
-            <offset x="-0.0910263" y="-5.46"/>
+            <name>I|PAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23622,7 +23486,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>{</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -23672,7 +23535,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -23689,8 +23551,7 @@
             </location>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>V</name>
-            <offset x="0" y="-5.46"/>
+            <name>V|HC</name>
             </Harmony>
           </voice>
         </Measure>
@@ -23699,7 +23560,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -23749,7 +23609,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -23766,8 +23625,7 @@
             </location>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>V</name>
-            <offset x="0" y="-5.46"/>
+            <name>V|HC</name>
             </Harmony>
           </voice>
         </Measure>
@@ -23776,7 +23634,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23843,7 +23700,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7(9)</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -23873,7 +23729,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           </voice>
         </Measure>
@@ -23881,8 +23736,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}</name>
-            <offset x="0" y="-5.46"/>
+            <name>I|PAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -23905,7 +23759,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio6</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -23917,7 +23770,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I{</name>
-            <offset x="0" y="-5.46"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -23969,7 +23821,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-3.95669"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -23992,8 +23843,7 @@
             </location>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>V</name>
-            <offset x="0" y="-3.96"/>
+            <name>V|HC</name>
             </Harmony>
           </voice>
         </Measure>
@@ -24002,7 +23852,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-3.96"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -24054,7 +23903,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-3.96"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -24077,8 +23925,7 @@
             </location>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>V</name>
-            <offset x="0" y="-3.96"/>
+            <name>V|HC</name>
             </Harmony>
           </voice>
         </Measure>
@@ -24087,7 +23934,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-3.96"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24154,7 +24000,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7(9)</name>
-            <offset x="0" y="-3.96"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24180,7 +24025,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-3.96"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -24194,8 +24038,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}{</name>
-            <offset x="0.1" y="-3.96"/>
+            <name>I|PAC}{</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24463,7 +24306,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>v6</name>
-            <offset x="0" y="-4.67"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24523,7 +24365,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V65/v</name>
-            <offset x="0" y="-4.66789"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24584,7 +24425,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>v</name>
-            <offset x="0" y="-4.67"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24634,7 +24474,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi.#viio65</name>
-            <offset x="0" y="-4.67"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24685,7 +24524,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>i6</name>
-            <offset x="0" y="-4.67"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24744,7 +24582,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V65</name>
-            <offset x="0" y="-4.67"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24805,7 +24642,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>i</name>
-            <offset x="0" y="-3.85"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24857,7 +24693,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>It6</name>
-            <offset x="0" y="-3.8455"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24903,8 +24738,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>V}</name>
-            <offset x="0" y="-3.85"/>
+            <name>V|HC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24921,15 +24755,14 @@
           <Rest>
             <durationType>eighth</durationType>
             </Rest>
-          <Harmony>
-            <harmonyType>1</harmonyType>
-            <name>viio7/V</name>
-            <offset x="-3.91413" y="-3.85"/>
-            </Harmony>
           <Clef>
             <concertClefType>G</concertClefType>
             <transposingClefType>G</transposingClefType>
             </Clef>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio7/V</name>
+            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
@@ -24959,7 +24792,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-3.85"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -24984,15 +24816,14 @@
           <Rest>
             <durationType>eighth</durationType>
             </Rest>
-          <Harmony>
-            <harmonyType>1</harmonyType>
-            <name>viio7/V</name>
-            <offset x="-4.00516" y="-3.85"/>
-            </Harmony>
           <Clef>
             <concertClefType>F</concertClefType>
             <transposingClefType>F</transposingClefType>
             </Clef>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>viio7/V</name>
+            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
@@ -25022,7 +24853,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-3.85"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -25117,7 +24947,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I.iii</name>
-            <offset x="0" y="-6.37"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -25226,7 +25055,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V43</name>
-            <offset x="0" y="-6.37"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -25334,7 +25162,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="-0.00569808" y="-6.96341"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -25482,15 +25309,14 @@
         </Measure>
       <Measure>
         <voice>
-          <Harmony>
-            <harmonyType>1</harmonyType>
-            <name>I[I{</name>
-            <offset x="0" y="-4.51"/>
-            </Harmony>
           <Clef>
             <concertClefType>F</concertClefType>
             <transposingClefType>F</transposingClefType>
             </Clef>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I[I{</name>
+            </Harmony>
           <Chord>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
@@ -25567,7 +25393,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7/IV</name>
-            <offset x="0" y="-4.50728"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -25643,7 +25468,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV</name>
-            <offset x="0" y="-4.51"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -25694,7 +25518,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-4.5"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -25729,7 +25552,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio6</name>
-            <offset x="0" y="-4.51"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -25810,7 +25632,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I]</name>
-            <offset x="0" y="-4.51"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -25833,7 +25654,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi6</name>
-            <offset x="0" y="-4.51"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -25845,7 +25665,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii</name>
-            <offset x="0" y="-4.51"/>
             </Harmony>
           <Rest>
             <durationType>measure</durationType>
@@ -25857,7 +25676,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-4.51"/>
             </Harmony>
           </voice>
         </Measure>
@@ -25866,7 +25684,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-4.51"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -25892,7 +25709,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0" y="-4.51"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -25906,7 +25722,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-4.51"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -25931,7 +25746,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii7</name>
-            <offset x="0" y="-4.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -25962,7 +25776,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-4.3"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -25997,7 +25810,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-4.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26025,7 +25837,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV6</name>
-            <offset x="0" y="-4.29944"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26046,7 +25857,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV</name>
-            <offset x="0" y="-4.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26064,7 +25874,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0" y="-4.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26081,7 +25890,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="1.3654" y="-4.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26099,7 +25907,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-4.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26116,7 +25923,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-4.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26133,8 +25939,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}</name>
-            <offset x="0" y="-4.3"/>
+            <name>I|PAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26148,15 +25953,14 @@
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
-          <Harmony>
-            <harmonyType>1</harmonyType>
-            <name>I6{</name>
-            <offset x="0" y="-4.3"/>
-            </Harmony>
           <Clef>
             <concertClefType>G</concertClefType>
             <transposingClefType>G</transposingClefType>
             </Clef>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>I6{</name>
+            </Harmony>
           <Chord>
             <dots>1</dots>
             <durationType>eighth</durationType>
@@ -26195,7 +25999,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-4.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26246,7 +26049,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-4.3"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -26270,7 +26072,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0" y="-4.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26339,7 +26140,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-5.77921"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26428,8 +26228,7 @@
             </Chord>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I</name>
-            <offset x="0" y="-5.78"/>
+            <name>I|IAC</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26456,7 +26255,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="-1.27437" y="-5.78"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -26496,7 +26294,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-5.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26547,7 +26344,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-5.78"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -26571,7 +26367,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0" y="-5.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26625,7 +26420,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="-0.0254416" y="-5.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26691,8 +26485,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}</name>
-            <offset x="0" y="-5.78"/>
+            <name>I|PAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26725,7 +26518,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="-1.63847" y="-5.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26779,7 +26571,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-5.78"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26815,15 +26606,14 @@
           <Rest>
             <durationType>quarter</durationType>
             </Rest>
-          <Harmony>
-            <harmonyType>1</harmonyType>
-            <name>V7</name>
-            <offset x="0" y="-5.78"/>
-            </Harmony>
           <Clef>
             <concertClefType>F</concertClefType>
             <transposingClefType>F</transposingClefType>
             </Clef>
+          <Harmony>
+            <harmonyType>1</harmonyType>
+            <name>V7</name>
+            </Harmony>
           <Chord>
             <durationType>quarter</durationType>
             <Spanner type="Slur">
@@ -26876,7 +26666,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-5.2"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26921,7 +26710,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V6/vi{</name>
-            <offset x="-2.73079" y="-5.2"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -26951,7 +26739,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-5.2"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -27082,7 +26869,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>#viio65/vi</name>
-            <offset x="0" y="-5.19573"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -27191,7 +26977,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi6</name>
-            <offset x="0" y="-5.26"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -27316,7 +27101,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>#viio65/v</name>
-            <offset x="0" y="-5.26001"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -27431,7 +27215,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>v6</name>
-            <offset x="0" y="-5.26"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -27562,7 +27345,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>#viio43/iv</name>
-            <offset x="0" y="-4.89925"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -27671,7 +27453,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>iv6</name>
-            <offset x="0" y="-4.9"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -27802,7 +27583,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I64</name>
-            <offset x="0" y="-3.72533"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -27931,7 +27711,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio7/V</name>
-            <offset x="0" y="-3.73"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -28067,8 +27846,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>V}</name>
-            <offset x="0" y="-5.93"/>
+            <name>V|HC}</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -28114,7 +27892,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>i</name>
-            <offset x="0" y="-5.93"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -28145,7 +27922,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-5.93"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -28187,7 +27963,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>i</name>
-            <offset x="0" y="-5.93"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -28218,7 +27993,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-5.93"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -28353,7 +28127,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I{</name>
-            <offset x="0" y="-4.46995"/>
             </Harmony>
           <Chord>
             <durationType>32nd</durationType>
@@ -28413,7 +28186,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-4.47"/>
             </Harmony>
           <Chord>
             <durationType>32nd</durationType>
@@ -28473,7 +28245,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-4.47"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28487,7 +28258,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="0" y="-4.47"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28501,7 +28271,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-4.47"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28519,7 +28288,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I(97)</name>
-            <offset x="0" y="-4.47"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28541,8 +28309,7 @@
             </Chord>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I</name>
-            <offset x="0" y="-4.47"/>
+            <name>I|IAC</name>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -28554,7 +28321,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV6</name>
-            <offset x="0" y="-4.47"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28604,7 +28370,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V6</name>
-            <offset x="0" y="-4.47"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28647,7 +28412,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V65</name>
-            <offset x="0" y="-4.47"/>
             </Harmony>
           <Rest>
             <durationType>quarter</durationType>
@@ -28659,7 +28423,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-5.63637"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28673,7 +28436,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-5.64"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28717,7 +28479,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-5.64"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28754,8 +28515,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>V}</name>
-            <offset x="0" y="-5.64"/>
+            <name>V|HC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -28785,7 +28545,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I{</name>
-            <offset x="0" y="-5.64"/>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
@@ -28887,7 +28646,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V6</name>
-            <offset x="-0.182053" y="-5.64"/>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
@@ -28948,7 +28706,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V65</name>
-            <offset x="0.0910263" y="-5.64"/>
             </Harmony>
           <Tuplet>
             <normalNotes>2</normalNotes>
@@ -28985,7 +28742,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="-0.0910263" y="-5.64"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29005,7 +28761,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I6</name>
-            <offset x="-1.00129" y="-5.64"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29019,7 +28774,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="-0.637184" y="-5.64"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29037,7 +28791,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I(97)</name>
-            <offset x="0.0267712" y="-6.3007"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29059,8 +28812,7 @@
             </Chord>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I</name>
-            <offset x="-0.0910263" y="-6.3"/>
+            <name>I|IAC</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29082,7 +28834,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV6</name>
-            <offset x="0" y="-6.3"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -29158,7 +28909,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V6</name>
-            <offset x="0.0910263" y="-6.3"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -29200,7 +28950,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V65</name>
-            <offset x="0" y="-6.3"/>
             </Harmony>
           <Chord>
             <BeamMode>mid</BeamMode>
@@ -29236,7 +28985,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-6.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29250,7 +28998,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-6.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29270,7 +29017,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-6.3"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29293,8 +29039,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}{</name>
-            <offset x="0" y="-6.3"/>
+            <name>I|PAC}{</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29619,7 +29364,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>bIIIM7</name>
-            <offset x="0" y="-4.5565"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29680,7 +29424,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>bVIM7</name>
-            <offset x="0" y="-4.56"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29728,7 +29471,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii%7</name>
-            <offset x="0" y="-4.56"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29771,7 +29513,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-4.56"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29809,7 +29550,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>bVI</name>
-            <offset x="0" y="-4.56"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29838,7 +29578,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>i64</name>
-            <offset x="0" y="-4.56"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29852,7 +29591,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio7/V</name>
-            <offset x="0" y="-4.56"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29879,8 +29617,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>V}</name>
-            <offset x="0" y="-4.56"/>
+            <name>V|HC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29900,7 +29637,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio7/V</name>
-            <offset x="-4.73337" y="-4.56"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -29931,7 +29667,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-4.31"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -29959,7 +29694,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio7/V</name>
-            <offset x="-4.59245" y="-4.31438"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -29990,7 +29724,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-4.31"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30085,7 +29818,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV{</name>
-            <offset x="0" y="-4.31"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30139,7 +29871,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-4.31"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30164,7 +29895,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-4.31"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30218,7 +29948,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-4.31"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30243,7 +29972,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-7.24"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30257,7 +29985,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-7.24"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30271,7 +29998,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-7.24"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30288,8 +30014,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}</name>
-            <offset x="0" y="-7.24"/>
+            <name>I|IAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30317,7 +30042,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV64{</name>
-            <offset x="0" y="-7.24"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30389,7 +30113,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0.182053" y="-7.24"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30426,7 +30149,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="-0.00411333" y="-7.38378"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30514,7 +30236,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="-0.0910263" y="-7.24"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30556,7 +30277,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-5.51"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30580,7 +30300,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-5.51"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30598,7 +30317,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio64</name>
-            <offset x="0" y="-5.51"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -30627,8 +30345,7 @@
             </Dynamic>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I6</name>
-            <offset x="0.0910263" y="-5.50857"/>
+            <name>I6|EC</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30656,7 +30373,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>#viio7/vi</name>
-            <offset x="-2.00258" y="-5.51"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30676,7 +30392,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0.182053" y="-5.51"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30697,7 +30412,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-5.51"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30714,7 +30428,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-5.51"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30735,7 +30448,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>viio64</name>
-            <offset x="0" y="-5.51"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30760,8 +30472,7 @@
             </Dynamic>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I6</name>
-            <offset x="0" y="-5.51"/>
+            <name>I6|EC</name>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30784,7 +30495,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>#viio7/vi</name>
-            <offset x="0" y="-5.51"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30813,7 +30523,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-5.51"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30840,7 +30549,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>ii6</name>
-            <offset x="0" y="-4.29"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30863,7 +30571,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V(64)</name>
-            <offset x="0" y="-4.29401"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30894,7 +30601,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V7</name>
-            <offset x="0" y="-4.29"/>
             </Harmony>
           <Chord>
             <durationType>eighth</durationType>
@@ -30920,8 +30626,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I[I}{</name>
-            <offset x="0" y="-4.29"/>
+            <name>I[I|PAC}{</name>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -31110,7 +30815,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V2(+4)</name>
-            <offset x="0" y="-4.29"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -31155,7 +30859,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-6.83"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -31344,7 +31047,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V2(+4)</name>
-            <offset x="9.09494e-14" y="-6.83288"/>
             </Harmony>
           <Chord>
             <durationType>16th</durationType>
@@ -31389,7 +31091,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I]</name>
-            <offset x="-0.0440517" y="-6.83"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -31425,7 +31126,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V/vi</name>
-            <offset x="0.0910263" y="-6.83"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -31471,7 +31171,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>vi</name>
-            <offset x="0" y="-6.83"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -31495,7 +31194,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>I</name>
-            <offset x="0" y="-6.83"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -31529,7 +31227,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>IV</name>
-            <offset x="0" y="-6.83"/>
             </Harmony>
           <Chord>
             <dots>1</dots>
@@ -31565,7 +31262,6 @@
           <Harmony>
             <harmonyType>1</harmonyType>
             <name>V</name>
-            <offset x="0" y="-6.83"/>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>
@@ -31597,8 +31293,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I}</name>
-            <offset x="0" y="-4.21375"/>
+            <name>I|PAC}</name>
             </Harmony>
           <Chord>
             <durationType>quarter</durationType>

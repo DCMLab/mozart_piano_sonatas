@@ -9,7 +9,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 6	6	20	6.0	0	0	4/4	2	1	ii6	C	I		ii6	ii		6					m	0	0	-1, 3, 2		2	-1
 7	7	26	1.0	1/2	1/2	4/4	2	1	V(64)	C	I		V(64)	V			64				M	0	0	1, 0, 4		1	1
 7	7	27	1.0	3/4	3/4	4/4	2	1	V7	C	I		V7	V		7					Mm7	0	0	1, 5, 2, -1		1	1
-8	8	28	8.0	0	0	4/4	2	1	I}{	C	I		I	I						}{	M	0	0	0, 4, 1		0	0
+8	8	28	8.0	0	0	4/4	2	1	I|PAC}{	C	I		I	I					PAC	}{	M	0	0	0, 4, 1		0	0
 10	10	36	2.0	0	0	4/4	2	1	I6	C	I		I6	I		6					M	0	0	4, 1, 0		0	4
 10	10	38	2.0	1/2	1/2	4/4	2	1	V65/ii	C	I		V65/ii	V		65		ii			Mm7	0	0	7, 4, 1, 3		3	7
 11	11	40	2.0	0	0	4/4	2	1	V43	C	I		V43	V		43					Mm7	0	0	2, -1, 1, 5		1	2
@@ -26,7 +26,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 17	17	64	2.0	0	0	4/4	2	1	ii6	C	I		ii6	ii		6					m	0	0	-1, 3, 2		2	-1
 17	17	66	1.0	1/2	1/2	4/4	2	1	V(64)	C	I		V(64)	V			64				M	0	0	1, 0, 4		1	1
 17	17	67	1.0	3/4	3/4	4/4	2	1	V	C	I		V	V							M	0	0	1, 5, 2		1	1
-18	18	68	2.0	0	0	4/4	2	1	IV6	C	I		IV6	IV		6					M	0	0	3, 0, -1		-1	3
+18	18	68	2.0	0	0	4/4	2	1	IV6|EC	C	I		IV6	IV		6			EC		M	0	0	3, 0, -1		-1	3
 18	18	70	2.0	1/2	1/2	4/4	2	1	IV	C	I		IV	IV							M	0	0	-1, 3, 0		-1	-1
 19	19	72	2.0	0	0	4/4	2	1	I6	C	I		I6	I		6					M	0	0	4, 1, 0		0	4
 19	19	74	2.0	1/2	1/2	4/4	2	1	I	C	I		I	I							M	0	0	0, 4, 1		0	0
@@ -34,7 +34,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 20	20	77	1.0	1/4	1/4	4/4	2	1	ii6	C	I		ii6	ii		6					m	0	0	-1, 3, 2		2	-1
 20	20	78	1.0	1/2	1/2	4/4	2	1	V(64)	C	I		V(64)	V			64				M	0	0	1, 0, 4		1	1
 20	20	79	1.0	3/4	3/4	4/4	2	1	V	C	I		V	V							M	0	0	1, 5, 2		1	1
-21	21	80	8.0	0	0	4/4	2	1	I}{	C	I		I	I						}{	M	0	0	0, 4, 1		0	0
+21	21	80	8.0	0	0	4/4	2	1	I|PAC}{	C	I		I	I					PAC	}{	M	0	0	0, 4, 1		0	0
 23	23	88	8.0	0	0	4/4	2	1	V6	C	I		V6	V		6					M	0	0	5, 2, 1		1	5
 25	25	96	8.0	0	0	4/4	2	1	V.V65	C	V		V65	V		65					Mm7	0	0	5, 2, -1, 1		1	5
 27	27	104	1.0	0	0	4/4	2	1	I	C	V		I	I							M	0	0	0, 4, 1		0	0
@@ -50,7 +50,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 30	30	116	2.0	0	0	4/4	2	1	IV	C	V		IV	IV							M	0	0	-1, 3, 0		-1	-1
 30	30	118	2.0	1/2	1/2	4/4	2	1	IV6	C	V		IV6	IV		6					M	0	0	3, 0, -1		-1	3
 31	31	120	4.0	0	0	4/4	2	1	ii	C	V		ii	ii							m	0	0	2, -1, 3		2	2
-32	32	124	8.0	0	0	4/4	2	1	V}	C	V		V	V						}	M	0	0	1, 5, 2		1	1
+32	32	124	8.0	0	0	4/4	2	1	V|HC}	C	V		V	V					HC	}	M	0	0	1, 5, 2		1	1
 34	34	132	1.0	0	0	4/4	2	1	V2	C	V		V2	V		2					Mm7	0	0	-1, 1, 5, 2		1	-1
 34	34	133	1.0	1/4	1/4	4/4	2	1	I6	C	V		I6	I		6					M	0	0	4, 1, 0		0	4
 34	34	134	1.0	1/2	1/2	4/4	2	1	V2	C	V		V2	V		2					Mm7	0	0	-1, 1, 5, 2		1	-1
@@ -65,7 +65,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 37	37	147	1.0	3/4	3/4	4/4	2	1	V6	C	V		V6	V		6					M	0	0	5, 2, 1		1	5
 38	38	148	1.0	0	0	4/4	2	1	I	C	V		I	I							M	0	0	0, 4, 1		0	0
 38	38	149	1.0	1/4	1/4	4/4	2	1	viio6/V	C	V		viio6/V	vii	o	6		V			o	0	0	3, 0, 6		6	3
-38	38	150	2.0	1/2	1/2	4/4	2	1	V}	C	V		V	V						}	M	0	0	1, 5, 2		1	1
+38	38	150	2.0	1/2	1/2	4/4	2	1	V|HC}	C	V		V	V					HC	}	M	0	0	1, 5, 2		1	1
 39	39	152	2.0	0	0	4/4	2	1	I{	C	V		I	I						{	M	0	0	0, 4, 1		0	0
 39	39	154	2.0	1/2	1/2	4/4	2	1	I6	C	V		I6	I		6					M	0	0	4, 1, 0		0	4
 40	40	156	2.0	0	0	4/4	2	1	V2	C	V		V2	V		2					Mm7	0	0	-1, 1, 5, 2		1	-1
@@ -76,13 +76,13 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 41	41	163	1.0	3/4	3/4	4/4	2	1	V6	C	V		V6	V		6					M	0	0	5, 2, 1		1	5
 42	42	164	1.0	0	0	4/4	2	1	I	C	V		I	I							M	0	0	0, 4, 1		0	0
 42	42	165	1.0	1/4	1/4	4/4	2	1	viio6/V	C	V		viio6/V	vii	o	6		V			o	0	0	3, 0, 6		6	3
-42	42	166	1.0	1/2	1/2	4/4	2	1	V}	C	V		V	V						}	M	0	0	1, 5, 2		1	1
+42	42	166	1.0	1/2	1/2	4/4	2	1	V|HC}	C	V		V	V					HC	}	M	0	0	1, 5, 2		1	1
 42	42	167	1.0	3/4	3/4	4/4	2	1	V2	C	V		V2	V		2					Mm7	0	0	-1, 1, 5, 2		1	-1
 43	43	168	4.0	0	0	4/4	2	1	I6{	C	V		I6	I		6				{	M	0	0	4, 1, 0		0	4
 44	44	172	4.0	0	0	4/4	2	1	IV	C	V		IV	IV							M	0	0	-1, 3, 0		-1	-1
 45	45	176	2.0	0	0	4/4	2	1	V(64)	C	V		V(64)	V			64				M	0	0	1, 0, 4		1	1
 45	45	178	2.0	1/2	1/2	4/4	2	1	V7	C	V		V7	V		7					Mm7	0	0	1, 5, 2, -1		1	1
-46	46	180	4.0	0	0	4/4	2	1	I6	C	V		I6	I		6					M	0	0	4, 1, 0		0	4
+46	46	180	4.0	0	0	4/4	2	1	I6|EC	C	V		I6	I		6			EC		M	0	0	4, 1, 0		0	4
 47	47	184	4.0	0	0	4/4	2	1	IV	C	V		IV	IV							M	0	0	-1, 3, 0		-1	-1
 48	48	188	1.0	0	0	4/4	2	1	I64	C	V		I64	I		64					M	0	0	1, 0, 4		0	1
 48	48	189	1.0	1/4	1/4	4/4	2	1	IV6	C	V		IV6	IV		6					M	0	0	3, 0, -1		-1	3
@@ -96,7 +96,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 51	51	200	4.0	0	0	4/4	2	1	ii6	C	V		ii6	ii		6					m	0	0	-1, 3, 2		2	-1
 52	52	204	4.0	0	0	4/4	2	1	V(64)	C	V		V(64)	V			64				M	0	0	1, 0, 4		1	1
 53	53	208	4.0	0	0	4/4	2	1	V7	C	V		V7	V		7					Mm7	0	0	1, 5, 2, -1		1	1
-54	54	212	2.0	0	0	4/4	2	1	I}	C	V		I	I						}	M	0	0	0, 4, 1		0	0
+54	54	212	2.0	0	0	4/4	2	1	I|PAC}	C	V		I	I					PAC	}	M	0	0	0, 4, 1		0	0
 54	54	213	0.0	1/4	1/4	4/4	2	1	{	C	V									{		0	0				
 54	54	214	1.0	1/2	1/2	4/4	2	1	V43	C	V		V43	V		43					Mm7	0	0	2, -1, 1, 5		1	2
 54	54	215	1.0	3/4	3/4	4/4	2	1	viio	C	V		viio	vii	o						o	0	0	5, 2, -1		5	5
@@ -115,7 +115,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 57	57	225	1.0	1/4	1/4	4/4	2	1	vi	C	V		vi	vi							m	0	0	3, 0, 4		3	3
 57	57	226	1.0	1/2	1/2	4/4	2	1	ii6	C	V		ii6	ii		6					m	0	0	-1, 3, 2		2	-1
 57	57	227	1.0	3/4	3/4	4/4	2	1	V	C	V		V	V							M	0	0	1, 5, 2		1	1
-58	58	228	4.0	0	0	4/4	2	1	I}	C	V		I	I						}	M	0	0	0, 4, 1		0	0
+58	58	228	4.0	0	0	4/4	2	1	I|PAC}	C	V		I	I					PAC	}	M	0	0	0, 4, 1		0	0
 59	59	232	8.0	0	0	4/4	2	1	i{	C	V		i	i						{	m	0	0	0, -3, 1		0	0
 61	61	240	1.5	0	0	4/4	2	1	i6	C	V		i6	i		6					m	0	0	-3, 1, 0		0	-3
 61	61	483/2	0.5	3/8	3/8	4/4	2	1	iio	C	V		iio	ii	o						o	0	0	2, -1, -4		2	2
@@ -155,7 +155,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 79	79	312	10.0	0	0	4/4	2	1	viio7/V	C	vi		viio7/V	vii	o	7		V			o7	0	1	6, 3, 0, -3		6	6
 81	81	322	1.0	1/2	1/2	4/4	2	1	V	C	vi		V	V							M	0	1	1, 5, 2		1	1
 81	81	323	1.0	3/4	3/4	4/4	2	1	V7	C	vi		V7	V		7					Mm7	0	1	1, 5, 2, -1		1	1
-82	82	324	2.0	0	0	4/4	2	1	i}	C	vi		i	i						}	m	0	1	0, -3, 1		0	0
+82	82	324	2.0	0	0	4/4	2	1	i|PAC}	C	vi		i	i					PAC	}	m	0	1	0, -3, 1		0	0
 82	82	325	0.0	1/4	1/4	4/4	2	1	{	C	vi									{		0	1				
 82	82	326	1.0	1/2	1/2	4/4	2	1	V43	C	vi		V43	V		43					Mm7	0	1	2, -1, 1, 5		1	2
 82	82	327	1.0	3/4	3/4	4/4	2	1	#viio	C	vi		#viio	#vii	o						o	0	1	5, 2, -1		5	5
@@ -174,7 +174,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 85	85	337	1.0	1/4	1/4	4/4	2	1	IV	C	vi		IV	IV							M	0	1	-1, 3, 0		-1	-1
 85	85	338	1.0	1/2	1/2	4/4	2	1	iio6	C	vi		iio6	ii	o	6					o	0	1	-1, -4, 2		2	-1
 85	85	339	1.0	3/4	3/4	4/4	2	1	V	C	vi		V	V							M	0	1	1, 5, 2		1	1
-86	86	340	8.0	0	0	4/4	2	1	i}{	C	vi		i	i						}{	m	0	1	0, -3, 1		0	0
+86	86	340	8.0	0	0	4/4	2	1	i|PAC}{	C	vi		i	i					PAC	}{	m	0	1	0, -3, 1		0	0
 88	88	348	1.5	0	0	4/4	2	1	i6	C	vi		i6	i		6					m	0	1	-3, 1, 0		0	-3
 88	88	699/2	0.5	3/8	3/8	4/4	2	1	iio	C	vi		iio	ii	o						o	0	1	2, -1, -4		2	2
 88	88	350	2.0	1/2	1/2	4/4	2	1	i	C	vi		i	i							m	0	1	0, -3, 1		0	0
@@ -200,7 +200,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 100	100	397	1.0	1/4	1/4	4/4	2	1	ii6	C	I		ii6	ii		6					m	0	0	-1, 3, 2		2	-1
 100	100	398	1.0	1/2	1/2	4/4	2	1	V(64)	C	I		V(64)	V			64				M	0	0	1, 0, 4		1	1
 100	100	399	1.0	3/4	3/4	4/4	2	1	V	C	I		V	V							M	0	0	1, 5, 2		1	1
-101	101	400	8.0	0	0	4/4	2	1	i}{	C	I		i	i						}{	m	0	0	0, -3, 1		0	0
+101	101	400	8.0	0	0	4/4	2	1	i|PAC}{	C	I		i	i					PAC	}{	m	0	0	0, -3, 1		0	0
 103	103	408	2.0	0	0	4/4	2	1	i6	C	I		i6	i		6					m	0	0	-3, 1, 0		0	-3
 103	103	410	2.0	1/2	1/2	4/4	2	1	i	C	I		i	i							m	0	0	0, -3, 1		0	0
 104	104	412	1.0	0	0	4/4	2	1	V64	C	I		V64	V		64					M	0	0	2, 1, 5		1	2
@@ -211,6 +211,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 106	106	421	3.0	1/4	1/4	4/4	2	1	iv6	C	I		iv6	iv		6					m	0	0	-4, 0, -1		-1	-4
 107	107	424	4.0	0	0	4/4	2	1	viio43/V	C	I		viio43/V	vii	o	43		V			o7	0	0	0, -3, 6, 3		6	0
 108	108	428	8.0	0	0	4/4	2	1	V6}	C	I		V6	V		6				}	M	0	0	5, 2, 1		1	5
+108	108	857/2	0.0	1/8	1/8	4/4	2	1	|HC	C	I								HC			0	0				
 110	110	436	2.0	0	0	4/4	2	1	IV6{	C	I		IV6	IV		6				{	M	0	0	3, 0, -1		-1	3
 110	110	438	2.0	1/2	1/2	4/4	2	1	IV	C	I		IV	IV							M	0	0	-1, 3, 0		-1	-1
 111	111	440	2.0	0	0	4/4	2	1	I6	C	I		I6	I		6					M	0	0	4, 1, 0		0	4
@@ -218,7 +219,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 112	112	444	2.0	0	0	4/4	2	1	ii6	C	I		ii6	ii		6					m	0	0	-1, 3, 2		2	-1
 112	112	446	1.0	1/2	1/2	4/4	2	1	V(64)	C	I		V(64)	V			64				M	0	0	1, 0, 4		1	1
 112	112	447	1.0	3/4	3/4	4/4	2	1	V	C	I		V	V							M	0	0	1, 5, 2		1	1
-113	113	448	2.0	0	0	4/4	2	1	IV6	C	I		IV6	IV		6					M	0	0	3, 0, -1		-1	3
+113	113	448	2.0	0	0	4/4	2	1	IV6|EC	C	I		IV6	IV		6			EC		M	0	0	3, 0, -1		-1	3
 113	113	450	2.0	1/2	1/2	4/4	2	1	IV	C	I		IV	IV							M	0	0	-1, 3, 0		-1	-1
 114	114	452	2.0	0	0	4/4	2	1	I6	C	I		I6	I		6					M	0	0	4, 1, 0		0	4
 114	114	454	2.0	1/2	1/2	4/4	2	1	I	C	I		I	I							M	0	0	0, 4, 1		0	0
@@ -226,7 +227,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 115	115	457	1.0	1/4	1/4	4/4	2	1	ii6	C	I		ii6	ii		6					m	0	0	-1, 3, 2		2	-1
 115	115	458	1.0	1/2	1/2	4/4	2	1	V(64)	C	I		V(64)	V			64				M	0	0	1, 0, 4		1	1
 115	115	459	1.0	3/4	3/4	4/4	2	1	V	C	I		V	V							M	0	0	1, 5, 2		1	1
-116	116	460	8.0	0	0	4/4	2	1	I}{	C	I		I	I						}{	M	0	0	0, 4, 1		0	0
+116	116	460	8.0	0	0	4/4	2	1	I|PAC}{	C	I		I	I					PAC	}{	M	0	0	0, 4, 1		0	0
 118	118	468	8.0	0	0	4/4	2	1	V6	C	I		V6	V		6					M	0	0	5, 2, 1		1	5
 120	120	476	8.0	0	0	4/4	2	1	V65/V	C	I		V65/V	V		65		V			Mm7	0	0	6, 3, 0, 2		2	6
 122	122	484	4.0	0	0	4/4	2	1	V[V	C	I	V	V	V							M	0	0	1, 5, 2		1	1
@@ -235,7 +236,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 124	124	492	4.0	0	0	4/4	2	1	V]	C	I	V	V	V							M	0	0	1, 5, 2		1	1
 125	125	496	2.0	0	0	4/4	2	1	I	C	I		I	I							M	0	0	0, 4, 1		0	0
 125	125	498	2.0	1/2	1/2	4/4	2	1	viio/V	C	I		viio/V	vii	o			V			o	0	0	6, 3, 0		6	6
-126	126	500	8.0	0	0	4/4	2	1	V}	C	I		V	V						}	M	0	0	1, 5, 2		1	1
+126	126	500	8.0	0	0	4/4	2	1	V|HC}	C	I		V	V					HC	}	M	0	0	1, 5, 2		1	1
 128	128	508	1.0	0	0	4/4	2	1	V2	C	I		V2	V		2					Mm7	0	0	-1, 1, 5, 2		1	-1
 128	128	509	1.0	1/4	1/4	4/4	2	1	I6	C	I		I6	I		6					M	0	0	4, 1, 0		0	4
 128	128	510	1.0	1/2	1/2	4/4	2	1	V2	C	I		V2	V		2					Mm7	0	0	-1, 1, 5, 2		1	-1
@@ -249,7 +250,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 131	131	522	2.0	1/2	1/2	4/4	2	1	V64	C	I		V64	V		64					M	0	0	2, 1, 5		1	2
 132	132	524	1.0	0	0	4/4	2	1	vi64	C	I		vi64	vi		64					m	0	0	4, 3, 0		3	4
 132	132	525	1.0	1/4	1/4	4/4	2	1	viio/V	C	I		viio/V	vii	o			V			o	0	0	6, 3, 0		6	6
-132	132	526	2.0	1/2	1/2	4/4	2	1	V}	C	I		V	V						}	M	0	0	1, 5, 2		1	1
+132	132	526	2.0	1/2	1/2	4/4	2	1	V|HC}	C	I		V	V					HC	}	M	0	0	1, 5, 2		1	1
 133	133	528	2.0	0	0	4/4	2	1	I{	C	I		I	I						{	M	0	0	0, 4, 1		0	0
 133	133	530	2.0	1/2	1/2	4/4	2	1	I6	C	I		I6	I		6					M	0	0	4, 1, 0		0	4
 134	134	532	2.0	0	0	4/4	2	1	V2	C	I		V2	V		2					Mm7	0	0	-1, 1, 5, 2		1	-1
@@ -260,12 +261,12 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 135	135	539	1.0	3/4	3/4	4/4	2	1	V6	C	I		V6	V		6					M	0	0	5, 2, 1		1	5
 136	136	540	1.0	0	0	4/4	2	1	I	C	I		I	I							M	0	0	0, 4, 1		0	0
 136	136	541	1.0	1/4	1/4	4/4	2	1	viio6/V	C	I		viio6/V	vii	o	6		V			o	0	0	3, 0, 6		6	3
-136	136	542	2.0	1/2	1/2	4/4	2	1	V}	C	I		V	V						}	M	0	0	1, 5, 2		1	1
+136	136	542	2.0	1/2	1/2	4/4	2	1	V|HC}	C	I		V	V					HC	}	M	0	0	1, 5, 2		1	1
 137	137	544	4.0	0	0	4/4	2	1	I6{	C	I		I6	I		6				{	M	0	0	4, 1, 0		0	4
 138	138	548	4.0	0	0	4/4	2	1	IV	C	I		IV	IV							M	0	0	-1, 3, 0		-1	-1
 139	139	552	2.0	0	0	4/4	2	1	V(64)	C	I		V(64)	V			64				M	0	0	1, 0, 4		1	1
 139	139	554	2.0	1/2	1/2	4/4	2	1	V7	C	I		V7	V		7					Mm7	0	0	1, 5, 2, -1		1	1
-140	140	556	4.0	0	0	4/4	2	1	I6	C	I		I6	I		6					M	0	0	4, 1, 0		0	4
+140	140	556	4.0	0	0	4/4	2	1	I6|EC	C	I		I6	I		6			EC		M	0	0	4, 1, 0		0	4
 141	141	560	4.0	0	0	4/4	2	1	IV6	C	I		IV6	IV		6					M	0	0	3, 0, -1		-1	3
 142	142	564	1.0	0	0	4/4	2	1	I64	C	I		I64	I		64					M	0	0	1, 0, 4		0	1
 142	142	565	1.0	1/4	1/4	4/4	2	1	IV6	C	I		IV6	IV		6					M	0	0	3, 0, -1		-1	3
@@ -279,7 +280,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 145	145	576	4.0	0	0	4/4	2	1	ii6	C	I		ii6	ii		6					m	0	0	-1, 3, 2		2	-1
 146	146	580	4.0	0	0	4/4	2	1	V(64)	C	I		V(64)	V			64				M	0	0	1, 0, 4		1	1
 147	147	584	4.0	0	0	4/4	2	1	V7	C	I		V7	V		7					Mm7	0	0	1, 5, 2, -1		1	1
-148	148	588	2.0	0	0	4/4	2	1	I}	C	I		I	I						}	M	0	0	0, 4, 1		0	0
+148	148	588	2.0	0	0	4/4	2	1	I|PAC}	C	I		I	I					PAC	}	M	0	0	0, 4, 1		0	0
 148	148	589	0.0	1/4	1/4	4/4	2	1	{	C	I									{		0	0				
 148	148	590	1.0	1/2	1/2	4/4	2	1	V43	C	I		V43	V		43					Mm7	0	0	2, -1, 1, 5		1	2
 148	148	591	1.0	3/4	3/4	4/4	2	1	viio	C	I		viio	vii	o						o	0	0	5, 2, -1		5	5
@@ -298,7 +299,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	globa
 151	151	601	1.0	1/4	1/4	4/4	2	1	iv	C	I		iv	iv							m	0	0	-1, -4, 0		-1	-1
 151	151	602	1.0	1/2	1/2	4/4	2	1	ii6	C	I		ii6	ii		6					m	0	0	-1, 3, 2		2	-1
 151	151	603	1.0	3/4	3/4	4/4	2	1	V	C	I		V	V							M	0	0	1, 5, 2		1	1
-152	152	604	7.0	0	0	4/4	2	1	I}	C	I		I	I						}	M	0	0	0, 4, 1		0	0
+152	152	604	7.0	0	0	4/4	2	1	I|PAC}	C	I		I	I					PAC	}	M	0	0	0, 4, 1		0	0
 153	153	611	1.0	3/4	3/4	4/4	2	1	V7	C	I		V7	V		7					Mm7	0	0	1, 5, 2, -1		1	1
 154	154	612	1.0	0	0	4/4	2	1	I	C	I		I	I							M	0	0	0, 4, 1		0	0
 154	154	613	1.0	1/4	1/4	4/4	2	1	V7	C	I		V7	V		7					Mm7	0	0	1, 5, 2, -1		1	1
