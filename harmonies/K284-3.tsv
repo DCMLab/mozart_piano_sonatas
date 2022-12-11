@@ -600,7 +600,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	alt_l
 226	202	809	1.0	3/4	3/4	2/2	2	1	V7		D	V		V7		V		7					Mm7	0	0	1, 5, 2, -1		1	1
 227	203	810	1.0	0	0	2/2	2	1	I(94)}		D	V		I(94)		I			94			}	M	0	0	0, -1, 1	2	0	0
 227	203	811	1.0	1/4	1/4	2/2	2	1	I|PAC		D	V		I		I					PAC		M	0	0	0, 4, 1		0	0
-228	203	812	2.0	0	1/2	2/2	2	1	I.ii%2/II		D	I		ii%2/II		ii	%	2		II			%7	0	0	2, 4, 1, -2		4	2
+228	203	812	2.0	0	1/2	2/2	2	1	I.ii%2/II{		D	I		ii%2/II		ii	%	2		II		{	%7	0	0	2, 4, 1, -2		4	2
 229	204	814	1.0	0	0	2/2	2	1	viio43/II		D	I		viio43/II		vii	o	43		II			o7	0	0	1, -2, 7, 4		7	1
 229	204	815	1.0	1/4	1/4	2/2	2	1	II6		D	I		II6		II		6					M	0	0	6, 3, 2		2	6
 229	204	816	1.0	1/2	1/2	2/2	2	1	viio43		D	I		viio43		vii	o	43					o7	0	0	-1, -4, 5, 2		5	-1
@@ -631,7 +631,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	alt_l
 236	211	845	1.0	3/4	3/4	2/2	2	1	V		D	I		V		V							M	0	0	1, 5, 2		1	1
 237	212	846	1.0	0	0	2/2	2	1	I(94)}		D	I		I(94)		I			94			}	M	0	0	0, -1, 1	2	0	0
 237	212	847	1.0	1/4	1/4	2/2	2	1	I|PAC		D	I		I		I					PAC		M	0	0	0, 4, 1		0	0
-238	212	848	2.0	0	1/2	2/2	2	1	I.ii%2/II		D	I		ii%2/II		ii	%	2		II			%7	0	0	2, 4, 1, -2		4	2
+238	212	848	2.0	0	1/2	2/2	2	1	I.ii%2/II{		D	I		ii%2/II		ii	%	2		II		{	%7	0	0	2, 4, 1, -2		4	2
 239	213	850	1.0	0	0	2/2	2	1	viio43/II		D	I		viio43/II		vii	o	43		II			o7	0	0	1, -2, 7, 4		7	1
 239	213	851	1.0	1/4	1/4	2/2	2	1	II6		D	I		II6		II		6					M	0	0	6, 3, 2		2	6
 239	213	852	1.0	1/2	1/2	2/2	2	1	viio43		D	I		viio43		vii	o	43					o7	0	0	-1, -4, 5, 2		5	-1
@@ -697,7 +697,7 @@ mc	mn	quarterbeats	duration_qb	mc_onset	mn_onset	timesig	staff	voice	label	alt_l
 263	236	928	1.0	1/4	1/4	3/4	2	1	I6		D	V		I6		I		6					M	0	0	4, 1, 0		0	4
 263	236	929	1.0	1/2	1/2	3/4	2	1	V7		D	V		V7		V		7					Mm7	0	0	1, 5, 2, -1		1	1
 264	237	930	2.0	0	0	3/4	2	1	I|PAC}		D	V		I		I					PAC	}	M	0	0	0, 4, 1		0	0
-264	237	932	1.0	1/2	1/2	3/4	2	1	I.iio/II		D	I		iio/II		ii	o			II			o	0	0	4, 1, -2		4	4
+264	237	932	1.0	1/2	1/2	3/4	2	1	I.iio/II{		D	I		iio/II		ii	o			II		{	o	0	0	4, 1, -2		4	4
 265	238	933	0.5	0	0	3/4	2	1	viio43/II		D	I		viio43/II		vii	o	43		II			o7	0	0	1, -2, 7, 4		7	1
 265	238	1867/2	1.5	1/8	1/8	3/4	2	1	II6		D	I		II6		II		6					M	0	0	6, 3, 2		2	6
 265	238	935	0.5	1/2	1/2	3/4	2	1	viio43		D	I		viio43		vii	o	43					o7	0	0	-1, -4, 5, 2		5	-1
