@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.02">
   <programVersion>3.6.2</programVersion>
-  <programRevision>3224f34</programRevision>
+  <programRevision></programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -9453,6 +9453,11 @@
             <durationType>quarter</durationType>
             <Spanner type="Slur">
               <Slur>
+                <SlurSegment no="0">
+                  <offset x="0" y="-2.38468"/>
+                  </SlurSegment>
+                <up>down</up>
+                <lineType>2</lineType>
                 </Slur>
               <next>
                 <location>
@@ -9462,11 +9467,6 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="-2.38468"/>
-                  </SlurSegment>
-                <up>down</up>
-                <lineType>2</lineType>
                 </Slur>
               <next>
                 <location>
@@ -10024,7 +10024,7 @@
             </BarLine>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>I.iv/ii</name>
+            <name>I.iv/ii{</name>
             </Harmony>
           <Rest>
             <durationType>measure</durationType>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.02">
   <programVersion>3.6.2</programVersion>
-  <programRevision>3224f34</programRevision>
+  <programRevision></programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -144,7 +144,6 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.76389</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
@@ -6085,6 +6084,10 @@
             <durationType>quarter</durationType>
             <Spanner type="Slur">
               <Slur>
+                <SlurSegment no="0">
+                  <offset x="0" y="-2.72642"/>
+                  </SlurSegment>
+                <up>down</up>
                 </Slur>
               <next>
                 <location>
@@ -6094,10 +6097,6 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="-2.72642"/>
-                  </SlurSegment>
-                <up>down</up>
                 </Slur>
               <next>
                 <location>
@@ -24319,10 +24318,6 @@
             <durationType>half</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="-2.90309"/>
-                  </SlurSegment>
-                <up>down</up>
                 </Slur>
               <next>
                 <location>
@@ -24332,6 +24327,10 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
+                <SlurSegment no="0">
+                  <offset x="0" y="-2.90309"/>
+                  </SlurSegment>
+                <up>down</up>
                 </Slur>
               <next>
                 <location>
@@ -28965,11 +28964,6 @@
             <durationType>quarter</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <o1 x="-1.65" y="-0.15"/>
-                  <o4 x="-13.8" y="6.71595e-16"/>
-                  <offset x="7.35" y="3.9"/>
-                  </SlurSegment>
                 </Slur>
               <next>
                 <location>
@@ -28979,6 +28973,11 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
+                <SlurSegment no="0">
+                  <o1 x="-1.65" y="-0.15"/>
+                  <o4 x="-13.8" y="6.71595e-16"/>
+                  <offset x="7.35" y="3.9"/>
+                  </SlurSegment>
                 </Slur>
               <next>
                 <location>
@@ -30801,7 +30800,7 @@
         <voice>
           <Harmony>
             <harmonyType>1</harmonyType>
-            <name>i.I6</name>
+            <name>i.I6{</name>
             </Harmony>
           <Rest>
             <durationType>half</durationType>
