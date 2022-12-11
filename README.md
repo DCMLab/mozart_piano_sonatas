@@ -447,117 +447,62 @@ Please create an issue and feel free to fork and submit pull requests.
 
 
 # Overview
-|file_name|measures|labels|standard|annotators|             reviewers             |
-|---------|-------:|-----:|--------|----------|-----------------------------------|
-|         |        |   246|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   160|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   320|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   237|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   122|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   199|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   202|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   153|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   375|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   106|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   122|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   164|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   324|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   171|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   326|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   319|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   229|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   748|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   323|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   241|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   391|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   296|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   219|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   426|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   295|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   221|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   472|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   297|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   174|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   324|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   401|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   177|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   125|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   323|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   166|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   426|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   425|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   220|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   435|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   296|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   214|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   318|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   595|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   262|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   428|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   119|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   147|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   146|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   252|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   248|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   274|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   299|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   155|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |        |   362|        |          |Johannes Hentschel, Markus Neuwirth|
-|         |     100|   251|        |          |                                   |
-|         |      74|   154|        |          |                                   |
-|         |     158|   321|        |          |                                   |
-|         |     144|   225|        |          |                                   |
-|         |      60|   124|        |          |                                   |
-|         |     190|   199|        |          |                                   |
-|         |     109|   208|        |          |                                   |
-|         |     106|   152|        |          |                                   |
-|         |     162|   384|        |          |                                   |
-|         |      36|   103|        |          |                                   |
-|         |      72|   129|        |          |                                   |
-|         |     102|   175|        |          |                                   |
-|         |     120|   326|        |          |                                   |
-|         |      39|   169|        |          |                                   |
-|         |     277|   337|        |          |                                   |
-|         |     127|   330|        |          |                                   |
-|         |      92|   228|        |          |                                   |
-|         |     260|   755|        |          |                                   |
-|         |     155|   306|        |          |                                   |
-|         |      79|   259|        |          |                                   |
-|         |     252|   406|        |          |                                   |
-|         |     133|   292|        |          |                                   |
-|         |      86|   250|        |          |                                   |
-|         |     252|   427|        |          |                                   |
-|         |     112|   319|        |          |                                   |
-|         |      93|   236|        |          |                                   |
-|         |     269|   491|        |          |                                   |
-|         |     150|   293|        |          |                                   |
-|         |      64|   187|        |          |                                   |
-|         |     171|   365|        |          |                                   |
-|         |     134|   398|        |          |                                   |
-|         |     100|   160|        |          |                                   |
-|         |     127|   128|        |          |                                   |
-|         |     229|   316|        |          |                                   |
-|         |      40|   168|        |          |                                   |
-|         |     245|   449|        |          |                                   |
-|         |     165|   431|        |          |                                   |
-|         |      82|   217|        |          |                                   |
-|         |     224|   460|        |          |                                   |
-|         |     185|   307|        |          |                                   |
-|         |      57|   214|        |          |                                   |
-|         |     319|   328|        |          |                                   |
-|         |     239|   583|        |          |                                   |
-|         |     122|   261|        |          |                                   |
-|         |     187|   419|        |          |                                   |
-|         |      73|   119|        |          |                                   |
-|         |      74|   146|        |          |                                   |
-|         |      73|   143|        |          |                                   |
-|         |     209|   245|        |          |                                   |
-|         |      55|   250|        |          |                                   |
-|         |      89|   280|        |          |                                   |
-|         |     160|   295|        |          |                                   |
-|         |      67|   151|        |          |                                   |
-|         |     189|   381|        |          |                                   |
-|         |      72|   123|        |          |                                   |
-|         |     226|   748|        |          |                                   |
-|         |     116|   406|        |          |                                   |
-|         |     100|   178|        |          |                                   |
+|file_name|measures|labels| annotators |             reviewers             |
+|---------|-------:|-----:|------------|-----------------------------------|
+|K279-1   |     100|   251|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K279-2   |      74|   154|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K279-3   |     158|   321|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K280-1   |     144|   225|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K280-2   |      60|   124|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K280-3   |     190|   199|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K281-1   |     109|   208|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K281-2   |     106|   152|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K281-3   |     162|   384|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K282-1   |      36|   103|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K282-2   |      72|   129|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K282-3   |     102|   175|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K283-1   |     120|   326|Tal Soker   |Johannes Hentschel, Markus Neuwirth|
+|K283-2   |      39|   169|Tal Soker   |Johannes Hentschel, Markus Neuwirth|
+|K283-3   |     277|   337|Tal Soker   |Johannes Hentschel, Markus Neuwirth|
+|K284-1   |     127|   330|Tal Soker   |Johannes Hentschel, Markus Neuwirth|
+|K284-2   |      92|   228|Tal Soker   |Johannes Hentschel, Markus Neuwirth|
+|K284-3   |     260|   755|Adrian Nagel|Johannes Hentschel, Markus Neuwirth|
+|K309-1   |     155|   306|Tal Soker   |Johannes Hentschel, Markus Neuwirth|
+|K309-2   |      79|   259|Tal Soker   |Johannes Hentschel, Markus Neuwirth|
+|K309-3   |     252|   406|Tal Soker   |Johannes Hentschel, Markus Neuwirth|
+|K310-1   |     133|   292|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K310-2   |      86|   250|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K310-3   |     252|   427|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K311-1   |     112|   319|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K311-2   |      93|   236|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K311-3   |     269|   491|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K330-1   |     150|   293|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K330-2   |      64|   187|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K330-3   |     171|   365|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K331-1   |     134|   398|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K331-2   |     100|   160|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K331-3   |     127|   128|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K332-1   |     229|   316|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K332-2   |      40|   168|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K332-3   |     245|   449|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K333-1   |     165|   431|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K333-2   |      82|   217|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K333-3   |     224|   460|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K457-1   |     185|   307|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K457-2   |      57|   214|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K457-3   |     319|   328|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K533-1   |     239|   583|Adrian Nagel|Johannes Hentschel, Markus Neuwirth|
+|K533-2   |     122|   261|Adrian Nagel|Johannes Hentschel, Markus Neuwirth|
+|K533-3   |     187|   419|Adrian Nagel|Johannes Hentschel, Markus Neuwirth|
+|K545-1   |      73|   119|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K545-2   |      74|   146|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K545-3   |      73|   143|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K570-1   |     209|   245|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K570-2   |      55|   250|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K570-3   |      89|   280|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K576-1   |     160|   295|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K576-2   |      67|   151|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+|K576-3   |     189|   381|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
+
+
+*Overview table updated using [ms3](https://johentsch.github.io/ms3/) 1.0.1.*
