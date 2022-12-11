@@ -1,0 +1,6 @@
+INCOMPLETE_MC_WRONGLY_COMPLETED_WARNING (3, 247) ms3.Corpus.mozart_piano_sonatas.K284-3
+	Warning appears because MC 247 stands in 2/2 and is an incomplete final measure with length of a half note, 
+	whereas MC 248 is the beginning of a new variation and has (only) a quarter note upbeat in 3/4.
+
+INCOMPLETE_MC_WRONGLY_COMPLETED_WARNING (3, 176) ms3.Corpus.mozart_piano_sonatas.K311-3 
+	MC 176 is a 3/8 upbeat measure after a cadenza (encoded as two bars with irregular lengths) within 6/8.
