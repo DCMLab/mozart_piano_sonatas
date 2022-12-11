@@ -642,16 +642,6 @@
             <durationType>quarter</durationType>
             <Spanner type="Slur">
               <Slur>
-                <up>up</up>
-                </Slur>
-              <next>
-                <location>
-                  <fractions>1/4</fractions>
-                  </location>
-                </next>
-              </Spanner>
-            <Spanner type="Slur">
-              <Slur>
                 <up>down</up>
                 </Slur>
               <next>
@@ -662,6 +652,16 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
+                </Slur>
+              <next>
+                <location>
+                  <fractions>1/4</fractions>
+                  </location>
+                </next>
+              </Spanner>
+            <Spanner type="Slur">
+              <Slur>
+                <up>up</up>
                 </Slur>
               <next>
                 <location>
@@ -12267,6 +12267,10 @@
               <tpc>13</tpc>
               </Note>
             </Chord>
+          <Dynamic>
+            <subtype>p</subtype>
+            <velocity>49</velocity>
+            </Dynamic>
           <Chord>
             <durationType>16th</durationType>
             <Note>

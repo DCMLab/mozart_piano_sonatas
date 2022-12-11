@@ -5672,6 +5672,13 @@
         </Measure>
       <Measure>
         <voice>
+          <Dynamic>
+            <subtype>p</subtype>
+            <velocity>49</velocity>
+            <placement>above</placement>
+            <minDistance>-999</minDistance>
+            <offset x="-0.419654" y="-3.85522"/>
+            </Dynamic>
           <Chord>
             <dots>1</dots>
             <durationType>half</durationType>

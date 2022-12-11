@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.02">
   <programVersion>3.6.2</programVersion>
-  <programRevision>3224f34</programRevision>
+  <programRevision></programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -149,7 +149,6 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.6</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
@@ -652,6 +651,10 @@
             </Chord>
           </voice>
         <voice>
+          <Dynamic>
+            <subtype>p</subtype>
+            <velocity>49</velocity>
+            </Dynamic>
           <Chord>
             <dots>1</dots>
             <durationType>eighth</durationType>
@@ -668,11 +671,6 @@
               <tpc>13</tpc>
               </Note>
             </Chord>
-          <Dynamic>
-            <subtype>p</subtype>
-            <velocity>49</velocity>
-            <offset x="0.658281" y="4.9"/>
-            </Dynamic>
           <Chord>
             <durationType>16th</durationType>
             <Note>
@@ -826,11 +824,6 @@
               <tpc>10</tpc>
               </Note>
             </Chord>
-          <Dynamic>
-            <subtype>p</subtype>
-            <velocity>49</velocity>
-            <offset x="0.658281" y="3.8"/>
-            </Dynamic>
           <Chord>
             <durationType>16th</durationType>
             <Note>
@@ -868,6 +861,10 @@
             </Chord>
           </voice>
         <voice>
+          <Dynamic>
+            <subtype>p</subtype>
+            <velocity>49</velocity>
+            </Dynamic>
           <Beam>
             <Fragment>
               <y1>7</y1>
