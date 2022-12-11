@@ -8,10 +8,11 @@ The precise metadata can be found in `metadata.tsv`. Thanks to Johannes Rüther 
 
 The folder `ambiguous_measure_numbers` contains alternative scores of four files. The difference is that in these scores, the bar numbering follows the Neue Mozart Ausgabe (NMA) and restarts at section breaks later in the piece. These are the only cases where the bar numbering in the main folder deviates: For unambiguous referencing, continuous bar numbers were used. However, we are joining the versions with the original NMA numbering for the sake of completeness:
 
-* K282-2_ambiguous_measure_numbers.mscx (Menuetto I & II)
-* K284-3_ambiguous_measure_numbers.mscx (Variations)
-* K331-1_ambiguous_measure_numbers.mscx (Variations)
-* K331-2_ambiguous_measure_numbers.mscx (Menuetto & Trio)
+* ambiguous_measure_numbers_for_K282-2.mscx (Menuetto I & II)
+* ambiguous_measure_numbers_for_K284-3.mscx (Variations)
+* ambiguous_measure_numbers_for_K331-1.mscx (Variations)
+* ambiguous_measure_numbers_for_K331-2.mscx (Menuetto & Trio)
+
 
 These files are not listed in `metadata.tsv`.
 
