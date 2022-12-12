@@ -1,0 +1,66 @@
+{
+    "license": "CC-BY-NC-SA-4.0",
+    "description": "<p>Scores, chord labels and cadence labels for Mozart&#39;s 18 piano sonatas, following the <a href=\"https://dme.mozarteum.at/DME/nma\">Neue Mozart Ausgabe</a>.</p>\n\n<p>This dataset is accompanied by the data report <code>Hentschel, J., Neuwirth, M. and Rohrmeier, M., 2021. The Annotated Mozart Sonatas: Score, Harmony, and Cadence. Transactions of the International Society for Music Information Retrieval, 4(1), pp.67&ndash;80. DOI:</code> <a href=\"http://doi.org/10.5334/tismir.63\">http://doi.org/10.5334/tismir.63</a></p>",
+    "contributors": [
+        {
+            "type": "DataCollector",
+            "name": "Uli Kneisel"
+        },
+        {
+            "type": "DataCollector",
+            "name": "Tal Soker"
+        },
+        {
+            "type": "DataCollector",
+            "name": "Adrian Nagel"
+        }
+    ],
+    "title": "The Annotated Mozart Sonatas: Score, Harmony, and Cadence",
+    "language": "eng",
+    "grants": [
+        {
+            "id": "10.13039/501100001711::105216_182811"
+        }
+    ],
+    "upload_type": "dataset",
+    "version": "2.0",
+    "keywords": [
+        "expert-annotated dataset",
+        "tonal harmony",
+        "cadence",
+        "classical style",
+        "piano music"
+    ],
+    "publication_date": "2022-12-12",
+    "creators": [
+        {
+            "orcid": "0000-0002-1986-9545",
+            "affiliation": "École Polytechnique Fédérale de Lausanne",
+            "name": "Johannes Hentschel"
+        },
+        {
+            "orcid": "0000-0003-1990-052X",
+            "affiliation": "École Polytechnique Fédérale de Lausanne",
+            "name": "Markus Neuwirth"
+        },
+        {
+            "orcid": "0000-0002-4323-7257",
+            "affiliation": "École Polytechnique Fédérale de Lausanne",
+            "name": "Martin Rohrmeier"
+        }
+    ],
+    "access_right": "open",
+    "related_identifiers": [
+        {
+            "scheme": "doi",
+            "identifier": "10.5334/tismir.63",
+            "relation": "isPublishedIn",
+            "resource_type": "publication-article"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.5281/zenodo.7424962",
+            "relation": "isVersionOf"
+        }
+    ]
+}
