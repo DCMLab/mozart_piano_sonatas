@@ -1,408 +1,295 @@
+<!-- TOC -->
+* [The Annotated Mozart Sonatas: Score, Harmony, and Cadence](#the-annotated-mozart-sonatas--score-harmony-and-cadence)
+  * [Changelog](#changelog)
+    * [Version 2.0](#version-20)
+      * [Changes to harmonize with other DCML corpora](#changes-to-harmonize-with-other-dcml-corpora)
+      * [Changes to the content](#changes-to-the-content)
+      * [Removed `mozart_loader.py`](#removed-mozartloaderpy)
+  * [Getting the Data](#getting-the-data)
+  * [Data Formats](#data-formats)
+    * [Opening Scores](#opening-scores)
+    * [Opening TSV files in a spreadsheet](#opening-tsv-files-in-a-spreadsheet)
+    * [Loading TSV files in Python](#loading-tsv-files-in-python)
+  * [How to read `metadata.tsv`](#how-to-read-metadatatsv)
+    * [File information](#file-information)
+    * [Composition information](#composition-information)
+    * [Score information](#score-information)
+    * [Identifiers](#identifiers)
+  * [Generating all TSV files from the scores](#generating-all-tsv-files-from-the-scores)
+  * [Questions, Suggestions, Corrections, Bug Reports](#questions-suggestions-corrections-bug-reports)
+  * [License](#license)
+* [Overview](#overview)
+<!-- TOC -->
+
+![Version](https://img.shields.io/github/v/release/DCMLab/mozart_piano_sonatas?display_name=tag)
+[![DOI](https://zenodo.org/badge/249007132.svg)](https://zenodo.org/badge/latestdoi/249007132)
 ![GitHub repo size](https://img.shields.io/github/repo-size/DCMLab/mozart_piano_sonatas)
 ![GitHub all releases](https://img.shields.io/github/downloads/DCMLab/mozart_piano_sonatas/total?color=%252300&label=Downloaded%20ZIPs)
 ![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-9cf)
 
-
 # The Annotated Mozart Sonatas: Score, Harmony, and Cadence
-Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following the [Neue Mozart Ausgabe](https://dme.mozarteum.at/DME/nma).
 
-This dataset is accompanied by the data report `Hentschel, J., Neuwirth, M. and Rohrmeier, M., 2021. The Annotated Mozart Sonatas: Score, Harmony, and Cadence. Transactions of the International Society for Music Information Retrieval, 4(1), pp.67–80. DOI:` [http://doi.org/10.5334/tismir.63](http://doi.org/10.5334/tismir.63)
+Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following
+the [Neue Mozart Ausgabe](https://dme.mozarteum.at/DME/nma).
 
-_An updated version of the dataset and the Python script are in preparation and will be released a couple of days from here (May 19th). The folder `scores` will be renamed to `MS3`. The column `onset` will be renamed to `mc_onset`. The annotation labels will appear under the left hand and in MuseScore's Roman Numeral Layer. The `mozart_loader.py` will be using the Python library [ms3](https://pypi.org/project/ms3) and appear with a couple of bugs corrected._
+This dataset is accompanied by the data
+report `Hentschel, J., Neuwirth, M. and Rohrmeier, M., 2021. The Annotated Mozart Sonatas: Score, Harmony, and Cadence. Transactions of the International Society for Music Information Retrieval, 4(1), pp.67–80. DOI:` [http://doi.org/10.5334/tismir.63](http://doi.org/10.5334/tismir.63)
 
-## TOC
 
-- [Data Formats](#data-formats)
-  - [Opening TSV files](#opening-tsv-files)
-- [Accessing the Data](#accessing-the-data)
-  - [Raw Data](#raw-data)
-  - [Accessing Harmony Features](#accessing-harmony-features)
-  - [Repetitions](#repetitions)
-  - [Transposing everything to C](#transposing-everything-to-c)
-- [How to correctly load the TSV files into pandas](#how-to-correctly-load-the-tsv-files-into-pandas)
-- [How to get to different representations of chord tones](#how-to-get-to-different-representations-of-chord-tones)
-  - [Scale Degrees & Roman Numerals](#scale-degrees--roman-numerals)
-  - [Intervals & Relative Chromatic Pitch Classes](#intervals--relative-chromatic-pitch-classes)
-  - [Note Names](#note-names)
-    - [Tonal Pitch Classes in the note lists](#tonal-pitch-classes-in-the-note-lists)
-  - [Storing and Retrieving Pitch-Based String Representations](#storing-and-retrieving-pitch-based-string-representations)
-  - [Data types for parsing the data](#data-types-for-parsing-the-data)
-    - [Data types](#data-types)
-    - [Converters/Parsers](#convertersparsers)
-- [Creating master table](#creating-master-table)
-- [Creating all TSV files](#creating-all-tsv-files)
-- [Questions, Suggestions, Corrections, Bug Reports](#questions-suggestions-corrections-bug-reports)
-- [Licenses](#licenses)
+## Changelog
+
+### Version 2.0
+
+#### Changes to harmonize with other DCML corpora
+
+* Eenamed folder `scores`
+  to `MS3` ([7549f6a](https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/7549f6a68cd05e2bbce4a09f76a1821faf61aa4e))
+* Extracted facets and metadata
+  with [ms3 1.0.1](https://github.com/johentsch/ms3) ([9eb9fe3](https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/9eb9fe3c26d5fbbdb61b485d6135dd421ed36dfd))
+    * TSV files now come with the column `quarterbeats`, which measures in quarter notes each event's position as its
+      distance from the beginning
+    * The extracted harmony labels in the folder `harmonies` are expanded into feature columns by default.
+    * Extracted notes now come with the columns `name` and `octave`.
+    * Column `volta` (containing first and second endings) removed from pieces that don't have any.
+    * `metadata.tsv` has been enriched with further columns, in particular information about each movement's dimensions,
+      including dimensions upon unfolding repeats (for instance, `last_mn` has the number of
+      measures, `last_mn_unfolded` the
+      number of measures when playing all repeats)
+    * The folder `reviewed` contains two files per movement:
+        * A copy of the score where all out-of-label notes have been colored in red; additionally, modified labels (
+          w.r.t. v1.0)
+          are shown in these files in a diff-like manner (removed in red, added in green).
+        * A copy of the harmonies TSV with six added columns that reflect the coloring of out-of-label notes ("coloring
+          reports")
+    * As long as the `ms3 review` has any complaints, it stores them in the file `warnings.log`. Currently, it is
+      showing
+      those labels where over 60% of the notes in the segment have been colored in red and probably need revisiting (
+      Pull Requests welcome)
+* Score updated
+  using `ms3 update` ([13dfb6d](https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/13dfb6d9a99c08a7f61b4fed195c36789a5d609d))
+    * Files updated to MuseScore 3.6.2
+    * All labels moved from the chord layer of staff 1 to the Roman Numeral Analysis layer of staff 2.
+      This changes how they are displayed and eliminates the requirement to prepend
+      a full stop to labels starting with a note name.
+* Cadence labels now integrated with harmony labels as per
+  [DCML harmony annotation standard 2.3.0](https://github.com/DCMLab/standards#v230) ([1c290e8](https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/1c290e8981de37b91f03ba6e2eb7e5e2c8025186))
+* TSV files are automatically kept up to date using
+  the [dcml_corpus_workflow](https://github.com/DCMLab/dcml_corpus_workflow)
+  ([c203595](https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/c2035954476f1a8093999758008d9ea7d885a802))
+
+#### Changes to the content
+
+* Made phrase annotations consistent by adding missing curly
+  brackets. ([9f10fc0](https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/9f10fc03359a48f598f9d6b70a7b131ac8bd2510))
+* Introduced first and second endings at the beginning of `K311-2` in order to introduce an `EC` label on the repetition
+  of bar 1.
+* Fixed repeat structure in _da capo_ movements K282-2 and K331-2 for correct unfolding
+  ([b7271da](https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/b7271da6ebd2e21abe7ccbe858065822a40095e7)..[0e9f060](https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/0e9f060dbfb1c4143362d586e30a3e309dcdbeeb))
+* updated labels of
+  K283-3 ([f1fe032](https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/f1fe0321616039ce77aad55914eac1640fed2255))
+* corrected scores in a few
+  places ([b6aa4f1](https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/b6aa4f1cd271ef475e559b53bbcb5fc4834040b6),
+  [438acb0](https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/438acb0da8e2f2203d73e313af0d14c03e0f18c2))
+
+#### Removed `mozart_loader.py`
+
+The functionality of the loader has been superseded by the [ms3 parsing library](https://github.com/johentsch/ms3).
+Once installed (`pip install ms3`), you'll have several commands on your hands, one of which is `ms3 transform`. For
+example, head to the folder with the dataset and type `ms3 transform -N` to create the concatenated note list.
+`ms3 transform -h` will show all options.
+
+
+## Getting the Data
+
+First, create a local copy of this repository, either by using the command 
+
+```bash
+git clone https://github.com/DCMLab/mozart_piano_sonatas.git
+```
+
+or by unpacking this [ZIP file](https://github.com/DCMLab/dcml_corpora/archive/refs/heads/main.zip). 
+
 
 
 ## Data Formats
 
-Every sonata movement is represented by five files with identical filenames in five different folders. For example, the first movement of the first sonata K. 279 has the following files:
+Every sonata movement is represented by five files with identical filenames in five different folders. For example, the
+first movement of the first sonata K. 279 has the following files:
 
-* `scores/K279-1.mscx`: Uncompressed MuseScore file including the music and harmony labels.
-* `notes/K279-1.tsv`: A table of all notes contained in the score and their relevant features.
+* `MS3/K279-1.mscx`: Uncompressed MuseScore file including the music and harmony labels.
+* `notes/K279-1.tsv`: A table of all note heads contained in the score and their relevant features (not each of them represents an onset, some are tied together)
 * `measures/K279-1.tsv`: A table with relevant information about the measures in the score.
-* `harmonies/K279-1.tsv`: A list of the included harmony labels with their positions in the score.
-* `cadences/K279-1.tsv`: A list of cadence labels and their positions.
+* `harmonies/K279-1.tsv`: A list of the included harmony labels (including cadences and phrases) with their positions in
+  the score.
 
-The README in each folder contains information about the respective files.
+### Opening Scores
 
-### Opening TSV files
+After navigating to your local copy, you can open the scores in the folder `MS3` with the free and open source score
+editor [MuseScore](https://musescore.org).
 
-Tab-separated value (TSV) files are like Comma-separated value (CSV) files and can be opened with most modern text editors. However, for correctly displaying the columns, you might want to use a spreadsheet or an addon for your favourite text editor. When you use an spreadsheet such as Excel, it might annoy you by interpreting fractions as dates. This can be circumvented by using `Data --> From Text/CSV` or the free alternative [LibreOffice Calc](https://www.libreoffice.org/download/download/). Other than that, TSV data can be loaded with every modern programming language.
+### Opening TSV files in a spreadsheet
 
-## Accessing the Data
+Tab-separated value (TSV) files are like Comma-separated value (CSV) files and can be opened with most modern text
+editors. However, for correctly displaying the columns, you might want to use a spreadsheet or an addon for your
+favourite text editor. When you use a spreadsheet such as Excel, it might annoy you by interpreting fractions as
+dates. This can be circumvented by using `Data --> From Text/CSV` or the free alternative
+[LibreOffice Calc](https://www.libreoffice.org/download/download/). Other than that, TSV data can be loaded with
+every modern programming language.
 
-The included script `mozart_loader.py` lets you conveniently create an augmented representation of the data. First, create a local copy of this repository, either by using the command `git clone https://github.com/DCMLab/mozart_piano_sonatas.git` or by unpacking this [ZIP file](https://github.com/DCMLab/mozart_piano_sonatas/archive/master.zip). After navigating to your local copy, you can simply run the script by typing `python mozart_loader.py`. The script requires Python >= 3.6 with `pandas` >=  0.24.0 installed.
+### Loading TSV files in Python
 
-### Raw Data
-
-> Run `python mozart_loader.py -h` to see the overview of available options.
-
-The script's most simple functionality concatenates all TSV files from the folders and stores them as single files:
-
-* `-N` concatenates the note matrices
-    * `-NT` merges notes that are being tied together, leaving only those representing an onset, with merged durations aggregated
-* `-M` concatenates the measure matrices
-* `-H` concatenates the harmony labels
-* `-C` concatenates the cadence labels
-
-In case you want to join harmony labels with notes and/or cadence labels in a single file, add `-j` for joining. The basic representation of all data in a single file is yielded by `python mozart_loader.py -NHCMj`.
-
-When joining the notes with labels, the latter often appear duplicated, namely once for every note with the identical onset. All notes that do not coincide with a label have NULL values in the concerning columns. This can be circumvented using the parameter `-p` which propagates the labels (and their features), thus identifying all notes that fall in their range.
-
-### Accessing Harmony Features
-
-The harmony labels follow the [DCML standard for harmonic annotation](https://github.com/DCMLab/standards) and can be split into feature columns.
-
-* Using the option `-e` on the script will perform this expansion for you and spread the encoded information over the DataFrame, e.g. information about global and local keys.
-* If you want to transpose all labels to the global tonic, thus eliminating the information about local keys, use `-g`.
-* The chord tones expressed by the labels can be additionally computed by using `-E` instead of `-e`. They are expressed as integer intervals representing the number of stacked perfect fifths over the tonic, i.e., `0` is the tonic, `1` the dominant, `2` the supertonic, `-1` the subdominant, etc.
-  * If the parameter `-g` is set, all chord tones are expressed as intervals (stacks of fifths) over the *global* tonic.
-  * Otherwise, they represent intervals (stacks of fifths) over the chord's *local* tonic.
-  * Or you can have all chord tones represent absolute pitches, based on the global key. In that case they display intervals (stacks of fifths) over the tone C = `0`, making G = `1`, F = `-1` etc.
-
-All options can be combined with the above-mentioned functionality for data joining. The thickest data representation would be yielded using `python mozart_loader.py NHCEpj`. Except if you add:
-
-### Repetitions
-
-By default, all data is being returned as though playing every section only once, i.e. without first endings (without *prima volta*). Instead, you may choose the 'unfolded' version that duplicates notes and labels depending on the piece's repeat structure. Simply add `-u` to the parameters. This puts first and second endings in their correct positions, thus creating correct transitions and event counts that are closer to what is actually being performed. This option adds the column `playthrough` which counts complete measures in `mn` style but counting "through" instead of repeating measure numbers.
-
-### Transposing everything to C
-
-The option `-A` lets you rebase all pitches on C which corresponds to a transposition of every piece to C major or C minor. It is a special case of the (maximal) parameter combination `-CHNEpj`: The result is a DataFrame that represents the note list of all pieces merged with cadence labels and fully expanded chord labels which both have been propagated over the note lists. The difference is that all global keys are changed to `C` or `c` with the columns `tpc` (tonal pitch class) and `midi` transposed accordingly. The chord tones correspond to the representation of parameter `-g` but without transposing the chord labels (unless you add `-g`).
-
-## How to correctly load the TSV files into pandas
-
-Since the TSV files contain null values, lists, fractions, and numbers that are to be treated as strings, you may want to use this code to load any TSV files related to this repository, processed or not:
+Since the TSV files contain null values, lists, fractions, and numbers that are to be treated as strings, you may want
+to use this code to load any TSV files related to this repository (provided you're doing it in Python). After a quick
+`pip install -U ms3` (requires Python 3.10) you'll be able to load any TSV like this:
 
 ```python
-from utils.feature_matrices import load_tsv
+import ms3
 
-############################################################################
-# For a file created using `python mozart_loader.py -CHNjuE`
-############################################################################
-tsv = './formatted/-CHNMjpuE_joined.tsv'
-
-############################################################################
-# If you have pandas >= 1.0.0 installed and want to use the new nullable
-# string type, set stringtype=True.
-############################################################################
-df = load_tsv(tsv, stringtype=False)
+labels = ms3.load_tsv('harmonies/K283-1.tsv')
+notes = ms3.load_tsv('notes/K283-1.tsv')
 ```
 
-## How to get to different representations of chord tones
+## How to read `metadata.tsv`
 
-For convenience a function for converting the chord tones into other representations
-is available. Here are a couple of examples. They show different representations for
-this small segment of the Adagio from K. 280:
-![mozart score example from K280-2](https://www.epfl.ch/labs/dcml/wp-content/uploads/2020/04/280-2.png)
+This section explains the meaning of the columns contained in `metadata.tsv`.
 
-The function `transform_note_columns()` receives a TSV file created by `mozart_loader.py [-E][-g][-a]`
-and outputs it with an altered representation of the chord tones.
+### File information
 
-### Scale Degrees & Roman Numerals
+| column                 | content                                                    |
+|------------------------|------------------------------------------------------------|
+| **fname**              | name without extension (for referencing related files)     |
+| **rel_path**           | relative file path of the score, including extension       |
+| **subdirectory**       | folder where the score is located                          |    
+| **last_mn**            | last measure number                                        |
+| **last_mn_unfolded**   | number of measures when playing all repeats                |
+| **length_qb**          | length of the piece, measured in quarter notes             |
+| **length_qb_unfolded** | length of the piece when playing all repeats               |
+| **volta_mcs**          | measure counts of first and second endings                 |
+| **all_notes_qb**       | summed up duration of all notes, measured in quarter notes |
+| **n_onsets**           | number of note onsets                                      |
+| **n_onset_positions**  | number of unique not onsets ("slices")                     |
 
-The first showcase begins with the "normal" chord tones, i.e., those expressed relative
-to the respective local tonic as output by `mozart_loader.py -E`. The parameter `sd`
-converts them to scale degrees, `rn` to Roman numerals. In both cases, `transform_note_columns()`
-automatically uses the boolean column `localkey_is_minor` to compute mode-dependent
-scale degrees.
+
+### Composition information
+
+| column             | content                   |
+|--------------------|---------------------------|
+| **composer**       | composer name             |
+| **workTitle**      | full sonata title         |
+| **composed_start** | earliest composition date |
+| **composed_end**   | latest composition date   |
+| **workNumber**     | Köchel number             |
+| **movementNumber** | 1, 2, or 3                |
+| **movementTitle**  | title of the movement     |
+
+### Score information
+
+| column          | content                                                |
+|-----------------|--------------------------------------------------------|
+| **label_count** | number of chord labels                                 |
+| **KeySig**      | key signature(s) (negative = flats, positive = sharps) |
+| **TimeSig**     | time signature(s)                                      |
+| **musescore**   | MuseScore version                                      |
+| **source**      | URL to the first typesetter's file                     |
+| **typesetter**  | first typesetter                                       |
+| **annotator**   | creator of the chord labels                            |
+| **reviewers**   | reviewers of the chord labels                          |
+
+### Identifiers
+
+These columns provide a mapping between multiple identifiers for the sonatas (not for individual movements).
+
+| column          | content                                                                                                 |
+|-----------------|---------------------------------------------------------------------------------------------------------|
+| **wikidata**    | URL of the [WikiData](https://www.wikidata.org/) item                                                   |
+| **viaf**        | URL of the Virtual International Authority File ([VIAF](http://viaf.org/)) entry                        |
+| **musicbrainz** | [MusicBrainz](https://musicbrainz.org/) identifier                                                      |
+| **imslp**       | URL to the wiki page within the International Music Score Library Project ([IMSLP](https://imslp.org/)) |
+
+
+## Generating all TSV files from the scores
+
+When you have made changes to the scores and want to update the TSV files accordingly, you can use the following
+command (provided you have pip-installed [ms3](https://github.com/johentsch/ms3)):
 
 ```python
-from utils.feature_matrices import load_tsv
-from utils.expand_labels import transform_note_columns
-
-df = load_tsv('./formatted/-E_harmonies.tsv')
-transform_note_columns(df, 'sd')
+ms3 extract -M -N -X -D # for measures, notes, expanded annotations, and metadata
 ```
 
-This example output shows only the most relevant columns:
-
-|globalkey|localkey|chord |     chord_tones     |root|bass_note|
-|---------|--------|------|---------------------|----|---------|
-|f        |III     |I     |(1, 3, 5)            |   1|        1|
-|f        |III     |V65/vi|(5#, 7, 2, 3)        |   3|       5#|
-|f        |III     |vi    |(6, 1, 3)            |   6|        6|
-|f        |III     |ii6   |(4, 6, 2)            |   2|        4|
-|f        |III     |V(64) |(5, 1, 3)            |   5|        5|
-|f        |III     |V7    |(5, 7, 2, 4)         |   5|        5|
-
-When the same chords are expressed relative to the global tonic by using
-`mozart_loader.py -Eg`, the local keys are eliminated. In order to compute correct
-scale degrees or Roman numerals for the chord tones, the boolean column `globalkey_is_minor`
-needs to be used:
+If, in addition, you want to generate the reviewed scores with out-of-label notes colored in red, you can do
 
 ```python
-df = load_tsv('./formatted/-Eg_harmonies.tsv')
-transform_note_columns(df, 'sd', minor_col='globalkey_is_minor')
+ms3 review -M -N -X -D # for extracting measures, notes, expanded annotations, and metadata
 ```
 
-|globalkey| chord |     chord_tones     |root|bass_note|
-|---------|-------|---------------------|----|---------|
-|f        |III    |(3, 5, 7)            |   3|        3|
-|f        |V65    |(7#, 2, 4, 5)        |   5|       7#|
-|f        |i      |(1, 3, 5)            |   1|        1|
-|f        |iv6    |(6, 1, 4)            |   4|        6|
-|f        |VII(64)|(7, 3, 5)            |   7|        7|
-|f        |VII7   |(7, 2, 4, 6)         |   7|        7|
-
-Instead, we could decide to view all chord tones as scale degrees of a major mode
-by using the keyword argument `minor=False`. Additionally, the next example uses
-the `note_cols` argument to transform only the `chord_tones` to Roman numerals,
-leaving the other columns untouched (as stacks of fifths over the global tonic).
-
-```python
-df = load_tsv('./formatted/-Eg_harmonies.tsv')
-transform_note_columns(df, 'rn', note_cols=['chord_tones'], minor=False)
-```
-
-|globalkey| chord |        chord_tones        |root|bass_note|
-|---------|-------|---------------------------|----|---------|
-|f        |III    |(IIIb, V, VIIb)      |  -3|       -3|
-|f        |V65    |(VII, II, IV, V)   |   1|        5|
-|f        |i      |(I, IIIb, V)         |   0|        0|
-|f        |iv6    |(VIb, I, IV)         |  -1|       -4|
-|f        |VII(64)|(VIIb, IIIb, V)      |  -2|       -2|
-|f        |VII7   |(VIIb, II, IV, VIb)|  -2|       -2|
-
-### Intervals & Relative Chromatic Pitch Classes
-
-This representation simply converts the 'stacks of fifths' intervals to specific
-interval names or to relative chromatic pitch classes where 0 is the tonic. In the
-two examples, the local keys have once again been preserved:
-
-```python
-df = load_tsv('./formatted/-E_harmonies.tsv')
-transform_note_columns(df, 'iv')
-```
-
-|globalkey|localkey|chord |      chord_tones       |root|bass_note|
-|---------|--------|------|------------------------|----|---------|
-|f        |III     |I     |(P1, M3, P5)      |P1  |P1       |
-|f        |III     |V65/vi|(A5, M7, M2, M3)|M3  |A5       |
-|f        |III     |vi    |(M6, P1, M3)      |M6  |M6       |
-|f        |III     |ii6   |(P4, M6, M2)      |M2  |P4       |
-|f        |III     |V(64) |(P5, P1, M3)      |P5  |P5       |
-|f        |III     |V7    |(P5, M7, M2, P4)|P5  |P5       |
-
-```python
-transform_note_columns(df, 'pc')
-```
-
-|globalkey|localkey|chord | chord_tones |root|bass_note|
-|---------|--------|------|-------------|---:|--------:|
-|f        |III     |I     |(0, 4, 7)    |   0|        0|
-|f        |III     |V65/vi|(8, 11, 2, 4)|   4|        8|
-|f        |III     |vi    |(9, 0, 4)    |   9|        9|
-|f        |III     |ii6   |(5, 9, 2)    |   2|        5|
-|f        |III     |V(64) |(7, 0, 4)    |   7|        7|
-|f        |III     |V7    |(7, 11, 2, 5)|   7|        7|
-
-### Note Names
-
-In order to express the chords as absolute pitches, the chord tones first need
-to be transposed to the absolute key which can be done using `mozart_loader.py -a`.
-
-```python
-df = load_tsv('./formatted/-a_harmonies.tsv')
-transform_note_columns(df, 'name')
-```
-
-|globalkey|localkey|chord |      chord_tones      |root|bass_note|
-|---------|--------|------|-----------------------|----|---------|
-|f        |III     |I     |(Ab, C, Eb)      |Ab  |Ab       |
-|f        |III     |V65/vi|(E, G, Bb, C)  |C   |E        |
-|f        |III     |vi    |(F, Ab, C)       |F   |F        |
-|f        |III     |ii6   |(Db, F, Bb)      |Bb  |Db       |
-|f        |III     |V(64) |(Eb, Ab, C)      |Eb  |Eb       |
-|f        |III     |V7    |(Eb, G, Bb, Db)|Eb  |Eb       |
-
-If, instead, you use the globalkey chord labels for a note name representation,
-this would correspond to a transposition of the whole piece to the key of C (major
-or minor), as output as well using `mozart_loader.py -A`.
-
-```python
-df = load_tsv('./formatted/-Eg_harmonies.tsv')
-transform_note_columns(df, 'name')
-```
-
-|globalkey| chord |     chord_tones      |root|bass_note|
-|---------|-------|----------------------|----|---------|
-|f        |III    |(Eb, G, Bb)     |Eb  |Eb       |
-|f        |V65    |(B, D, F, G)  |G   |B        |
-|f        |i      |(C, Eb, G)      |C   |C        |
-|f        |iv6    |(Ab, C, F)      |F   |Ab       |
-|f        |VII(64)|(Bb, Eb, G)     |Bb  |Bb       |
-|f        |VII7   |(Bb, D, F, Ab)|Bb  |Bb       |
-
-Using the original labels and chord tones (`mozart_loader.py -E`) would correspond to a transposition to
-C (major or minor) of each segment in a particular local key. In other words,
-all `I` chords will appear as `(C, E, G)` (in major and minor keys) but all `III`
-chords, for example, will appear as `(Eb, G, Bb)` for local minor keys and as
-`(E, G#, B)` for local major keys.
-
-|globalkey|localkey|chord |     chord_tones     |root|bass_note|
-|---------|--------|------|---------------------|----|---------|
-|f        |III     |I     |(C, E, G)      |C   |C        |
-|f        |III     |V65/vi|(G#, B, D, E)|E   |G#       |
-|f        |III     |vi    |(A, C, E)      |A   |A        |
-|f        |III     |ii6   |(F, A, D)      |D   |F        |
-|f        |III     |V(64) |(G, C, E)      |G   |G        |
-|f        |III     |V7    |(G, B, D, F) |G   |G        |
-
-#### Tonal Pitch Classes in the note lists
-
-Naturally, you can also represent the pitches of the note lists of the actual scores
-as note names, e.g. the simple note list of all sonatas created using `mozart_loader.py -N`:
-
-```python
-df = load_tsv('./formatted/-N_notes.tsv')
-transform_note_columns(df, 'name', note_cols=['tpc'])
-```
-
-The first five notes in the first sonata `K279-1` with their note names:
-
-|mc |mn |onset|duration|tpc|midi|
-|--:|--:|----:|-------:|--:|---:|
-|  1|  1|    0|1/16    |C  |  48|
-|  1|  1|    0|1/4     |E  |  64|
-|  1|  1|    0|1/4     |G  |  67|
-|  1|  1|    0|1/4     |C  |  72|
-|  1|  1|1/16 |1/16    |C  |  60|
-
-### Storing and Retrieving Pitch-Based String Representations
-
-The convenience function `load_tsv()` is hard-coded to the data types that `mozart_loader.py`
-produces. This would cause an error if you tried to use it on a TSV file where the
-chord tones have been converted to a pitch based representation (note names, scale
-degrees, roman numerals, or interval names). This small example shows how the converters
-and datatypes that the function uses can be updated. It uses a note list with joined
-harmonies and chord tones produced by `mozart_loader.py -Naj`.
-
-```python
-from utils.feature_matrices import load_tsv, str2strtuple, iterable2str
-from utils.expand_labels import transform_note_columns
-
-df = load_tsv('./formatted/-Naj_joined.tsv')
-
-# Converting the (absolute) chord tones and the pitches of the notes to note names
-absolute_chord_tones = transform_note_columns(df, 'name')
-absolute_pitches = transform_note_columns(absolute_chord_tones, 'name', note_cols=['tpc'])
-
-# Converting the tone tuples to strings before saving the DataFrame to TSV
-tone_tuples = ['chord_tones', 'added_tones']
-absolute_pitches.loc[:, tone_tuples] = absolute_pitches.loc[:, tone_tuples].applymap(iterable2str)
-absolute_pitches.to_csv('absolute_pitches.tsv', sep='\t')
-
-# re-loading the stored TSV while updating the converters and data types for the altered columns
-reloaded = load_tsv('absolute_pitches.tsv', converters={'chord_tones': str2strtuple, 'added_tones': str2strtuple}, dtypes={'root': str, 'bass_note': str, 'tpc': str}, )
-```
-
-### Data types for parsing the data
-
-The function `load_tsv` uses the following data types and converters to load the individual columns.
-
-#### Data types
-
-The data type `Int64` designates columns that contain integers *and* NULL values. The column `function` serves as a quick reminder for the meaning of column names which are not self-evident. The column `occurrence`
-shows which of the individual TSV files the columns can occur and, consequently, in which README you
-find information about the column (**N**otes, **H**armonies, **C**adences, **M**easures)
-
-| column           | function                                             | type    | occurrence |
-|------------------|------------------------------------------------------|---------|------------|
-| alt_label        | alternative chord label                              | string  | H          |
-| barline          |                                                      | string  | M          |
-| bass_note        |                                                      | Int64   | H          |
-| cadence          |                                                      | string  | C          |
-| cadences_id      |                                                      | Int64   | C          |
-| changes          | chord alterations, suspensions, additions etc.       | string  | H          |
-| chord            | part of the chord label that defines the chord tones | string  | H          |
-| chord_type       |                                                      | string  | H          |
-| dont_count       | concerns measure numbering                           | Int64   | M          |
-| figbass          | chord inversion                                      | string  | H          |
-| form             | chord form                                           | string  | H          |
-| globalkey        | global reference key of a piece                      | string  | H          |
-| gracenote        |                                                      | string  | N          |
-| harmonies_id     |                                                      | Int64   | H          |
-| keysig           | key signature of a measure                           | integer | M          |
-| label            | complete chord label                                 | string  | H          |
-| localkey         | local reference key                                  | string  | H          |
-| mc               | measure count                                        | integer | NHM        |
-| midi             |                                                      | integer | H          |
-| mn               | measure number                                       | integer | NHCM       |
-| notes_id         |                                                      | Int64   | N          |
-| numbering_offset | concerns measure numbering                           | Int64   | M          |
-| numeral          | Roman numeral (chord root)                           | string  | H          |
-| pedal            |                                                      | string  | H          |
-| phraseend        |                                                      | string  | H          |
-| playthrough      | unique measure numbers for unfolded scores           | integer | NHCM       |
-| relativeroot     | lower-reference key from which a chord is borrowed   | string  | H          |
-| repeats          |                                                      | string  | M          |
-| root             | root expressed as interval                           | Int64   | H          |
-| special          | shorthand chord symbols                              | string  | H          |
-| staff            |                                                      | integer | N          |
-| tied             |                                                      | Int64   | N          |
-| timesig          | time signature                                       | string  | NHCM       |
-| tpc              | tonal pitch class                                    | integer | N          |
-| voice            | in which notational layer a note occurs              | integer | N          |
-| voices           | number of notational layers in a measure             | integer | M          |
-| volta            | for identifying first and second endings             | Int64   | M          |
-
-#### Converters/Parsers
-
-The collections are stored in the TSV files as strings in which the different elements
-are separated by the string `, ` (comma and space). The boolean values are stored as
-0 or 1. The fractions are stored either as integers or in the format `3/4`.
-
-| column             | converter  | occurrence |
-|--------------------|------------|------------|
-| added_tones        | collection | H          |
-| act_dur            | fraction   | M          |
-| chord_tones        | collection | H          |
-| globalkey_is_minor | boolean    | H          |
-| localkey_is_minor  | boolean    | H          |
-| next               | collection | M          |
-| nominal_duration   | fraction   | N          |
-| offset             | fraction   | M          |
-| onset              | fraction   | NHC        |
-| duration           | fraction   | N          |
-| scalar             | fraction   | N          |
-
-## Creating master table
-
-    python mozart_loader.py -NECMjp
-
-
-## Creating all TSV files
-
-    ms3 extract -N ../notes -M ../measures -L ../harmonies -e ambig
+By adding the flag `-c` to the review command, it will additionally compare the (potentially modified) annotations in the score
+with the ones currently present in the harmonies TSV files and reflect the comparison in the reviewed scores.
 
 ## Questions, Suggestions, Corrections, Bug Reports
 
 Please create an issue and feel free to fork and submit pull requests.
 
-## Licenses
+## License
 
-* **Data**: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/))
-* **Software**: [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/))
+
+# Overview
+
+| file_name | measures | labels | annotators   | reviewers                           |
+|-----------|---------:|-------:|--------------|-------------------------------------|
+| K279-1    |      100 |    251 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K279-2    |       74 |    156 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K279-3    |      158 |    321 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K280-1    |      144 |    225 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K280-2    |       60 |    124 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K280-3    |      190 |    199 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K281-1    |      109 |    208 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K281-2    |      106 |    153 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K281-3    |      162 |    384 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K282-1    |       36 |    104 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K282-2    |       72 |    129 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K282-3    |      102 |    176 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K283-1    |      120 |    326 | Tal Soker    | Johannes Hentschel, Markus Neuwirth |
+| K283-2    |       39 |    169 | Tal Soker    | Johannes Hentschel, Markus Neuwirth |
+| K283-3    |      277 |    337 | Tal Soker    | Johannes Hentschel, Markus Neuwirth |
+| K284-1    |      127 |    330 | Tal Soker    | Johannes Hentschel, Markus Neuwirth |
+| K284-2    |       92 |    228 | Tal Soker    | Johannes Hentschel, Markus Neuwirth |
+| K284-3    |      260 |    755 | Adrian Nagel | Johannes Hentschel, Markus Neuwirth |
+| K309-1    |      155 |    307 | Tal Soker    | Johannes Hentschel, Markus Neuwirth |
+| K309-2    |       79 |    259 | Tal Soker    | Johannes Hentschel, Markus Neuwirth |
+| K309-3    |      252 |    406 | Tal Soker    | Johannes Hentschel, Markus Neuwirth |
+| K310-1    |      133 |    292 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K310-2    |       86 |    252 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K310-3    |      252 |    428 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K311-1    |      112 |    319 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K311-2    |       93 |    241 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K311-3    |      269 |    491 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K330-1    |      150 |    293 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K330-2    |       64 |    187 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K330-3    |      171 |    365 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K331-1    |      134 |    399 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K331-2    |      100 |    160 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K331-3    |      127 |    128 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K332-1    |      229 |    316 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K332-2    |       40 |    168 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K332-3    |      245 |    449 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K333-1    |      165 |    431 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K333-2    |       82 |    217 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K333-3    |      224 |    460 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K457-1    |      185 |    308 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K457-2    |       57 |    214 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K457-3    |      319 |    328 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K533-1    |      239 |    584 | Adrian Nagel | Johannes Hentschel, Markus Neuwirth |
+| K533-2    |      122 |    261 | Adrian Nagel | Johannes Hentschel, Markus Neuwirth |
+| K533-3    |      187 |    423 | Adrian Nagel | Johannes Hentschel, Markus Neuwirth |
+| K545-1    |       73 |    119 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K545-2    |       74 |    146 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K545-3    |       73 |    143 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K570-1    |      209 |    245 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K570-2    |       55 |    250 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K570-3    |       89 |    281 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K576-1    |      160 |    295 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K576-2    |       67 |    151 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+| K576-3    |      189 |    381 | Uli Kneisel  | Johannes Hentschel, Markus Neuwirth |
+
+*Overview table updated using [ms3](https://johentsch.github.io/ms3/) 1.0.1.*

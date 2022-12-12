@@ -1,3 +1,41 @@
+# Harmony and Phrase Annotations
+
+Within the major-minor system of the Classical period, the pitch collection for a key can be said to consist of a root pitch and a major or (natural) minor scale built on that pitch. Therefore, we express keys using a common shorthand where capitals denote the root of a major key and lowercase letters that of a minor key. At the beginning of each piece (or movement), the global key is indicated by the absolute note name of its root (see \ref{tab:features}). 
+% implying that the local key is \Q{I} or \Q{i}. 
+% The roots of the local keys are expressed in terms of Roman numerals relative to the root of the global key (including the key of the tonic, \Q{I} or \Q{i}). 
+
+In the annotation syntax, changes of the local key (modulations) are prepended to the actual chord label where the change occurs, separated by a period. 
+
+
+is based on triads with three chord tones (root, third, and fifth) and seventh chords with four chord tones. A chord's type is defined by the interval classes between the root (as the lowest voice) and the remaining chord tones.
+In addition, chord inversion, defined by the chord tone which is put lowest, is expressed as the generic intervals that the other chord tones form with the bass note (conventional figured bass notation). The XXX standard expresses a chordal root as a Roman numeral that determines its position with respect to the scale of the current local key (or of a lower-level key), preceded by accidentals where needed to indicate modifications of the default scale. 
+\autoref{tab:chords} shows how the case of the Roman numeral (represented as RN for uppercase and rn for lowercase) in combination with the features \textit{Type} and \textit{Inversion} defines the chord tones. Note that the \textit{Root} defines merely the root's position in the scale and the size of the third above, while \textit{Inversion} distinguishes triads from tetrads; all three features are needed, however, in order to define the complete \textit{Chord type}.
+\begin{table}[htb]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}llll@{}}
+\toprule
+Root & Type & Inversions   & Chord type              \\ \midrule
+RN   & <NA> & <NA>, 6, 64  & Major triad             \\
+rn   & <NA> & <NA>, 6, 64  & Minor triad             \\
+rn   & o    & <NA>, 6, 64  & Diminished triad        \\
+RN   & +    & <NA>, 6, 64  & Augmented triad         \\
+RN   & <NA> & 7, 65, 43, 2 & Dominant seventh        \\
+rn   & <NA> & 7, 65, 43, 2 & Minor seventh           \\
+rn   & o    & 7, 65, 43, 2 & Diminished seventh      \\
+rn   & \%   & 7, 65, 43, 2 & Half-diminished seventh \\
+RN   & M    & 7, 65, 43, 2 & Major seventh           \\
+rn   & M    & 7, 65, 43, 2 & Minor major seventh     \\
+RN   & +    & 7, 65, 43, 2 & Augmented minor seventh \\
+RN   & +M    & 7, 65, 43, 2 & Augmented major seventh \\\bottomrule
+\end{tabular}%
+}
+\caption{Possible feature combinations for defining chord tones. The first column represents the case of the chord root's Roman numeral. <NA> stands for absence of the feature.}
+\label{tab:chords}
+\end{table}
+
+The annotation standard contains three special symbols for the augmented sixth chords which cannot confidently be expressed in terms of a root, namely \Q{It6} for the Italian, \Q{Ger} for the German, and \Q{Fr} for the French sixth chord. 
+
 ## Columns
 
 The TSVs in this folder each contain all chord labels of one of the movements with their temporal positions. The column `presence` shows with which parameters of `mozart_loader.py` the column is present, where `raw` means that the column is present in the raw data and will be output with `-H`. The raw data contain only the columns `mc, mn, onset, label`. The derived feature columns are available via `mozart_loader.py [-e]` or, with chord tones added for each label, via one of the parameters `mozart_loader.py [-E][-g][-a][-A]`.

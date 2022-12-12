@@ -1,0 +1,339 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/csvw#",
+    {
+      "@language": "en "
+    }
+  ],
+  "dc:title": "DCML harmony annotations for mozart_piano_sonatas",
+  "dialect": {
+    "delimiter": "\t"
+  },
+  "dc:description": "One feature matrix per score, containing one line per label. The first columns (until 'label') are the same as in extracted 'labels' tables with the difference that only those harmony labels that match the DCML harmony annotation standard (dcmlab.github.io/standards) are included. Since these follow a specific syntax, they can be split into their components (features) and transformed into scale degrees. For more information, please refer to the docs at https://johentsch.github.io/ms3/columns",
+  "dc:created": "2022-12-11T21:48:26",
+  "dc:creator": [
+    {
+      "@context": "https://schema.org/",
+      "@type": "SoftwareApplication",
+      "@id": "https://github.com/johentsch/ms3",
+      "name": "ms3",
+      "description": "A parser for MuseScore 3 files.",
+      "author": {
+        "name": "Johannes Hentschel",
+        "@id": "https://orcid.org/0000-0002-1986-9545"
+      },
+      "softwareVersion": "1.0.1"
+    }
+  ],
+  "tables": [
+    {
+      "url": "K279-1.tsv"
+    },
+    {
+      "url": "K279-2.tsv"
+    },
+    {
+      "url": "K279-3.tsv"
+    },
+    {
+      "url": "K280-1.tsv"
+    },
+    {
+      "url": "K280-2.tsv"
+    },
+    {
+      "url": "K280-3.tsv"
+    },
+    {
+      "url": "K281-1.tsv"
+    },
+    {
+      "url": "K281-2.tsv"
+    },
+    {
+      "url": "K281-3.tsv"
+    },
+    {
+      "url": "K282-1.tsv"
+    },
+    {
+      "url": "K282-2.tsv"
+    },
+    {
+      "url": "K282-3.tsv"
+    },
+    {
+      "url": "K283-1.tsv"
+    },
+    {
+      "url": "K283-2.tsv"
+    },
+    {
+      "url": "K283-3.tsv"
+    },
+    {
+      "url": "K284-1.tsv"
+    },
+    {
+      "url": "K284-2.tsv"
+    },
+    {
+      "url": "K284-3.tsv"
+    },
+    {
+      "url": "K309-1.tsv"
+    },
+    {
+      "url": "K309-2.tsv"
+    },
+    {
+      "url": "K309-3.tsv"
+    },
+    {
+      "url": "K310-1.tsv"
+    },
+    {
+      "url": "K310-2.tsv"
+    },
+    {
+      "url": "K310-3.tsv"
+    },
+    {
+      "url": "K311-1.tsv"
+    },
+    {
+      "url": "K311-2.tsv"
+    },
+    {
+      "url": "K311-3.tsv"
+    },
+    {
+      "url": "K330-1.tsv"
+    },
+    {
+      "url": "K330-2.tsv"
+    },
+    {
+      "url": "K330-3.tsv"
+    },
+    {
+      "url": "K331-1.tsv"
+    },
+    {
+      "url": "K331-2.tsv"
+    },
+    {
+      "url": "K331-3.tsv"
+    },
+    {
+      "url": "K332-1.tsv"
+    },
+    {
+      "url": "K332-2.tsv"
+    },
+    {
+      "url": "K332-3.tsv"
+    },
+    {
+      "url": "K333-1.tsv"
+    },
+    {
+      "url": "K333-2.tsv"
+    },
+    {
+      "url": "K333-3.tsv"
+    },
+    {
+      "url": "K457-1.tsv"
+    },
+    {
+      "url": "K457-2.tsv"
+    },
+    {
+      "url": "K457-3.tsv"
+    },
+    {
+      "url": "K533-1.tsv"
+    },
+    {
+      "url": "K533-2.tsv"
+    },
+    {
+      "url": "K533-3.tsv"
+    },
+    {
+      "url": "K545-1.tsv"
+    },
+    {
+      "url": "K545-2.tsv"
+    },
+    {
+      "url": "K545-3.tsv"
+    },
+    {
+      "url": "K570-1.tsv"
+    },
+    {
+      "url": "K570-2.tsv"
+    },
+    {
+      "url": "K570-3.tsv"
+    },
+    {
+      "url": "K576-1.tsv"
+    },
+    {
+      "url": "K576-2.tsv"
+    },
+    {
+      "url": "K576-3.tsv"
+    }
+  ],
+  "tableSchema": {
+    "columns": [
+      {
+        "titles": "mc",
+        "datatype": "integer",
+        "dc:description": "Measure count."
+      },
+      {
+        "titles": "mn",
+        "datatype": "string",
+        "dc:description": "Measure number."
+      },
+      {
+        "titles": "quarterbeats",
+        "datatype": {
+          "base": "string",
+          "format": "-?\\d+(?:\\/\\d+)?"
+        }
+      },
+      {
+        "titles": "duration_qb",
+        "datatype": "float"
+      },
+      {
+        "titles": "mc_onset",
+        "datatype": {
+          "base": "string",
+          "format": "-?\\d+(?:\\/\\d+)?"
+        },
+        "dc:description": "An event's distance (fraction of a whole note) from the beginning of the MC."
+      },
+      {
+        "titles": "mn_onset",
+        "datatype": {
+          "base": "string",
+          "format": "-?\\d+(?:\\/\\d+)?"
+        },
+        "dc:description": "An event's distance (fraction of a whole note) from the beginning of the MN."
+      },
+      {
+        "titles": "timesig",
+        "datatype": "string"
+      },
+      {
+        "titles": "staff",
+        "datatype": "integer"
+      },
+      {
+        "titles": "voice",
+        "datatype": "integer"
+      },
+      {
+        "titles": "volta",
+        "datatype": "integer"
+      },
+      {
+        "titles": "label",
+        "datatype": "string"
+      },
+      {
+        "titles": "alt_label",
+        "datatype": "string"
+      },
+      {
+        "titles": "globalkey",
+        "datatype": "string"
+      },
+      {
+        "titles": "localkey",
+        "datatype": "string"
+      },
+      {
+        "titles": "pedal",
+        "datatype": "string"
+      },
+      {
+        "titles": "chord",
+        "datatype": "string"
+      },
+      {
+        "titles": "special",
+        "datatype": "string"
+      },
+      {
+        "titles": "numeral",
+        "datatype": "string"
+      },
+      {
+        "titles": "form",
+        "datatype": "string"
+      },
+      {
+        "titles": "figbass",
+        "datatype": "string"
+      },
+      {
+        "titles": "changes",
+        "datatype": "string"
+      },
+      {
+        "titles": "relativeroot",
+        "datatype": "string"
+      },
+      {
+        "titles": "cadence",
+        "datatype": "string"
+      },
+      {
+        "titles": "phraseend",
+        "datatype": "string"
+      },
+      {
+        "titles": "chord_type",
+        "datatype": "string"
+      },
+      {
+        "titles": "globalkey_is_minor",
+        "datatype": "boolean"
+      },
+      {
+        "titles": "localkey_is_minor",
+        "datatype": "boolean"
+      },
+      {
+        "titles": "chord_tones",
+        "datatype": {
+          "base": "string",
+          "format": "\\(-?\\d+, ?-?\\d+\\)"
+        }
+      },
+      {
+        "titles": "added_tones",
+        "datatype": {
+          "base": "string",
+          "format": "\\(-?\\d+, ?-?\\d+\\)"
+        }
+      },
+      {
+        "titles": "root",
+        "datatype": "integer"
+      },
+      {
+        "titles": "bass_note",
+        "datatype": "integer"
+      }
+    ]
+  }
+}
