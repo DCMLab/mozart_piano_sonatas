@@ -107,7 +107,7 @@ First, create a local copy of this repository, either by using the command
 git clone https://github.com/DCMLab/mozart_piano_sonatas.git
 ```
 
-or by unpacking this [ZIP file](https://github.com/DCMLab/dcml_corpora/archive/refs/heads/main.zip). 
+or by unpacking this [ZIP file](https://github.com/DCMLab/mozart_piano_sonatas/archive/refs/heads/main.zip). 
 
 
 
