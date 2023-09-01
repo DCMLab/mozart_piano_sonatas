@@ -233,7 +233,7 @@ Please create an issue and feel free to fork and submit pull requests.
 
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/))
 
-# Overview
+## Overview
 |file_name|measures|labels| annotators |             reviewers             |
 |---------|-------:|-----:|------------|-----------------------------------|
 |K279-1   |     100|   251|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
@@ -292,4 +292,4 @@ Creative Commons Attribution-NonCommercial-ShareAlike 4.0 ([CC BY-NC-SA 4.0](htt
 |K576-3   |     189|   381|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
 
 
-*Overview table updated using [ms3](https://johentsch.github.io/ms3/) 1.1.0.*
+*Overview table automatically updated using [ms3](https://johentsch.github.io/ms3/).*
