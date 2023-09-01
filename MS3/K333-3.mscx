@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.02">
   <programVersion>3.6.2</programVersion>
-  <programRevision></programRevision>
+  <programRevision>3224f34</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -239,6 +239,16 @@
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <Tempo>
+            <tempo>2.6666666666666665</tempo>
+            <text>Allegretto grazioso</text>
+            </Tempo>
+          <Tempo>
+            <tempo>2.6666699999999999</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><sym>metNoteHalfUp</sym> = 80</text>
+            </Tempo>
           <Chord>
             <dots>1</dots>
             <durationType>quarter</durationType>
