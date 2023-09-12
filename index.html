@@ -1,0 +1,1145 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>The Annotated Mozart Sonatas: Score, Harmony, and Cadence &#8212; The Annotated Mozart Sonatas v2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to use" href="introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    <p class="title logo__title">The Annotated Mozart Sonatas v2.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="introduction.html">
+                        How to use
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="analyses.html">
+                        Analyses
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="introduction.html">
+                        How to use
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="analyses.html">
+                        Analyses
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <nav class="contents local" id="readme" role="doc-toc">
+<p class="topic-title">README</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#the-annotated-mozart-sonatas-score-harmony-and-cadence" id="id1">The Annotated Mozart Sonatas: Score, Harmony, and Cadence</a></p>
+<ul>
+<li><p><a class="reference internal" href="#changelog" id="id2">Changelog</a></p>
+<ul>
+<li><p><a class="reference internal" href="#version-2-0" id="id3">Version 2.0</a></p>
+<ul>
+<li><p><a class="reference internal" href="#changes-to-harmonize-with-other-dcml-corpora" id="id4">Changes to harmonize with other DCML corpora</a></p></li>
+<li><p><a class="reference internal" href="#changes-to-the-content" id="id5">Changes to the content</a></p></li>
+<li><p><a class="reference internal" href="#removed-mozart-loader-py" id="id6">Removed <code class="docutils literal notranslate"><span class="pre">mozart_loader.py</span></code></a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#getting-the-data" id="id7">Getting the Data</a></p></li>
+<li><p><a class="reference internal" href="#data-formats" id="id8">Data Formats</a></p>
+<ul>
+<li><p><a class="reference internal" href="#opening-scores" id="id9">Opening Scores</a></p></li>
+<li><p><a class="reference internal" href="#opening-tsv-files-in-a-spreadsheet" id="id10">Opening TSV files in a spreadsheet</a></p></li>
+<li><p><a class="reference internal" href="#loading-tsv-files-in-python" id="id11">Loading TSV files in Python</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#how-to-read-metadata-tsv" id="id12">How to read <code class="docutils literal notranslate"><span class="pre">metadata.tsv</span></code></a></p>
+<ul>
+<li><p><a class="reference internal" href="#file-information" id="id13">File information</a></p></li>
+<li><p><a class="reference internal" href="#composition-information" id="id14">Composition information</a></p></li>
+<li><p><a class="reference internal" href="#score-information" id="id15">Score information</a></p></li>
+<li><p><a class="reference internal" href="#identifiers" id="id16">Identifiers</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#generating-all-tsv-files-from-the-scores" id="id17">Generating all TSV files from the scores</a></p></li>
+<li><p><a class="reference internal" href="#questions-suggestions-corrections-bug-reports" id="id18">Questions, Suggestions, Corrections, Bug Reports</a></p></li>
+<li><p><a class="reference internal" href="#license" id="id19">License</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#overview" id="id20">Overview</a></p></li>
+</ul>
+</nav>
+<!-- TOC -->
+<ul class="simple">
+<li><p><span class="xref myst">The Annotated Mozart Sonatas: Score, Harmony, and Cadence</span></p>
+<ul>
+<li><p><span class="xref myst">Changelog</span></p>
+<ul>
+<li><p><span class="xref myst">Version 2.0</span></p>
+<ul>
+<li><p><span class="xref myst">Changes to harmonize with other DCML corpora</span></p></li>
+<li><p><span class="xref myst">Changes to the content</span></p></li>
+<li><p><span class="xref myst">Removed <code class="docutils literal notranslate"><span class="pre">mozart_loader.py</span></code></span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><span class="xref myst">Getting the Data</span></p></li>
+<li><p><span class="xref myst">Data Formats</span></p>
+<ul>
+<li><p><span class="xref myst">Opening Scores</span></p></li>
+<li><p><span class="xref myst">Opening TSV files in a spreadsheet</span></p></li>
+<li><p><span class="xref myst">Loading TSV files in Python</span></p></li>
+</ul>
+</li>
+<li><p><span class="xref myst">How to read <code class="docutils literal notranslate"><span class="pre">metadata.tsv</span></code></span></p>
+<ul>
+<li><p><span class="xref myst">File information</span></p></li>
+<li><p><span class="xref myst">Composition information</span></p></li>
+<li><p><span class="xref myst">Score information</span></p></li>
+<li><p><span class="xref myst">Identifiers</span></p></li>
+</ul>
+</li>
+<li><p><span class="xref myst">Generating all TSV files from the scores</span></p></li>
+<li><p><span class="xref myst">Questions, Suggestions, Corrections, Bug Reports</span></p></li>
+<li><p><span class="xref myst">License</span></p></li>
+</ul>
+</li>
+<li><p><span class="xref myst">Overview</span></p></li>
+</ul>
+<!-- TOC -->
+<p><img alt="Version" src="https://img.shields.io/github/v/release/DCMLab/mozart_piano_sonatas?display_name=tag" />
+<a class="reference external" href="https://zenodo.org/badge/latestdoi/249007132"><img alt="DOI" src="https://zenodo.org/badge/249007132.svg" /></a>
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/DCMLab/mozart_piano_sonatas" />
+<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/DCMLab/mozart_piano_sonatas/total?color=%252300&amp;label=Downloaded%20ZIPs" />
+<img alt="License" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-9cf" /></p>
+<section id="the-annotated-mozart-sonatas-score-harmony-and-cadence">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">The Annotated Mozart Sonatas: Score, Harmony, and Cadence</a><a class="headerlink" href="#the-annotated-mozart-sonatas-score-harmony-and-cadence" title="Permalink to this heading">#</a></h1>
+<p>Scores, chord labels and cadence labels for Mozart’s 18 piano sonatas, following
+the <a class="reference external" href="https://dme.mozarteum.at/DME/nma">Neue Mozart Ausgabe</a>.</p>
+<p>This dataset is accompanied by the data
+report <code class="docutils literal notranslate"><span class="pre">Hentschel,</span> <span class="pre">J.,</span> <span class="pre">Neuwirth,</span> <span class="pre">M.</span> <span class="pre">and</span> <span class="pre">Rohrmeier,</span> <span class="pre">M.,</span> <span class="pre">2021.</span> <span class="pre">The</span> <span class="pre">Annotated</span> <span class="pre">Mozart</span> <span class="pre">Sonatas:</span> <span class="pre">Score,</span> <span class="pre">Harmony,</span> <span class="pre">and</span> <span class="pre">Cadence.</span> <span class="pre">Transactions</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">International</span> <span class="pre">Society</span> <span class="pre">for</span> <span class="pre">Music</span> <span class="pre">Information</span> <span class="pre">Retrieval,</span> <span class="pre">4(1),</span> <span class="pre">pp.67–80.</span> <span class="pre">DOI:</span></code> <a class="reference external" href="http://doi.org/10.5334/tismir.63">http://doi.org/10.5334/tismir.63</a></p>
+<section id="changelog">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Changelog</a><a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h2>
+<section id="version-2-0">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Version 2.0</a><a class="headerlink" href="#version-2-0" title="Permalink to this heading">#</a></h3>
+<section id="changes-to-harmonize-with-other-dcml-corpora">
+<h4><a class="toc-backref" href="#id4" role="doc-backlink">Changes to harmonize with other DCML corpora</a><a class="headerlink" href="#changes-to-harmonize-with-other-dcml-corpora" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Eenamed folder <code class="docutils literal notranslate"><span class="pre">scores</span></code>
+to <code class="docutils literal notranslate"><span class="pre">MS3</span></code> (<a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/7549f6a68cd05e2bbce4a09f76a1821faf61aa4e">7549f6a</a>)</p></li>
+<li><p>Extracted facets and metadata
+with <a class="reference external" href="https://github.com/johentsch/ms3">ms3 1.0.1</a> (<a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/9eb9fe3c26d5fbbdb61b485d6135dd421ed36dfd">9eb9fe3</a>)</p>
+<ul>
+<li><p>TSV files now come with the column <code class="docutils literal notranslate"><span class="pre">quarterbeats</span></code>, which measures in quarter notes each event’s position as its
+distance from the beginning</p></li>
+<li><p>The extracted harmony labels in the folder <code class="docutils literal notranslate"><span class="pre">harmonies</span></code> are expanded into feature columns by default.</p></li>
+<li><p>Extracted notes now come with the columns <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">octave</span></code>.</p></li>
+<li><p>Column <code class="docutils literal notranslate"><span class="pre">volta</span></code> (containing first and second endings) removed from pieces that don’t have any.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metadata.tsv</span></code> has been enriched with further columns, in particular information about each movement’s dimensions,
+including dimensions upon unfolding repeats (for instance, <code class="docutils literal notranslate"><span class="pre">last_mn</span></code> has the number of
+measures, <code class="docutils literal notranslate"><span class="pre">last_mn_unfolded</span></code> the
+number of measures when playing all repeats)</p></li>
+<li><p>The folder <code class="docutils literal notranslate"><span class="pre">reviewed</span></code> contains two files per movement:</p>
+<ul>
+<li><p>A copy of the score where all out-of-label notes have been colored in red; additionally, modified labels (
+w.r.t. v1.0)
+are shown in these files in a diff-like manner (removed in red, added in green).</p></li>
+<li><p>A copy of the harmonies TSV with six added columns that reflect the coloring of out-of-label notes (“coloring
+reports”)</p></li>
+</ul>
+</li>
+<li><p>As long as the <code class="docutils literal notranslate"><span class="pre">ms3</span> <span class="pre">review</span></code> has any complaints, it stores them in the file <code class="docutils literal notranslate"><span class="pre">warnings.log</span></code>. Currently, it is
+showing
+those labels where over 60% of the notes in the segment have been colored in red and probably need revisiting (
+Pull Requests welcome)</p></li>
+</ul>
+</li>
+<li><p>Score updated
+using <code class="docutils literal notranslate"><span class="pre">ms3</span> <span class="pre">update</span></code> (<a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/13dfb6d9a99c08a7f61b4fed195c36789a5d609d">13dfb6d</a>)</p>
+<ul>
+<li><p>Files updated to MuseScore 3.6.2</p></li>
+<li><p>All labels moved from the chord layer of staff 1 to the Roman Numeral Analysis layer of staff 2.
+This changes how they are displayed and eliminates the requirement to prepend
+a full stop to labels starting with a note name.</p></li>
+</ul>
+</li>
+<li><p>Cadence labels now integrated with harmony labels as per
+<a class="reference external" href="https://github.com/DCMLab/standards#v230">DCML harmony annotation standard 2.3.0</a> (<a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/1c290e8981de37b91f03ba6e2eb7e5e2c8025186">1c290e8</a>)</p></li>
+<li><p>TSV files are automatically kept up to date using
+the <a class="reference external" href="https://github.com/DCMLab/dcml_corpus_workflow">dcml_corpus_workflow</a>
+(<a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/c2035954476f1a8093999758008d9ea7d885a802">c203595</a>)</p></li>
+</ul>
+</section>
+<section id="changes-to-the-content">
+<h4><a class="toc-backref" href="#id5" role="doc-backlink">Changes to the content</a><a class="headerlink" href="#changes-to-the-content" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Made phrase annotations consistent by adding missing curly
+brackets. (<a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/9f10fc03359a48f598f9d6b70a7b131ac8bd2510">9f10fc0</a>)</p></li>
+<li><p>Introduced first and second endings at the beginning of <code class="docutils literal notranslate"><span class="pre">K311-2</span></code> in order to introduce an <code class="docutils literal notranslate"><span class="pre">EC</span></code> label on the repetition
+of bar 1.</p></li>
+<li><p>Fixed repeat structure in <em>da capo</em> movements K282-2 and K331-2 for correct unfolding
+(<a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/b7271da6ebd2e21abe7ccbe858065822a40095e7">b7271da</a>..<a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/0e9f060dbfb1c4143362d586e30a3e309dcdbeeb">0e9f060</a>)</p></li>
+<li><p>updated labels of
+K283-3 (<a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/f1fe0321616039ce77aad55914eac1640fed2255">f1fe032</a>)</p></li>
+<li><p>corrected scores in a few
+places (<a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/b6aa4f1cd271ef475e559b53bbcb5fc4834040b6">b6aa4f1</a>,
+<a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/pull/5/commits/438acb0da8e2f2203d73e313af0d14c03e0f18c2">438acb0</a>)</p></li>
+</ul>
+</section>
+<section id="removed-mozart-loader-py">
+<h4><a class="toc-backref" href="#id6" role="doc-backlink">Removed <code class="docutils literal notranslate"><span class="pre">mozart_loader.py</span></code></a><a class="headerlink" href="#removed-mozart-loader-py" title="Permalink to this heading">#</a></h4>
+<p>The functionality of the loader has been superseded by the <a class="reference external" href="https://github.com/johentsch/ms3">ms3 parsing library</a>.
+Once installed (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ms3</span></code>), you’ll have several commands on your hands, one of which is <code class="docutils literal notranslate"><span class="pre">ms3</span> <span class="pre">transform</span></code>. For
+example, head to the folder with the dataset and type <code class="docutils literal notranslate"><span class="pre">ms3</span> <span class="pre">transform</span> <span class="pre">-N</span></code> to create the concatenated note list.
+<code class="docutils literal notranslate"><span class="pre">ms3</span> <span class="pre">transform</span> <span class="pre">-h</span></code> will show all options.</p>
+</section>
+</section>
+</section>
+<section id="getting-the-data">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Getting the Data</a><a class="headerlink" href="#getting-the-data" title="Permalink to this heading">#</a></h2>
+<p>First, create a local copy of this repository, either by using the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/DCMLab/mozart_piano_sonatas.git
+</pre></div>
+</div>
+<p>or by unpacking this <a class="reference external" href="https://github.com/DCMLab/mozart_piano_sonatas/archive/refs/heads/main.zip">ZIP file</a>.</p>
+</section>
+<section id="data-formats">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Data Formats</a><a class="headerlink" href="#data-formats" title="Permalink to this heading">#</a></h2>
+<p>Every sonata movement is represented by five files with identical filenames in five different folders. For example, the
+first movement of the first sonata K. 279 has the following files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MS3/K279-1.mscx</span></code>: Uncompressed MuseScore file including the music and harmony labels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notes/K279-1.tsv</span></code>: A table of all note heads contained in the score and their relevant features (not each of them represents an onset, some are tied together)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">measures/K279-1.tsv</span></code>: A table with relevant information about the measures in the score.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">harmonies/K279-1.tsv</span></code>: A list of the included harmony labels (including cadences and phrases) with their positions in
+the score.</p></li>
+</ul>
+<section id="opening-scores">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Opening Scores</a><a class="headerlink" href="#opening-scores" title="Permalink to this heading">#</a></h3>
+<p>After navigating to your local copy, you can open the scores in the folder <code class="docutils literal notranslate"><span class="pre">MS3</span></code> with the free and open source score
+editor <a class="reference external" href="https://musescore.org">MuseScore</a>.</p>
+</section>
+<section id="opening-tsv-files-in-a-spreadsheet">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Opening TSV files in a spreadsheet</a><a class="headerlink" href="#opening-tsv-files-in-a-spreadsheet" title="Permalink to this heading">#</a></h3>
+<p>Tab-separated value (TSV) files are like Comma-separated value (CSV) files and can be opened with most modern text
+editors. However, for correctly displaying the columns, you might want to use a spreadsheet or an addon for your
+favourite text editor. When you use a spreadsheet such as Excel, it might annoy you by interpreting fractions as
+dates. This can be circumvented by using <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">--&gt;</span> <span class="pre">From</span> <span class="pre">Text/CSV</span></code> or the free alternative
+<a class="reference external" href="https://www.libreoffice.org/download/download/">LibreOffice Calc</a>. Other than that, TSV data can be loaded with
+every modern programming language.</p>
+</section>
+<section id="loading-tsv-files-in-python">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Loading TSV files in Python</a><a class="headerlink" href="#loading-tsv-files-in-python" title="Permalink to this heading">#</a></h3>
+<p>Since the TSV files contain null values, lists, fractions, and numbers that are to be treated as strings, you may want
+to use this code to load any TSV files related to this repository (provided you’re doing it in Python). After a quick
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">ms3</span></code> (requires Python 3.10) you’ll be able to load any TSV like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ms3</span>
+
+<span class="n">labels</span> <span class="o">=</span> <span class="n">ms3</span><span class="o">.</span><span class="n">load_tsv</span><span class="p">(</span><span class="s1">&#39;harmonies/K283-1.tsv&#39;</span><span class="p">)</span>
+<span class="n">notes</span> <span class="o">=</span> <span class="n">ms3</span><span class="o">.</span><span class="n">load_tsv</span><span class="p">(</span><span class="s1">&#39;notes/K283-1.tsv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="how-to-read-metadata-tsv">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">How to read <code class="docutils literal notranslate"><span class="pre">metadata.tsv</span></code></a><a class="headerlink" href="#how-to-read-metadata-tsv" title="Permalink to this heading">#</a></h2>
+<p>This section explains the meaning of the columns contained in <code class="docutils literal notranslate"><span class="pre">metadata.tsv</span></code>.</p>
+<section id="file-information">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">File information</a><a class="headerlink" href="#file-information" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>column</p></th>
+<th class="head"><p>content</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>fname</strong></p></td>
+<td><p>name without extension (for referencing related files)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rel_path</strong></p></td>
+<td><p>relative file path of the score, including extension</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>subdirectory</strong></p></td>
+<td><p>folder where the score is located</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>last_mn</strong></p></td>
+<td><p>last measure number</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>last_mn_unfolded</strong></p></td>
+<td><p>number of measures when playing all repeats</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>length_qb</strong></p></td>
+<td><p>length of the piece, measured in quarter notes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>length_qb_unfolded</strong></p></td>
+<td><p>length of the piece when playing all repeats</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>volta_mcs</strong></p></td>
+<td><p>measure counts of first and second endings</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>all_notes_qb</strong></p></td>
+<td><p>summed up duration of all notes, measured in quarter notes</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>n_onsets</strong></p></td>
+<td><p>number of note onsets</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>n_onset_positions</strong></p></td>
+<td><p>number of unique not onsets (“slices”)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="composition-information">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Composition information</a><a class="headerlink" href="#composition-information" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>column</p></th>
+<th class="head"><p>content</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>composer</strong></p></td>
+<td><p>composer name</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>workTitle</strong></p></td>
+<td><p>full sonata title</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>composed_start</strong></p></td>
+<td><p>earliest composition date</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>composed_end</strong></p></td>
+<td><p>latest composition date</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>workNumber</strong></p></td>
+<td><p>Köchel number</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>movementNumber</strong></p></td>
+<td><p>1, 2, or 3</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>movementTitle</strong></p></td>
+<td><p>title of the movement</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="score-information">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Score information</a><a class="headerlink" href="#score-information" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>column</p></th>
+<th class="head"><p>content</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>label_count</strong></p></td>
+<td><p>number of chord labels</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>KeySig</strong></p></td>
+<td><p>key signature(s) (negative = flats, positive = sharps)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>TimeSig</strong></p></td>
+<td><p>time signature(s)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>musescore</strong></p></td>
+<td><p>MuseScore version</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>source</strong></p></td>
+<td><p>URL to the first typesetter’s file</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>typesetter</strong></p></td>
+<td><p>first typesetter</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>annotator</strong></p></td>
+<td><p>creator of the chord labels</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>reviewers</strong></p></td>
+<td><p>reviewers of the chord labels</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="identifiers">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Identifiers</a><a class="headerlink" href="#identifiers" title="Permalink to this heading">#</a></h3>
+<p>These columns provide a mapping between multiple identifiers for the sonatas (not for individual movements).</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>column</p></th>
+<th class="head"><p>content</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>wikidata</strong></p></td>
+<td><p>URL of the <a class="reference external" href="https://www.wikidata.org/">WikiData</a> item</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>viaf</strong></p></td>
+<td><p>URL of the Virtual International Authority File (<a class="reference external" href="http://viaf.org/">VIAF</a>) entry</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>musicbrainz</strong></p></td>
+<td><p><a class="reference external" href="https://musicbrainz.org/">MusicBrainz</a> identifier</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>imslp</strong></p></td>
+<td><p>URL to the wiki page within the International Music Score Library Project (<a class="reference external" href="https://imslp.org/">IMSLP</a>)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="generating-all-tsv-files-from-the-scores">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Generating all TSV files from the scores</a><a class="headerlink" href="#generating-all-tsv-files-from-the-scores" title="Permalink to this heading">#</a></h2>
+<p>When you have made changes to the scores and want to update the TSV files accordingly, you can use the following
+command (provided you have pip-installed <a class="reference external" href="https://github.com/johentsch/ms3">ms3</a>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ms3</span> <span class="n">extract</span> <span class="o">-</span><span class="n">M</span> <span class="o">-</span><span class="n">N</span> <span class="o">-</span><span class="n">X</span> <span class="o">-</span><span class="n">D</span> <span class="c1"># for measures, notes, expanded annotations, and metadata</span>
+</pre></div>
+</div>
+<p>If, in addition, you want to generate the reviewed scores with out-of-label notes colored in red, you can do</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ms3</span> <span class="n">review</span> <span class="o">-</span><span class="n">M</span> <span class="o">-</span><span class="n">N</span> <span class="o">-</span><span class="n">X</span> <span class="o">-</span><span class="n">D</span> <span class="c1"># for extracting measures, notes, expanded annotations, and metadata</span>
+</pre></div>
+</div>
+<p>By adding the flag <code class="docutils literal notranslate"><span class="pre">-c</span></code> to the review command, it will additionally compare the (potentially modified) annotations in the score
+with the ones currently present in the harmonies TSV files and reflect the comparison in the reviewed scores.</p>
+</section>
+<section id="questions-suggestions-corrections-bug-reports">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">Questions, Suggestions, Corrections, Bug Reports</a><a class="headerlink" href="#questions-suggestions-corrections-bug-reports" title="Permalink to this heading">#</a></h2>
+<p>Please create an issue and feel free to fork and submit pull requests.</p>
+</section>
+<section id="license">
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">License</a><a class="headerlink" href="#license" title="Permalink to this heading">#</a></h2>
+<p>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (<a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>)</p>
+</section>
+</section>
+<section id="overview">
+<h1><a class="toc-backref" href="#id20" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>file_name</p></th>
+<th class="head text-right"><p>measures</p></th>
+<th class="head text-right"><p>labels</p></th>
+<th class="head"><p>annotators</p></th>
+<th class="head"><p>reviewers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>K279-1</p></td>
+<td class="text-right"><p>100</p></td>
+<td class="text-right"><p>251</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K279-2</p></td>
+<td class="text-right"><p>74</p></td>
+<td class="text-right"><p>156</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K279-3</p></td>
+<td class="text-right"><p>158</p></td>
+<td class="text-right"><p>321</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K280-1</p></td>
+<td class="text-right"><p>144</p></td>
+<td class="text-right"><p>225</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K280-2</p></td>
+<td class="text-right"><p>60</p></td>
+<td class="text-right"><p>124</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K280-3</p></td>
+<td class="text-right"><p>190</p></td>
+<td class="text-right"><p>199</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K281-1</p></td>
+<td class="text-right"><p>109</p></td>
+<td class="text-right"><p>208</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K281-2</p></td>
+<td class="text-right"><p>106</p></td>
+<td class="text-right"><p>153</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K281-3</p></td>
+<td class="text-right"><p>162</p></td>
+<td class="text-right"><p>384</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K282-1</p></td>
+<td class="text-right"><p>36</p></td>
+<td class="text-right"><p>104</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K282-2</p></td>
+<td class="text-right"><p>72</p></td>
+<td class="text-right"><p>129</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K282-3</p></td>
+<td class="text-right"><p>102</p></td>
+<td class="text-right"><p>176</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K283-1</p></td>
+<td class="text-right"><p>120</p></td>
+<td class="text-right"><p>326</p></td>
+<td><p>Tal Soker</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K283-2</p></td>
+<td class="text-right"><p>39</p></td>
+<td class="text-right"><p>169</p></td>
+<td><p>Tal Soker</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K283-3</p></td>
+<td class="text-right"><p>277</p></td>
+<td class="text-right"><p>337</p></td>
+<td><p>Tal Soker</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K284-1</p></td>
+<td class="text-right"><p>127</p></td>
+<td class="text-right"><p>330</p></td>
+<td><p>Tal Soker</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K284-2</p></td>
+<td class="text-right"><p>92</p></td>
+<td class="text-right"><p>228</p></td>
+<td><p>Tal Soker</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K284-3</p></td>
+<td class="text-right"><p>260</p></td>
+<td class="text-right"><p>755</p></td>
+<td><p>Adrian Nagel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K309-1</p></td>
+<td class="text-right"><p>155</p></td>
+<td class="text-right"><p>307</p></td>
+<td><p>Tal Soker</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K309-2</p></td>
+<td class="text-right"><p>79</p></td>
+<td class="text-right"><p>259</p></td>
+<td><p>Tal Soker</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K309-3</p></td>
+<td class="text-right"><p>252</p></td>
+<td class="text-right"><p>406</p></td>
+<td><p>Tal Soker</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K310-1</p></td>
+<td class="text-right"><p>133</p></td>
+<td class="text-right"><p>292</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K310-2</p></td>
+<td class="text-right"><p>86</p></td>
+<td class="text-right"><p>252</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K310-3</p></td>
+<td class="text-right"><p>252</p></td>
+<td class="text-right"><p>428</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K311-1</p></td>
+<td class="text-right"><p>112</p></td>
+<td class="text-right"><p>319</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K311-2</p></td>
+<td class="text-right"><p>93</p></td>
+<td class="text-right"><p>241</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K311-3</p></td>
+<td class="text-right"><p>269</p></td>
+<td class="text-right"><p>491</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K330-1</p></td>
+<td class="text-right"><p>150</p></td>
+<td class="text-right"><p>293</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K330-2</p></td>
+<td class="text-right"><p>64</p></td>
+<td class="text-right"><p>187</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K330-3</p></td>
+<td class="text-right"><p>171</p></td>
+<td class="text-right"><p>365</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K331-1</p></td>
+<td class="text-right"><p>134</p></td>
+<td class="text-right"><p>399</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K331-2</p></td>
+<td class="text-right"><p>100</p></td>
+<td class="text-right"><p>160</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K331-3</p></td>
+<td class="text-right"><p>127</p></td>
+<td class="text-right"><p>128</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K332-1</p></td>
+<td class="text-right"><p>229</p></td>
+<td class="text-right"><p>316</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K332-2</p></td>
+<td class="text-right"><p>40</p></td>
+<td class="text-right"><p>168</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K332-3</p></td>
+<td class="text-right"><p>245</p></td>
+<td class="text-right"><p>449</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K333-1</p></td>
+<td class="text-right"><p>165</p></td>
+<td class="text-right"><p>431</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K333-2</p></td>
+<td class="text-right"><p>82</p></td>
+<td class="text-right"><p>217</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K333-3</p></td>
+<td class="text-right"><p>224</p></td>
+<td class="text-right"><p>460</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K457-1</p></td>
+<td class="text-right"><p>185</p></td>
+<td class="text-right"><p>308</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K457-2</p></td>
+<td class="text-right"><p>57</p></td>
+<td class="text-right"><p>214</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K457-3</p></td>
+<td class="text-right"><p>319</p></td>
+<td class="text-right"><p>328</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K533-1</p></td>
+<td class="text-right"><p>239</p></td>
+<td class="text-right"><p>584</p></td>
+<td><p>Adrian Nagel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K533-2</p></td>
+<td class="text-right"><p>122</p></td>
+<td class="text-right"><p>261</p></td>
+<td><p>Adrian Nagel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K533-3</p></td>
+<td class="text-right"><p>187</p></td>
+<td class="text-right"><p>423</p></td>
+<td><p>Adrian Nagel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K545-1</p></td>
+<td class="text-right"><p>73</p></td>
+<td class="text-right"><p>119</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K545-2</p></td>
+<td class="text-right"><p>74</p></td>
+<td class="text-right"><p>146</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K545-3</p></td>
+<td class="text-right"><p>73</p></td>
+<td class="text-right"><p>143</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K570-1</p></td>
+<td class="text-right"><p>209</p></td>
+<td class="text-right"><p>245</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K570-2</p></td>
+<td class="text-right"><p>55</p></td>
+<td class="text-right"><p>250</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K570-3</p></td>
+<td class="text-right"><p>89</p></td>
+<td class="text-right"><p>281</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K576-1</p></td>
+<td class="text-right"><p>160</p></td>
+<td class="text-right"><p>295</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-even"><td><p>K576-2</p></td>
+<td class="text-right"><p>67</p></td>
+<td class="text-right"><p>151</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+<tr class="row-odd"><td><p>K576-3</p></td>
+<td class="text-right"><p>189</p></td>
+<td class="text-right"><p>381</p></td>
+<td><p>Uli Kneisel</p></td>
+<td><p>Johannes Hentschel, Markus Neuwirth</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Overview table updated using <a class="reference external" href="https://johentsch.github.io/ms3/">ms3</a> 1.1.0.</em></p>
+</section>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Further information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">How to use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyses.html">Analyses</a></li>
+</ul>
+</div>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="right-next"
+       href="introduction.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How to use</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The Annotated Mozart Sonatas: Score, Harmony, and Cadence</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changelog">Changelog</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-2-0">Version 2.0</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-to-harmonize-with-other-dcml-corpora">Changes to harmonize with other DCML corpora</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-to-the-content">Changes to the content</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#removed-mozart-loader-py">Removed <code class="docutils literal notranslate"><span class="pre">mozart_loader.py</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-data">Getting the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-formats">Data Formats</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-scores">Opening Scores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-tsv-files-in-a-spreadsheet">Opening TSV files in a spreadsheet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-tsv-files-in-python">Loading TSV files in Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-read-metadata-tsv">How to read <code class="docutils literal notranslate"><span class="pre">metadata.tsv</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-information">File information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composition-information">Composition information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#score-information">Score information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifiers">Identifiers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-all-tsv-files-from-the-scores">Generating all TSV files from the scores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-suggestions-corrections-bug-reports">Questions, Suggestions, Corrections, Bug Reports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="_sources/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, Johannes Hentschel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
