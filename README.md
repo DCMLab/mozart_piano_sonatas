@@ -92,4 +92,4 @@ Creative Commons Attribution-NonCommercial-ShareAlike 4.0 ([CC BY-NC-SA 4.0](htt
 |K576-3   |     189|   381|Uli Kneisel |Johannes Hentschel, Markus Neuwirth|
 
 
-*Overview table automatically updated using [ms3](https://johentsch.github.io/ms3/).*
+*Overview table automatically updated using [ms3](https://ms3.readthedocs.io/).*
