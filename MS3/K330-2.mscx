@@ -145,7 +145,6 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.76389</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
@@ -238,6 +237,12 @@
             <sigN>3</sigN>
             <sigD>4</sigD>
             </TimeSig>
+          <Tempo>
+            <tempo>0.80000000000000004</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"/><b><font face="Edwin"/> = 48</b></text>
+            </Tempo>
           <Chord>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
@@ -1438,7 +1443,7 @@
             <durationType>quarter</durationType>
             <Spanner type="Slur">
               <Slur>
-                <lineType>2</lineType>
+                <up>up</up>
                 </Slur>
               <next>
                 <location>
@@ -1448,7 +1453,7 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
-                <up>up</up>
+                <lineType>2</lineType>
                 </Slur>
               <next>
                 <location>
