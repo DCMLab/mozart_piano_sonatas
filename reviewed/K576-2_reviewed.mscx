@@ -145,7 +145,6 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.76389</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
@@ -269,6 +268,11 @@
           <controller ctrl="7" value="80"/>
           <synti>Fluid</synti>
           </Channel>
+        <Channel name="harmony">
+          <program value="0"/>
+          <controller ctrl="7" value="80"/>
+          <synti>Fluid</synti>
+          </Channel>
         </Instrument>
       </Part>
     <Staff id="1">
@@ -281,10 +285,16 @@
             <sigN>3</sigN>
             <sigD>4</sigD>
             </TimeSig>
-          <SystemText>
-            <offset x="0" y="-7"/>
+          <Tempo>
+            <tempo>0.76666666666666672</tempo>
             <text>Adagio</text>
-            </SystemText>
+            </Tempo>
+          <Tempo>
+            <tempo>0.76666666666666661</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"></font><b><font face="Edwin"></font> = 46</b></text>
+            </Tempo>
           <Chord>
             <dots>1</dots>
             <durationType>eighth</durationType>

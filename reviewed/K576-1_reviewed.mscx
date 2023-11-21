@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.02">
   <programVersion>3.6.2</programVersion>
-  <programRevision></programRevision>
+  <programRevision>3224f34</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -291,10 +291,17 @@
             <velocity>96</velocity>
             <offset x="0.658281" y="5"/>
             </Dynamic>
-          <SystemText>
-            <offset x="-2" y="-4"/>
+          <Tempo>
+            <tempo>2.2999999999999998</tempo>
             <text>Allegro</text>
-            </SystemText>
+            </Tempo>
+          <Tempo>
+            <tempo>2.3000000000000003</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <offset x="3.72402" y="-9.95488"/>
+            <text><b></b><font face="ScoreText"></font> <b><font face="Edwin"></font> = 92</b></text>
+            </Tempo>
           <Chord>
             <durationType>eighth</durationType>
             <Note>

@@ -167,7 +167,6 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.564</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
@@ -278,8 +277,7 @@
             <sigD>4</sigD>
             </TimeSig>
           <Tempo>
-            <tempo>1.8333299999999999</tempo>
-            <followText>1</followText>
+            <tempo>4</tempo>
             <offset x="-9.87409" y="-8.25276"/>
             <text><font size="12"></font>Allegro assai
 agitato</text>
@@ -288,6 +286,12 @@ agitato</text>
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <Tempo>
+            <tempo>4</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><sym>metNoteHalfUp</sym><sym>space</sym><sym>metAugmentationDot</sym> = 80</text>
+            </Tempo>
           <Chord>
             <durationType>quarter</durationType>
             <Note>
@@ -9030,21 +9034,21 @@ agitato</text>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
               <Slur>
-                </Slur>
-              <next>
-                <location>
-                  <measures>2</measures>
-                  <fractions>-3/8</fractions>
-                  </location>
-                </next>
-              </Spanner>
-            <Spanner type="Slur">
-              <Slur>
                 <up>up</up>
                 </Slur>
               <next>
                 <location>
                   <fractions>1/4</fractions>
+                  </location>
+                </next>
+              </Spanner>
+            <Spanner type="Slur">
+              <Slur>
+                </Slur>
+              <next>
+                <location>
+                  <measures>2</measures>
+                  <fractions>-3/8</fractions>
                   </location>
                 </next>
               </Spanner>

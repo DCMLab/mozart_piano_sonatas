@@ -1,0 +1,18 @@
+Warnings encountered during the last execution of ms3 review
+============================================================
+
+DCML_NON_CHORD_TONES_ABOVE_THRESHOLD_WARNING (19, 124, '0', 'VI6') ms3.Parse.mozart_piano_sonatas.K283-3 --
+	The label 'VI6' in m. 124, onset 0 (MC 124, onset 0) seems not to correspond well to the score (which does not necessarily mean it is wrong).
+	In the context of G.vi, it expresses the scale degrees ('1', '3', '6') [('E', 'G', 'C')].
+	The corresponding score segment has 2 within-label and 4 out-of-label note onsets, a ratio of 0.6666666666666666 > 0.6 (the current, arbitrary, threshold).
+	If it turns out the label is correct, please add the header of this warning to the IGNORED_WARNINGS, ideally followed by a free-text comment in subsequent lines starting with a space or tab.
+DCML_NON_CHORD_TONES_ABOVE_THRESHOLD_WARNING (19, 128, '0', 'VI6') ms3.Parse.mozart_piano_sonatas.K283-3 --
+	The label 'VI6' in m. 128, onset 0 (MC 128, onset 0) seems not to correspond well to the score (which does not necessarily mean it is wrong).
+	In the context of G.vi, it expresses the scale degrees ('1', '3', '6') [('E', 'G', 'C')].
+	The corresponding score segment has 3 within-label and 6 out-of-label note onsets, a ratio of 0.6666666666666666 > 0.6 (the current, arbitrary, threshold).
+	If it turns out the label is correct, please add the header of this warning to the IGNORED_WARNINGS, ideally followed by a free-text comment in subsequent lines starting with a space or tab.
+DCML_NON_CHORD_TONES_ABOVE_THRESHOLD_WARNING (19, 128, '5/16', '#viio64/v') ms3.Parse.mozart_piano_sonatas.K283-3 --
+	The label '#viio64/v' in m. 128, onset 5/16 (MC 128, onset 5/16) seems not to correspond well to the score (which does not necessarily mean it is wrong).
+	In the context of G.vi, it expresses the scale degrees ('1', '#4', '#6') [('E', 'A#', 'C#')].
+	The corresponding score segment has 0 within-label and 1 out-of-label note onsets, a ratio of 1.0 > 0.6 (the current, arbitrary, threshold).
+	If it turns out the label is correct, please add the header of this warning to the IGNORED_WARNINGS, ideally followed by a free-text comment in subsequent lines starting with a space or tab.
