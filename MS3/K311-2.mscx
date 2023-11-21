@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.02">
   <programVersion>3.6.2</programVersion>
-  <programRevision></programRevision>
+  <programRevision>3224f34</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -219,18 +219,17 @@
             <offset x="-8.8143" y="-8.90038"/>
             <text>Andante con espressione</text>
             </StaffText>
-          <Tempo>
-            <tempo>0.75</tempo>
-            <followText>1</followText>
-            <visible>0</visible>
-            <offset x="-3.38609" y="-7.371"/>
-            <text><sym>metNote8thUp</sym> = 90</text>
-            </Tempo>
           <Dynamic>
             <subtype>p</subtype>
             <velocity>49</velocity>
             <offset x="-0.684174" y="3.24103"/>
             </Dynamic>
+          <Tempo>
+            <tempo>0.66666666666666663</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"/><b><font face="Edwin"/> = 40</b></text>
+            </Tempo>
           <Chord>
             <durationType>eighth</durationType>
             <Spanner type="Slur">
