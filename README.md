@@ -11,7 +11,7 @@ and serves as welcome page for both
 
 For information on how to obtain and use the dataset, please refer to [this documentation page](https://dcmlab.github.io/mozart_piano_sonatas/introduction).
 
-# The Annotated Mozart Sonatas: Score, Harmony, and Cadence (v2.0)
+# The Annotated Mozart Sonatas: Score, Harmony, and Cadence (v2.1)
 
 Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following
 the [Neue Mozart Ausgabe](https://dme.mozarteum.at/DME/nma).
