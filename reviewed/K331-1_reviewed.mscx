@@ -146,13 +146,13 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.76389</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
     <showFrames>1</showFrames>
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
+    <metaTag name="compared_against">v2.0</metaTag>
     <metaTag name="composer">Wolfgang Amadeus Mozart</metaTag>
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2017-06-08</metaTag>
@@ -258,10 +258,9 @@
             <sigD>8</sigD>
             </TimeSig>
           <Tempo>
-            <tempo>1</tempo>
-            <followText>1</followText>
+            <tempo>1.25</tempo>
             <offset x="0.0851164" y="-10.3955"/>
-            <text>Andante grazioso <sym>metNote8thUp</sym> = 120</text>
+            <text>Andante grazioso</text>
             </Tempo>
           <Dynamic>
             <subtype>p</subtype>
@@ -272,6 +271,14 @@
             <offset x="-4.10638" y="-14.0422"/>
             <text>Thema.</text>
             </RehearsalMark>
+          <Tempo>
+            <tempo>1.25</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <minDistance>-5.68979</minDistance>
+            <offset x="0.910263" y="-6.74571"/>
+            <text><b></b><font face="ScoreText"></font> <b><font face="Edwin"></font> = 50</b></text>
+            </Tempo>
           <Chord>
             <dots>1</dots>
             <durationType>eighth</durationType>

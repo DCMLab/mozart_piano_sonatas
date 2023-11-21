@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.02">
   <programVersion>3.6.2</programVersion>
-  <programRevision></programRevision>
+  <programRevision>3224f34</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -231,6 +231,12 @@
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <Tempo>
+            <tempo>0.83333333333333337</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"/><b><font face="Edwin"/> = 50</b></text>
+            </Tempo>
           <Chord>
             <durationType>eighth</durationType>
             <Articulation>
@@ -642,16 +648,6 @@
             <durationType>quarter</durationType>
             <Spanner type="Slur">
               <Slur>
-                <up>down</up>
-                </Slur>
-              <next>
-                <location>
-                  <fractions>1/4</fractions>
-                  </location>
-                </next>
-              </Spanner>
-            <Spanner type="Slur">
-              <Slur>
                 </Slur>
               <next>
                 <location>
@@ -662,6 +658,16 @@
             <Spanner type="Slur">
               <Slur>
                 <up>up</up>
+                </Slur>
+              <next>
+                <location>
+                  <fractions>1/4</fractions>
+                  </location>
+                </next>
+              </Spanner>
+            <Spanner type="Slur">
+              <Slur>
+                <up>down</up>
                 </Slur>
               <next>
                 <location>

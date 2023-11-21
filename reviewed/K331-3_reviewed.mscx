@@ -142,13 +142,13 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.76389</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
     <showFrames>1</showFrames>
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
+    <metaTag name="compared_against">v2.0</metaTag>
     <metaTag name="composer">Wolfgang Amadeus Mozart</metaTag>
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2017-07-13</metaTag>
@@ -240,6 +240,21 @@
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <SystemText>
+            <offset x="-10.0129" y="-5.31726"/>
+            <text>ALLA TURCA</text>
+            </SystemText>
+          <Tempo>
+            <tempo>2.2666666666666666</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <offset x="0.546158" y="-10.3081"/>
+            <text><b></b><font face="ScoreText"></font><b><font face="Edwin"></font> = 68</b></text>
+            </Tempo>
+          <Tempo>
+            <tempo>2.2666666666666666</tempo>
+            <text>Allegretto</text>
+            </Tempo>
           <Chord>
             <durationType>16th</durationType>
             <Spanner type="Slur">

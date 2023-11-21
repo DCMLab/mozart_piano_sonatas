@@ -143,13 +143,13 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.76389</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
     <showFrames>1</showFrames>
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
+    <metaTag name="compared_against">v2.0</metaTag>
     <metaTag name="composer">Wolfgang Amadeus Mozart</metaTag>
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2017-07-13</metaTag>
@@ -226,6 +226,7 @@
         </Instrument>
       </Part>
     <Staff id="1">
+      <VBox/>
       <Measure>
         <voice>
           <TimeSig>
@@ -236,6 +237,12 @@
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <Tempo>
+            <tempo>1.5</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"></font><b><font face="Edwin"></font> = 90</b></text>
+            </Tempo>
           <Beam>
             <StemDirection>down</StemDirection>
             </Beam>

@@ -144,7 +144,6 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.76389</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
@@ -234,6 +233,16 @@
             <sigN>2</sigN>
             <sigD>4</sigD>
             </TimeSig>
+          <Tempo>
+            <tempo>1.6666666666666667</tempo>
+            <text>Rondo: Allegretto</text>
+            </Tempo>
+          <Tempo>
+            <tempo>1.6666666666666667</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"/><b><font face="Edwin"/> = 100</b></text>
+            </Tempo>
           <Chord>
             <durationType>eighth</durationType>
             <Articulation>

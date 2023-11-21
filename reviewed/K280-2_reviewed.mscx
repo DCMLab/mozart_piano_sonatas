@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.02">
   <programVersion>3.6.2</programVersion>
-  <programRevision></programRevision>
+  <programRevision>3224f34</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -155,6 +155,7 @@
     <showFrames>1</showFrames>
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
+    <metaTag name="compared_against">v2.0</metaTag>
     <metaTag name="composer">Wolfgang Amadeus Mozart</metaTag>
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2017-12-04</metaTag>
@@ -236,6 +237,12 @@
             <subtype>f</subtype>
             <velocity>96</velocity>
             </Dynamic>
+          <Tempo>
+            <tempo>0.75</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"></font> <b><font face="Edwin"></font> = 30</b></text>
+            </Tempo>
           <Chord>
             <dots>1</dots>
             <durationType>eighth</durationType>

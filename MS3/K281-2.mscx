@@ -150,7 +150,6 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.6</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
@@ -234,6 +233,12 @@
             <offset x="-12.1229" y="-9.83984"/>
             <text>Andante amoroso</text>
             </StaffText>
+          <Tempo>
+            <tempo>0.85000000000000009</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"/> <b><font face="Edwin"/> = 34</b></text>
+            </Tempo>
           <Rest>
             <durationType>eighth</durationType>
             </Rest>

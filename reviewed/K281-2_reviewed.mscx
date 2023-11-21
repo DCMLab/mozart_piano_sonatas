@@ -150,13 +150,13 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.6</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
     <showFrames>1</showFrames>
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
+    <metaTag name="compared_against">v2.0</metaTag>
     <metaTag name="composer">Wolfgang Amadeus Mozart</metaTag>
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2017-12-05</metaTag>
@@ -234,6 +234,12 @@
             <offset x="-12.1229" y="-9.83984"/>
             <text>Andante amoroso</text>
             </StaffText>
+          <Tempo>
+            <tempo>0.85000000000000009</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"></font> <b><font face="Edwin"></font> = 34</b></text>
+            </Tempo>
           <Rest>
             <durationType>eighth</durationType>
             </Rest>

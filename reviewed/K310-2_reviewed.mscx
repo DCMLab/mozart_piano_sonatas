@@ -145,13 +145,13 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.564</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
-    <showInvisible>0</showInvisible>
+    <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
     <showFrames>1</showFrames>
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
+    <metaTag name="compared_against">v2.0</metaTag>
     <metaTag name="composer">Wolfgang Amadeus Mozart</metaTag>
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2016-07-13</metaTag>
@@ -265,9 +265,15 @@
               </Groups>
             </TimeSig>
           <Tempo>
-            <tempo>0.83333299999999999</tempo>
+            <tempo>0.66666666666666663</tempo>
             <offset x="-9.56803" y="-7.52889"/>
             <text>Andante cantabile con espressione</text>
+            </Tempo>
+          <Tempo>
+            <tempo>0.66666666666666663</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"></font><b><font face="Edwin"></font> = 40</b></text>
             </Tempo>
           <Chord>
             <durationType>16th</durationType>

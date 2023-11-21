@@ -148,7 +148,6 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.6</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
@@ -234,6 +233,12 @@
             <subtype>f</subtype>
             <velocity>96</velocity>
             </Dynamic>
+          <Tempo>
+            <tempo>2.7333333333333334</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"/><b><font face="Edwin"/> = 82</b></text>
+            </Tempo>
           <Chord>
             <durationType>32nd</durationType>
             <Spanner type="Slur">

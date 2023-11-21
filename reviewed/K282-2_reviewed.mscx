@@ -156,6 +156,7 @@
     <showFrames>1</showFrames>
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
+    <metaTag name="compared_against">v2.0</metaTag>
     <metaTag name="composer">Wolfgang Amadeus Mozart</metaTag>
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2018-02-11</metaTag>
@@ -239,6 +240,12 @@
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <Tempo>
+            <tempo>2.7000000000000002</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"></font><b><font face="Edwin"></font> = 54</b></text>
+            </Tempo>
           <Chord>
             <dots>1</dots>
             <durationType>eighth</durationType>

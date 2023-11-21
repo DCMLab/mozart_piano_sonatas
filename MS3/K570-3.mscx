@@ -146,7 +146,6 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.76389</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
@@ -242,6 +241,12 @@
           <SystemText>
             <text>Allegretto</text>
             </SystemText>
+          <Tempo>
+            <tempo>2.3999999999999999</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"/><b><font face="Edwin"/> = 72</b></text>
+            </Tempo>
           <Chord>
             <durationType>eighth</durationType>
             <Note>

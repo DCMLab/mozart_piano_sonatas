@@ -145,13 +145,13 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.76389</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
     <showFrames>1</showFrames>
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
+    <metaTag name="compared_against">v2.0</metaTag>
     <metaTag name="composer">Wolfgang Amadeus Mozart</metaTag>
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2018-07-18</metaTag>
@@ -269,9 +269,15 @@
           <controller ctrl="7" value="80"/>
           <synti>Fluid</synti>
           </Channel>
+        <Channel name="harmony">
+          <program value="0"/>
+          <controller ctrl="7" value="80"/>
+          <synti>Fluid</synti>
+          </Channel>
         </Instrument>
       </Part>
     <Staff id="1">
+      <VBox/>
       <Measure>
         <voice>
           <KeySig>
@@ -281,10 +287,16 @@
             <sigN>3</sigN>
             <sigD>4</sigD>
             </TimeSig>
-          <SystemText>
-            <offset x="0" y="-7"/>
+          <Tempo>
+            <tempo>0.76666666666666672</tempo>
             <text>Adagio</text>
-            </SystemText>
+            </Tempo>
+          <Tempo>
+            <tempo>0.76666666666666661</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"></font><b><font face="Edwin"></font> = 46</b></text>
+            </Tempo>
           <Chord>
             <dots>1</dots>
             <durationType>eighth</durationType>

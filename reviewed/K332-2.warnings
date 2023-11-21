@@ -1,0 +1,59 @@
+Warnings encountered during the last execution of ms3 review
+============================================================
+
+DCML_NON_CHORD_TONES_ABOVE_THRESHOLD_WARNING (19, 7, '5/16', 'V7/V') ms3.Parse.mozart_piano_sonatas.K332-2
+	The label 'V7/V' in m. 7, onset 5/16 (MC 7, onset 5/16) seems not to correspond well to the score (which does not necessarily mean it is wrong).
+	In the context of Bb.V, it expresses the scale degrees
+	('2', '#4', '6', '1') [('G', 'B', 'D', 'F')].
+	The corresponding score segment has 3 within-label and 6 out-of-label note onsets,
+	a ratio of 0.6666666666666666 > 0.6 (the current, arbitrary, threshold).
+	If it turns out the label is correct, please add the header of this warning to the IGNORED_WARNINGS, ideally followed
+	by a free-text comment in subsequent lines starting with a space or tab.
+DCML_NON_CHORD_TONES_ABOVE_THRESHOLD_WARNING (19, 11, '1/4', 'IV') ms3.Parse.mozart_piano_sonatas.K332-2
+	The label 'IV' in m. 11, onset 1/4 (MC 11, onset 1/4) seems not to correspond well to the score (which does not necessarily mean it is wrong).
+	In the context of Bb.V, it expresses the scale degrees
+	('4', '6', '1') [('Bb', 'D', 'F')].
+	The corresponding score segment has 3 within-label and 5 out-of-label note onsets,
+	a ratio of 0.625 > 0.6 (the current, arbitrary, threshold).
+	If it turns out the label is correct, please add the header of this warning to the IGNORED_WARNINGS, ideally followed
+	by a free-text comment in subsequent lines starting with a space or tab.
+DCML_NON_CHORD_TONES_ABOVE_THRESHOLD_WARNING (19, 15, '1/4', 'IV') ms3.Parse.mozart_piano_sonatas.K332-2
+	The label 'IV' in m. 15, onset 1/4 (MC 15, onset 1/4) seems not to correspond well to the score (which does not necessarily mean it is wrong).
+	In the context of Bb.V, it expresses the scale degrees
+	('4', '6', '1') [('Bb', 'D', 'F')].
+	The corresponding score segment has 3 within-label and 5 out-of-label note onsets,
+	a ratio of 0.625 > 0.6 (the current, arbitrary, threshold).
+	If it turns out the label is correct, please add the header of this warning to the IGNORED_WARNINGS, ideally followed
+	by a free-text comment in subsequent lines starting with a space or tab.
+DCML_NON_CHORD_TONES_ABOVE_THRESHOLD_WARNING (19, 17, '3/8', 'V65/IV') ms3.Parse.mozart_piano_sonatas.K332-2
+	The label 'V65/IV' in m. 17, onset 3/8 (MC 17, onset 3/8) seems not to correspond well to the score (which does not necessarily mean it is wrong).
+	In the context of Bb.V, it expresses the scale degrees
+	('3', '5', 'b7', '1') [('A', 'C', 'Eb', 'F')].
+	The corresponding score segment has 1 within-label and 2 out-of-label note onsets,
+	a ratio of 0.6666666666666666 > 0.6 (the current, arbitrary, threshold).
+	If it turns out the label is correct, please add the header of this warning to the IGNORED_WARNINGS, ideally followed
+	by a free-text comment in subsequent lines starting with a space or tab.
+DCML_NON_CHORD_TONES_ABOVE_THRESHOLD_WARNING (19, 31, '1/4', 'IV') ms3.Parse.mozart_piano_sonatas.K332-2
+	The label 'IV' in m. 31, onset 1/4 (MC 31, onset 1/4) seems not to correspond well to the score (which does not necessarily mean it is wrong).
+	In the context of Bb.I, it expresses the scale degrees
+	('4', '6', '1') [('Eb', 'G', 'Bb')].
+	The corresponding score segment has 3 within-label and 5 out-of-label note onsets,
+	a ratio of 0.625 > 0.6 (the current, arbitrary, threshold).
+	If it turns out the label is correct, please add the header of this warning to the IGNORED_WARNINGS, ideally followed
+	by a free-text comment in subsequent lines starting with a space or tab.
+DCML_NON_CHORD_TONES_ABOVE_THRESHOLD_WARNING (19, 35, '1/4', 'IV') ms3.Parse.mozart_piano_sonatas.K332-2
+	The label 'IV' in m. 35, onset 1/4 (MC 35, onset 1/4) seems not to correspond well to the score (which does not necessarily mean it is wrong).
+	In the context of Bb.I, it expresses the scale degrees
+	('4', '6', '1') [('Eb', 'G', 'Bb')].
+	The corresponding score segment has 6 within-label and 10 out-of-label note onsets,
+	a ratio of 0.625 > 0.6 (the current, arbitrary, threshold).
+	If it turns out the label is correct, please add the header of this warning to the IGNORED_WARNINGS, ideally followed
+	by a free-text comment in subsequent lines starting with a space or tab.
+DCML_NON_CHORD_TONES_ABOVE_THRESHOLD_WARNING (19, 37, '3/8', 'V65/IV') ms3.Parse.mozart_piano_sonatas.K332-2
+	The label 'V65/IV' in m. 37, onset 3/8 (MC 37, onset 3/8) seems not to correspond well to the score (which does not necessarily mean it is wrong).
+	In the context of Bb.I, it expresses the scale degrees
+	('3', '5', 'b7', '1') [('D', 'F', 'Ab', 'Bb')].
+	The corresponding score segment has 1 within-label and 2 out-of-label note onsets,
+	a ratio of 0.6666666666666666 > 0.6 (the current, arbitrary, threshold).
+	If it turns out the label is correct, please add the header of this warning to the IGNORED_WARNINGS, ideally followed
+	by a free-text comment in subsequent lines starting with a space or tab.

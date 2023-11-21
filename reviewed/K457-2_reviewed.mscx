@@ -146,13 +146,13 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.564</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
-    <showInvisible>0</showInvisible>
+    <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
     <showFrames>1</showFrames>
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
+    <metaTag name="compared_against">v2.0</metaTag>
     <metaTag name="composer">Wolfgang Amadeus Mozart</metaTag>
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2016-05-12</metaTag>
@@ -263,6 +263,12 @@
             <tempo>0.51666699999999999</tempo>
             <offset x="-4.3494" y="-6.30928"/>
             <text>Adagio</text>
+            </Tempo>
+          <Tempo>
+            <tempo>0.51666666666666661</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"></font><b><font face="Edwin"></font> = 31</b></text>
             </Tempo>
           <Chord>
             <durationType>quarter</durationType>

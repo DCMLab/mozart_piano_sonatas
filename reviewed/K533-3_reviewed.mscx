@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.02">
   <programVersion>3.6.2</programVersion>
-  <programRevision></programRevision>
+  <programRevision>3224f34</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
@@ -157,6 +157,7 @@
     <showFrames>1</showFrames>
     <showMargins>0</showMargins>
     <metaTag name="arranger"></metaTag>
+    <metaTag name="compared_against">v2.0</metaTag>
     <metaTag name="composer">Wolfgang Amadeus Mozart</metaTag>
     <metaTag name="copyright"></metaTag>
     <metaTag name="creationDate">2018-12-09</metaTag>
@@ -223,16 +224,9 @@
             </TimeSig>
           <StaffText>
             <family>Times New Roman</family>
-            <size>13</size>
-            <bold>1</bold>
-            <offset x="-9.43296" y="-10.5647"/>
-            <text>Andante</text>
-            </StaffText>
-          <StaffText>
-            <family>Times New Roman</family>
             <size>15</size>
             <bold>1</bold>
-            <offset x="-9.89749" y="-13.3638"/>
+            <offset x="-9.68695" y="-9.25832"/>
             <text>Rondo</text>
             </StaffText>
           <StaffText>
@@ -246,6 +240,18 @@
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <Tempo>
+            <tempo>2.3999999999999999</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"></font><b><font face="Edwin"></font> = 72</b></text>
+            </Tempo>
+          <Tempo>
+            <tempo>2.3999999999999999</tempo>
+            <minDistance>-9.18472</minDistance>
+            <offset x="-4.52655" y="-4.22318"/>
+            <text>Andante</text>
+            </Tempo>
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
@@ -9193,6 +9199,8 @@
             <durationType>half</durationType>
             <Spanner type="Slur">
               <Slur>
+                <up>down</up>
+                <lineType>2</lineType>
                 </Slur>
               <next>
                 <location>
@@ -9202,8 +9210,6 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
-                <up>down</up>
-                <lineType>2</lineType>
                 </Slur>
               <next>
                 <location>
@@ -10142,27 +10148,27 @@
             <durationType>half</durationType>
             <Spanner type="Slur">
               <Slur>
+                <up>up</up>
+                </Slur>
+              <next>
+                <location>
+                  <fractions>1/2</fractions>
+                  </location>
+                </next>
+              </Spanner>
+            <Spanner type="Slur">
+              <Slur>
+                <up>up</up>
+                </Slur>
+              <next>
+                <location>
+                  <fractions>1/2</fractions>
+                  </location>
+                </next>
+              </Spanner>
+            <Spanner type="Slur">
+              <Slur>
                 <lineType>2</lineType>
-                </Slur>
-              <next>
-                <location>
-                  <fractions>1/2</fractions>
-                  </location>
-                </next>
-              </Spanner>
-            <Spanner type="Slur">
-              <Slur>
-                <up>up</up>
-                </Slur>
-              <next>
-                <location>
-                  <fractions>1/2</fractions>
-                  </location>
-                </next>
-              </Spanner>
-            <Spanner type="Slur">
-              <Slur>
-                <up>up</up>
                 </Slur>
               <next>
                 <location>
@@ -11099,7 +11105,7 @@
             <durationType>quarter</durationType>
             <Spanner type="Slur">
               <Slur>
-                <up>up</up>
+                <lineType>2</lineType>
                 </Slur>
               <next>
                 <location>
@@ -11109,7 +11115,7 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
-                <lineType>2</lineType>
+                <up>up</up>
                 </Slur>
               <next>
                 <location>
@@ -14285,6 +14291,8 @@
             <durationType>half</durationType>
             <Spanner type="Slur">
               <Slur>
+                <up>down</up>
+                <lineType>2</lineType>
                 </Slur>
               <next>
                 <location>
@@ -14294,8 +14302,6 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
-                <up>down</up>
-                <lineType>2</lineType>
                 </Slur>
               <next>
                 <location>
@@ -27075,7 +27081,6 @@
             <durationType>half</durationType>
             <Spanner type="Slur">
               <Slur>
-                <up>down</up>
                 <lineType>2</lineType>
                 </Slur>
               <next>
@@ -27086,6 +27091,7 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
+                <up>down</up>
                 <lineType>2</lineType>
                 </Slur>
               <next>

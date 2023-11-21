@@ -145,7 +145,6 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.76389</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
@@ -240,6 +239,12 @@
             <subtype>p</subtype>
             <velocity>49</velocity>
             </Dynamic>
+          <Tempo>
+            <tempo>2.5</tempo>
+            <followText>1</followText>
+            <visible>0</visible>
+            <text><b></b><font face="ScoreText"/><b><font face="Edwin"/> = 50</b></text>
+            </Tempo>
           <Chord>
             <durationType>half</durationType>
             <Spanner type="Slur">
@@ -18846,6 +18851,10 @@
             <durationType>quarter</durationType>
             <Spanner type="Slur">
               <Slur>
+                <SlurSegment no="0">
+                  <offset x="0" y="2.25903"/>
+                  </SlurSegment>
+                <up>up</up>
                 </Slur>
               <next>
                 <location>
@@ -18856,10 +18865,6 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="2.25903"/>
-                  </SlurSegment>
-                <up>up</up>
                 </Slur>
               <next>
                 <location>
@@ -18941,10 +18946,6 @@
             <durationType>quarter</durationType>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="-2.49272"/>
-                  </SlurSegment>
-                <up>down</up>
                 </Slur>
               <next>
                 <location>
@@ -18955,6 +18956,10 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
+                <SlurSegment no="0">
+                  <offset x="0" y="-2.49272"/>
+                  </SlurSegment>
+                <up>down</up>
                 </Slur>
               <next>
                 <location>
@@ -26523,6 +26528,10 @@
             <durationType>quarter</durationType>
             <Spanner type="Slur">
               <Slur>
+                <SlurSegment no="0">
+                  <offset x="0" y="2.12448"/>
+                  </SlurSegment>
+                <up>up</up>
                 </Slur>
               <next>
                 <location>
@@ -26533,10 +26542,6 @@
               </Spanner>
             <Spanner type="Slur">
               <Slur>
-                <SlurSegment no="0">
-                  <offset x="0" y="2.12448"/>
-                  </SlurSegment>
-                <up>up</up>
                 </Slur>
               <next>
                 <location>

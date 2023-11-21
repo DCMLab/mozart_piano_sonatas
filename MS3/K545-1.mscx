@@ -144,7 +144,6 @@
       <usePre_3_6_defaults>1</usePre_3_6_defaults>
       <defaultsVersion>301</defaultsVersion>
       <Spatium>1.76389</Spatium>
-      <romanNumeralPlacement>1</romanNumeralPlacement>
       </Style>
     <showInvisible>1</showInvisible>
     <showUnprintable>1</showUnprintable>
@@ -233,6 +232,15 @@
             <sigN>4</sigN>
             <sigD>4</sigD>
             </TimeSig>
+          <Tempo>
+            <tempo>2.4666666666666668</tempo>
+            <text>Allegro</text>
+            </Tempo>
+          <Tempo>
+            <tempo>2.4666666666666668</tempo>
+            <followText>1</followText>
+            <text><b></b><font face="ScoreText"/><b><font face="Edwin"/> = 74</b></text>
+            </Tempo>
           <Chord>
             <durationType>half</durationType>
             <Note>
