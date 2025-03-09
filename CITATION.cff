@@ -1,18 +1,32 @@
 cff-version: 1.2.0
 message: "Please cite this dataset using the metadata from 'preferred-citation'."
 title: "The Annotated Mozart Sonatas: Score, Harmony, and Cadence"
-abstract: "Scores, chord labels and cadence labels for Mozart's 18 piano sonatas, following the Neue Mozart Ausgabe."
 type: dataset
+abstract: >-
+  Scores, chord labels and cadence labels for Mozart's 18 piano sonatas,
+  following the Neue Mozart Ausgabe.
+
+  This dataset is accompanied by the data report Hentschel, J., Neuwirth, M. and
+  Rohrmeier, M., 2021. The Annotated Mozart Sonatas: Score, Harmony, and
+  Cadence. Transactions of the International Society for Music Information
+  Retrieval, 4(1), pp.67–80. DOI: http://doi.org/10.5334/tismir.63doi: 10.5281/ZENODO.7473560c
+url: https://zenodo.org/doi/10.5281/zenodo.7424962
+repository: https://github.com/DCMLab/mozart_piano_sonatas
+identifiers:
+  - type: doi
+    value: 10.5281/ZENODO.7424962
+  - type: url
+    value: https://zenodo.org/doi/10.5281/zenodo.7424962
 authors:
     - given-names: Johannes
       family-names: Hentschel
-      email: johannes.hentschel@epfl.ch
-      affiliation: "École Polytechnique Fédérale de Lausanne"
+      email: johannes.hentschel@bruckneruni.at
+      affiliation: "Anton Bruckner University Linz"
       orcid: "https://orcid.org/0000-0002-1986-9545"
     - given-names: Markus
       family-names: Neuwirth
       email: markus.neuwirth@bruckneruni.at
-      affiliation: "Bruckner University Linz"
+      affiliation: "Anton Bruckner University Linz"
       orcid: "https://orcid.org/0000-0003-1990-052X"
     - given-names: Martin
       family-names: Rohrmeier
@@ -24,33 +38,80 @@ date-released: 2023-11-21
 keywords:
   - "expert-annotated dataset"
   - "tonal harmony"
-  - cadence
+  - "music research"
+  - "music theory"
+  - "music analysis"
+  - "music history"
+  - "corpus studies"
+  - "corpora"
+  - "symbolic dataset"
+  - "scores"
+  - "annotated dataset"
+  - "harmony"
+  - "key annotations"
+  - "chord annotations"
+  - "phrase annotations"
+  - "cadence annotations"
   - "classical style"
   - "piano music"
-license: "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License"
-repository: https://github.com/DCMLab/mozart_piano_sonatas
+license: "CC-BY-NC-4.0"
 preferred-citation:
   authors:
     - given-names: Johannes
       family-names: Hentschel
-      email: johannes.hentschel@epfl.ch
-      affiliation: "École Polytechnique Fédérale de Lausanne"
+      email: johannes.hentschel@bruckneruni.at
+      affiliation: "Anton Bruckner University Linz"
       orcid: "https://orcid.org/0000-0002-1986-9545"
     - given-names: Markus
       family-names: Neuwirth
       email: markus.neuwirth@bruckneruni.at
-      affiliation: "Bruckner University Linz"
+      affiliation: "Anton Bruckner University Linz"
       orcid: "https://orcid.org/0000-0003-1990-052X"
     - given-names: Martin
       family-names: Rohrmeier
       email: martin.rohrmeier@epfl.ch
       affiliation: "École Polytechnique Fédérale de Lausanne"
       orcid: "https://orcid.org/0000-0002-4323-7257"
-  title: "The Annotated Mozart Sonatas: Score, Harmony, and Cadence"
+  title: An Annotated Corpus of Tonal Piano Music from the Long 19th Century
   doi: 10.5334/tismir.63
+  url: http://dx.doi.org/10.5334/tismir.63
+  identifiers:
+    - type: doi
+      value: 10.5334/tismir.63
+    - type: url
+      value: http://dx.doi.org/10.5334/tismir.63
+    - type: other
+      value: urn:issn:2514-3298
   type: article
-  journal: "Transactions of the International Society for Music Information Retrieval"
+  journal: Transactions of the International Society for Music Information Retrieval
+  issn: 2514-3298
+  publisher:
+    name: Ubiquity Press, Ltd.
   volume: 4
   issue: 1
   year: 2021
-  abstract: "This article describes a new expert-labelled dataset featuring harmonic, phrase, and cadence analyses of all piano sonatas by W.A. Mozart. The dataset draws on the DCML standard for harmonic annotation and is being published adopting the FAIR principles of Open Science. The annotations have been verified using a data triangulation procedure which is presented as an alternative approach to handling annotator subjectivity. This procedure is suited for ensuring consistency, within the dataset and beyond, despite the high level of analytical detail afforded by the employed harmonic annotation syntax. The harmony labels also encode contextual information and are therefore suited for investigating music theoretical questions related to tonal harmony and the harmonic makeup of cadences in the classical style. Apart from providing basic statistical analyses characterizing the dataset, its music theoretical potential is illustrated by two preliminary experiments, one on the terminal harmonies of cadences and the other on the relation between performance durations and harmonic density. Furthermore, particular features can be selected to produce more coarse-grained training data, for example for chord detection algorithms that require less analytical detail. Facilitating the dataset’s reusability, it comes with a Python script that allows researchers to easily access various representations of the data tailored to their particular needs."
+  month: 5
+  start: 67
+  end: 80
+  abstract: >-
+    <jats:p>This article describes a new expert-labelled dataset featuring 
+    harmonic, phrase, and cadence analyses of all piano sonatas by W.A. Mozart. 
+    The dataset draws on the DCML standard for harmonic annotation and is being
+    published adopting the FAIR principles of Open Science. The annotations 
+    have been verified using a data triangulation procedure which is presented 
+    as an alternative approach to handling annotator subjectivity. This 
+    procedure is suited for ensuring consistency, within the dataset and 
+    beyond, despite the high level of analytical detail afforded by the 
+    employed harmonic annotation syntax. The harmony labels also encode 
+    contextual information and are therefore suited for investigating music 
+    theoretical questions related to tonal harmony and the harmonic makeup of 
+    cadences in the classical style. Apart from providing basic statistical 
+    analyses characterizing the dataset, its music theoretical potential is 
+    illustrated by two preliminary experiments, one on the terminal harmonies 
+    of cadences and the other on the relation between performance durations and 
+    harmonic density. Furthermore, particular features can be selected to 
+    produce more coarse-grained training data, for example for chord detection 
+    algorithms that require less analytical detail. Facilitating the dataset’s 
+    reusability, it comes with a Python script that allows researchers to 
+    easily access various representations of the data tailored to their 
+    particular needs.</jats:p>

@@ -1,10 +1,9 @@
 {
     "license": "CC-BY-NC-SA-4.0",
-    "description": "<p>Scores, chord labels and cadence labels for Mozart&#39;s 18 piano sonatas, following the <a href=\"https://dme.mozarteum.at/DME/nma\">Neue Mozart Ausgabe</a>.</p>\n\n<p>This dataset is accompanied by the data report <code>Hentschel, J., Neuwirth, M. and Rohrmeier, M., 2021. The Annotated Mozart Sonatas: Score, Harmony, and Cadence. Transactions of the International Society for Music Information Retrieval, 4(1), pp.67&ndash;80. DOI:</code> <a href=\"http://doi.org/10.5334/tismir.63\">http://doi.org/10.5334/tismir.63</a></p>",
     "contributors": [
         {
             "type": "DataCollector",
-            "name": "Uli Kneisel"
+            "name": "Adrian Nagel"
         },
         {
             "type": "DataCollector",
@@ -12,11 +11,28 @@
         },
         {
             "type": "DataCollector",
-            "name": "Adrian Nagel"
+            "name": "Uli Kneisel"
         }
     ],
     "title": "The Annotated Mozart Sonatas: Score, Harmony, and Cadence",
-    "language": "eng",
+    "keywords": [
+        "music research",
+        "music theory",
+        "music analysis",
+        "music history",
+        "corpus studies",
+        "corpora",
+        "symbolic dataset",
+        "scores",
+        "annotated dataset",
+        "harmony",
+        "key annotations",
+        "chord annotations",
+        "phrase annotations",
+        "cadence annotations",
+        "classical style",
+        "piano music"
+    ],
     "grants": [
         {
             "id": "10.13039/501100001711::105216_182811"
@@ -24,23 +40,24 @@
     ],
     "upload_type": "dataset",
     "version": "v2.1",
-    "keywords": [
-        "expert-annotated dataset",
-        "tonal harmony",
-        "cadence",
-        "classical style",
-        "piano music"
+    "communities": [
+        {
+            "identifier": "dcml"
+        },
+        {
+            "identifier": "epfl"
+        }
     ],
-    "publication_date": "2023-11-21",
+    "publication_date": "2025-03-03",
     "creators": [
         {
             "orcid": "0000-0002-1986-9545",
-            "affiliation": "École Polytechnique Fédérale de Lausanne",
+            "affiliation": "Anton Bruckner University Linz",
             "name": "Johannes Hentschel"
         },
         {
             "orcid": "0000-0003-1990-052X",
-            "affiliation": "École Polytechnique Fédérale de Lausanne",
+            "affiliation": "Anton Bruckner University Linz",
             "name": "Markus Neuwirth"
         },
         {
@@ -58,9 +75,20 @@
             "resource_type": "publication-article"
         },
         {
+            "scheme": "url",
+            "identifier": "https://github.com/DCMLab/mozart_piano_sonatas/tree/v2.1",
+            "relation": "references"
+        },
+        {
+            "scheme": "url",
+            "identifier": "https://dcmlab.github.io/mozart_piano_sonatas/",
+            "relation": "isDocumentedBy"
+        },
+        {
             "scheme": "doi",
-            "identifier": "10.5281/zenodo.7424962",
-            "relation": "isVersionOf"
+            "identifier": "10.5281/zenodo.13844105",
+            "relation": "isPartOf",
+            "resource_type":"dataset"
         }
     ]
 }
