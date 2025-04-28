@@ -32,12 +32,13 @@ If you are only interested in the current version of the corpus, you can downloa
 Data Formats
 ============
 
-Each piece in this corpus is represented by four files with identical names, each in its own folder. For example, the first movement of the first sonata, K. 279 has the following files:
+Each piece in this corpus is represented by five files with identical names, each in its own folder. For example, the first movement of the first sonata, K. 279 has the following files:
 
--  ``MS3/K279-1.mscx``: Uncompressed MuseScore file including the music and annotation labels.
--  ``notes/K279-1.tsv``: A table of all note heads contained in the score and their relevant features (not each of them represents an onset, some are tied together)
--  ``measures/K279-1.tsv``: A table with relevant information about the measures in the score.
--  ``harmonies/K279-1.tsv``: A list of the included harmony labels (including cadences and phrases) with their positions in the score.
+-  ``MS3/K279-1.mscx``: Uncompressed MuseScore 3.6.2 file including the music and annotation labels.
+-  ``notes/K279-1.notes.tsv``: A table of all note heads contained in the score and their relevant features (not each of them represents an onset, some are tied together)
+-  ``measures/K279-1.measures.tsv``: A table with relevant information about the measures in the score.
+-  ``chords/K279-1.chords.tsv``: A table containing layer-wise unique onset positions with the musical markup (such as dynamics, articulation, lyrics, figured bass, etc.).
+-  ``harmonies/K279-1.harmonies.tsv``: A table of the included harmony labels (including cadences and phrases) with their positions in the score.
 
 Opening Scores
 --------------
